@@ -326,8 +326,11 @@ class Manage_menu extends CI_Controller {
 		$page_id 	= $_POST["page_id"];
 		?>
 		<select name="group_page_id" id="group_page_id" data-placeholder="Select Group Page" class="chosen-select" required onchange="onchanage_page_info()">
-		<option value="0">
+		<option value="">
 			Select Group Page
+		</option>
+		<option value="0" page_title="<?php echo $page_type ?>" page_url="<?php echo $page_type ?>">
+			All <?php echo $page_type ?>
 		</option>
 		<?php 
 		$result = $this->db->query("select id,title,url from tbl_$page_type where status=1")->result();

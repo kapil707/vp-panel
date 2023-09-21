@@ -24,17 +24,7 @@ $whatsappno = $this->Main_Model->get_website_data("whatsappno");
 <!DOCTYPE html>
 <html lang="en-US" class="no-js">
 <head>
-	<title>
-		<?php echo $title; ?> <?php echo $meta_title ?>
-	</title>
-	<?php echo $google_code ?>
-	<meta name="author" content="<?php echo $meta_title ?>">
-	<meta name="description" content="<?php echo $meta_discription ?>" />
-	<meta name="keywords" content="<?php echo $meta_keywords ?>" />
-
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <link rel="icon" type="image/png" href="<?php echo base_url() ?>assets/website/images/favicon.png">
-    <link rel="apple-touch-icon" href="<?php echo base_url() ?>assets/website/images/apple-touch-icon.png">
+    <?php echo vp_head(); ?>
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/plugins.min.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/revslider/settings.css">
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/website/css/style3661.css?v=2.0">
@@ -80,17 +70,17 @@ $whatsappno = $this->Main_Model->get_website_data("whatsappno");
         <div class="container nav-container">
             <div class="flex-row nav-wrapper justify-content-between">
                 <div class="column"><a href="#top" class="logo">
-                    <img src="<?php echo base_url() ?>uploads/manage_website/photo/main/<?php echo $logo; ?>" alt="website logo" class="logo-white mxw-22">
-					<img src="<?php echo base_url() ?>uploads/manage_website/photo/main/<?php echo $logo; ?>" alt="website logo" class="logo-dark mxw-22"></a></div>
+                    <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="logo-white mxw-22">
+					<img src="<?php echo $logo; ?>" alt="website logo" class="logo-dark mxw-22"></a></div>
                 
 				<div id="nav-menu" class="column ml-auto nav-menu">
                     <ul class="nav-links justify-content-end">
                         <li class="logo-for-mobile-navigation">
-							<img src="<?php echo base_url() ?>uploads/manage_website/photo/main/<?php echo $logo; ?>" alt="website logo" class="logo-white mxw-22">
+							<img src="<?php echo $logo; ?>" alt="website logo" class="logo-white mxw-22">
 							
-                            <img src="<?php echo base_url() ?>uploads/manage_website/photo/main/<?php echo $logo; ?>" alt="website logo" class="logo-dark mxw-22">
+                            <img src="<?php echo $logo; ?>" alt="website logo" class="logo-dark mxw-22">
                         </li>
-						<?php echo get_menu(); ?>
+						<?php echo vp_menu(); ?>
                     </ul>
                 </div>
                 <div class="mobile-nb">

@@ -69,7 +69,7 @@ class Manage_field_group_model extends CI_Model
 				?>
 				<div class="ibox float-e-margins">
 					<div class="ibox-content">
-						<?php echo admin_side_image($row->field_label,$row->field_name,"",$row->field_name,"field",$row->required); ?>
+						<?php admin_side_image($row->field_label,$row->field_name,"",$row->field_name,"field",$row->required); ?>
 					</div>
 				</div>
 				<?php

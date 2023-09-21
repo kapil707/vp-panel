@@ -39,22 +39,9 @@
 							</span>
 						</div>
 					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Image (Favicon)
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<input type="file" class="form-control" id="form-field-1" placeholder="image" name="image_favicon" />
-							<?php $image_site_favicon = get_library_to_image(get_field_data("image_site_favicon")); ?>
-							<input type="hidden" name="image_site_favicon_old" value="<?php echo get_field_data("image_site_favicon") ?>">
-						</div>
-						<div class="col-sm-4">
-							<img src="<?php echo $image_site_favicon ?>" width="100%">
-						</div>
-					</div>
+
+					<?php admin_side_image("Image (Favicon)","image_favicon","","image_site_favicon","field",""); ?>
+				
 				</div>
 			</div>
 		</div>
@@ -62,37 +49,9 @@
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Image (Logo)
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<input type="file" class="form-control" id="form-field-1" placeholder="image" name="image" />
-							<?php $image_site_logo = get_library_to_image(get_field_data("image_site_logo")); ?>
-							<input type="hidden" name="image_site_logo_old" value="<?php echo get_field_data("image_site_logo") ?>">
-						</div>
-						<div class="col-sm-12">
-							<img src="<?php echo $image_site_logo ?>" width="100%">
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Mobile Image (Logo)
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<input type="file" class="form-control" id="form-field-1" placeholder="Mobile Image" name="mobile_image" />
-							<?php $mobile_image_site_logo = get_library_to_image(get_field_data("mobile_image_site_logo")); ?>
-							<input type="hidden" name="mobile_image_site_logo_old" value="<?php echo get_field_data("mobile_image_site_logo") ?>">
-						</div>
-						<div class="col-sm-12">
-							<img src="<?php echo $mobile_image_site_logo ?>" width="100%">
-						</div>
-					</div>
+					<?php admin_side_image("Image (Logo)","image","","image_site_logo","field-12",""); ?>
+					<hr>
+					<?php admin_side_image("Mobile Image (Logo)","mobile_image","","mobile_image_site_logo","field-12",""); ?>
 					
 					<div class="clearfix form-actions">
 						<div class="col-md-12">

@@ -86,7 +86,7 @@
 						</div>
 					</div>
 					<hr>
-					<?php  admin_side_image("Image","image","",$row->image,"","1"); ?>
+					<?php  admin_side_image("Image","image","",$row->image,"",""); ?>
 					<hr>
 					<?php  admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
 					<hr>

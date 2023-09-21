@@ -80,27 +80,11 @@
 						</div>
 					</div>
 					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Image
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<input type="file" class="form-control" id="form-field-1" placeholder="image" name="image" />
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Mobile Image
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<input type="file" class="form-control" id="form-field-1" placeholder="Mobile Image" name="mobile_image" />
-						</div>
-					</div>
+					<hr>
+					<?php  admin_side_image("Image","image","","","",""); ?>
+					<hr>
+					<?php  admin_side_image("Mobile Image","mobile_image","","","",""); ?>
+					<hr>
 					
 					
 					<div class="form-group">

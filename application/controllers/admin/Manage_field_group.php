@@ -164,7 +164,7 @@ class Manage_field_group extends CI_Controller {
 		{
 			$message_db = "";
 			$this->form_validation->set_rules('field_label','Field Label',"required");
-			if($field_label_old==$field_name){
+			if($field_label_old!=$field_name){
 				$this->form_validation->set_rules('field_name', 'Field Name', "required|is_unique[$Page_tbl.field_name]");
 			}
 			if ($this->form_validation->run() == FALSE)

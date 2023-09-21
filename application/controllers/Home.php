@@ -1,46 +1,29 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Home extends CI_Controller {
-	
-	var $Page_title = "Home";
-	var $Page_name  = "home";
-	var $Page_view  = "home";
-	var $Page_menu  = "home";
-	var $page_controllers = "home";
-	var $Page_tbl   = "";
+
 	public function index($page="")
 	{
-		$this->page_data($page);
-		
-		$Page_title = $this->Page_title;
-		$Page_name 	= $this->Page_name;
-		$Page_view 	= $this->Page_view;
-		$Page_menu 	= $this->Page_menu;
-		$Page_tbl 	= $this->Page_tbl;
-		$page_controllers 	= $this->page_controllers;	
+		$page_data = get_all_page_data($page);
 
-		$data['title1'] = $Page_title;
-		$data['title2'] = "View";
-		$data['Page_name'] = $Page_name;
-		$data['Page_menu'] = $Page_menu;
-		$this->breadcrumbs->push("<i class='fa fa-home' aria-hidden='true'></i>Home","home");		
-		$tbl = $Page_tbl;		
-
-		$data['url_path'] = base_url()."uploads/manage_slider/photo/main/";
+		$data["page_data"] = $page_data[0];
+		echo $page_data[1];
+		$mypage = $page_data[2];
 
 		$where1 = array('status'=>'1');
 		$data["tbl_slider"] = $this->Main_Model->get_single_data_result("tbl_slider",$where1,"id","asc");
 		
-		$data['url_path1'] = base_url()."uploads/manage_video/photo/main/";
-		
 		$this->load->view("website/header",$data);
-		$this->load->view("website/index",$data);
+		if($page=="home" || $page=="Home" || $page==""){
+			$this->load->view("website/index",$data);
+		}else{
+			if($mypage==""){
+				$this->load->view("website/index-2",$data);
+			}else{
+				$this->load->view("website/".$mypage,$data);
+			}
+		}
 		$this->load->view("website/footer",$data);
-	}
-	
-	public function page_data($page)
-	{
-		echo "asdfsfd";
 	}
 
 	public function lead()
