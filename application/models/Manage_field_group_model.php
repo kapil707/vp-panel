@@ -173,6 +173,34 @@ class Manage_field_group_model extends CI_Model
 			}
 		}
 	}
+
+	function insert_field_data_default($title,$field_name)
+    {		
+		$system_ip 	= $this->input->ip_address();
+		$time 		= time();
+		$date 		= date("Y-m-d",$time);
+		$user_id 	= $this->session->userdata("user_id");
+			
+		if($title!=""){
+			$dt = array(
+				'title'=>$title,
+				'field_name'=>$field_name,
+				'date'=>$date,
+				'time'=>$time,
+				'update_date'=>$date,
+				'update_time'=>$time,
+				'system_ip'=>$system_ip,
+				'user_id'=>$user_id,);
+			
+			$row1 = $this->db->query("select id from tbl_field_data where field_name='$field_name'")->row();
+			if($row1->id==""){
+				$this->Scheme_Model->insert_fun("tbl_field_data",$dt);
+			}else{
+				$where = array("id"=>$row1->id);
+				$this->Scheme_Model->edit_fun("tbl_field_data",$dt,$where);
+			}
+		}
+	}
 	
 	
 	/********************************************************/

@@ -46,7 +46,12 @@
 								</label>
 							</div>
 							<div class="col-sm-12">
-								<input type="text" class="form-control title" id="form-field-1" placeholder="Title" name="title" value="<?php echo $title; ?>" required />
+								<input type="text" class="form-control title" id="form-field-1" placeholder="Title" name="title" value="<?php echo set_value('title'); ?>" required />
+							</div>
+							<div class="help-inline col-sm-12 has-error">
+								<span class="help-block reset middle">  
+									<?= form_error('title'); ?>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -78,11 +83,16 @@
 					<div class="form-group">
 						<div class="col-sm-12">
 							<label class="control-label" for="form-field-1">
-								Seq No
+								Sorting Order
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<input type="text" class="form-control" id="form-field-1" placeholder="Seq No" name="seq_no" value="<?php echo $seq_no; ?>" required />
+							<input type="text" class="form-control" id="form-field-1" placeholder="Sorting Order" name="sorting_order" value="<?php echo set_value('sorting_order'); ?>" required />
+						</div>
+						<div class="help-inline col-sm-12 has-error">
+							<span class="help-block reset middle">  
+								<?= form_error('sorting_order'); ?>
+							</span>
 						</div>
 					</div>
 					

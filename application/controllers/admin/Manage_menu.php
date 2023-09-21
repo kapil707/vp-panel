@@ -43,7 +43,8 @@ class Manage_menu extends CI_Controller {
 		if(isset($Submit))
 		{
 			$message_db = "";
-			$this->form_validation->set_rules('menu','Menu Title',"required");
+			$this->form_validation->set_rules('title','Title',"required");
+			$this->form_validation->set_rules('sorting_order', 'Sorting Order', "required|is_unique[$Page_tbl.sorting_order]");
 			if ($this->form_validation->run() == FALSE)
 			{
 				$message = "Check Validation.";
@@ -53,28 +54,16 @@ class Manage_menu extends CI_Controller {
 			{
 				$time = time();
 				$date = date("Y-m-d",$time);
-				if (!empty($_FILES["image"]["name"]))
-				{
-					$this->Image_Model->uploadTo = $upload_path;
-					$photo = $this->Image_Model->upload($_FILES['image']);
-					$photo = str_replace($upload_path,"",$photo);
-					
-					$this->Image_Model->newPath = $upload_resize;
-					$this->Image_Model->newWidth = 550;
-					$this->Image_Model->newHeight = 550;
-					$this->Image_Model->resize();
-				}		
-				else
-				{
-					$photo = "";
-				}
+				
 				
 				$result = "";
 				$dt = array(
-				'user_id'=>$user_id,
-				'menu'=>$menu,
-				'url'=>$url,
-				'seq_no'=>$seq_no,
+				'title'=>$title,
+				'page_type'=>$group_page_type,
+				'page_id'=>$group_page_id,
+				
+				
+				'sorting_order'=>$sorting_order,
 				'status'=>$status,
 				'date'=>$date,
 				'time'=>$time,

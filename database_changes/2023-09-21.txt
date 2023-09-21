@@ -1,0 +1,6 @@
+ALTER TABLE `tbl_menu`
+  DROP `menu`,
+  DROP `seq_no`;
+
+ALTER TABLE `tbl_menu` ADD `title` VARCHAR(255) NOT NULL AFTER `id`, ADD `page_type` VARCHAR(100) NOT NULL AFTER `title`, ADD `page_id` INT NOT NULL AFTER `page_type`;
+ALTER TABLE `tbl_menu` ADD `sorting_order` INT NOT NULL AFTER `menu_id`;
