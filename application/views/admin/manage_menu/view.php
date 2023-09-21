@@ -1,64 +1,66 @@
 <div class="row">
-    <div class="col-xs-12" style="margin-bottom:5px;">
-    	<a href="add">
-            <button type="submit" class="btn btn-info">
-                Add
-            </button>            
-        </a>
-   	</div>
+	<div class="col-xs-12" style="margin-bottom:20px;">
+		<a href="<?= base_url()?>admin/<?= $Page_name; ?>/add" class="btn btn-w-m btn-info">
+			Add +
+		</a>
+	</div>
     <div class="col-xs-12">
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover dataTables-example">
-                <thead>
-                    <tr>
-                    	<th>
-                        	Sno.
-                        </th>
-						<th>
-                        	Menu
-                        </th>
-						<th>
-                        	Submenu
-                        </th>
-                        <th>
-                        	Action
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                <?php
-				$i=1;
-                foreach ($result as $row)
-                {
-					?>
-                    <tr id="row_<?= $row->id; ?>">
-                    	<td>
-                        	<?= $row->sorting_order; ?>
-                        </td>
- 						<td>
-                        	<?= ($row->title); ?>
-                        </td>
-						<td>
-                        	<?php
-							if($row->menu_id==""){
-								echo "n/a";
+		<div class="ibox float-e-margins">
+			<div class="ibox-content">
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover dataTables-example">
+						<thead>
+							<tr>
+								<th>
+									Sno.
+								</th>
+								<th>
+									Menu
+								</th>
+								<th>
+									Submenu
+								</th>
+								<th>
+									Action
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php
+						$i=1;
+						foreach ($result as $row)
+						{
+							?>
+							<tr id="row_<?= $row->id; ?>">
+								<td>
+									<?= $row->sorting_order; ?>
+								</td>
+								<td>
+									<?= ($row->title); ?>
+								</td>
+								<td>
+									<?php
+									if($row->menu_id==""){
+										echo "n/a";
+									}
+									?>
+								</td>
+								<td class="text-right">
+									<div class="btn-group">
+										<a href="edit/<?= $row->id; ?>" class="btn-white btn btn-xs">Edit
+										</a>
+										<a href="javascript:void(0)" onclick="delete_rec('<?= $row->id; ?>')" class="btn-white btn btn-xs">Delete</i> </a>
+									</div>
+								</td>
+							</tr>
+							<?php
 							}
 							?>
-                        </td>
-						<td class="text-right">
-                        	<div class="btn-group">
-								<a href="edit/<?= $row->id; ?>" class="btn-white btn btn-xs">Edit
-								</a>
-								<a href="javascript:void(0)" onclick="delete_rec('<?= $row->id; ?>')" class="btn-white btn btn-xs">Delete</i> </a>
-							</div>
-                        </td>
-                    </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </div>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
     </div>
 </div>
 <script>

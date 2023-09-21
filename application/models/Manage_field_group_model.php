@@ -2,11 +2,11 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 class Manage_field_group_model extends CI_Model  
 {  
-	function get_field_group_set_page_type()
+	function get_field_group_set_page_type($selected="")
     {
 		?>
-		<option value="page">Page</li>
-		<option value="blog">Blog</li>
+		<option value="page" <?php if($selected=="page") { echo "selected"; } ?>>Page</li>
+		<option value="blog"  <?php if($selected=="blog") { echo "selected"; } ?>>Blog</li>
 		<?php
 	}
 	
@@ -69,26 +69,7 @@ class Manage_field_group_model extends CI_Model
 				?>
 				<div class="ibox float-e-margins">
 					<div class="ibox-content">
-						<div class="form-group">
-							<div class="col-sm-12">
-								<label class="control-label" for="form-field-1">
-									<?php echo $row->field_label ?>
-								</label>
-							</div>
-							<?php if(get_field_data($row->field_name)=="") { ?>
-							<div class="col-sm-12">
-								<input type="file" class="form-control" name="<?php echo $row->field_name ?>" <?php if($row->required==1){ echo "required"; } ?> />
-							</div>
-							<?php } else { ?>
-							<div class="col-sm-12 css_<?php echo $row->field_name ?>">
-							
-							</div>
-							<div class="col-sm-3 img_css_<?php echo $row->field_name ?>">
-								<img src="<?php echo get_library_to_image(get_field_data($row->field_name))?>" width="100%">
-								<a href="javascript:void(0)" onclick="delete_field_data_image('<?php echo $row->field_name ?>','<?php echo $row->required ?>')" class="btn-white btn btn-xs">Delete</a>
-							</div>
-							<?php } ?>
-						</div>
+						<?php echo admin_side_image($row->field_label,$row->field_name,"",$row->field_name,"field",$row->required); ?>
 					</div>
 				</div>
 				<?php
@@ -221,4 +202,7 @@ class Manage_field_group_model extends CI_Model
 			$this->get_all_category_for_selected($category_id,$row->id,$i);
 		}
 	}
+
+	/********************************************************/
+	
 }  

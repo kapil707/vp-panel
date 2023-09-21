@@ -54,17 +54,16 @@ class Manage_menu extends CI_Controller {
 			{
 				$time = time();
 				$date = date("Y-m-d",$time);
-				
-				
+
 				$result = "";
 				$dt = array(
 				'title'=>$title,
 				'page_type'=>$group_page_type,
 				'page_id'=>$group_page_id,
-				
-				
+				'menu_id'=>$menu_id,
 				'sorting_order'=>$sorting_order,
 				'status'=>$status,
+				'user_id'=>$user_id,
 				'date'=>$date,
 				'time'=>$time,
 				'update_date'=>$date,
@@ -208,13 +207,15 @@ class Manage_menu extends CI_Controller {
 				$description1 = ($description1);
 				$result = "";
 				$dt = array(
-				'user_id'=>$user_id,
-				'photo'=>$photo,
 				'title'=>$title,
-				'description'=>$description,
-				'description1'=>$description1,
-				'url'=>$url,
+				'page_type'=>$group_page_type,
+				'page_id'=>$group_page_id,
+				'menu_id'=>$menu_id,
+				'sorting_order'=>$sorting_order,
 				'status'=>$status,
+				'user_id'=>$user_id,
+				'date'=>$date,
+				'time'=>$time,
 				'update_date'=>$date,
 				'update_time'=>$time,
 				'system_ip'=>$system_ip,);
@@ -321,7 +322,8 @@ class Manage_menu extends CI_Controller {
 
 	public function change_select_group_page_type_api()
 	{
-		$page_type = $_POST["page_type"];
+		$page_type 	= $_POST["page_type"];
+		$page_id 	= $_POST["page_id"];
 		?>
 		<select name="group_page_id" id="group_page_id" data-placeholder="Select Group Page" class="chosen-select" required onchange="onchanage_page_info()">
 		<option value="0">
@@ -332,7 +334,8 @@ class Manage_menu extends CI_Controller {
 		foreach($result as $row) { ?>
 			<option value="<?php echo $row->id ?>" 
 			page_title="<?php echo $row->title?>"
-			page_url="<?php echo $row->url?>">
+			page_url="<?php echo $row->url?>"
+			<?php if($page_id==$row->id) { echo "selected"; } ?>>
 			<?php echo $row->title ?>
 			</li>
 		<?php } 

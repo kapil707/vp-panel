@@ -1,4 +1,218 @@
-								                        </div>                    </div>                </div>                <div class="footer">                     <div class="pull-right">						Powered by Kapil Sharma					</div>					<div>						All rights are reserved  &copy; <?php echo date("Y") ?>					</div>                </div>            </div>        </div>	</div>    <!-- Mainly scripts -->    <script src="<?= base_url()?>/assets/js/jquery-3.1.1.min.js"></script>    <script src="<?= base_url()?>/assets/js/bootstrap.min.js"></script>    <script src="<?= base_url()?>/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>    <script src="<?= base_url()?>/assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>        <!-- Flot -->    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.js"></script>    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.tooltip.min.js"></script>    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.spline.js"></script>    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.resize.js"></script>    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.pie.js"></script>    <!-- Peity -->    <script src="<?= base_url()?>/assets/js/plugins/peity/jquery.peity.min.js"></script>    <script src="<?= base_url()?>/assets/js/demo/peity-demo.js"></script>    <!-- Custom and plugin javascript -->    <script src="<?= base_url()?>/assets/js/inspinia.js"></script>    <script src="<?= base_url()?>/assets/js/plugins/pace/pace.min.js"></script>    <!-- jQuery UI -->    <script src="<?= base_url()?>/assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>    <!-- GITTER -->    <script src="<?= base_url()?>/assets/js/plugins/gritter/jquery.gritter.min.js"></script>    <!-- Sparkline -->    <script src="<?= base_url()?>/assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>    <!-- Sparkline demo data  -->    <script src="<?= base_url()?>/assets/js/demo/sparkline-demo.js"></script>    <!-- ChartJS-->    <script src="<?= base_url()?>/assets/js/plugins/chartJs/Chart.min.js"></script>    <!-- Toastr -->    <script src="<?= base_url()?>/assets/js/plugins/toastr/toastr.min.js"></script>                <script>        $(document).ready(function() {            setTimeout(function() {                toastr.options = {				  "closeButton": true,				  "debug": false,				  "progressBar": true,				  "preventDuplicates": false,				  "positionClass": "toast-top-right",				  "onclick": null,				  "showDuration": "400",				  "hideDuration": "1000",				  "timeOut": "7000",				  "extendedTimeOut": "1000",				  "showEasing": "swing",				  "hideEasing": "linear",				  "showMethod": "fadeIn",				  "hideMethod": "fadeOut"				};				<?php				if($this->session->flashdata('message_footer')!="")				{										if($this->session->flashdata('message_type')=="success")					{ 						?>							toastr.success('<?= $this->session->flashdata('full_message'); ?>');						<?php 					} 					if($this->session->flashdata('message_type')=="info")					{ 						?>							toastr.info('<?= $this->session->flashdata('full_message'); ?>');						<?php					}										if($this->session->flashdata('message_type')=="warning")					{ 						?>							toastr.warning('<?= $this->session->flashdata('full_message'); ?>');						<?php					}											if($this->session->flashdata('message_type')=="error")					{						?>							toastr.error('<?= $this->session->flashdata('full_message'); ?>');						<?php					}				}?>            }, 1300);        });				function java_alert_function(message_type,full_message)		{			toastr.options = {			  "closeButton": true,			  "debug": false,			  "progressBar": true,			  "preventDuplicates": false,			  "positionClass": "toast-top-right",			  "onclick": null,			  "showDuration": "400",			  "hideDuration": "5000",			  "timeOut": "7000",			  "extendedTimeOut": "5000",			  "showEasing": "swing",			  "hideEasing": "linear",			  "showMethod": "fadeIn",			  "hideMethod": "fadeOut"			};			if(message_type=="success")			{ 				toastr.success(full_message);			} 			if(message_type=="info")			{ 				toastr.info(full_message);			}							if(message_type=="warning")			{ 				toastr.warning(full_message);			}									if(message_type=="error")			{				toastr.error(full_message);			}		}    </script>	<script src="<?= base_url()?>/assets/js/plugins/dataTables/datatables.min.js"></script>    <!-- Page-Level Scripts -->    <script>        $(document).ready(function(){            $('.dataTables-example').DataTable({                pageLength: 25,                responsive: true,                dom: '<"html5buttons"B>lTfgitp',                buttons: [                    { extend: 'copy'},                    {extend: 'csv'},                    {extend: 'excel', title: 'ExampleFile'},                    {extend: 'pdf', title: 'ExampleFile'},                    {extend: 'print',                     customize: function (win){                            $(win.document.body).addClass('white-bg');                            $(win.document.body).css('font-size', '10px');                            $(win.document.body).find('table')                                    .addClass('compact')                                    .css('font-size', 'inherit');                    }                    }                ]            });        });    </script><!-- Data picker -->   <script src="<?= base_url()?>/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>    <script>$('#data_5 .input-daterange').datepicker({	keyboardNavigation: false,	forceParse: false,	autoclose: true,	format: 'dd-MM-yyyy'});  </script><!-- Dual Listbox --><script src="<?= base_url()?>/assets/js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script><script>$(document).ready(function(){$('.dual_select').bootstrapDualListbox({selectorMinimalHeight: 160});check_login();get_latitude_longitude();});</script><!-- Chosen -->    <script src="<?= base_url()?>/assets/js/plugins/chosen/chosen.jquery.js"></script>    <!-- Jasny -->    <script src="<?= base_url()?>/assets/js/plugins/jasny/jasny-bootstrap.min.js"></script><script>function goBack() {    window.history.back();}</script>   <!-- Switchery -->   <script src="<?= base_url()?>/assets/js/plugins/switchery/switchery.js"></script>   <script>$(document).ready(function(){$('.chosen-select').chosen({width: "100%"});var elem = document.querySelector('.js-switch');var switchery = new Switchery(elem, { color: '#1AB394' });var elem1 = document.querySelector('.js-switch1');var switchery1 = new Switchery(elem1, { color: '#1AB394' });var elem2 = document.querySelector('.js-switch2');var switchery2 = new Switchery(elem2, { color: '#1AB394' });var elem3 = document.querySelector('.js-switch3');var switchery3 = new Switchery(elem3, { color: '#1AB394' });var elem4 = document.querySelector('.js-switch4');var switchery4 = new Switchery(elem4, { color: '#1AB394' });var elem5 = document.querySelector('.js-switch5');var switchery5 = new Switchery(elem5, { color: '#1AB394' });});</script><div class="script_load"></div><script>
+								
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                     <div class="pull-right">
+						Powered by Kapil Sharma
+					</div>
+					<div>
+						All rights are reserved  &copy; <?php echo date("Y") ?>
+					</div>
+                </div>
+            </div>
+        </div>
+	</div>
+    <!-- Mainly scripts -->
+    <script src="<?= base_url()?>/assets/js/jquery-3.1.1.min.js"></script>
+    <script src="<?= base_url()?>/assets/js/bootstrap.min.js"></script>
+    <script src="<?= base_url()?>/assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="<?= base_url()?>/assets/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+    
+    <!-- Flot -->
+    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.js"></script>
+    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.tooltip.min.js"></script>
+    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.spline.js"></script>
+    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.resize.js"></script>
+    <script src="<?= base_url()?>/assets/js/plugins/flot/jquery.flot.pie.js"></script>
+    <!-- Peity -->
+    <script src="<?= base_url()?>/assets/js/plugins/peity/jquery.peity.min.js"></script>
+    <script src="<?= base_url()?>/assets/js/demo/peity-demo.js"></script>
+    <!-- Custom and plugin javascript -->
+    <script src="<?= base_url()?>/assets/js/inspinia.js"></script>
+    <script src="<?= base_url()?>/assets/js/plugins/pace/pace.min.js"></script>
+    <!-- jQuery UI -->
+    <script src="<?= base_url()?>/assets/js/plugins/jquery-ui/jquery-ui.min.js"></script>
+    <!-- GITTER -->
+    <script src="<?= base_url()?>/assets/js/plugins/gritter/jquery.gritter.min.js"></script>
+    <!-- Sparkline -->
+    <script src="<?= base_url()?>/assets/js/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- Sparkline demo data  -->
+    <script src="<?= base_url()?>/assets/js/demo/sparkline-demo.js"></script>
+    <!-- ChartJS-->
+    <script src="<?= base_url()?>/assets/js/plugins/chartJs/Chart.min.js"></script>
+    <!-- Toastr -->
+    <script src="<?= base_url()?>/assets/js/plugins/toastr/toastr.min.js"></script>
+    
+    
+    
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                toastr.options = {
+				  "closeButton": true,
+				  "debug": false,
+				  "progressBar": true,
+				  "preventDuplicates": false,
+				  "positionClass": "toast-top-right",
+				  "onclick": null,
+				  "showDuration": "400",
+				  "hideDuration": "1000",
+				  "timeOut": "7000",
+				  "extendedTimeOut": "1000",
+				  "showEasing": "swing",
+				  "hideEasing": "linear",
+				  "showMethod": "fadeIn",
+				  "hideMethod": "fadeOut"
+				};
+				<?php
+				if($this->session->flashdata('message_footer')!="")
+				{
+					
+					if($this->session->flashdata('message_type')=="success")
+					{ 
+						?>
+							toastr.success('<?= $this->session->flashdata('full_message'); ?>');
+						<?php 
+					} 
+					if($this->session->flashdata('message_type')=="info")
+					{ 
+						?>
+							toastr.info('<?= $this->session->flashdata('full_message'); ?>');
+						<?php
+					}
+					
+					if($this->session->flashdata('message_type')=="warning")
+					{ 
+						?>
+							toastr.warning('<?= $this->session->flashdata('full_message'); ?>');
+						<?php
+					}						
+					if($this->session->flashdata('message_type')=="error")
+					{
+						?>
+							toastr.error('<?= $this->session->flashdata('full_message'); ?>');
+						<?php
+					}
+				}?>
+            }, 1300);
+        });
+		
+		function java_alert_function(message_type,full_message)
+		{
+			toastr.options = {
+			  "closeButton": true,
+			  "debug": false,
+			  "progressBar": true,
+			  "preventDuplicates": false,
+			  "positionClass": "toast-top-right",
+			  "onclick": null,
+			  "showDuration": "400",
+			  "hideDuration": "5000",
+			  "timeOut": "7000",
+			  "extendedTimeOut": "5000",
+			  "showEasing": "swing",
+			  "hideEasing": "linear",
+			  "showMethod": "fadeIn",
+			  "hideMethod": "fadeOut"
+			};
+			if(message_type=="success")
+			{ 
+				toastr.success(full_message);
+			} 
+			if(message_type=="info")
+			{ 
+				toastr.info(full_message);
+			}
+				
+			if(message_type=="warning")
+			{ 
+				toastr.warning(full_message);
+			}						
+			if(message_type=="error")
+			{
+				toastr.error(full_message);
+			}
+		}
+    </script>
+	<script src="<?= base_url()?>/assets/js/plugins/dataTables/datatables.min.js"></script>
+    <!-- Page-Level Scripts -->
+    <script>
+        $(document).ready(function(){
+            $('.dataTables-example').DataTable({
+                pageLength: 25,
+                responsive: true,
+                dom: '<"html5buttons"B>lTfgitp',
+                buttons: [
+                    { extend: 'copy'},
+                    {extend: 'csv'},
+                    {extend: 'excel', title: 'ExampleFile'},
+                    {extend: 'pdf', title: 'ExampleFile'},
+                    {extend: 'print',
+                     customize: function (win){
+                            $(win.document.body).addClass('white-bg');
+                            $(win.document.body).css('font-size', '10px');
+                            $(win.document.body).find('table')
+                                    .addClass('compact')
+                                    .css('font-size', 'inherit');
+                    }
+                    }
+                ]
+            });
+        });
+    </script>
+<!-- Data picker -->
+   <script src="<?= base_url()?>/assets/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+  
+  <script>
+$('#data_5 .input-daterange').datepicker({
+	keyboardNavigation: false,
+	forceParse: false,
+	autoclose: true,
+	format: 'dd-MM-yyyy'
+});  </script>
+<!-- Dual Listbox -->
+<script src="<?= base_url()?>/assets/js/plugins/dualListbox/jquery.bootstrap-duallistbox.js"></script>
+<script>
+$(document).ready(function(){
+$('.dual_select').bootstrapDualListbox({
+selectorMinimalHeight: 160
+});
+check_login();
+get_latitude_longitude();
+});
+</script>
+<!-- Chosen -->
+    <script src="<?= base_url()?>/assets/js/plugins/chosen/chosen.jquery.js"></script>
+    <!-- Jasny -->
+    <script src="<?= base_url()?>/assets/js/plugins/jasny/jasny-bootstrap.min.js"></script>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+   <!-- Switchery -->
+   <script src="<?= base_url()?>/assets/js/plugins/switchery/switchery.js"></script>
+   
+<script>
+$(document).ready(function(){
+$('.chosen-select').chosen({width: "100%"});
+var elem = document.querySelector('.js-switch');
+var switchery = new Switchery(elem, { color: '#1AB394' });
+var elem1 = document.querySelector('.js-switch1');
+var switchery1 = new Switchery(elem1, { color: '#1AB394' });
+var elem2 = document.querySelector('.js-switch2');
+var switchery2 = new Switchery(elem2, { color: '#1AB394' });
+var elem3 = document.querySelector('.js-switch3');
+var switchery3 = new Switchery(elem3, { color: '#1AB394' });
+var elem4 = document.querySelector('.js-switch4');
+var switchery4 = new Switchery(elem4, { color: '#1AB394' });
+var elem5 = document.querySelector('.js-switch5');
+var switchery5 = new Switchery(elem5, { color: '#1AB394' });
+});
+</script>
+<div class="script_load"></div>
+<script>
 function onchange_theme_header()
 {
 	id = $("#theme_header").val();
@@ -71,7 +285,8 @@ function check_login()
 	});
 	setTimeout('check_login();',1000);
 	//show_now_time1();
-}function notify(pgtype)
+}
+function notify(pgtype)
 {
 	$.ajax({
 	type       : "POST",
@@ -87,9 +302,69 @@ function check_login()
 }
 </script>
 <!-- SUMMERNOTE -->
-<script src="<?= base_url()?>/assets/js/plugins/summernote/summernote.min.js"></script><script>$(document).ready(function(){
+<script src="<?= base_url()?>/assets/js/plugins/summernote/summernote.min.js"></script>
+<script>
+$(document).ready(function(){
 	$('.summernote').summernote();
-});function disabled_submit_button(id){	$(".submit_button").show();	$(".submit_button_disabled").hide();	if(id==1){		$(".submit_button").hide();		$(".submit_button_disabled").show();	}}function delete_field_data_image(field_name,required){		if (confirm('Are you sure Delete?')) { 		$.ajax({		type       : "POST",		data       :  {field_name:field_name} ,		url        : "<?= base_url()?>admin/manage_field_group/delete_field_data_image",		success    : function(data){				if(data!="")				{					if(data=="Error")					{						java_alert_function("error","Image Not Delete");					}					if(data=="ok")					{						java_alert_function("success","Image Deleted");						$(".img_css_"+field_name).html('')						if(required==1){							$(".css_"+field_name).html('<input type="file" class="form-control" name="'+field_name+'" required />')						}else{							$(".css_"+field_name).html('<input type="file" class="form-control" name="'+field_name+'" />')						}					}				}									else				{					java_alert_function("error","Something Wrong");				}			}		});	}}
+});
+function disabled_submit_button(id)
+{
+	$(".submit_button").show();
+	$(".submit_button_disabled").hide();
+	if(id==1){
+		$(".submit_button").hide();
+		$(".submit_button_disabled").show();
+	}
+}
+function delete_field_data_image(field_name,required){
+	
+	if (confirm('Are you sure Delete?')) { 
+		$.ajax({
+		type       : "POST",
+		data       :  {field_name:field_name},
+		url        : "<?= base_url()?>admin/manage_field_group/delete_field_data_image",
+		success    : function(data){
+				if(data!="")
+				{
+					if(data=="Error")
+					{
+						java_alert_function("error","Image Not Delete");
+					}
+					if(data=="ok")
+					{
+						java_alert_function("success","Image Deleted");
+						$(".img_default_field_css_"+field_name).html('')
+						if(required==1){
+							$(".default_field_css_"+field_name).html('<input type="file" class="form-control" name="'+field_name+'" required />')
+						}else{
+							$(".default_field_css_"+field_name).html('<input type="file" class="form-control" name="'+field_name+'" />')
+						}
+					}
+				}					
+				else
+				{
+					java_alert_function("error","Something Wrong");
+				}
+			}
+		});
+	}
+}
+
+function delete_page_image(field_name,required){
+	
+	if (confirm('Are you sure Delete?')) {
+
+		java_alert_function("success","Image Deleted");
+		$(".img_default_field_css_"+field_name).html('')
+		$("."+field_name+"_old_cls").val('')
+		
+		if(required==1){
+			$(".default_field_css_"+field_name).html('<input type="file" class="form-control" name="'+field_name+'" required />')
+		}else{
+			$(".default_field_css_"+field_name).html('<input type="file" class="form-control" name="'+field_name+'" />')
+		}
+	}
+}
 </script>
 </body>
 </html>

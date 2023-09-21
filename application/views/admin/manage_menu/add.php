@@ -1,6 +1,8 @@
 <div class="row">
 	<div class="col-xs-12" style="margin-bottom:20px;">
-		<button type="button" class="btn btn-w-m btn-info" onclick="goBack();"><< Back</button>
+		<a href="<?= base_url()?>admin/<?= $Page_name; ?>" class="btn btn-w-m btn-info">
+			Back
+		</a>
 	</div>
 	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
 		<div class="col-xs-9">
@@ -38,6 +40,7 @@
 							</div>
 						</div>
 					</div>
+					
 					<div class="form-group">
 						<div class="col-sm-12">
 							<div class="col-sm-12">
@@ -52,6 +55,32 @@
 								<span class="help-block reset middle">  
 									<?= form_error('title'); ?>
 								</span>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-12">
+							<div class="col-sm-12">
+								<label class="control-label" for="form-field-1">
+									Parent Menu
+								</label>
+							</div>
+							<div class="col-sm-4">
+								<select name="menu_id" id="menu_id" data-placeholder="Select Parent Menu" class="chosen-select">
+									<option value="0">
+										Select Parent Menu
+									</option>
+									<?php
+									$query = $this->db->query("select * from tbl_menu where status=1")->result();
+									foreach($query as $r){
+										?>
+										<option value="<?php echo $r->id ?>" <?php if($r->id==set_value('menu_id')) { ?> selected <?php } ?>>
+										<?php echo $r->title ?>
+										</option>
+										<?php
+									}
+									?>
+								</select>
 							</div>
 						</div>
 					</div>
