@@ -1,16 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Manage_page extends CI_Controller {
-	var $Page_title = "Manage Page";
-	var $Page_name  = "manage_page";
-	var $Page_view  = "manage_page";
-	var $Page_menu  = "manage_page";
-	var $page_controllers = "manage_page";
-	var $Page_tbl   = "tbl_page";
+class Manage_gallery extends CI_Controller {
+	var $Page_title = "Manage Gallery";
+	var $Page_name  = "manage_gallery";
+	var $Page_view  = "manage_gallery";
+	var $Page_menu  = "manage_gallery";
+	var $page_controllers = "manage_gallery";
+	var $Page_tbl   = "tbl_gallery";
 	public function index()
 	{
-		$page_controllers = $this->page_controllers;
-		redirect("admin/$page_controllers/view");
+		$page_type = $_GET["page_type"];
+		if($page_type){
+			$page_controllers = $this->page_controllers;
+			redirect("admin/$page_controllers/view?page_type=$page_type");
+		}else{
+			$page_controllers = $this->page_controllers;
+			redirect("admin/$page_controllers/view");
+		}
 	}	
 	public function add()
 	{
@@ -25,22 +31,36 @@ class Manage_page extends CI_Controller {
 		$Page_tbl 	= $this->Page_tbl;
 		$page_controllers 	= $this->page_controllers;
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
+		
+		$page_type = $_GET["page_type"];
+		if($page_type){
+			$Page_title = str_replace("Blog",$page_type,$Page_title);
+			$pg_type = "?page_type=".$page_type;
+			$data['pg_type'] = $pg_type;
+			$Page_title = str_replace("manage_","",$Page_title);
+		}
+		
 		$data['title1'] = $Page_title." || Add";
 		$data['title2'] = "Add";
 		$data['Page_name'] = $Page_name;
 		$data['Page_menu'] = $Page_menu;		
 		$this->breadcrumbs->push("Admin","admin/");
-		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
-		$this->breadcrumbs->push("Add","admin/$page_controllers/add");
+		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/".$pg_type);
+		$this->breadcrumbs->push("Add","admin/$page_controllers/add".$pg_type);
 		$tbl = $Page_tbl;
+
+		if(empty($page_type)){
+			$page_type = "";
+		}
 		
+		$url = "";
 		$system_ip = $this->input->ip_address();
 		extract($_POST);
 		if(isset($Submit))
 		{
 			$message_db = "";
 			$this->form_validation->set_rules('title','Title',"required");
-			$this->form_validation->set_rules('url', 'Url', "required|is_unique[$Page_tbl.url]");
+			//$this->form_validation->set_rules('url', 'Url', "required|is_unique[$Page_tbl.url]");
 			if ($this->form_validation->run() == FALSE)
 			{
 				$message = "Check Validation.";
@@ -59,23 +79,11 @@ class Manage_page extends CI_Controller {
 					$image_ = "";
 				}
 				
-				if (!empty($_FILES["mobile_image"]["name"]))
-				{
-					$mobile_image_ = $this->Manage_library_Model->insert_image_library($_FILES['mobile_image']);
-				}		
-				else
-				{
-					$mobile_image_ = "";
-				}
-				
 				$result = "";
 				$dt = array(
 					'title'=>$title,
-					'description'=>$description,
-					'excerpt'=>$excerpt,
 					'image'=>$image_,
-					'mobile_image'=>$mobile_image_,
-					'status'=>$status,
+					'page_type'=>$page_type,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
@@ -108,7 +116,7 @@ class Manage_page extends CI_Controller {
 				$this->Admin_Model->Add_Activity_log($message_db);
 				if($result)
 				{
-					redirect(base_url()."admin/$page_controllers/edit/".$result);
+					redirect(base_url()."admin/$page_controllers/edit/".$result.$pg_type);
 				}
 			}
 		}
@@ -123,8 +131,6 @@ class Manage_page extends CI_Controller {
 		$user_id = $this->session->userdata("user_id");
 		$user_type = $this->session->userdata("user_type");
 		/******************session***********************/
-		$_SESSION["latitude"] = 
-		$_SESSION["longitude"] = "";
 		$Page_title = $this->Page_title;
 		$Page_name 	= $this->Page_name;
 		$Page_view 	= $this->Page_view;
@@ -132,13 +138,22 @@ class Manage_page extends CI_Controller {
 		$Page_tbl 	= $this->Page_tbl;
 		$page_controllers 	= $this->page_controllers;
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
+		
+		$page_type = $_GET["page_type"];
+		if($page_type){
+			$Page_title = str_replace("Blog",$page_type,$Page_title);
+			$pg_type = "?page_type=".$page_type;
+			$data['pg_type'] = $pg_type;
+			$Page_title = str_replace("manage_","",$Page_title);
+		}
+		
 		$data['title1'] = $Page_title." || View";
 		$data['title2'] = "View";
 		$data['Page_name'] = $Page_name;
 		$data['Page_menu'] = $Page_menu;		
 		$this->breadcrumbs->push("Admin","admin/");
-		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
-		$this->breadcrumbs->push("View","admin/$page_controllers/view");
+		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/".$pg_type);
+		$this->breadcrumbs->push("View","admin/$page_controllers/view".$pg_type);
 		$tbl = $Page_tbl;
 		
 		extract($_POST);
@@ -150,7 +165,8 @@ class Manage_page extends CI_Controller {
 			$dt = array('status'=>"5");
 			$this->Scheme_Model->edit_fun($tbl,$dt,$where);			
 		}
-		$query = $this->db->query("select * from $tbl order by id desc");
+		
+		$query = $this->db->query("select * from $tbl where page_type='$page_type' order by id desc");
   		$data["result"] = $query->result();
 		$this->load->view("admin/header_footer/header",$data);
 		$this->load->view("admin/$Page_view/view",$data);
@@ -169,25 +185,35 @@ class Manage_page extends CI_Controller {
 		$Page_tbl 	= $this->Page_tbl;
 		$page_controllers 	= $this->page_controllers;
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
+		
+		$page_type = $_GET["page_type"];
+		if($page_type){
+			$Page_title = str_replace("Blog",$page_type,$Page_title);
+			$pg_type = "?page_type=".$page_type;
+			$data['pg_type'] = $pg_type;
+			$Page_title = str_replace("manage_","",$Page_title);
+		}
+		
 		$data['title1'] = $Page_title." || Edit";
 		$data['title2'] = "Edit";
 		$data['Page_name'] = $Page_name;
 		$data['Page_menu'] = $Page_menu;		
 		$this->breadcrumbs->push("Edit","admin/");
-		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
-		$this->breadcrumbs->push("Edit","admin/$page_controllers/edit");
+		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/".$pg_type);
+		$this->breadcrumbs->push("Edit","admin/$page_controllers/edit".$pg_type);
 		$tbl = $Page_tbl;
 		
 		
+		$category_id = $url = "";
 		$system_ip = $this->input->ip_address();		
 		extract($_POST);
 		if(isset($Submit))
 		{
 			$message_db = "";
 			$this->form_validation->set_rules('title','Title',"required");
-			if($url_old==$url){
+			/*if($url_old!=$url){
 				$this->form_validation->set_rules('url', 'Url', "required|is_unique[$Page_tbl.url]");
-			}
+			}*/
 			if ($this->form_validation->run() == FALSE)
 			{
 				$message = "Check Validation.";
@@ -212,24 +238,16 @@ class Manage_page extends CI_Controller {
 					$image_ = $image_old;
 				}
 				
-				if (!empty($_FILES["mobile_image"]["name"]))
-				{
-					$mobile_image_ = $this->Manage_library_Model->insert_image_library($_FILES['mobile_image']);
-				}		
-				else
-				{
-					$mobile_image_ = $mobile_image_old;
+				if($category_id){
+					$category_id = implode(',',$category_id);
 				}
 				
 				$result = "";
 				$dt = array(
 					'title'=>$title,
-					'description'=>$description,
-					'excerpt'=>$excerpt,
 					'image'=>$image_,
-					'mobile_image'=>$mobile_image_,
-					'join_page'=>$join_page,
-					'join_page_type'=>$join_page_type,
+					'category_id'=>$category_id,
+					'page_type'=>$page_type,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
@@ -307,5 +325,33 @@ class Manage_page extends CI_Controller {
 		$this->Admin_Model->Add_Activity_log($message);
 		echo "ok";
 	}
-
+	public function delete_photo()
+	{
+		$id = $_POST["id"];
+		$type_me = $_POST["type_me"];
+		$Page_title = $this->Page_title;
+		$Page_tbl = $this->Page_tbl;
+		$page_controllers 	= $this->page_controllers;
+		$url_path = "./uploads/$page_controllers/photo/";
+		$query = $this->db->query("select * from $Page_tbl where id='$id'");
+        $row = $query->row();
+		$filename = $url_path.$row->$type_me;
+		$name = ucfirst(base64_decode($row->menu_title));
+		$result = $this->db->query("update $Page_tbl set $type_me='' where id='$id'");
+		if($result)
+		{
+			$message = "$name - Delete Photo Successfully.";
+			if (file_exists($filename)) 
+			{
+    			unlink($filename);
+			}
+		}
+		else
+		{
+			$message = "$name - Photo Not Update.";
+		}
+		$message = $Page_title." - ".$message;
+		$this->Admin_Model->Add_Activity_log($message);
+		echo "ok";
+	}
 }

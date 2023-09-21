@@ -56,14 +56,15 @@ if ( ! function_exists('get_menu'))
 			}
 			$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row->title.'</a></il>';
 		}
-		$result = $ci->db->query("SELECT blog_type FROM `tbl_menu` join tbl_page on tbl_page.id=tbl_menu.page_id and tbl_menu.page_type='page' and tbl_page.blog_type!='' and tbl_menu.id='$menu_id'")->result();
+		$result = $ci->db->query("SELECT options_id,tbl_options.page_type,tbl_options.page_name,tbl_options.isdefault FROM `tbl_menu` join tbl_page on tbl_page.id=tbl_menu.page_id and tbl_menu.page_type='page' and tbl_page.options_id!='' join  tbl_options on tbl_options.id=tbl_page.options_id and tbl_menu.id='$menu_id'")->result();
 		foreach($result as $row){
-			if($row->blog_type=="default"){
+			$tbl = $row->page_type; // yha par table ke liya use ho raha h
+			if($row->isdefault=="1"){
 				$page_type = "";
 			}else{
-				$page_type = "manage_".$row->blog_type;
+				$page_type = "manage_".$row->page_name;
 			}
-			$result1 = $ci->db->query("SELECT * FROM `tbl_blog` where page_type='$page_type'")->result();
+			$result1 = $ci->db->query("SELECT * FROM `tbl_$tbl` where page_type='$page_type'")->result();
 			foreach($result1 as $row1){
 				$return.='<li> <a href="'.base_url().'blog/'.$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
 			}			

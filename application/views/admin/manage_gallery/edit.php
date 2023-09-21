@@ -27,37 +27,6 @@
 						</div>
 					</div>
 					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Description
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<textarea type="text" class="form-control summernote" id="form-field-1" placeholder="Description" name="description" style="height:100px"><?php echo $row->description; ?></textarea>
-						</div>
-						<div class="help-inline col-sm-12 has-error">
-							<span class="help-block reset middle">  
-								<?= form_error('description'); ?>
-							</span>
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Excerpt
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<textarea type="text" class="form-control" id="form-field-1" placeholder="Excerpt" name="excerpt" style="height:100px"><?php echo $row->excerpt; ?></textarea>
-						</div>
-						<div class="help-inline col-sm-12 has-error">
-							<span class="help-block reset middle">  
-								<?= form_error('excerpt'); ?>
-							</span>
-						</div>
-					</div>					
 				</div>
 			</div>
 			<?php $this->Manage_field_group_model->get_field_group_to_show_box("blog",$row->id);?>
@@ -74,46 +43,51 @@
 						<?php 
 						$page_type = $_GET["page_type"];
 						if($page_type==""){
-							$page_type = "blog";
+							$page_type = "gallery";
 						}else{
 							$page_type = str_replace("manage_","",$page_type);
 						}
 						$category_id = explode (",",$row->category_id);
-						$this->Manage_field_group_model->get_all_category_for_selected($category_id,"0",5,"blog",$page_type) ?>
+						$this->Manage_field_group_model->get_all_category_for_selected($category_id,"0",5,"gallery",$page_type) ?>
 					</div>
 				</div>
 			</div>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
+					<?php admin_side_image("Image","image","",$row->image,"",""); ?>
+					<hr>
+					
 					<div class="form-group">
 						<div class="col-sm-12">
 							<label class="control-label" for="form-field-1">
-								Url
+								Status
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<input type="text" class="form-control url" id="form-field-1" placeholder="Url" name="url" value="<?php echo $row->url; ?>" onchange="url_change2()" />
-						</div>
-						<div class="col-sm-12">
-							<span class="url1">
-								Permalink : <a href='<?= base_url(); ?><?php echo $row->url; ?>' target='_blank'><?= base_url(); ?><?php echo $row->url; ?></a>
-							</span>
-						</div>
-						<div class="help-inline col-sm-12 has-error">
-							<span class="help-block reset middle url_error">  
-								<?= form_error('url'); ?>
-							</span>
+							<select name="status" id="status" data-placeholder="Select Status" class="chosen-select" >
+								<option value="1" <?php if($row->status==1) { ?> selected <?php } ?>>
+									Active
+								</option>
+								<option value="0" <?php if($row->status==0) { ?> selected <?php } ?>>
+									Inactive
+								</option>
+							</select>
 						</div>
 					</div>
 					
-					<hr>
-					<?php admin_side_image("Image","image","",$row->image,"",""); ?>
-					<hr>
-					<?php admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
-					<hr>
-					
-					<?php $this->Manage_field_group_model->get_status_or_submit_button($row->status,"Update"); ?>
-				
+					<div class="clearfix form-actions">
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-block btn-info submit_button" name="Submit">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								Update
+							</button>
+							
+							<span class="btn btn-block btn-danger submit_button_disabled" name="Submit" style="display:none">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								Update
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

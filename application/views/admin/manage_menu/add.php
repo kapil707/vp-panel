@@ -125,65 +125,14 @@
 						</div>
 					</div>
 					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Image
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<input type="file" class="form-control" id="form-field-1" placeholder="image" name="image" />
-						</div>
-					</div>
+					<hr>
+					<?php admin_side_image("Image","image","",$row->image,"",""); ?>
+					<hr>
+					<?php admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
+					<hr>
 					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Mobile Image
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<input type="file" class="form-control" id="form-field-1" placeholder="Mobile Image" name="mobile_image" />
-						</div>
-					</div>
+					<?php $this->Manage_field_group_model->get_status_or_submit_button(set_value('sorting_order'),"Submit"); ?>
 					
-					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Status
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<select name="status" id="status" data-placeholder="Select Status" class="chosen-select" >
-								<option value="1" <?php if(set_value('status')==1) { ?> selected <?php } ?>>
-									Active
-								</option>
-								<option value="0" <?php if(set_value('status')==0) { ?> selected <?php } ?>>
-									Inactive
-								</option>
-							</select>
-						</div>
-						<div class="help-inline col-sm-12 has-error">
-							<span class="help-block reset middle">  
-								<?= form_error('status'); ?>
-							</span>
-						</div>
-					</div>
-					
-					<div class="clearfix form-actions">
-						<div class="col-md-12">
-							<button type="submit" class="btn btn-block btn-info submit_button" name="Submit">
-								<i class="ace-icon fa fa-check bigger-110"></i>
-								Submit
-							</button>
-							
-							<span class="btn btn-block btn-danger submit_button_disabled" name="Submit" style="display:none">
-								<i class="ace-icon fa fa-check bigger-110"></i>
-								Submit
-							</span>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>

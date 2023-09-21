@@ -86,9 +86,11 @@
 						</div>
 					</div>
 					<hr>
-					<?php  admin_side_image("Image","image","",$row->image,"",""); ?>
+					<?php admin_side_image("Image","image","",$row->image,"",""); ?>
 					<hr>
-					<?php  admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
+					<?php admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
+					<hr>
+					<?php $this->Manage_field_group_model->get_all_type_of_category_to_join_in_page($row->options_id); ?>
 					<hr>
 					<div class="form-group">
 						<div class="col-sm-12">

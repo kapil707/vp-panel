@@ -186,10 +186,10 @@ class Manage_field_group_model extends CI_Model
 	
 	/********************************************************/
 	
-	function get_all_category_for_selected($category_id,$id,$myi)
+	function get_all_category_for_selected($category_id,$id,$myi,$page_type,$page_name)
     {		
 		$i = $myi + 20;
-		$result = $this->db->query("select id,title from tbl_category where status=1 and category_id='$id'")->result();
+		$result = $this->db->query("select tbl_category.id,tbl_category.title from tbl_category join tbl_options on tbl_options.id=tbl_category.options_id where tbl_category.status=1 and tbl_category.category_id='$id' and tbl_options.page_type='$page_type' and tbl_options.page_name='$page_name'")->result();
 		foreach($result as $row){
 			?>
 			<div class="col-sm-12">
@@ -199,10 +199,100 @@ class Manage_field_group_model extends CI_Model
 				<label>
 			</div>
 			<?php
-			$this->get_all_category_for_selected($category_id,$row->id,$i);
+			$this->get_all_category_for_selected($category_id,$row->id,$i,$page_type,$page_name);
 		}
 	}
 
 	/********************************************************/
 	
+	function get_all_type_of_category_to_join_in_page($selected="")
+    {
+		?>
+		<div class="form-group">
+			<div class="col-sm-12">
+				<label class="control-label" for="form-field-1">
+					Content To Join
+				</label>
+			</div>
+			<div class="col-sm-12">
+				<select name="options_id" id="options_id" data-placeholder="Select Parent Category" class="chosen-select">
+					<option value="">
+						Select Content To Join
+					</option>
+					<optgroup label="Blogs">
+					<?php
+					$query = $this->db->query("select * from tbl_options where status=1 and page_type='blog'")->result();
+					foreach($query as $r){
+						?>
+						<option value="<?php echo $r->id ?>" <?php if($r->id==$selected) { ?> selected <?php } ?>>
+						<?php echo $r->page_name ?>
+						</option>
+						<?php
+					}
+					?>
+					</optgroup>
+					
+					<optgroup label="Gallery">
+					<?php
+					$query = $this->db->query("select * from tbl_options where status=1 and page_type='gallery'")->result();
+					foreach($query as $r){
+						?>
+						<option value="<?php echo $r->id ?>" <?php if($r->id==$selected) { ?> selected <?php } ?>>
+						<?php echo $r->page_name ?>
+						</option>
+						<?php
+					}
+					?>
+					</optgroup>
+				</select>
+			</div>
+			<div class="help-inline col-sm-12 has-error">
+				<span class="help-block reset middle">  
+					<?= form_error('options_id'); ?>
+				</span>
+			</div>
+		</div>
+		<?php
+	}
+
+	function get_status_or_submit_button($status,$submit_text){
+		?>
+		<div class="form-group">
+			<div class="col-sm-12">
+				<label class="control-label" for="form-field-1">
+					Status
+				</label>
+			</div>
+			<div class="col-sm-12">
+				<select name="status" id="status" data-placeholder="Select Status" class="chosen-select" >
+					<option value="1" <?php if($status==1) { ?> selected <?php } ?>>
+						Active
+					</option>
+					<option value="0" <?php if($status==0) { ?> selected <?php } ?>>
+						Inactive
+					</option>
+				</select>
+			</div>
+			<div class="help-inline col-sm-12 has-error">
+				<span class="help-block reset middle">  
+					<?= form_error('status'); ?>
+				</span>
+			</div>
+		</div>
+
+		<div class="clearfix form-actions">
+			<div class="col-md-12">
+				<button type="submit" class="btn btn-block btn-info submit_button" name="Submit">
+					<i class="ace-icon fa fa-check bigger-110"></i>
+					<?php echo $submit_text ?>
+				</button>
+				
+				<span class="btn btn-block btn-danger submit_button_disabled" name="Submit" style="display:none">
+					<i class="ace-icon fa fa-check bigger-110"></i>
+					<?php echo $submit_text ?>
+				</span>
+			</div>
+		</div>
+		<?php
+	}
 }  

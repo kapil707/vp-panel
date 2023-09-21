@@ -246,7 +246,7 @@ class Manage_blog extends CI_Controller {
 				}		
 				else
 				{
-					$image_ = "";
+					$image_ = $image_old;
 				}
 				
 				if (!empty($_FILES["mobile_image"]["name"]))
@@ -255,7 +255,7 @@ class Manage_blog extends CI_Controller {
 				}		
 				else
 				{
-					$mobile_image_ = "";
+					$mobile_image_ = $mobile_image_old;
 				}
 				
 				if($category_id){

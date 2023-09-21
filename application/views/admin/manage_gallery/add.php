@@ -15,7 +15,7 @@
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<input type="text" class="form-control title" id="form-field-1" placeholder="Title" name="title" value="<?php echo set_value('title'); ?>" onchange="url_change()" />
+							<input type="text" class="form-control" id="form-field-1" placeholder="Title" name="title" value="<?php echo set_value('title'); ?>" />
 						</div>
 						<div class="help-inline col-sm-12 has-error">
 							<span class="help-block reset middle">  
@@ -24,69 +24,50 @@
 						</div>
 					</div>
 					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Description
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<textarea type="text" class="form-control summernote" id="form-field-1" placeholder="Description" name="description" style="height:100px"><?php echo set_value('description'); ?></textarea>
-						</div>
-						<div class="help-inline col-sm-12 has-error">
-							<span class="help-block reset middle">  
-								<?= form_error('description'); ?>
-							</span>
-						</div>
-					</div>
-					
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Excerpt
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<textarea type="text" class="form-control" id="form-field-1" placeholder="Excerpt" name="excerpt" style="height:100px"><?php echo set_value('excerpt'); ?></textarea>
-						</div>
-						<div class="help-inline col-sm-12 has-error">
-							<span class="help-block reset middle">  
-								<?= form_error('excerpt'); ?>
-							</span>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-3">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
+					<?php admin_side_image("Image","image","","","",""); ?>
+					<hr>
 					<div class="form-group">
 						<div class="col-sm-12">
 							<label class="control-label" for="form-field-1">
-								Url
+								Status
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<input type="text" class="form-control url" id="form-field-1" placeholder="Url" name="url" value="<?php echo set_value('url'); ?>" />
-						</div>
-						<div class="col-sm-12">
-							<span class="url1"></span>
+							<select name="status" id="status" data-placeholder="Select Status" class="chosen-select" >
+								<option value="1" <?php if(set_value('status')==1) { ?> selected <?php } ?>>
+									Active
+								</option>
+								<option value="0" <?php if(set_value('status')==0) { ?> selected <?php } ?>>
+									Inactive
+								</option>
+							</select>
 						</div>
 						<div class="help-inline col-sm-12 has-error">
-							<span class="help-block reset middle url_error">  
-								<?= form_error('url'); ?>
+							<span class="help-block reset middle">  
+								<?= form_error('status'); ?>
 							</span>
 						</div>
 					</div>
 					
-					<hr>
-					<?php admin_side_image("Image","image","",$row->image,"",""); ?>
-					<hr>
-					<?php admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
-					<hr>
-					
-					<?php $this->Manage_field_group_model->get_status_or_submit_button(set_value('status'),"Submit"); ?>
+					<div class="clearfix form-actions">
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-block btn-info submit_button" name="Submit">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								Submit
+							</button>
+							
+							<span class="btn btn-block btn-danger submit_button_disabled" name="Submit" style="display:none">
+								<i class="ace-icon fa fa-check bigger-110"></i>
+								Submit
+							</span>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
