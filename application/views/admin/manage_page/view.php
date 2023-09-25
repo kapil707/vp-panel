@@ -57,7 +57,7 @@
 									<div class="btn-group">
 										<a href="edit/<?= $row->id; ?>" class="btn-white btn btn-xs">Edit
 										</a>
-										<a href="javascript:void(0)" onclick="delete_rec('<?= $row->id; ?>')" class="btn-white btn btn-xs">Delete</i> </a>
+										<a href="javascript:void(0)" onclick="delete_page_rec('<?= $row->id; ?>')" class="btn-white btn btn-xs">Delete</i> </a>
 									</div>
 								</td>
 							</tr>

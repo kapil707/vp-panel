@@ -17,17 +17,17 @@
             <div class="col-md-5">
                 <div class="contact-left">
                     <div class="elementor-widget-container margin-b-50">
-                        <h2><?php echo get_field_data("contact_label1") ?></h2>
+                        <h2><?php echo get_field_data("contact_label1",9) ?></h2>
                     </div>
                     <div class="contact-address">
                         <i class="fa fa-map-marker" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_address") ?>
+						<?php echo get_field_data("contact_address",9) ?>
 						<br><br>
 						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_email") ?>
+						<?php echo get_field_data("contact_email",9) ?>
 						<br><br>
 						<i class="fa fa-phone" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_phone") ?>
+						<?php echo get_field_data("contact_phone",9) ?>
                     </div>					
                 </div>
             </div>
@@ -65,5 +65,5 @@
     </div>
 </section>
 <section class="map-sec">
-    <?php echo get_field_data("contact_map") ?>
+    <?php echo get_field_data("contact_map",9) ?>
 </section>

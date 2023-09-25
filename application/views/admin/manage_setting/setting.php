@@ -40,21 +40,18 @@
 						</div>
 					</div>
 
-					<?php admin_side_image("Image (Favicon)","image_favicon","","image_site_favicon","field",""); ?>
+					<?php admin_side_image("Image (Favicon)","image_site_favicon","","image_site_favicon","field",""); ?>
 				
 				</div>
 			</div>
 		</div>
 		<div class="col-xs-3">
+			<?php publish_panel_right_top("not","Submit"); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
-
-					<?php admin_side_image("Image (Logo)","image","","image_site_logo","field-12",""); ?>
+					<?php admin_side_image("Image (Logo)","image_site_logo","","image_site_logo","field-12",""); ?>
 					<hr>
-					<?php admin_side_image("Mobile Image (Logo)","mobile_image","","mobile_image_site_logo","field-12",""); ?>
-					
-					<hr>					
-					<?php $this->Manage_field_group_model->get_status_or_submit_button(set_value('status'),"Submit"); ?>
+					<?php admin_side_image("Mobile Image (Logo)","mobile_image_site_logo","","mobile_image_site_logo","field-12",""); ?>
 				</div>
 			</div>
 		</div>

@@ -17,7 +17,7 @@
                             class="icon-md mx-1 sm-mt-2 text-sm border-1 border-gray-800 text-gray-800 hover-text-linkedin hover-border-linkedin rounded-full transition-colors duration-300"><i
                                 class="bi-linkedin"></i></a></div>
 							<p class="lg-mt-3 sm-mt-3 text-gray-700"><i class="fa fa-map-marker" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_address") ?>
+						<?php echo get_field_data("contact_address",9) ?>
 						</p>
                 </div>
                 <div class="flex flex-column align-items-center xs-mt-5 animated" data-animation="flipInX"
@@ -29,16 +29,16 @@
 						<p class="lg-mt-3 sm-mt-3 text-gray-700">
 						
 						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_email") ?>
+						<?php echo get_field_data("contact_email2",9) ?>
 						<br>
 						<i class="fa fa-phone" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_phone") ?></p>
+						<?php echo get_field_data("contact_phone",9) ?></p>
                 </div>
             </div>
         </div>
 		<hr>
 		<div class="container-lg text-sm" style="margin-top:50px;">
-			<?php echo get_field_data("contact_disclosure") ?>
+			<?php echo get_field_data("contact_disclosure",9) ?>
 		</div>
 		
 		

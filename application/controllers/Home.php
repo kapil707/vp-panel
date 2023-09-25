@@ -21,6 +21,24 @@ class Home extends CI_Controller {
 		}
 		$this->load->view("website/default_theme/footer",$data);
 	}
+	
+	public function blog($page="")
+	{
+		$page_data = get_all_blog_data($page);
+		$data["page_data"] = $page_data[0];
+		$mypage = $page_data[2]."-single";
+		
+		$this->load->view("website/default_theme/header",$data);
+		$this->load->view("website/default_theme/".$mypage,$data);
+		$this->load->view("website/default_theme/footer",$data);
+	}
+	
+	public function not_found()
+	{
+		$this->load->view("website/default_theme/header",$data);
+		$this->load->view("website/default_theme/not_found",$data);
+		$this->load->view("website/default_theme/footer",$data);
+	}
 
 	public function lead()
 	{

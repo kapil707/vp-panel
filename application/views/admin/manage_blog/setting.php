@@ -1,9 +1,9 @@
 <div class="row">
-	<?php /* <div class="col-xs-12" style="margin-bottom:20px;">
-		<a href="<?= base_url()?>admin/<?= $Page_name; ?>" class="btn btn-w-m btn-info">
+	<div class="col-xs-12" style="margin-bottom:20px;">
+		<a href="<?= base_url()?>admin/<?= $Page_name; ?>/<?php echo $child_page ?>" class="btn btn-w-m btn-info">
 			Back
 		</a>
-	</div> */ ?>
+	</div>
 	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
 		<input type="hidden" name="options_id" value="<?php echo $options_id = get_page_type_to_options_id($_GET["page_type"]); ?>">
 		<div class="col-xs-9">

@@ -41,7 +41,7 @@ class Manage_category extends CI_Controller {
 			$message_db = "";
 			//$this->form_validation->set_rules('title','Title',"required");
 			$this->form_validation->set_rules('title', 'Title', "required|is_unique[$Page_tbl.title]");
-			$this->form_validation->set_rules('options_id','Content To Join',"required");
+			//$this->form_validation->set_rules('join_page_id','Content To Join',"required");
 			if ($this->form_validation->run() == FALSE)
 			{
 				$message = "Check Validation.";
@@ -57,7 +57,7 @@ class Manage_category extends CI_Controller {
 					'title'=>$title,
 					'slug'=>$slug,
 					'category_id'=>$category_id,
-					'options_id'=>$options_id,
+					'join_page_id'=>$join_page_id,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
@@ -116,7 +116,7 @@ class Manage_category extends CI_Controller {
 		$data['title1'] = $Page_title." || View";
 		$data['title2'] = "View";
 		$data['Page_name'] = $Page_name;
-		$data['Page_menu'] = $Page_menu;		
+		$data['Page_menu'] = $Page_menu;
 		$this->breadcrumbs->push("Admin","admin/");
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("View","admin/$page_controllers/view");
@@ -169,7 +169,7 @@ class Manage_category extends CI_Controller {
 			if($title_old!=$title){
 				$this->form_validation->set_rules('title', 'Title', "required|is_unique[$Page_tbl.title]");
 			}
-			$this->form_validation->set_rules('options_id','Content To Join',"required");
+			//$this->form_validation->set_rules('join_page_id','Content To Join',"required");
 			if ($this->form_validation->run() == FALSE)
 			{
 				$message = "Check Validation.";
@@ -185,7 +185,7 @@ class Manage_category extends CI_Controller {
 					'title'=>$title,
 					'slug'=>$slug,
 					'category_id'=>$category_id,
-					'options_id'=>$options_id,
+					'join_page_id'=>$join_page_id,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
@@ -244,7 +244,8 @@ class Manage_category extends CI_Controller {
 			echo "ok";
 		}
 	}
-	public function delete_rec()
+	
+	public function delete_page_rec()
 	{
 		$id = $_POST["id"];
 		$Page_title = $this->Page_title;

@@ -34,13 +34,15 @@ class Manage_page extends CI_Controller {
 		$this->breadcrumbs->push("Add","admin/$page_controllers/add");
 		$tbl = $Page_tbl;
 		
+		$page_type = "page";
 		$system_ip = $this->input->ip_address();
 		extract($_POST);
 		if(isset($Submit))
 		{
 			$message_db = "";
 			$this->form_validation->set_rules('title','Title',"required");
-			$this->form_validation->set_rules('url', 'Url', "required|is_unique[$Page_tbl.url]");
+			/*$this->form_validation->set_rules('url', 'Url', "required|callback_check_url");
+			$this->form_validation->set_rules('url', 'Url', "required|callback_check_url");*/
 			if ($this->form_validation->run() == FALSE)
 			{
 				$message = "Check Validation.";
@@ -50,32 +52,15 @@ class Manage_page extends CI_Controller {
 			{
 				$time = time();
 				$date = date("Y-m-d",$time);
-				if (!empty($_FILES["image"]["name"]))
-				{
-					$image_ = $this->Manage_library_Model->insert_image_library($_FILES['image']);
-				}		
-				else
-				{
-					$image_ = "";
-				}
-				
-				if (!empty($_FILES["mobile_image"]["name"]))
-				{
-					$mobile_image_ = $this->Manage_library_Model->insert_image_library($_FILES['mobile_image']);
-				}		
-				else
-				{
-					$mobile_image_ = "";
-				}
 				
 				$result = "";
 				$dt = array(
 					'title'=>$title,
 					'description'=>$description,
 					'excerpt'=>$excerpt,
-					'image'=>$image_,
-					'mobile_image'=>$mobile_image_,
-					'status'=>$status,
+					'image'=>$image,
+					'mobile_image'=>$mobile_image,
+					'page_type'=>$page_type,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
@@ -150,7 +135,8 @@ class Manage_page extends CI_Controller {
 			$dt = array('status'=>"5");
 			$this->Scheme_Model->edit_fun($tbl,$dt,$where);			
 		}
-		$query = $this->db->query("select * from $tbl order by id desc");
+		$page_type = "page";
+		$query = $this->db->query("select * from $tbl where page_type='$page_type' order by id desc");
   		$data["result"] = $query->result();
 		$this->load->view("admin/header_footer/header",$data);
 		$this->load->view("admin/$Page_view/view",$data);
@@ -178,16 +164,16 @@ class Manage_page extends CI_Controller {
 		$this->breadcrumbs->push("Edit","admin/$page_controllers/edit");
 		$tbl = $Page_tbl;
 		
-		
+		$page_type = "page";
 		$system_ip = $this->input->ip_address();		
 		extract($_POST);
 		if(isset($Submit))
 		{
 			$message_db = "";
 			$this->form_validation->set_rules('title','Title',"required");
-			if($url_old==$url){
+			/*if($url_old==$url){
 				$this->form_validation->set_rules('url', 'Url', "required|is_unique[$Page_tbl.url]");
-			}
+			}*/
 			if ($this->form_validation->run() == FALSE)
 			{
 				$message = "Check Validation.";
@@ -203,34 +189,15 @@ class Manage_page extends CI_Controller {
 				$date = date("Y-m-d",$time);
 				$where = array('id'=>$id);
 				
-				if (!empty($_FILES["image"]["name"]))
-				{
-					$image_ = $this->Manage_library_Model->insert_image_library($_FILES['image']);
-				}		
-				else
-				{
-					$image_ = $image_old;
-				}
-				
-				if (!empty($_FILES["mobile_image"]["name"]))
-				{
-					$mobile_image_ = $this->Manage_library_Model->insert_image_library($_FILES['mobile_image']);
-				}		
-				else
-				{
-					$mobile_image_ = $mobile_image_old;
-				}
-				
 				$result = "";
 				$dt = array(
 					'title'=>$title,
 					'description'=>$description,
 					'excerpt'=>$excerpt,
-					'image'=>$image_,
-					'mobile_image'=>$mobile_image_,
-					'options_id'=>$options_id,
-					'date'=>$date,
-					'time'=>$time,
+					'image'=>$image,
+					'mobile_image'=>$mobile_image,
+					'page_type'=>$page_type,
+					'join_page_id'=>$join_page_id,
 					'update_date'=>$date,
 					'update_time'=>$time,
 					'system_ip'=>$system_ip,
@@ -273,22 +240,8 @@ class Manage_page extends CI_Controller {
 		$this->load->view("admin/$Page_view/edit",$data);
 		$this->load->view("admin/header_footer/footer",$data);
 	}
-	public function check_url()
-	{
-		$Page_tbl 	= $this->Page_tbl;
-		$id 		= $_POST["id"];
-		$url 		= $_POST["url"];		
-		$query = $this->db->query("select * from $Page_tbl where url='$url' and id!='$id'")->row();
-		if($query->id)
-		{
-			echo "Error";
-		}
-		else
-		{
-			echo "ok";
-		}
-	}
-	public function delete_rec()
+	
+	public function delete_page_rec()
 	{
 		$id = $_POST["id"];
 		$Page_title = $this->Page_title;
@@ -307,4 +260,27 @@ class Manage_page extends CI_Controller {
 		echo "ok";
 	}
 
+	public function check_url_api()
+	{
+		$Page_tbl 	= $this->Page_tbl;
+		$id 		= $_POST["id"];
+		$url 		= $_POST["url"];
+		$child_page = $_POST["page_url"];
+		if($child_page=="page"){
+			$child_page = "";
+		}
+		$where = "";
+		if($id!=""){
+			$where = " and id!='$id'"; 
+		}
+		$query = $this->db->query("select id from $Page_tbl where url='$url' and child_page='$child_page' and page_type='page' $where")->row();
+		if($query->id)
+		{
+			echo "Error";
+		}
+		else
+		{
+			echo "ok";
+		}
+	}
 }

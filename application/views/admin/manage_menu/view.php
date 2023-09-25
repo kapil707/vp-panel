@@ -21,6 +21,12 @@
 									Submenu
 								</th>
 								<th>
+									Status
+								</th>
+								<th>
+									Update
+								</th>
+								<th>
 									Action
 								</th>
 							</tr>
@@ -31,7 +37,7 @@
 						foreach ($result as $row)
 						{
 							?>
-							<tr id="row_<?= $row->id; ?>">
+							<tr id="row_<?= $row->id; ?>" <?php if($row->status==0){ ?> class="text-warning" <?php } ?>>
 								<td>
 									<?= $row->sorting_order; ?>
 								</td>
@@ -45,11 +51,31 @@
 									}
 									?>
 								</td>
+								<td>
+								<?php
+								if($row->status=="1"){
+									echo "Active";
+								}
+								if($row->status=="0"){
+									echo "Inactive";
+								}
+								?>
+								</td>
+								<td>
+									<?php 
+									$date = ($row->update_time); 
+									echo date('d M,Y', $date);
+									?> at
+									<?php 
+									$time = ($row->update_time); 
+									echo date('H:i', $time);
+									?>
+								</td>
 								<td class="text-right">
 									<div class="btn-group">
 										<a href="edit/<?= $row->id; ?>" class="btn-white btn btn-xs">Edit
 										</a>
-										<a href="javascript:void(0)" onclick="delete_rec('<?= $row->id; ?>')" class="btn-white btn btn-xs">Delete</i> </a>
+										<a href="javascript:void(0)" onclick="delete_page_rec('<?= $row->id; ?>')" class="btn-white btn btn-xs">Delete</i> </a>
 									</div>
 								</td>
 							</tr>

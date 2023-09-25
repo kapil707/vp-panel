@@ -72,12 +72,10 @@
 			</div>
 		</div>
 		<div class="col-xs-3">
+			<?php publish_panel_right_top($row,"Update"); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
-					<?php $this->Manage_field_group_model->get_all_type_of_category_to_join_in_page($row->options_id); ?>
-
-					<hr>					
-					<?php $this->Manage_field_group_model->get_status_or_submit_button($row->status,"Update"); ?>
+					<?php $this->Manage_field_group_model->get_all_type_of_category_to_join_in_page($row->join_page_id); ?>
 				</div>
 			</div>
 		</div>

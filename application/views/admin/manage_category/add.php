@@ -68,12 +68,10 @@
 			</div>
 		</div>
 		<div class="col-xs-3">
+			<?php publish_panel_right_top(set_value('status'),"Submit"); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<?php $this->Manage_field_group_model->get_all_type_of_category_to_join_in_page(""); ?>
-
-					<hr>					
-					<?php $this->Manage_field_group_model->get_status_or_submit_button(set_value('status'),"Submit"); ?>
 				</div>
 			</div>
 		</div>

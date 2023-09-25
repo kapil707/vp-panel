@@ -18,7 +18,7 @@
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<input type="text" class="form-control title" id="form-field-1" placeholder="Title" name="title" value="<?php echo $row->title; ?>" onchange="url_change()" />
+							<input type="text" class="form-control title" id="form-field-1" placeholder="Title" name="title" value="<?php echo $row->title; ?>" onchange="onchange_title()" />
 						</div>
 						<div class="help-inline col-sm-12 has-error">
 							<span class="help-block reset middle">  
@@ -73,7 +73,7 @@
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<input type="text" class="form-control url" id="form-field-1" placeholder="Url" name="url" value="<?php echo $row->url; ?>" onchange="url_change2()" />
+							<input type="text" class="form-control url" id="form-field-1" placeholder="Url" name="url" value="<?php echo $row->url; ?>" onchange="onchange_url()" />
 						</div>
 						<div class="col-sm-12">
 							<span class="url1">
@@ -88,7 +88,7 @@
 					</div>
 					
 					<hr>
-					<?php $this->Manage_field_group_model->get_all_type_of_category_to_join_in_page($row->options_id); ?>
+					<?php $this->Manage_field_group_model->get_all_type_of_category_to_join_in_page($row->join_page_id); ?>
 					
 					<hr>
 					<?php admin_side_image("Image","image","",$row->image,"",""); ?>
@@ -102,7 +102,7 @@
 	<?php } ?>
 </div><!-- /.row -->
 <script>
-function url_change()
+function onchange_title()
 {
 	url = $(".url").val();
 	if(url==""){
@@ -111,14 +111,14 @@ function url_change()
 		title = title.trim(title).replace(/ /g,'-');
 		title = encodeURI(title).replace(/[!\/\\#,+()$~%.'":*?<>{}]/g,'');
 		$(".url").val(title)
-		v = '<?= base_url(); ?>'+title;
+		v = '<?= base_url(); ?><?= $page_url ?>/'+title;
 		url1 = "Permalink : <a href='"+v+"' target='_blank'>"+v+"</a>";
 		$(".url1").html(url1)
-		change_url(title)
+		check_url(title)
 	}
 }
 
-function url_change2()
+function onchange_url()
 {
 	url = $(".url").val();
 	if(url!=""){
@@ -127,20 +127,25 @@ function url_change2()
 		title = title.trim(title).replace(/ /g,'-');
 		title = encodeURI(title).replace(/[!\/\\#,+()$~%.'":*?<>{}]/g,'');
 
-		v = '<?= base_url(); ?>'+title;
+		v = '<?= base_url(); ?><?= $page_url ?>/'+title;
 		url1 = "Permalink : <a href='"+v+"' target='_blank'>"+v+"</a>";
 		$(".url1").html(url1)
-		change_url(title)
+		check_url(title)
 	}
 }
 
-function change_url(url)
+var check_url_btn = 0;
+function check_url(url)
 {
-	id = 0;
+	check_url_btn = 1;
+	check_btn_in_page();
+	
+	page_url = "<?= $page_url ?>";
+	id = "<?= $row->id ?>";
 	$.ajax({
 	type       : "POST",
-	data       :  {url:url,id:id,} ,
-	url        : "<?= base_url()?>admin/<?= $Page_name?>/check_url",
+	data       :  {url:url,id:id,page_url:page_url} ,
+	url        : "<?= base_url()?>admin/<?= $Page_name?>/check_url_api",
 	success    : function(data){
 			if(data!="")
 			{
@@ -148,13 +153,13 @@ function change_url(url)
 				{
 					java_alert_function("error","This Url Already Taken")
 					$('.url_error').html("This Url Already Taken");
-					disabled_submit_button(1);
 				}
 				if(data=="ok")
 				{
 					java_alert_function("success","Url Ok");
 					$('.url_error').html("Url Ok");
-					disabled_submit_button(0);
+					check_url_btn = 0;
+					check_btn_in_page()
 				}
 			}					
 			else
@@ -164,5 +169,13 @@ function change_url(url)
 			}
 		}
 	});
+}
+
+function check_btn_in_page(){
+	
+	disabled_submit_button(1); // 1 say disabled hota ha
+	if(check_url_btn==0){
+		disabled_submit_button(0);
+	}
 }
 </script>

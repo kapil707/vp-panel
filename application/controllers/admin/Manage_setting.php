@@ -45,35 +45,10 @@ class Manage_setting extends CI_Controller {
 
 			$this->Manage_field_group_model->insert_field_data_default($site_tagline,"site_tagline");
 
-			if (!empty($_FILES["image"]["name"]))
-			{
-				$image_site_logo = $this->Manage_library_Model->insert_image_library($_FILES['image']);
-			}		
-			else
-			{
-				$image_site_logo = $image_site_logo_old;
-			}
-			
-			if (!empty($_FILES["mobile_image"]["name"]))
-			{
-				$mobile_image_site_logo = $this->Manage_library_Model->insert_image_library($_FILES['mobile_image']);
-			}		
-			else
-			{
-				$mobile_image_site_logo = $mobile_image_site_logo_old;
-			}
-
-			if (!empty($_FILES["image_favicon"]["name"]))
-			{
-				$image_site_favicon = $this->Manage_library_Model->insert_image_library($_FILES['image_favicon']);
-			}		
-			else
-			{
-				$image_site_favicon = $image_site_favicon_old;
-			}
-
 			$this->Manage_field_group_model->insert_field_data_default($image_site_logo,"image_site_logo");
+			
 			$this->Manage_field_group_model->insert_field_data_default($mobile_image_site_logo,"mobile_image_site_logo");
+			
 			$this->Manage_field_group_model->insert_field_data_default($image_site_favicon,"image_site_favicon");
 
 			redirect(current_url());

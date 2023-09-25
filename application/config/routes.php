@@ -57,9 +57,11 @@ $route['admin/register']='admin/admin/register';
 $route['admin/logout']='admin/admin/logout';
 
 $route['(:any)']='home/index/$1';
-$route['blog/(:any)']='home/index/$1/$2';
 
 //$route['admin/manger-manage/add']='admin/admin/manger_manage/add';
 
-$route['404_override'] = '';
+$route['404_override']='home/not_found';
 $route['translate_uri_dashes'] = FALSE;
+
+global $DB_ROUTES;
+if(!empty($DB_ROUTES)) $route = array_merge($route,$DB_ROUTES);

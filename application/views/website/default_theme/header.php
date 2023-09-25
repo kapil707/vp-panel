@@ -17,9 +17,9 @@
 						<i class="fa fa-file-text-o" aria-hidden="true"></i>
 						e-Brochure |
 						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_email") ?> |
+						<?php echo get_field_data("contact_email2",9) ?> |
 						<i class="fa fa-phone" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_phone") ?>
+						<?php echo get_field_data("contact_phone",9) ?>
 					</p>					
                 </div>
 				
@@ -45,23 +45,16 @@
             </div>
         </div>
     </div>
-    <nav id="navigation" class="modern-nav sticky nav-lg text-sm bordered bg-dark-600 font-secondary fixed-height"
-        data-offset="15">
+    <nav id="navigation" class="modern-nav sticky nav-lg text-sm bordered bg-dark-600 font-secondary fixed-height" data-offset="15">
         <div class="container nav-container">
             <div class="flex-row nav-wrapper justify-content-between">
                 <div class="column">
 					<a href="#top" class="logo">
-                    <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="logo-white mxw-20">
-					<img src="<?php echo $logo; ?>" alt="website logo" class="logo-dark mxw-20"></a>
+                    <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="mxw-18"></a>
 				</div>
                 
 				<div id="nav-menu" class="column ml-auto nav-menu">
                     <ul class="nav-links justify-content-end">
-                        <li class="logo-for-mobile-navigation">
-							<img src="<?php echo $logo; ?>" alt="website logo" class="logo-white mxw-22">
-							
-                            <img src="<?php echo $logo; ?>" alt="website logo" class="logo-dark mxw-22">
-                        </li>
 						<?php echo vp_menu(); ?>
                     </ul>
                 </div>

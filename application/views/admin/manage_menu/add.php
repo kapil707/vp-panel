@@ -5,6 +5,7 @@
 		</a>
 	</div>
 	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="group_child_page" class="css_group_child_page" value="<?php echo $row->child_page ?>">
 		<div class="col-xs-9">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
@@ -88,27 +89,9 @@
 			</div>
 		</div>
 		<div class="col-xs-3">
+			<?php publish_panel_right_top($row,"Submit"); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Url
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<input type="text" class="form-control url" id="form-field-1" placeholder="Url" name="url" value="<?php echo set_value('url'); ?>" readonly />
-						</div>
-						<div class="col-sm-12">
-							<span class="url1"></span>
-						</div>
-						<div class="help-inline col-sm-12 has-error">
-							<span class="help-block reset middle url_error">  
-								<?= form_error('url'); ?>
-							</span>
-						</div>
-					</div>
-
 					<div class="form-group">
 						<div class="col-sm-12">
 							<label class="control-label" for="form-field-1">
@@ -130,10 +113,6 @@
 					
 					<hr>
 					<?php admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
-					
-					<hr>					
-					<?php $this->Manage_field_group_model->get_status_or_submit_button(set_value('status'),"Submit"); ?>
-					
 				</div>
 			</div>
 		</div>
@@ -141,7 +120,10 @@
 </div>
 <script>
 function onchange_select_group_page_type(id){
-	page_type = $('.group_page_type_'+id+' option:selected').val();
+	page_type  = $('.group_page_type_'+id+' option:selected').val();
+	child_page = $('.group_page_type_'+id+' option:selected').attr("child_page");
+	
+	$(".css_group_child_page").val(child_page)
 	change_select_group_page_type(page_type)
 }
 function change_select_group_page_type(page_type)

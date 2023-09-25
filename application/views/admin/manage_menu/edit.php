@@ -6,6 +6,7 @@
 	</div>
 	<?php foreach ($result as $row) { ?> 
 	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="group_child_page" class="css_group_child_page" value="<?php echo $row->child_page ?>">
 		<div class="col-xs-9">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
@@ -21,7 +22,7 @@
 									<option value="0">
 										Select Group Page Type
 									</option>
-									<?php $this->Manage_field_group_model->get_field_group_set_page_type($row->page_type) ?>
+									<?php $this->Manage_field_group_model->get_field_group_set_page_type($row->page_type,$row->child_page) ?>
 								</select>
 							</div>
 						</div>
@@ -89,6 +90,7 @@
 			</div>
 		</div>
 		<div class="col-xs-3">
+			<?php publish_panel_right_top($row,"Update"); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<div class="form-group">
@@ -112,9 +114,6 @@
 					
 					<hr>
 					<?php  admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
-					
-					<hr>					
-					<?php $this->Manage_field_group_model->get_status_or_submit_button($row->status,"Update"); ?>
 				</div>
 			</div>
 		</div>
@@ -125,18 +124,21 @@
 <?php if($row->page_type) { ?>
 setTimeout(
 function(){
-	change_select_group_page_type('<?php echo $row->page_type ?>','<?php echo $row->page_id ?>');
+	change_select_group_page_type('<?php echo $row->page_type ?>','<?php echo $row->child_page ?>','<?php echo $row->page_id ?>');
 }, 500);
 <?php }?>
 function onchange_select_group_page_type(id){
-	page_type = $('.group_page_type_'+id+' option:selected').val();
-	change_select_group_page_type(page_type)
+	page_type  = $('.group_page_type_'+id+' option:selected').val();
+	child_page = $('.group_page_type_'+id+' option:selected').attr("child_page");
+	
+	$(".css_group_child_page").val(child_page)
+	change_select_group_page_type(page_type,child_page)
 }
-function change_select_group_page_type(page_type,page_id)
+function change_select_group_page_type(page_type,child_page,page_id)
 {	
 	$.ajax({
 	type       : "POST",
-	data       :  {page_type:page_type,page_id:page_id} ,
+	data       :  {page_type:page_type,child_page:child_page,page_id:page_id} ,
 	url        : "<?= base_url()?>admin/<?= $Page_name?>/change_select_group_page_type_api",
 	success    : function(data){
 			if(data!="")

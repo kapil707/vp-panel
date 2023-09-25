@@ -11,3 +11,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |	https://codeigniter.com/user_guide/general/hooks.html
 |
 */
+
+//require_once BASEPATH."application/config/database.php";
+
+$hook['pre_system'] = array(
+'class'    => 'Router_Hook',
+'function' => 'get_routes',
+'filename' => 'Router_Hook.php',
+'filepath' => 'hooks',
+'params'   => array(
+	"localhost",
+	"r1_user",
+	"kapil1234!@#$",
+	"r1_db",
+	"",
+	)
+);

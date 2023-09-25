@@ -59,6 +59,7 @@ class Manage_menu extends CI_Controller {
 				$dt = array(
 				'title'=>$title,
 				'page_type'=>$group_page_type,
+				'child_page'=>$group_child_page,
 				'page_id'=>$group_page_id,
 				'menu_id'=>$menu_id,
 				'sorting_order'=>$sorting_order,
@@ -186,29 +187,12 @@ class Manage_menu extends CI_Controller {
 				$time = time();
 				$date = date("Y-m-d",$time);
 				$where = array('id'=>$id);
-				if (!empty($_FILES["image"]["name"]))
-				{
-					$this->Image_Model->uploadTo = $upload_path;
-					$photo = $this->Image_Model->upload($_FILES['image']);
-					$photo = str_replace($upload_path,"",$photo);
-					
-					$this->Image_Model->newPath = $upload_resize;
-					$this->Image_Model->newWidth = 550;
-					$this->Image_Model->newHeight = 550;
-					$this->Image_Model->resize();
-				}		
-				else
-				{
-					$photo = $old_photo;
-				}
 				
-				$title = ($title);
-				$description = ($description);
-				$description1 = ($description1);
 				$result = "";
 				$dt = array(
 				'title'=>$title,
 				'page_type'=>$group_page_type,
+				'child_page'=>$group_child_page,
 				'page_id'=>$group_page_id,
 				'menu_id'=>$menu_id,
 				'sorting_order'=>$sorting_order,
@@ -271,7 +255,8 @@ class Manage_menu extends CI_Controller {
 			echo "ok";
 		}
 	}
-	public function delete_rec()
+	
+	public function delete_page_rec()
 	{
 		$id = $_POST["id"];
 		$Page_title = $this->Page_title;
@@ -289,58 +274,18 @@ class Manage_menu extends CI_Controller {
 		$this->Admin_Model->Add_Activity_log($message);
 		echo "ok";
 	}
-	public function delete_photo()
-	{
-		error_reporting(0);
-		$id = $_POST["id"];
-		$type_me = $_POST["type_me"];
-		$Page_title = $this->Page_title;
-		$Page_tbl = $this->Page_tbl;
-		$page_controllers 	= $this->page_controllers;
-		$url_path = "./uploads/$page_controllers/photo/";
-		$query = $this->db->query("select * from $Page_tbl where id='$id'");
-        $row = $query->row();
-		$filename = $url_path.$row->$type_me;
-		$name = ucfirst(base64_decode($row->menu_title));
-		$result = $this->db->query("update $Page_tbl set $type_me='' where id='$id'");
-		if($result)
-		{
-			$message = "$name - Delete Photo Successfully.";
-			if (file_exists($filename)) 
-			{
-    			unlink($filename);
-			}
-		}
-		else
-		{
-			$message = "$name - Photo Not Update.";
-		}
-		$message = $Page_title." - ".$message;
-		$this->Admin_Model->Add_Activity_log($message);
-		echo "ok";
-	}
 
 	public function change_select_group_page_type_api()
 	{
 		$page_type 	= $_POST["page_type"];
+		$child_page = $_POST["child_page"];
 		$page_id 	= $_POST["page_id"];
-		?>
-		<select name="group_page_id" id="group_page_id" data-placeholder="Select Group Page" class="chosen-select" required onchange="onchanage_page_info()">
-		<option value="">
-			Select Group Page
-		</option>
-		<option value="0" page_title="<?php echo $page_type ?>" page_url="<?php echo $page_type ?>">
-			All <?php echo $page_type ?>
-		</option>
-		<?php 
-		$result = $this->db->query("select id,title,url from tbl_$page_type where status=1")->result();
-		foreach($result as $row) { ?>
-			<option value="<?php echo $row->id ?>" 
-			page_title="<?php echo $row->title?>"
-			page_url="<?php echo $row->url?>"
-			<?php if($page_id==$row->id) { echo "selected"; } ?>>
-			<?php echo $row->title ?>
-			</li>
-		<?php } 
+		
+		$all = $page_type;
+		if($child_page){
+			$all = get_child_page_name($child_page);
+			$all = str_replace("Manage ","",$all);
+		}
+		$this->Manage_field_group_model->change_select_group_page_type($all,$page_type,$page_id,$child_page);
 	}
 }

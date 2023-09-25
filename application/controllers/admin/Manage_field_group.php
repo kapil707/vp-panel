@@ -56,7 +56,7 @@ class Manage_field_group extends CI_Controller {
 				$dt = array(
 					'field_label'=>$field_label,
 					'field_name'=>$field_name,
-					'field_type'=>$field_type,
+					'group_type_id'=>$group_type_id,
 					'required'=>$required,
 					'date'=>$date,
 					'time'=>$time,
@@ -174,8 +174,8 @@ class Manage_field_group extends CI_Controller {
 			}
 			else
 			{
-				if($group_page_id){
-					$this->Manage_field_group_model->insert_field_group_set($group_page_type,$group_page_id,$id);
+				if($group_page_type!="not" || $group_child_page!=""){
+					$this->Manage_field_group_model->insert_field_group_set($group_page_type,$group_child_page,$group_page_id,$id);
 				}
 				
 				$time = time();
@@ -184,7 +184,7 @@ class Manage_field_group extends CI_Controller {
 				$dt = array(
 					'field_label'=>$field_label,
 					'field_name'=>$field_name,
-					'field_type'=>$field_type,
+					'group_type_id'=>$group_type_id,
 					'required'=>$required,
 					'date'=>$date,
 					'time'=>$time,
@@ -277,20 +277,18 @@ class Manage_field_group extends CI_Controller {
 		echo "ok";
 	}
 	
-	
 	public function change_select_group_page_type_api()
 	{
-		$page_type = $_POST["page_type"];
-		?>
-		<select name="group_page_id" id="group_page_id" data-placeholder="Select Group Page" class="chosen-select" required>
-		<option value="0">
-			Select Group Page
-		</option>
-		<?php 
-		$result = $this->db->query("select id,title from tbl_$page_type where status=1")->result();
-		foreach($result as $row) { ?>
-			<option value="<?php echo $row->id ?>"><?php echo $row->title ?></li>
-		<?php } 
+		$page_type 	= $_POST["page_type"];
+		$child_page = $_POST["child_page"];
+		$page_id 	= $_POST["page_id"];
+		
+		$all = $page_type;
+		if($child_page){
+			$all = get_child_page_name($child_page);
+			$all = str_replace("Manage ","",$all);
+		}
+		$this->Manage_field_group_model->change_select_group_page_type($all,$page_type,$page_id,$child_page);
 	}
 	
 	public function delete_field_group_set()
@@ -310,9 +308,9 @@ class Manage_field_group extends CI_Controller {
 	
 	public function delete_field_data_image()
 	{
-		$field_name = $_POST["field_name"];
+		$id = $_POST["id"];
 		
-		$result = $this->db->query("delete from tbl_field_data where field_name='$field_name'");
+		$result = $this->db->query("delete from tbl_field_data where id='$id'");
 		if($result)
 		{
 			$message = "Delete Successfully.";

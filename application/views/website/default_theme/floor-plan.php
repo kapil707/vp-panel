@@ -15,7 +15,8 @@
     <div class="container cursor-default">
 		<div class="flex-row lg-flex-columns-12 md-flex-columns-2 sm-flex-columns-2 xs-flex-columns-1">
 			<div class="row">
-				<?php $manage_gallery_floor_plan = get_gallery("manage_gallery_floor_plan");
+				<?php 
+				$manage_gallery_floor_plan = get_gallery("gallery_floor_plan");
 				foreach($manage_gallery_floor_plan as $row) { ?>
 				<div class="col-sm-6" style="margin-bottom:20px;">
 					<img src="<?php echo get_library_to_image($row->image,'main'); ?>" width="100%">

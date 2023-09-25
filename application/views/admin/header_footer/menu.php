@@ -45,16 +45,21 @@
 				$menu_setting_url 	= $menu_url."/setting";
 				if($mymenu->menu_id!=0){
 					$new_menu = $this->db->query("SELECT * FROM `tbl_permission_page` where id='$mymenu->menu_id'")->row();
-					$pg_type 			= $menu_page_type;
-					$menu_url 			= $new_menu->page_type."/?page_type=".$pg_type;
-					$menu_add_url 		= $new_menu->page_type."/add?page_type=".$pg_type;
-					$menu_setting_url 	= $new_menu->page_type."/setting?page_type=".$pg_type;
+					$child_page 		= $menu_page_type;
+					$child_page 		= str_replace("manage_","",$child_page);
+					$menu_url 			= $new_menu->page_type."/?child_page=".$child_page;
+					$menu_add_url 		= $new_menu->page_type."/add?child_page=".$child_page;
+					$menu_setting_url 	= $new_menu->page_type."/setting?child_page=".$child_page;
+				}
+				$get_child_page = "";
+				if($_GET["child_page"]){
+					$get_child_page = "manage_".$_GET["child_page"];
 				}
 				?> 
 				<li 
-				<?php if($Page_menu==$menu_page_type && $_GET["page_type"]=="") { ?> 
+				<?php if($Page_menu==$menu_page_type && $get_child_page=="") { ?> 
 				class="active" <?php } ?>
-				<?php if($_GET["page_type"]==$menu_page_type && $_GET["page_type"]!="") { ?> class="active" <?php } ?>>
+				<?php if($get_child_page==$menu_page_type && $get_child_page!="") { ?> class="active" <?php } ?>>
 				
                     <a href="<?= base_url()?>admin/<?php echo $menu_url ?>">
                     <?php if(base64_decode($mymenu->fafa_icon)==""){ ?>
