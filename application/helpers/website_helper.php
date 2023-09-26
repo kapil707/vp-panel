@@ -1,5 +1,17 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+if ( ! function_exists('get_theme'))
+{
+	function get_theme()
+    {
+		$ci =& get_instance();
+		$ci->load->database(); 
+	
+		$row = $ci->db->query("select * from tbl_theme where isdefault='1'")->row();
+		return $row->title;
+	}
+}
+
 if ( ! function_exists('vp_head'))
 {
 	function vp_head(){

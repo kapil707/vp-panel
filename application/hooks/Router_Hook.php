@@ -18,7 +18,7 @@ class Router_Hook
 
         mysqli_select_db($con,$params[3]);
 
-        $sql = "SELECT * FROM {$params[4]}routes";
+        $sql = "SELECT * FROM {$params[4]}tbl_routes";
         $query = mysqli_query($con,$sql);
 
         $routes = array();

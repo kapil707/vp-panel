@@ -3,6 +3,7 @@
         <ul class="nav metismenu" id="side-menu">
             <li class="nav-header text-center">
                 <div class="dropdown profile-element"> <span>
+					<img alt="image" class="img-circle" src="<?= base_url()?>assets/admin/vp-admin1.png" width="180" />
                 	<?php 
 					if($this->session->userdata("user_type") !=""){ ?>
                     <img alt="image" class="img-circle" src="<?= get_library_to_image($this->session->userdata("image"),'main') ?>" width="100" />
@@ -25,7 +26,7 @@
                     </ul>
                 </div>
                 <div class="logo-element">
-                    RE+
+                    Vp-Admin
                 </div>
             </li>
             <li <?php if($Page_menu=="dashboard") { ?> class="active" <?php } ?>>
@@ -43,6 +44,7 @@
 				$menu_page_type 	= $menu_url;
 				$menu_add_url 		= $menu_url."/add";
 				$menu_setting_url 	= $menu_url."/setting";
+				$menu_theme_url 	= $menu_url."/theme";
 				if($mymenu->menu_id!=0){
 					$new_menu = $this->db->query("SELECT * FROM `tbl_permission_page` where id='$mymenu->menu_id'")->row();
 					$child_page 		= $menu_page_type;
@@ -50,6 +52,7 @@
 					$menu_url 			= $new_menu->page_type."/?child_page=".$child_page;
 					$menu_add_url 		= $new_menu->page_type."/add?child_page=".$child_page;
 					$menu_setting_url 	= $new_menu->page_type."/setting?child_page=".$child_page;
+					$menu_theme_url 	= $new_menu->page_type."/theme?child_page=".$child_page;
 				}
 				$get_child_page = "";
 				if($_GET["child_page"]){
@@ -60,7 +63,6 @@
 				<?php if($Page_menu==$menu_page_type && $get_child_page=="") { ?> 
 				class="active" <?php } ?>
 				<?php if($get_child_page==$menu_page_type && $get_child_page!="") { ?> class="active" <?php } ?>>
-				
                     <a href="<?= base_url()?>admin/<?php echo $menu_url ?>">
                     <?php if(base64_decode($mymenu->fafa_icon)==""){ ?>
                     <i class="fa fa-th-large"></i>
@@ -68,7 +70,7 @@
                     <?= base64_decode($mymenu->fafa_icon); ?>
                     <?php } ?>
                     <span class="nav-label">
-                    <?= $mymenu->page_title;?>
+						<?= $mymenu->page_title;?>
                     </span> 
                     </a>
 					<?php if($mymenu->page_add=="1" || $mymenu->page_view=="1" || $mymenu->page_setting=="1"){ ?>
@@ -81,6 +83,9 @@
 						<?php } ?>
 						<?php if($mymenu->page_setting=="1"){ ?>
 								<li <?php if($Page_menu=="title") { ?> class="active" <?php } ?>><a href="<?= base_url()?>admin/<?php echo $menu_setting_url ?>">Setting</a></li>
+						<?php } ?>
+						<?php if($mymenu->page_theme=="1"){ ?>
+								<li <?php if($Page_menu=="title") { ?> class="active" <?php } ?>><a href="<?= base_url()?>admin/<?php echo $menu_theme_url ?>">Theme</a></li>
 						<?php } ?>
 					</ul>
 					<?php } ?>

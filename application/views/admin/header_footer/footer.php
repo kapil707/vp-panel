@@ -3,7 +3,7 @@
                 </div>
                 <div class="footer">
                      <div class="pull-right">
-						Powered by Kapil Sharma
+						Powered by Vp-Panel
 					</div>
 					<div>
 						All rights are reserved  &copy; <?php echo date("Y") ?>

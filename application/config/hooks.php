@@ -21,9 +21,9 @@ $hook['pre_system'] = array(
 'filepath' => 'hooks',
 'params'   => array(
 	"localhost",
-	"r1_user",
+	"central50no_user",
 	"kapil1234!@#$",
-	"r1_db",
+	"central50noida_db",
 	"",
 	)
 );

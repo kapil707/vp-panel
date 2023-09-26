@@ -86,16 +86,15 @@ class Manage_blog extends CI_Controller {
 					'child_page'=>$child_page,
 					'category_id'=>$category_id,
 					'sorting_order'=>$sorting_order,
+					'url'=>$url,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
 					'update_time'=>$time,
 					'system_ip'=>$system_ip,
 					'user_id'=>$user_id,
-					'status'=>$status,
-					'url'=>$url,);
+					'status'=>$status,);
 				$result = $this->Scheme_Model->insert_fun($tbl,$dt);
-				$title = ($title);
 				if($result)
 				{
 					$message_db = "($title) -  Add Successfully.";
@@ -254,15 +253,13 @@ class Manage_blog extends CI_Controller {
 					'child_page'=>$child_page,
 					'category_id'=>$category_id,
 					'sorting_order'=>$sorting_order,
+					'url'=>$url,
 					'update_date'=>$date,
 					'update_time'=>$time,
 					'system_ip'=>$system_ip,
 					'user_id'=>$user_id,
-					'status'=>$status,
-					'url'=>$url,);
+					'status'=>$status,);
 				$result = $this->Scheme_Model->edit_fun($tbl,$dt,$where);
-				$title = ($title);				
-				$title = $old_title." - ($title)";
 				if($result)
 				{
 					$message_db = "$title - Edit Successfully.";
