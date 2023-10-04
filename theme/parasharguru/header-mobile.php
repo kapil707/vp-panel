@@ -31,11 +31,7 @@ $id = $_SESSION['profile_user'];
 if($id==""){
     wp_redirect(home_url()."/login");
 }
-/*
-global $wpdb;
-$table_name = $wpdb->prefix . 'my_users';
-$sql = "SELECT * FROM $table_name WHERE id='$id'";
-$users_row = $wpdb->get_row($sql); */
+$users_row = get_table_row("tbl_o_my_users where id='$id'");
 ?>
 <div class="mobile-left-menu">
 	<i class="fa fa-times mobile-left-menu-cancel" aria-hidden="true" onclick="menuoff()"></i>
@@ -52,37 +48,37 @@ $users_row = $wpdb->get_row($sql); */
 		<div class="col-sm-12">
 			<ul class="menu_css">
 				<li>
-					<a href="<?php echo site_url(); ?>/home">
+					<a href="<?php echo site_url(); ?>home">
 						Home
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo site_url(); ?>/bhava">
+					<a href="<?php echo site_url(); ?>bhava">
 						Bhava
 					</a>
 				</li>
                 <li>
-					<a href="<?php echo site_url(); ?>/janmarashi">
+					<a href="<?php echo site_url(); ?>janmarashi">
 						Janmarashi
 					</a>
 				</li>
                 <li>
-					<a href="<?php echo site_url(); ?>/panchang">
+					<a href="<?php echo site_url(); ?>panchang">
 						Panchang
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo site_url(); ?>/Referralcode">
+					<a href="<?php echo site_url(); ?>Referralcode">
 						Referral code
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo site_url(); ?>/profile_edit_page">
+					<a href="<?php echo site_url(); ?>profile_edit_page">
 						Edit Profile
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo site_url(); ?>/profile_logout">
+					<a href="<?php echo site_url(); ?>profile_logout">
 						Logout
 					</a>
 				</li>
