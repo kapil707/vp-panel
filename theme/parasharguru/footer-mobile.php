@@ -13,4 +13,3 @@ function menuoff(){
     $(".mobile-left-menu").hide();
 }
 </script>
-<?php wp_footer(); ?>
