@@ -318,7 +318,7 @@ if ( ! function_exists('slider_page'))
 		<div class="carousel-inner">
 			<?php 
 			$i = 1;
-			$result = get_gallery();
+			$result = get_gallery($val);
 			foreach($result as $row) {
 			?>
 			<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">

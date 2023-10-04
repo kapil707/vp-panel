@@ -1,6 +1,6 @@
 <?php include_once(get_header("mobile")); ?>
 <?php
-echo do_slider('[smartslider3 slider="2"]');
+echo do_slider('slider');
 ?>
 <div class="bg-[#A17603] text-white text-center p-1">
 	<p class="font-medium text-[32px] mt-1" id="join" style="font-size: 35px;">
