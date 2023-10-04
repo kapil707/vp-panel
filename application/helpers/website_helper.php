@@ -297,3 +297,50 @@ if ( ! function_exists('get_social_icon'))
 		return $result;
 	}
 }
+
+if ( ! function_exists('do_shortcode'))
+{
+	function do_shortcode($val = ""){
+
+	}
+}
+
+if ( ! function_exists('slider_page'))
+{
+	function do_slider($val = ""){
+		?>
+		<!-- Add these links to your HTML file -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap.min.css">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/js/bootstrap.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+			<img src="image1.jpg" alt="Image 1">
+			</div>
+			<div class="carousel-item">
+			<img src="image2.jpg" alt="Image 2">
+			</div>
+			<div class="carousel-item">
+			<img src="image3.jpg" alt="Image 3">
+			</div>
+		</div>
+		</div>
+		<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+			</a>
+			<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+		<script>
+		$(document).ready(function() {
+			$('#myCarousel').carousel();
+		});
+		</script>
+
+		<?php
+	}
+}
