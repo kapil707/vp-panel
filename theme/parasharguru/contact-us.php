@@ -1,69 +1,72 @@
-<section id="home" class="fullwidth bg-stone-800">
-    <div id="home-slider-wrapper" class="rev_slider_wrapper fullwidthbanner-container">
-        <img src="<?php echo get_library_to_image($page_data->image,'main'); ?>" width="100%">
-    </div>
-</section>
-<section id="about" class="lg-py-4 sm-py-4">
-    <div class="container cursor-default">
-        <div class="flex-row lg-flex-columns-12 md-flex-columns-2 sm-flex-columns-2 xs-flex-columns-1">
-            <h2 class="text-center"><?php echo $page_data->title ?></h2>
-            <?php echo $page_data->description ?>
-        </div>
-    </div>
-</section>
-<section class="contact-sec lg-py-4 sm-py-4">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="contact-left">
-                    <div class="elementor-widget-container margin-b-50">
-                        <h2><?php echo get_field_data("contact_label1",9) ?></h2>
-                    </div>
-                    <div class="contact-address">
-                        <i class="fa fa-map-marker" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_address",9) ?>
-						<br><br>
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_email",9) ?>
-						<br><br>
-						<i class="fa fa-phone" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_phone",9) ?>
-                    </div>					
+<?php 
+//Template Name:Contactus-pg
+?>
+<?php get_header(); 
+?>
+
+    <!-- header -->
+    <header id="page-top" class="blog-banner">
+        <!-- Start: Header Content -->
+        <div class="container" id="blog">
+            <div class="row blog-header text-center wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-sm-12">
+                    <!-- Headline Goes Here -->
+                    <h4><a href="<?php echo site_url(); ?>"> Home </a> / Contact Us</h4>
+                    <h3>Contact Us</h3>
                 </div>
             </div>
-			
-            <div class="col-md-7 mob-m-t-50">
-                <div class="contact-right">
-                    <div class="elementor-widget-container">
-                        <span>leave a message</span>
-                        <h2>We love to hear from you</h2>
+            <!-- End: .row -->
+        </div>
+        <!-- End: Header Content -->
+    </header>
+    <!--/. header -->
+
+    <!-- End: Header Section
+==================================================-->
+
+
+    <!--   Start: Contact Section  
+==================================================-->
+    <section class="contact-section contact_page">
+        <div class="container">
+            <!-- Start: Heading -->
+            <div class="base-header">
+                <h3>contact us</h3>
+            </div>
+            <!-- End:  heading -->
+            <div class="row">
+                <!-- Start:  Content  -->
+                <div class="inner-contact">
+                    <div class="row contact_info">
+                        <div class="bottom_contact col-sm-4 col-xs-12"><i class="icon_pin_alt"></i>
+                            <p>company name </p>
+                            <h4><?php echo get_field('company_name','61'); ?></h4>
+                        </div>
+                        <div class="bottom_contact col-sm-4 col-xs-12"><i class="icon_phone"></i>
+                            <p>Toll Free Number</p>
+                            <h4><?php echo get_field('phone_no','61'); ?></h4>
+                        </div>
+                        <div class="bottom_contact col-sm-4 col-xs-12"><i class="icon_email_alt"></i>
+                            <p>Email</p>
+                            <h4><?php echo get_field('email_id','61'); ?></h4>
+                        </div>
                     </div>
-                    <div class="contact-form">
-                        <form action="<?= base_url(); ?>home/lead" method="post">
-                            <div class="form-group">
-                                <label for="name">Your Name *</label>
-                                <input type="text" class="form-control" placeholder="Name" name="name" id="qSenderName4" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email address *</label>
-                                <input type="text" class="form-control" placeholder="Email" name="email" id="qEmailID4" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Phone Number</label>
-                                <input type="text" class="form-control" placeholder="Contact Number" name="mobile" id="qContact4">
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Message</label>
-                                <textarea class="form-control" rows="5" placeholder="Comment" name="message" id="qQueryMessage4"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary" value="SUBMIT">Submit</button>
-                        </form>
+                    <!-- End:contact-info  -->
+                    <div class="row">
+                        <!--  Contact Form  -->
+                        <div class="contact-form">
+							<?php echo do_shortcode('[contact-form-7 id="69" title="Contactus"]');?>
+                        </div>
+                        <!-- End:Contact Form  -->
                     </div>
                 </div>
+                <!-- End: inner-contact-->
             </div>
+            <!-- End: row-->
         </div>
-    </div>
-</section>
-<section class="map-sec">
-    <?php echo get_field_data("contact_map",9) ?>
-</section>
+        <!-- End: container-->
+    </section>
+	
+    <!-- End:Contact Section 
+==================================================-->
+<?php get_footer(); ?>
