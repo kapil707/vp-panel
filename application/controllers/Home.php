@@ -16,7 +16,7 @@ class Home extends CI_Controller {
 		$data["page_data"] = $page_data[0];
 		$mypage = $page_data[2];
 		
-		//$this->load->view("../../theme/".$theme."/header",$data);
+		$this->load->view("../../theme/".$theme."/header",$data);
 		if($page=="home" || $page=="Home" || $page==""){
 			$this->load->view("../../theme/".$theme."/index",$data);
 		}else{
@@ -26,7 +26,7 @@ class Home extends CI_Controller {
 				$this->load->view("../../theme/".$theme."/".$mypage,$data);
 			}
 		}
-		//$this->load->view("../../theme/".$theme."/footer",$data);
+		$this->load->view("../../theme/".$theme."/footer",$data);
 	}
 	
 	public function blog($page="")
