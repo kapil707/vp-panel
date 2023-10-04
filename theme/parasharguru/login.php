@@ -1,9 +1,3 @@
-<?php 
-//Template Name:Login-pg
-?>
-<?php get_header(); ?>
-<body>
-<?php //echo the_content(); ?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4">
