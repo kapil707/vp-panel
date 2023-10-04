@@ -95,7 +95,7 @@ $users_row = $wpdb->get_row($sql); */
 		<div class="bg-[#A17603] text-white text-center p-1">
 			<img src="<?php echo get_theme_path(); ?>images/menu-icon-12.png" class="mobile-menu-css" onclick="menushow()">
 			<p class="font-medium text-[28px] mt-1" id="join" style="font-size: 35px;">
-				<?php echo get_field('login_label1','43'); ?>
+				<?php echo get_field_data('login_label1','73'); ?>
 			</p>
 		</div>
 	</div>
