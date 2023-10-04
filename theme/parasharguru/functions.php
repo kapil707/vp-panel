@@ -30,7 +30,22 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	$otp = getName();
 	$your_code = getName();
 
-	$table_name = $wpdb->prefix . 'my_users'; // Replace 'your_table_name' with your actual table name
+	$dt = array(
+		'first_name'=>$name,
+		'country'=>$country,
+		'mobile'=>$mobile,
+		'otp'=>$otp,
+		'interest'=>$interest,
+		'interest_type'=>$interest_type,
+		'your_code'=>$your_code,);
+	
+	$where = array('mobile'=>$mobile);
+	$row = $this->Scheme_Model->get_single_data_row("tbl_o_my_users",$where);
+	if(empty($row)){
+		$this->Scheme_Model->insert_fun("tbl_o_my_users",$dt);
+	}
+
+	/*$table_name = $wpdb->prefix . 'my_users'; // Replace 'your_table_name' with your actual table name
 	
 	$table_name2 = $wpdb->prefix . 'my_use_code';
 
@@ -102,12 +117,11 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 
 	send_otp($message,$mobile1);
 	
-	/************************************************************************/
 	$sql = "SELECT * FROM $table_name WHERE mobile='$mobile'";
 	$row = $wpdb->get_row($sql);
 	
 	wp_redirect( home_url('/otp-enter/?id='.$row->id) ); 
-	exit();
+	exit(); */
 }
 
 function send_otp($message,$mobile){
