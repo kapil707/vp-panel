@@ -28,6 +28,10 @@ class Home extends CI_Controller {
 		}
 		//$this->load->view("../../theme/".$theme."/footer",$data);
 	}
+
+	public function post_data()
+	{
+	}
 	
 	public function blog($page="")
 	{
