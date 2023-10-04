@@ -974,4 +974,4 @@ aYoga=new Array(
 }
 </script>
 
-<?php include_once(get_header("mobile")); ?>
+<?php include_once(get_footer("mobile")); ?>
