@@ -33,10 +33,8 @@ class Home extends CI_Controller {
 
 	public function post_data()
 	{
-		if($_POST["action_type"]=="login_submit"){
-
-			print_r($_POST);
-		}
+		$theme = get_field_data("system_theme");
+		$this->load->view("../../theme/".$theme."/functions",$data);
 	}
 	
 	public function blog($page="")

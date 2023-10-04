@@ -1,140 +1,115 @@
 <?php
-register_nav_menus(
-	array(
-		'primary-menu'=>'Top Menu'
-	)
-);
+if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
+	// Form data processing logic here
+	echo $name 		= sanitize_text_field( $_POST['name']);
+	$country 	= sanitize_text_field( $_POST['dropdown']);
+	$mobile 	= sanitize_text_field( $_POST['mobile']);
+	$user_code 	= sanitize_text_field( $_POST['user_code']);
+	$interest 	= sanitize_text_field( $_POST['interest']);
+	$interest_type 	= sanitize_text_field( $_POST['interest_type']);
 
+	global $wpdb;
 
-add_theme_support('post-thumbnails');
-add_theme_support('custom-header');
+	/******county code or 0 remove hota ha iss say********* */
+	$sql1 = "SELECT * FROM wp_country WHERE iso='$country'";
+	$row1 = $wpdb->get_row($sql1);
 
-register_sidebar(
-	array(
-		'name'=>"Sidebar Location",
-		'id'=>"sidebar",
-	)
-);
-add_post_type_support('page','excerpt');
+	$mobile = str_replace($row1->phonecode,"",$mobile);
+	$fstchar = substr($mobile,0, 1);
+	if($fstchar == "+"){
+		$mobile = substr($mobile, 1);
+	}
+	$fstchar = substr($mobile,0, 1);
+	if($fstchar == "0"){
+		$mobile = substr($mobile, 1);
+	}
 
-function strtolower_fun($v) {
-	$v = strtolower($v);
-	$v = str_replace(" ","_",$v);
-	return $v;
-}
+	$mobile1 = $row1->phonecode.$mobile;
+	/***************************************************** */
+	
+	$otp = getName();
+	$your_code = getName();
 
-function custom_form_submit_handler() {
-    if( isset($_POST['action']) && $_POST['action'] == 'custom_form_submit' ) {
-        // Form data processing logic here
-        $name 		= sanitize_text_field( $_POST['name']);
-        $country 	= sanitize_text_field( $_POST['dropdown']);
-        $mobile 	= sanitize_text_field( $_POST['mobile']);
-		$user_code 	= sanitize_text_field( $_POST['user_code']);
-        $interest 	= sanitize_text_field( $_POST['interest']);
-        $interest_type 	= sanitize_text_field( $_POST['interest_type']);
+	$table_name = $wpdb->prefix . 'my_users'; // Replace 'your_table_name' with your actual table name
+	
+	$table_name2 = $wpdb->prefix . 'my_use_code';
 
-		global $wpdb;
+	$data_to_check = array(
+		'mobile' =>$mobile,
+		// Add more columns and values as needed
+	);
 
-		/******county code or 0 remove hota ha iss say********* */
-		$sql1 = "SELECT * FROM wp_country WHERE iso='$country'";
-		$row1 = $wpdb->get_row($sql1);
+	$where = array();
+	foreach ($data_to_check as $column => $value) {
+		$where[] = $column . ' = %s';
+	}
 
-		$mobile = str_replace($row1->phonecode,"",$mobile);
-		$fstchar = substr($mobile,0, 1);
-		if($fstchar == "+"){
-			$mobile = substr($mobile, 1);
-		}
-		$fstchar = substr($mobile,0, 1);
-		if($fstchar == "0"){
-			$mobile = substr($mobile, 1);
-		}
+	$where_clause = implode(' AND ', $where);
 
-		$mobile1 = $row1->phonecode.$mobile;
-		/***************************************************** */
+	$sql = $wpdb->prepare("SELECT COUNT(*) FROM $table_name WHERE $where_clause", $data_to_check);
+
+	$existing_count = $wpdb->get_var($sql);
+
+	if ($existing_count > 0) {
+		// Data already exists, handle accordingly
 		
-		$otp = getName();
-		$your_code = getName();
-
-		$table_name = $wpdb->prefix . 'my_users'; // Replace 'your_table_name' with your actual table name
-		
-		$table_name2 = $wpdb->prefix . 'my_use_code';
-
-		$data_to_check = array(
-			'mobile' =>$mobile,
+	} else {
+		// Data doesn't exist, proceed with the insertion
+		$data_to_insert = array(
+			'first_name'=>$name,
+			'country'=>$country,
+			'mobile'=>$mobile,
+			'otp'=>$otp,
+			'interest'=>$interest,
+			'interest_type'=>$interest_type,
+			'your_code'=>$your_code,
 			// Add more columns and values as needed
 		);
 
-		$where = array();
-		foreach ($data_to_check as $column => $value) {
-			$where[] = $column . ' = %s';
-		}
+		$format = array(
+			'%s', // For string values
+			'%s', // For string values
+			// Add more format placeholders based on the data types of your columns
+		);
 
-		$where_clause = implode(' AND ', $where);
+		$insert_result = $wpdb->insert($table_name, $data_to_insert, $format);
 
-		$sql = $wpdb->prepare("SELECT COUNT(*) FROM $table_name WHERE $where_clause", $data_to_check);
-
-		$existing_count = $wpdb->get_var($sql);
-
-		if ($existing_count > 0) {
-			// Data already exists, handle accordingly
-			
+		if ($insert_result === false) {
+			// Handle the insertion error
 		} else {
-			// Data doesn't exist, proceed with the insertion
-			$data_to_insert = array(
-				'first_name'=>$name,
-				'country'=>$country,
-				'mobile'=>$mobile,
-				'otp'=>$otp,
-                'interest'=>$interest,
-                'interest_type'=>$interest_type,
-				'your_code'=>$your_code,
-				// Add more columns and values as needed
+			// Insertion successful
+			
+			$sql = "SELECT id FROM $table_name WHERE mobile='$mobile'";
+			$row = $wpdb->get_row($sql);
+			$id = $row->id;
+			
+			$data_to_insert2 = array(
+				'use_code_user' =>$id,
+				'user_code' =>$user_code,
 			);
-
-			$format = array(
+			$format2 = array(
 				'%s', // For string values
 				'%s', // For string values
 				// Add more format placeholders based on the data types of your columns
 			);
-
-			$insert_result = $wpdb->insert($table_name, $data_to_insert, $format);
-
-			if ($insert_result === false) {
-				// Handle the insertion error
-			} else {
-				// Insertion successful
-				
-				$sql = "SELECT id FROM $table_name WHERE mobile='$mobile'";
-				$row = $wpdb->get_row($sql);
-				$id = $row->id;
-				
-				$data_to_insert2 = array(
-					'use_code_user' =>$id,
-					'user_code' =>$user_code,
-				);
-				$format2 = array(
-					'%s', // For string values
-					'%s', // For string values
-					// Add more format placeholders based on the data types of your columns
-				);
-				if($_GET["code"]){
-					$wpdb->insert($table_name2, $data_to_insert2, $format2);
-				}
+			if($_GET["code"]){
+				$wpdb->insert($table_name2, $data_to_insert2, $format2);
 			}
 		}
-		
-		$message = "Hello $name <br> Thank you for intresting us your otp is this: $otp";
+	}
+	
+	$message = "Hello $name <br> Thank you for intresting us your otp is this: $otp";
 
-		send_otp($message,$mobile1);
-		
-		/************************************************************************/
-		$sql = "SELECT * FROM $table_name WHERE mobile='$mobile'";
-		$row = $wpdb->get_row($sql);
-        
-        wp_redirect( home_url('/otp-enter/?id='.$row->id) ); 
-        exit();
-    }
+	send_otp($message,$mobile1);
+	
+	/************************************************************************/
+	$sql = "SELECT * FROM $table_name WHERE mobile='$mobile'";
+	$row = $wpdb->get_row($sql);
+	
+	wp_redirect( home_url('/otp-enter/?id='.$row->id) ); 
+	exit();
 }
+
 function send_otp($message,$mobile){
 
 	$whatsapp_key = "433e4178876685b01e0f99a4e474bcfab30d6b57fb256500ee65827aed544f37557625b3d70d4152";
@@ -185,8 +160,6 @@ function getName() {
  
     return $randomString;
 }
-add_action( 'admin_post_nopriv_custom_form_submit', 'custom_form_submit_handler' );
-add_action( 'admin_post_custom_form_submit', 'custom_form_submit_handler' );
 
 function otp_page_form_submit_handler() {
     if( isset($_POST['action']) && $_POST['action'] == 'otp_page_form_submit' ) {
