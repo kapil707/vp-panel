@@ -178,7 +178,7 @@ function getName() {
 }
 
 /**********otp submit******************** */
-if( isset($_POST['action']) && $_POST['action'] == 'otp_page_form_submit' ) {
+if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_submit' ) {
 	$otp 		= filter_var($_POST['otp'],FILTER_SANITIZE_STRING);
 	$id 		= filter_var($_POST['id'],FILTER_SANITIZE_STRING);
 	
