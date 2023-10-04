@@ -21,9 +21,9 @@ $hook['pre_system'] = array(
 'filepath' => 'hooks',
 'params'   => array(
 	"localhost",
-	"vp-panel",
-	"kapil1234!@#$",
 	"vp-user",
+	"kapil1234!@#$",
+	"vp-panel",
 	"",
 	)
 );
