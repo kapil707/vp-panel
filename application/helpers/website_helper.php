@@ -324,7 +324,7 @@ if ( ! function_exists('slider_page'))
 			<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
 				<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>">
 			</div>
-			<?php } ?>
+			<?php $i++; } ?>
 		</div>
 		</div>
 		<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
