@@ -327,7 +327,7 @@ if ( ! function_exists('slider_page'))
 			<?php $i++; } ?>
 		</div>
 		</div>
-		<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+		<a class="carousel-control-prev" href="#myCarousel_<?php echo $val; ?>" role="button" data-slide="prev">
 			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			<span class="sr-only">Previous</span>
 			</a>
@@ -337,7 +337,7 @@ if ( ! function_exists('slider_page'))
 		</a>
 		<script>
 		$(document).ready(function() {
-			$('#myCarousel').carousel();
+			$('#myCarousel_<?php echo $val; ?>').carousel();
 		});
 		</script>
 
