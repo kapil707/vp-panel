@@ -214,12 +214,6 @@ function otp_page_form_submit_handler() {
 }
 
 
-add_action( 'admin_post_nopriv_otp_page_form_submit', 'otp_page_form_submit_handler' );
-add_action( 'admin_post_otp_page_form_submit', 'otp_page_form_submit_handler' );
-
-
-
-
 function profile_page_form_submit_handler() {
     if( isset($_POST['action']) && $_POST['action'] == 'profile_page_form_submit' ) {
 		session_start();
@@ -260,8 +254,4 @@ function profile_page_form_submit_handler() {
 		wp_redirect( home_url('/profile_edit_page') );
     }
 }
-
-
-add_action( 'admin_post_nopriv_profile_page_form_submit', 'profile_page_form_submit_handler' );
-add_action( 'admin_post_profile_page_form_submit', 'profile_page_form_submit_handler' );
 ?>
