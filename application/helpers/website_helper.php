@@ -18,7 +18,7 @@ if ( ! function_exists('get_theme_path'))
 }
 if ( ! function_exists('get_header'))
 {
-	function get_header($page="")
+	function get_header()
     {
 		return include_once("header.php");
 	}
