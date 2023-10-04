@@ -1,19 +1,10 @@
-<?php 
-//Template Name:Referralcode-pg
-?>
-<?php get_header("mobile"); ?>
-<body>
-<?php echo the_content(); ?>
+<?php include_once(get_header("mobile")); ?>
 <?php
 session_start();
 // Set a session variable
 $id = $_SESSION['profile_user'];
 			
-global $wpdb;
-$table_name = $wpdb->prefix . 'my_users';
-
-$sql = "SELECT * FROM $table_name WHERE id='$id'";
-$row = $wpdb->get_row($sql);
+$row = get_table_row("tbl_o_my_users where id='$id'");
 ?>
 	<h1 style="font-size:30px;margin-top:30px;" class="text-center">Referral code</h1>
 	<h1 style="font-size:30px;margin-top:30px;" class="text-center"><?php echo $row->your_code ?></h1>
