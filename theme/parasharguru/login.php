@@ -28,8 +28,8 @@
 				<?php echo get_field_data('login_label5','43'); ?>
 			</p>
 			<div class="p-4">
-				<form class="" action="" method="POST">
-				<input type="hidden" name="action" value="custom_form_submit">
+				<form method="POST" action="<?php echo base_url(); ?>/post-data">
+				<input type="hidden" name="action" value="login_submit">
 				<input type="hidden" name="user_code" value="<?php echo $_GET["code"] ?>">
                 <input type="hidden" name="interest" value="<?php echo $_GET["interest"] ?>">
                 <input type="hidden" name="interest_type" value="<?php echo $_GET["interest_type"] ?>">

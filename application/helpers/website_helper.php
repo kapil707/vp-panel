@@ -30,7 +30,10 @@ if ( ! function_exists('get_footer'))
 {
 	function get_footer($page="")
     {
-		return base_url()."theme/".$theme."/";
+		if($page!=""){
+			return "footer-".$page.".php";
+		}
+		return "footer.php";
 	}
 }
 if ( ! function_exists('get_table'))
