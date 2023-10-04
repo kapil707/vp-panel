@@ -314,7 +314,7 @@ if ( ! function_exists('slider_page'))
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/js/bootstrap.min.js"></script>
 		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+		<div id="myCarousel_<?php echo $val; ?>" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
 			<?php 
 			$i = 1;
@@ -340,7 +340,24 @@ if ( ! function_exists('slider_page'))
 			$('#myCarousel_<?php echo $val; ?>').carousel();
 		});
 		</script>
+		<style>
+			#myCarousel_<?php echo $val; ?> {
+				width: 100%;
+				max-width: 100%;
+			}
 
+			.carousel-inner {
+				width: 100%;
+				max-width: 100%;
+				height: 400px; /* Adjust the height as needed */
+			}
+
+			.carousel-item img {
+				width: 100%;
+				max-width: 100%;
+				height: auto;
+			}
+		</style>
 		<?php
 	}
 }
