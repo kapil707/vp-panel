@@ -39,8 +39,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 		'interest_type'=>$interest_type,
 		'your_code'=>$your_code,);
 	
-	$where = array('mobile'=>$mobile);
-	$row = $this->Scheme_Model->get_single_data_row("tbl_o_my_users",$where);
+	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
 	if(empty($row)){
 		$this->Scheme_Model->insert_fun("tbl_o_my_users",$dt);
 	}
@@ -123,7 +122,8 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	wp_redirect( home_url('/otp-enter/?id='.$row->id) ); 
 	exit(); */
 
-	redirect(base_url()."otp-enter");
+	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
+	redirect(base_url()."otp-enter?id=".$row->id);
 }
 
 function send_otp($message,$mobile){

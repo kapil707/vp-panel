@@ -48,6 +48,18 @@ if ( ! function_exists('get_table'))
 	}
 }
 
+if ( ! function_exists('get_table_row'))
+{
+	function get_table_row($table)
+    {
+		$ci =& get_instance();
+		$ci->load->database(); 
+	
+		$result = $ci->db->query("select * from $table order by id asc")->row();
+		return $result;
+	}
+}
+
 if ( ! function_exists('vp_head'))
 {
 	function vp_head(){
