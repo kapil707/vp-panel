@@ -228,11 +228,11 @@ if ( ! function_exists('get_library_to_image'))
 	
 		$row = $ci->db->query("select image from tbl_library where id='$id'")->row();
 		
-		if($row->image && $type==""){
+		if(!empty($row->image) && $type==""){
 			return base_url()."uploads/manage_library/photo/resize/".$row->image;
 		}
 		
-		if($row->image && $type=="main"){
+		if(!empty($row->image) && $type=="main"){
 			return base_url()."uploads/manage_library/photo/main/".$row->image;
 		}
 	}

@@ -52,6 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 //$route['add']='usermanage/add';
 
+$route['vp-admin']='admin/admin';
+
 $route['admin']='admin/admin';
 $route['admin/register']='admin/admin/register';
 $route['admin/logout']='admin/admin/logout';

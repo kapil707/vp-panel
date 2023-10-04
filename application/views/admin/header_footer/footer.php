@@ -369,12 +369,11 @@ function delete_page_rec(id)
 					{
 						java_alert_function("success","Delete Successfully");
 						$("#row_"+id).hide("500");
-						child_page = "<?php echo $_GET['child_page']!='' ?>";
-						if(child_page){
+						<?php if(!empty($_GET['child_page'])) { ?>
 							window.location.href = '<?= base_url()?>admin/<?= $Page_name; ?>/?child_page=<?php echo $_GET['child_page'] ?>';
-						}else{
+						<?php }else{ ?>
 						window.location.href = '<?= base_url()?>admin/<?= $Page_name; ?>/';
-						}
+						<?php } ?>
 					}					
 					else
 					{

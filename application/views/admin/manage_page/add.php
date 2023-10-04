@@ -59,7 +59,37 @@
 			</div>
 		</div>
 		<div class="col-xs-3">
-			<?php publish_panel_right_top($row,"Submit"); ?>
+			<?php publish_panel_right_top("","Submit"); ?>
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
+					<div class="form-group">
+						<div class="col-sm-12">
+							<label class="control-label" for="form-field-1">
+								Template
+							</label>
+						</div>
+						<div class="col-sm-12">
+							<?php
+							$this->load->helper('directory'); //load directory helper
+							$dir = "./theme/central50noida/";
+							$map = directory_map($dir);
+							?>
+							<select class="form-control">
+								<option>Select Template</option>
+								<?php foreach($map as $r){
+									if(strpos($r,'.php')){
+									?>
+										<option>
+											<?php echo $r; ?>
+										</option>
+									<?php
+									}
+								} ?>
+							</select>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<div class="form-group">
@@ -131,7 +161,7 @@ function check_url(url)
 	check_btn_in_page();
 	
 	page_url = "<?= $page_url ?>";
-	id = "<?= $row->id ?>";
+	id = "";
 	$.ajax({
 	type       : "POST",
 	data       :  {url:url,id:id,page_url:page_url} ,

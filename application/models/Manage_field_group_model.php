@@ -87,51 +87,53 @@ class Manage_field_group_model extends CI_Model
 			<input type="hidden" name="page_id" value="<?php echo $page_id ?>">
 			<?php
 			$row = $this->db->query("SELECT tbl_field_group.*,tbl_field_group_type.title as type FROM `tbl_field_group` join tbl_field_group_type on tbl_field_group_type.id=tbl_field_group.group_type_id and tbl_field_group.id='$row1->group_id'")->row();
-			if($row->type=="text"){
-				?>
-				<div class="ibox float-e-margins">
-					<div class="ibox-content">
-						<div class="form-group">
-							<div class="col-sm-12">
-								<label class="control-label" for="form-field-1">
-									<?php echo $row->field_label ?>
-								</label>
-							</div>
-							<div class="col-sm-12">
-								<input type="text" class="form-control" id="form-field-1" placeholder="<?php echo $row->field_label ?>" name="<?php echo $row->field_name ?>" value="<?php echo get_field_data($row->field_name,$page_id) ?>" <?php if($row->required==1){ echo "requried"; } ?> />
-							</div>
-						</div>
-					</div>
-				</div>
-				<?php
-			}
-			
-			if($row->type=="textarea"){ ?>
-				<div class="ibox float-e-margins">
-					<div class="ibox-content">
-						<div class="form-group">
-							<div class="col-sm-12">
-								<label class="control-label" for="form-field-1">
-									<?php echo $row->field_label ?>
-								</label>
-							</div>
-							<div class="col-sm-12">
-								<textarea type="text" class="form-control" id="form-field-1" placeholder="<?php echo $row->field_label ?>" name="<?php echo $row->field_name ?>" style="height:100px" <?php if($row->required==1){ echo "requried"; } ?>><?php echo get_field_data($row->field_name,$page_id) ?></textarea>
+			if(!empty($row)){
+				if($row->type=="text"){
+					?>
+					<div class="ibox float-e-margins">
+						<div class="ibox-content">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<label class="control-label" for="form-field-1">
+										<?php echo $row->field_label ?>
+									</label>
+								</div>
+								<div class="col-sm-12">
+									<input type="text" class="form-control" id="form-field-1" placeholder="<?php echo $row->field_label ?>" name="<?php echo $row->field_name ?>" value="<?php echo get_field_data($row->field_name,$page_id) ?>" <?php if($row->required==1){ echo "requried"; } ?> />
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<?php
-			}
-			
-			if($row->type=="image"){
-				?>
-				<div class="ibox float-e-margins">
-					<div class="ibox-content">
-						<?php admin_side_image($row->field_label,$row->field_name,"",$row->field_name,"field",$row->required,$page_id,0); ?>
+					<?php
+				}
+				
+				if($row->type=="textarea"){ ?>
+					<div class="ibox float-e-margins">
+						<div class="ibox-content">
+							<div class="form-group">
+								<div class="col-sm-12">
+									<label class="control-label" for="form-field-1">
+										<?php echo $row->field_label ?>
+									</label>
+								</div>
+								<div class="col-sm-12">
+									<textarea type="text" class="form-control" id="form-field-1" placeholder="<?php echo $row->field_label ?>" name="<?php echo $row->field_name ?>" style="height:100px" <?php if($row->required==1){ echo "requried"; } ?>><?php echo get_field_data($row->field_name,$page_id) ?></textarea>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-				<?php
+					<?php
+				}
+				
+				if($row->type=="image"){
+					?>
+					<div class="ibox float-e-margins">
+						<div class="ibox-content">
+							<?php admin_side_image($row->field_label,$row->field_name,"",$row->field_name,"field",$row->required,$page_id,0); ?>
+						</div>
+					</div>
+					<?php
+				}
 			}
 		}
 	}

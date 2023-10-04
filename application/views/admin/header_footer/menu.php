@@ -55,7 +55,7 @@
 					$menu_theme_url 	= $new_menu->page_type."/theme?child_page=".$child_page;
 				}
 				$get_child_page = "";
-				if($_GET["child_page"]){
+				if(!empty($_GET["child_page"])){
 					$get_child_page = "manage_".$_GET["child_page"];
 				}
 				?> 

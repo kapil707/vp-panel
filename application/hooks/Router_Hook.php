@@ -26,7 +26,7 @@ class Router_Hook
             $routes[$route['route']] = $route['controller'];
         }
         mysqli_free_result($query);
-        mysqli_close();
+        //mysqli_close();
         $DB_ROUTES = $routes;
     }
 }

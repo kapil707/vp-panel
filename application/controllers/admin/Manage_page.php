@@ -33,6 +33,8 @@ class Manage_page extends CI_Controller {
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("Add","admin/$page_controllers/add");
 		$tbl = $Page_tbl;
+		$data["page_url"] = "";
+		$data["child_page"] = "";
 		
 		$page_type = "page";
 		$system_ip = $this->input->ip_address();
@@ -125,6 +127,8 @@ class Manage_page extends CI_Controller {
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("View","admin/$page_controllers/view");
 		$tbl = $Page_tbl;
+		$data["page_url"] = "";
+		$data["child_page"] = "";
 		
 		extract($_POST);
 		if(isset($Delete))
@@ -163,6 +167,8 @@ class Manage_page extends CI_Controller {
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("Edit","admin/$page_controllers/edit");
 		$tbl = $Page_tbl;
+		$data["page_url"] = "";
+		$data["child_page"] = "";
 		
 		$page_type = "page";
 		$system_ip = $this->input->ip_address();		
@@ -270,11 +276,11 @@ class Manage_page extends CI_Controller {
 			$child_page = "";
 		}
 		$where = "";
-		if($id!=""){
+		if(!empty($id)){
 			$where = " and id!='$id'"; 
 		}
 		$query = $this->db->query("select id from $Page_tbl where url='$url' and child_page='$child_page' and page_type='page' $where")->row();
-		if($query->id)
+		if(!empty($query->id))
 		{
 			echo "Error";
 		}
