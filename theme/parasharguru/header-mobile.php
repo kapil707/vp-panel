@@ -68,7 +68,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 					</a>
 				</li>
 				<li>
-					<a href="<?php echo site_url(); ?>Referralcode">
+					<a href="<?php echo site_url(); ?>eferral-rcode">
 						Referral code
 					</a>
 				</li>
