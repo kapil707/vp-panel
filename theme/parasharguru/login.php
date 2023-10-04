@@ -36,7 +36,7 @@
 	
 				<select aria-label="Phone number country" class="PhoneInputCountrySelect" name="dropdown" onchange="PhoneInputCountrySelect()">
 					<?php
-					$country = get_table("wp_country");
+					$country = get_table("tbl_o_country");
 					foreach($country as $row){
 						?>
 						<option value="<?php echo $row->iso ?>" <?php if($row->phonecode=="91"){ echo "selected"; } ?> cname="<?php echo $row->name ?>" ios="<?php echo $row->iso ?>" phonecode="<?php echo $row->phonecode ?>"><?php echo $row->name ?></option>
@@ -69,7 +69,7 @@
 			<div id="accordion">
 			<?php
 				$i = 1;
-				$result = get_table("interest");
+				$result = get_table("tbl_o_interest");
 				foreach($result as $row) {
 				?>
 				<div class="card">
@@ -93,7 +93,7 @@
 					<div id="collapseOne<?php echo $row->id; ?>" class="collapse <?php if($i==1) { echo "show"; }?>" aria-labelledby="headingOne<?php echo $row->id; ?>" data-parent="#collapseOne<?php echo $row->id; ?>">
 						<div class="card-body text-left">
 							<?php
-							$result2 = get_table("interest_type where interest_id='$row->id'");
+							$result2 = get_table("tbl_o_interest_type where interest_id='$row->id'");
 							foreach($result2 as $row2){
 								?>
 								<a href="https://parashar.guru/login/?interest=<?php echo ($row->id) ?>&&interest_type=<?php echo ($row2->id) ?>">
