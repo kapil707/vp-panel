@@ -1,3 +1,4 @@
+<?php include_once(get_header()); ?>
 <section id="home" class="fullwidth bg-stone-800">
     <div id="home-slider-wrapper" class="rev_slider_wrapper fullwidthbanner-container">
         <img src="<?php echo get_library_to_image($page_data->image,'main'); ?>" width="100%">
@@ -28,5 +29,6 @@
 		</div>
     </div>
 </section>
-<link rel="stylesheet" href="<?php echo base_url() ?>theme/<?php echo $theme?>/lightbox/dist/css/lightbox.min.css">
-<script src="<?php echo base_url() ?>theme/<?php echo $theme?>/lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
+<link rel="stylesheet" href="<?php echo get_theme_path(); ?>lightbox/dist/css/lightbox.min.css">
+<script src="<?php echo get_theme_path(); ?>lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
+<?php include_once(get_footer()); ?>

@@ -45,9 +45,9 @@ class Home extends CI_Controller {
 		$data["page_data"] 	= $page_data[0];
 		$mypage 			= $page_data[2]."-single";
 		
-		$this->load->view("../../theme/".$theme."/header",$data);
+		//$this->load->view("../../theme/".$theme."/header",$data);
 		$this->load->view("../../theme/".$theme."/".$mypage,$data);
-		$this->load->view("../../theme/".$theme."/footer",$data);
+		//$this->load->view("../../theme/".$theme."/footer",$data);
 	}
 	
 	public function not_found()

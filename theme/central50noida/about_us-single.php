@@ -1,3 +1,4 @@
+<?php include_once(get_header()); ?>
 <section id="home" class="fullwidth bg-stone-800">
     <div id="home-slider-wrapper" class="rev_slider_wrapper fullwidthbanner-container">
         <img src="<?php echo get_library_to_image($page_data->image,'main'); ?>" width="100%">
@@ -11,3 +12,4 @@
         </div>
     </div>
 </section>
+<?php include_once(get_footer()); ?>

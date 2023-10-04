@@ -43,17 +43,17 @@
 		
 		
     </footer>
-    <script src="<?php echo base_url() ?>theme/<?php echo $theme?>/js/bs.js"></script>
-    <script src="<?php echo base_url() ?>theme/<?php echo $theme?>/js/plugins.min.js"></script>
-    <script src="<?php echo base_url() ?>theme/<?php echo $theme?>/js/revslider/jquery.themepunch.revolution.min.js"></script>
-    <script src="<?php echo base_url() ?>theme/<?php echo $theme?>/js/revslider/jquery.themepunch.tools.min.js"></script>
-    <script src="<?php echo base_url() ?>theme/<?php echo $theme?>/js/functions.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/bs.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/plugins.min.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/revslider/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/revslider/jquery.themepunch.tools.min.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/functions.js"></script>
     <script>
         var revapi1050, tpj = jQuery;
         null == tpj("#home-slider").revolution ? revslider_showDoubleJqueryError("#home-slider") : revapi1050 = tpj(
             "#home-slider").show().revolution({
             sliderType: "standard",
-            jsFileLocation: "<?php echo base_url() ?>theme/<?php echo $theme?>/js/revslider/",
+            jsFileLocation: "<?php echo get_theme_path(); ?>js/revslider/",
             sliderLayout: "fullwidth",
             dottedOverlay: "none",
             delay: 9e3,
