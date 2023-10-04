@@ -20,7 +20,7 @@ if ( ! function_exists('get_header'))
 {
 	function get_header($page="")
     {
-		echo 'header.php';
+		$this->load->view("../../theme/".$theme."/header");
 	}
 }
 if ( ! function_exists('get_footer'))
