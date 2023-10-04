@@ -24,7 +24,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 		$mobile = substr($mobile, 1);
 	}
 
-	echo $mobile1 = $phonecode.$mobile;
+	$mobile1 = $phonecode.$mobile;
 	/***************************************************** */
 	
 	$otp = getName();
