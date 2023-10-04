@@ -20,6 +20,7 @@ if ( ! function_exists('get_header'))
 {
 	function get_header($page="")
     {
+		$theme = get_field_data("system_theme");
 		$this->load->view("../../theme/".$theme."/header");
 	}
 }
