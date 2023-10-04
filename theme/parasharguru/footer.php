@@ -95,15 +95,15 @@
     <!-- Scripts
 ========================================-->
     <!-- jquery -->
-    <script src="<?php echo get_template_directory_uri();?>/js/jquery-1.12.4.min.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/jquery-1.12.4.min.js"></script>
     <!-- plugins -->
-    <script src="<?php echo get_template_directory_uri();?>/js/plugins.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/plugins.js"></script>
     <!-- Bootstrap -->
-    <script src="<?php echo get_template_directory_uri();?>/js/bootstrap.min.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/bootstrap.min.js"></script>
 
     <!-- Custom Scripts
 ========================================-->
-    <script src="<?php echo get_template_directory_uri();?>/js/main.js"></script>
+    <script src="<?php echo get_theme_path(); ?>js/main.js"></script>
 
 </body>
 
