@@ -316,15 +316,15 @@ if ( ! function_exists('slider_page'))
 
 		<div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<div class="carousel-inner">
-			<div class="carousel-item active">
-			<img src="image1.jpg" alt="Image 1">
+			<?php 
+			$i = 1;
+			$result = get_gallery();
+			foreach($result as $row) {
+			?>
+			<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
+				<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>">
 			</div>
-			<div class="carousel-item">
-			<img src="image2.jpg" alt="Image 2">
-			</div>
-			<div class="carousel-item">
-			<img src="image3.jpg" alt="Image 3">
-			</div>
+			<?php } ?>
 		</div>
 		</div>
 		<a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
