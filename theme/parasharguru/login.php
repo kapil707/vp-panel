@@ -1,6 +1,5 @@
 <?php 
-$theme = get_field_data("system_theme");
-include_once("../../theme/".$theme."/header");
+include_once("header.php");
 ?>
 <div class="container-fluid">
 	<div class="row">
