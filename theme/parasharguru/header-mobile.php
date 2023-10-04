@@ -29,7 +29,7 @@ session_start();
 // Set a session variable
 $id = $_SESSION['profile_user'];
 if($id==""){
-    wp_redirect(home_url()."/login");
+    redirect(base_url().'login');
 }
 $users_row = get_table_row("tbl_o_my_users where id='$id'");
 ?>
