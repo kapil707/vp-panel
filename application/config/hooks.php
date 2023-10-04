@@ -13,7 +13,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 //require_once BASEPATH."application/config/database.php";
-
 $hook['pre_system'] = array(
 'class'    => 'Router_Hook',
 'function' => 'get_routes',
