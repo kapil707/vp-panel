@@ -1,29 +1,16 @@
-<?php 
-//Template Name:Profile-Edit-page-pg
-?>
-<?php get_header("mobile"); ?>
-<body>
-<?php echo the_content(); ?>
+<?php include_once(get_header("mobile")); ?>
 <?php
 session_start();
 // Set a session variable
 $id = $_SESSION['profile_user'];
 			
-global $wpdb;
-$table_name = $wpdb->prefix . 'my_users';
+$row = get_table_row("tbl_o_my_users where id='$id'");
 
-$sql = "SELECT * FROM $table_name WHERE id='$id'";
-$row = $wpdb->get_row($sql);
-
-$table_name  = $wpdb->prefix . 'interest';
-$table_name2 = $wpdb->prefix . 'interest_type';
-
-$sql1 = "SELECT * FROM $table_name ";
-$result1 = $wpdb->get_results($sql1);
+$result1 = get_table("tbl_o_interest");
 ?>
 	
-<form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data">
-	<input type="hidden" name="action" value="profile_page_form_submit">
+<form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
+	<input type="hidden" name="action_type" value="profile_page_form_submit">
 	<div class="row">
 		<div class="col-sm-12 form-group">
 			<label>First Name:</label>
