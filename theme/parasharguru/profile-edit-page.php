@@ -49,20 +49,18 @@ $result1 = get_table("tbl_o_interest");
 		
 		<?php 
 		
-		$sql1 = "SELECT * FROM $table_name where id='$interest'";
-		$result1 = $wpdb->get_results($sql1);
-		foreach($result1 as $row1) {
-
-		$sql2 = "SELECT * FROM $table_name2 where interest_id='$row1->id'";
-		$result2 = $wpdb->get_results($sql2);
+		$result2 = get_table("tbl_o_interest where id='$interest'");
+		foreach($result2 as $row2) {
+		
+		$result3 = get_table("tbl_o_interest_type where interest_id='$row2->id'");
 		?>
 		<div class="col-sm-12 form-group">
-			<label><?php echo $row1->name ?></label>	
+			<label><?php echo $row2->name ?></label>	
 			<select name="interest_type" id="interest_type" class="form-control input-lg">
 				<option value="0" <?php if($row->solving=="0") {echo "selected"; } ?>>Please Select</option>
 
-				<?php foreach($result2 as $row2) { ?>
-				<option value="<?php echo $id = ($row2->id); ?>" <?php if($row->interest_type==$id) {echo "selected"; } ?>><?php echo $row2->name ?></option>
+				<?php foreach($result3 as $row3) { ?>
+				<option value="<?php echo $id = ($row3->id); ?>" <?php if($row->interest_type==$id) {echo "selected"; } ?>><?php echo $row3->name ?></option>
 
 				<?php  } ?>
 			</select>
