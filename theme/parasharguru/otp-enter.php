@@ -1,15 +1,9 @@
-<?php 
-//Template Name:Otp-page-pg
-?>
-<?php get_header(); ?>
+<?php include_once(get_header()); ?>
 <body>
-<?php echo the_content(); ?>
 <?php
-global $wpdb;
-$table_name = $wpdb->prefix . 'my_users';
 $id = $_GET["id"];
-$sql = "SELECT * FROM $table_name WHERE id='$id'";
-$row = $wpdb->get_row($sql);
+$result = get_table("tbl_o_my_users WHERE id='$id'");
+foreach($result as $row){ }
 
 $no = $row->mobile;
 ?>
@@ -21,14 +15,14 @@ $no = $row->mobile;
 		<div class="col-sm-4 text-center">
 			<div class="bg-[#A17603] text-white text-center p-1">
 				<p class="font-medium text-[32px] mt-1" id="join" style="font-size: 35px;">
-					<?php echo get_field('login_label1','43'); ?>
+					<?php echo get_field_data('login_label1','73'); ?>
 				</p>
 			</div>
 			<p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
-				<?php echo get_field('login_label2','43'); ?>
+				<?php echo get_field_data('login_label2','73'); ?>
 			</p>
 			<form class="" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST" style="margin-top:50px;">
-				<input type="hidden" name="action" value="otp_page_form_submit">
+				<input type="hidden" name="action_type" value="otp_page_form_submit">
 				<input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
 				<div class="mt-2">
 					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->name; ?>, Otp Send on your this mobile no <?php echo $no; ?></p>
