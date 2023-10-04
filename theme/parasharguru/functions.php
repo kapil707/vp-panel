@@ -122,6 +122,8 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	
 	wp_redirect( home_url('/otp-enter/?id='.$row->id) ); 
 	exit(); */
+
+	redirect(base_url()."otp-enter");
 }
 
 function send_otp($message,$mobile){
