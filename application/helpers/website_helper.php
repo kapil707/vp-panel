@@ -18,9 +18,12 @@ if ( ! function_exists('get_theme_path'))
 }
 if ( ! function_exists('get_header'))
 {
-	function get_header()
+	function get_header($page="")
     {
-		return include_once("header.php");
+		if($page!=""){
+			return "header-".$page.".php";
+		}
+		return "header.php";
 	}
 }
 if ( ! function_exists('get_footer'))

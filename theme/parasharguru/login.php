@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php include_once(get_header()); ?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4">
