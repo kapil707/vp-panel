@@ -56,7 +56,7 @@ $route['admin']='admin/admin';
 $route['admin/register']='admin/admin/register';
 $route['admin/logout']='admin/admin/logout';
 
-$route['(:any)']='home/index/$1';
+//$route['(:any)']='home/index/$1';
 
 //$route['admin/manger-manage/add']='admin/admin/manger_manage/add';
 
