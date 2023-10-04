@@ -16,6 +16,20 @@ if ( ! function_exists('get_theme_path'))
 		return base_url()."theme/".$theme."/";
 	}
 }
+if ( ! function_exists('get_header'))
+{
+	function get_header($page="")
+    {
+		include 'header.php';
+	}
+}
+if ( ! function_exists('get_footer'))
+{
+	function get_footer($page="")
+    {
+		return base_url()."theme/".$theme."/";
+	}
+}
 if ( ! function_exists('get_table'))
 {
 	function get_table($table)
