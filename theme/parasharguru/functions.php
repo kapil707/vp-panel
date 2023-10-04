@@ -1,20 +1,20 @@
 <?php
 if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	// Form data processing logic here
-	echo $name 		= sanitize_text_field( $_POST['name']);
-	$country 	= sanitize_text_field( $_POST['dropdown']);
-	$mobile 	= sanitize_text_field( $_POST['mobile']);
-	$user_code 	= sanitize_text_field( $_POST['user_code']);
-	$interest 	= sanitize_text_field( $_POST['interest']);
-	$interest_type 	= sanitize_text_field( $_POST['interest_type']);
-
-	global $wpdb;
+	$name 		= filter_var($_POST['name'],FILTER_SANITIZE_STRING);
+	$country 	= filter_var($_POST['dropdown'],FILTER_SANITIZE_STRING);
+	$mobile 	= filter_var($_POST['mobile'],FILTER_SANITIZE_STRING);
+	$user_code 	= filter_var($_POST['user_code'],FILTER_SANITIZE_STRING);
+	$interest 	= filter_var($_POST['interest'],FILTER_SANITIZE_STRING);
+	$interest_type 	= filter_var($_POST['interest_type'],FILTER_SANITIZE_STRING);
 
 	/******county code or 0 remove hota ha iss say********* */
-	$sql1 = "SELECT * FROM wp_country WHERE iso='$country'";
-	$row1 = $wpdb->get_row($sql1);
+	$result = get_table("wp_country WHERE iso='$country'");
+	foreach($result as $row1){
+		$phonecode = $row1->phonecode;
+	}
 
-	$mobile = str_replace($row1->phonecode,"",$mobile);
+	$mobile = str_replace($phonecode,"",$mobile);
 	$fstchar = substr($mobile,0, 1);
 	if($fstchar == "+"){
 		$mobile = substr($mobile, 1);
@@ -24,7 +24,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 		$mobile = substr($mobile, 1);
 	}
 
-	$mobile1 = $row1->phonecode.$mobile;
+	echo $mobile1 = $phonecode.$mobile;
 	/***************************************************** */
 	
 	$otp = getName();
@@ -163,8 +163,8 @@ function getName() {
 
 function otp_page_form_submit_handler() {
     if( isset($_POST['action']) && $_POST['action'] == 'otp_page_form_submit' ) {
-		$otp 		= sanitize_text_field( $_POST['otp'] );
-		$id 		= sanitize_text_field( $_POST['id'] );
+		$otp 		= filter_var($_POST['otp'] );
+		$id 		= filter_var($_POST['id'] );
 		
 		global $wpdb;
 		$table_name = $wpdb->prefix . 'my_users';
@@ -215,15 +215,15 @@ function profile_page_form_submit_handler() {
 		global $wpdb;
 		$table_name = $wpdb->prefix . 'my_users';
 		
-		$first_name = sanitize_text_field( $_POST['first_name'] );
-		$last_name 	= sanitize_text_field( $_POST['last_name'] );
-		$email 		= sanitize_text_field( $_POST['email'] );
-		$interest 	= sanitize_text_field( $_POST['interest'] );
-		$interest_type 	= sanitize_text_field( $_POST['interest_type'] );
-		$address 	= sanitize_text_field( $_POST['address'] );
-		$dob 		= sanitize_text_field( $_POST['dob'] );
-		$time 		= sanitize_text_field( $_POST['time'] );
-		$place 		= sanitize_text_field( $_POST['place'] );
+		$first_name = filter_var($_POST['first_name'] );
+		$last_name 	= filter_var($_POST['last_name'] );
+		$email 		= filter_var($_POST['email'] );
+		$interest 	= filter_var($_POST['interest'] );
+		$interest_type 	= filter_var($_POST['interest_type'] );
+		$address 	= filter_var($_POST['address'] );
+		$dob 		= filter_var($_POST['dob'] );
+		$time 		= filter_var($_POST['time'] );
+		$place 		= filter_var($_POST['place'] );
 	
 		$data = array(
 			'first_name' => $first_name,
