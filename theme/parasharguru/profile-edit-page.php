@@ -100,4 +100,4 @@ function onchnage_dropdown(){
 	window.location.href = "https://parashar.guru/profile_edit_page/?interest="+val;
 }
 </script>
-<?php get_footer("mobile"); ?>
+<?php include_once(get_footer("mobile")); ?>
