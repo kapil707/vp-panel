@@ -21,7 +21,7 @@ $no = $row->mobile;
 			<p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 				<?php echo get_field_data('login_label2','73'); ?>
 			</p>
-			<form class="" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST" style="margin-top:50px;">
+			<form class="" method="POST" style="margin-top:50px;" action="<?php echo base_url(); ?>post-data">
 				<input type="hidden" name="action_type" value="otp_page_form_submit">
 				<input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
 				<div class="mt-2">
