@@ -8,7 +8,14 @@ if ( ! function_exists('remove_p_tag'))
 		return $data;
 	}
 }
-
+if ( ! function_exists('get_theme_path'))
+{
+	function get_theme_path()
+    {
+		$theme = get_field_data("system_theme");
+		return base_url()."theme/".$theme."/";
+	}
+}
 if ( ! function_exists('get_table'))
 {
 	function get_table($table)

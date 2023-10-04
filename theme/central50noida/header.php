@@ -2,9 +2,9 @@
 <html lang="en-US" class="no-js">
 <head>
     <?php echo vp_head(); ?>
-    <link rel="stylesheet" href="<?php echo base_url() ?>theme/<?php echo $theme?>/css/plugins.min.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>theme/<?php echo $theme?>/css/revslider/settings.css">
-    <link rel="stylesheet" href="<?php echo base_url() ?>theme/<?php echo $theme?>/css/style3661.css?v=2.0">
+    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/plugins.min.css">
+    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/revslider/settings.css">
+    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/style3661.css?v=2.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
