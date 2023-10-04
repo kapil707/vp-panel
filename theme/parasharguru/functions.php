@@ -177,42 +177,33 @@ function getName() {
     return $randomString;
 }
 
-function otp_page_form_submit_handler() {
-    if( isset($_POST['action']) && $_POST['action'] == 'otp_page_form_submit' ) {
-		$otp 		= filter_var($_POST['otp'] );
-		$id 		= filter_var($_POST['id'] );
-		
-		global $wpdb;
-		$table_name = $wpdb->prefix . 'my_users';
-		
-		$sql = "SELECT * FROM $table_name WHERE id='$id'";
-		$row = $wpdb->get_row($sql);
-		$row_otp = $row->otp;
-		if($row_otp==$otp){
-			session_start();
-			// Set a session variable
-			$_SESSION['profile_user'] = $id;
-			if($row->profile_update==0){
-				
-				$profile_update = 1;
-				$data = array(
-					'profile_update' => $profile_update,
-				);
+/**********otp submit******************** */
+if( isset($_POST['action']) && $_POST['action'] == 'otp_page_form_submit' ) {
+	$otp 		= filter_var($_POST['otp'],FILTER_SANITIZE_STRING);
+	$id 		= filter_var($_POST['id'],FILTER_SANITIZE_STRING);
+	
+	$row = get_table_row("tbl_o_my_users WHERE id='$id'");
 
-				$where = array(
-					'id' => $id,
-				);
+	$row_otp = $row->otp;
+	if($row_otp==$otp){
+		session_start();
+		// Set a session variable
+		$_SESSION['profile_user'] = $id;
+		if($row->profile_update==0){
 
-				$wpdb->update($table_name, $data, $where);
-				
-				wp_redirect(home_url('/profile_edit_page'));
-			}else{
-				wp_redirect(home_url('/home'));
-			}
+			$where = array('id'=>$id);
+
+			$dt = array(
+				'profile_update'=>'1',);
+			$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
+			
+			redirect(base_url().'/profile_edit_page');
 		}else{
-			wp_redirect(home_url('/otp-enter/?id='.$id.'&error=true'));
+			redirect(base_url().'/home');
 		}
-    }
+	}else{
+		redirect(base_url().'/otp-enter/?id='.$id.'&error=true');
+	}
 }
 
 

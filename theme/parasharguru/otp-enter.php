@@ -2,8 +2,7 @@
 <body>
 <?php
 $id = $_GET["id"];
-$result = get_table("tbl_o_my_users WHERE id='$id'");
-foreach($result as $row){ }
+$row = get_table_row("tbl_o_my_users WHERE id='$id'");
 
 $no = $row->mobile;
 ?>
