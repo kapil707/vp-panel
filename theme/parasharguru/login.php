@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+$theme = get_field_data("system_theme");
+include_once("../../theme/".$theme."/header");
+?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4">

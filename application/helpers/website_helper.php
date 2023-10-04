@@ -20,8 +20,7 @@ if ( ! function_exists('get_header'))
 {
 	function get_header($page="")
     {
-		$theme = get_field_data("system_theme");
-		include_once("../../theme/".$theme."/header");
+		
 	}
 }
 if ( ! function_exists('get_footer'))
