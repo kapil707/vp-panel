@@ -20,7 +20,7 @@ if ( ! function_exists('get_header'))
 {
 	function get_header($page="")
     {
-		
+		include_once("header.php");
 	}
 }
 if ( ! function_exists('get_footer'))
