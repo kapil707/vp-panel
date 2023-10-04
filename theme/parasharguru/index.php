@@ -75,8 +75,7 @@ echo do_slider('slider');
               Karana (1/60 parts of lunar month) and Yoga (1/27 parts of lunar 
               month). Changing value of date and time in a field of the form it 
               is possible to find most favourable time for any of undertaking.&nbsp; Accuracy of calculation +/- 1 minute.</P></BLOCKQUOTE><BR>
-<?php echo the_content(); ?>
-<?php get_footer("mobile"); ?>
+
 <script>
 // globals
 d2r = Math.PI/180;
