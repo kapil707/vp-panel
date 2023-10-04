@@ -26,4 +26,4 @@ function CopyToClipboard(id)
 	alert("Text Copy")
 }
 </script>
-<?php get_footer("mobile"); ?>
+<?php include_once(get_footer("mobile")); ?>
