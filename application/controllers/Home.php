@@ -33,6 +33,10 @@ class Home extends CI_Controller {
 
 	public function post_data()
 	{
+		if($_POST["action_type"]=="login_submit"){
+
+			print_r($_POST);
+		}
 	}
 	
 	public function blog($page="")
