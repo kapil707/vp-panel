@@ -9,6 +9,18 @@ if ( ! function_exists('remove_p_tag'))
 	}
 }
 
+if ( ! function_exists('get_table'))
+{
+	function get_table($table)
+    {
+		$ci =& get_instance();
+		$ci->load->database(); 
+	
+		$result = $ci->db->query("select * from $table order by id asc")->result();
+		return $result;
+	}
+}
+
 if ( ! function_exists('vp_head'))
 {
 	function vp_head(){

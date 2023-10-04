@@ -27,7 +27,7 @@
 				<?php echo get_field_data('login_label5','43'); ?>
 			</p>
 			<div class="p-4">
-				<form class="" action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="POST">
+				<form class="" action="" method="POST">
 				<input type="hidden" name="action" value="custom_form_submit">
 				<input type="hidden" name="user_code" value="<?php echo $_GET["code"] ?>">
                 <input type="hidden" name="interest" value="<?php echo $_GET["interest"] ?>">
@@ -36,8 +36,7 @@
 	
 				<select aria-label="Phone number country" class="PhoneInputCountrySelect" name="dropdown" onchange="PhoneInputCountrySelect()">
 					<?php
-					global $wpdb;
-					$country = $wpdb->get_results("SELECT * FROM `wp_country` ORDER by id asc");
+					$country = get_table("wp_country");
 					foreach($country as $row){
 						?>
 						<option value="<?php echo $row->iso ?>" <?php if($row->phonecode=="91"){ echo "selected"; } ?> cname="<?php echo $row->name ?>" ios="<?php echo $row->iso ?>" phonecode="<?php echo $row->phonecode ?>"><?php echo $row->name ?></option>
@@ -57,7 +56,7 @@
 
 				<button type="submit" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="login_submit">Continue To Dashboard<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></button></div></form>
 			</div>
-			<?php $login_image1 = get_field('login_image1','43');
+			<?php $login_image1 = get_field_data('login_image1','43');
 			if($login_image1) {?>
 			<div class="p-4 mt-5">
 				<?php $sizes = ($login_image1["sizes"]) ?>
@@ -70,13 +69,7 @@
 			<div id="accordion">
 			<?php
 				$i = 1;
-				global $wpdb;
-				$table_name  = $wpdb->prefix . 'interest';
-				$table_name2 = $wpdb->prefix . 'interest_type';
-
-				$sql = "SELECT * FROM $table_name ";
-				$result = $wpdb->get_results($sql);
-				//print_r($result);
+				$result = get_table("interest");
 				foreach($result as $row) {
 				?>
 				<div class="card">
@@ -100,8 +93,7 @@
 					<div id="collapseOne<?php echo $row->id; ?>" class="collapse <?php if($i==1) { echo "show"; }?>" aria-labelledby="headingOne<?php echo $row->id; ?>" data-parent="#collapseOne<?php echo $row->id; ?>">
 						<div class="card-body text-left">
 							<?php
-							$sql2 = "SELECT * FROM $table_name2 where interest_id='$row->id'";
-							$result2 = $wpdb->get_results($sql2);
+							$result2 = get_table("interest_type where interest_id='$row->id'");
 							foreach($result2 as $row2){
 								?>
 								<a href="https://parashar.guru/login/?interest=<?php echo ($row->id) ?>&&interest_type=<?php echo ($row2->id) ?>">
