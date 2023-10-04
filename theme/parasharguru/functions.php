@@ -9,7 +9,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	$interest_type 	= filter_var($_POST['interest_type'],FILTER_SANITIZE_STRING);
 
 	/******county code or 0 remove hota ha iss say********* */
-	$result = get_table("wp_country WHERE iso='$country'");
+	$result = get_table("tbl_o_country WHERE iso='$country'");
 	foreach($result as $row1){
 		$phonecode = $row1->phonecode;
 	}
