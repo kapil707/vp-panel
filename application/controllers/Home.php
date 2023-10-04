@@ -9,7 +9,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		echo $this->uri->segment('1');
+		$page = $this->uri->segment('1');
 
 		$theme = get_field_data("system_theme");
 		$page_data = get_all_page_data($page);
