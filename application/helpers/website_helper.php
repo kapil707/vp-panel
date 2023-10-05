@@ -69,11 +69,12 @@ if ( ! function_exists('vp_head'))
 			<?php echo get_field_data("site_title") ?> || <?php echo get_field_data("site_tagline") ?>
 		</title>
 
+		<?php /*
 		<?php echo $google_code ?>
 
 		<meta name="author" content="<?php echo $meta_title ?>">
 		<meta name="description" content="<?php echo $meta_discription ?>" />
-		<meta name="keywords" content="<?php echo $meta_keywords ?>" />
+		<meta name="keywords" content="<?php echo $meta_keywords ?>" /> */?>
 
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
@@ -91,18 +92,20 @@ if ( ! function_exists('vp_menu'))
 		$ci =& get_instance();
 		$ci->load->database(); 
 	
+		$return = "";
 		$result = $ci->db->query("select * from tbl_menu where status=1 and menu_id=0 order by sorting_order asc")->result();
 		foreach($result as $row){
 			$row1 = $ci->db->query("select * from tbl_page where id='$row->page_id'")->row();
-			if($row->child_page!=""){
-				$row1->url = $row->child_page;
+			$url = "";
+			if(!empty($row->child_page)){
+				$url = $row->child_page;
 			}
 			$dt = get_blog_pg_url($row->page_type,$row->child_page);
-			if($dt["url"]) {
-				$row1->url = $dt["url"];
+			if(!empty($dt["url"])) {
+				$url = $dt["url"];
 			}
 			
-			$return.= '<li><a href="'.base_url().$row1->url.'" class="nav-link">'.$row->title.'</a>'.vp_menu_submenu($row->id).'</li>';
+			$return.= '<li><a href="'.base_url().$url.'" class="nav-link">'.$row->title.'</a>'.vp_menu_submenu($row->id).'</li>';
 		}
         return $return;
     }   
@@ -114,6 +117,8 @@ if ( ! function_exists('vp_menu_submenu'))
     {
 		$ci =& get_instance();
 		$ci->load->database();
+
+		$return = "";
 		
 		// iss say wo wala sub manu ata ha jo sirf menu say set hota ha 
 		$result = $ci->db->query("select * from tbl_menu where status=1 and menu_id='$menu_id' order by sorting_order asc")->result();
@@ -153,8 +158,10 @@ if ( ! function_exists('vp_menu_submenu'))
 				$return.='<li> <a href="'.base_url().$blog.'/'.$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
 			}			
 		}
-		if($return){
+		if(!empty($return)){
 			$return ='<ul style="display:none">'.$return.'</ul>';
+		}else{
+			$return = "";
 		}
 		return $return;	
 	}
@@ -212,9 +219,13 @@ if ( ! function_exists('get_blog_pg_url'))
 		$row = $ci->db->query("select * from tbl_permission_page where page_type='$page_type'")->row();
 		
 		$row1 = $ci->db->query("select link_page,url from tbl_page where join_page_id='$row->id'")->row();
-		
-		$data["link_page"] = $row1->link_page;
-		$data["url"] = $row1->url;
+		if(!empty($row1)){
+			$data["link_page"] = $row1->link_page;
+			$data["url"] = $row1->url;
+		}else{
+			$data["link_page"] = "";
+			$data["url"] = "";
+		}
 		return $data;
 	}
 }
@@ -246,7 +257,11 @@ if ( ! function_exists('get_field_data'))
 		$ci->load->database(); 
 
 		$row = $ci->db->query("select title from tbl_field_data where field_name='$field_name' and page_id='$page_id'")->row();
-		return $row->title;
+		$title="";
+		if(!empty($row->title)){
+			$title = $row->title;
+		}
+		return $title;
 	}
 }
 
