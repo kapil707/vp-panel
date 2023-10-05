@@ -197,7 +197,7 @@ if ( ! function_exists('get_all_blog_data'))
 		$dt = get_blog_pg_url($row->page_type,$row->child_page);
 		
 		$data[0] = $row; 
-		$data[1] = $page_type;
+		$data[1] = "";
 		$data[2] = $dt["link_page"];
 
 		return $data;
