@@ -29,7 +29,7 @@ $result1 = get_table("tbl_o_interest");
 			<input type="text" name="" class="form-control input-lg" placeholder="Enter Phone Number" required="" value="<?php echo $row->mobile ?>" readonly>
 		</div>
 		<?php
-		if($_GET["interest"]){
+		if(!empty($_GET["interest"])){
 			$interest = $_GET["interest"];
 		}else{
 			$interest = $row->interest;
