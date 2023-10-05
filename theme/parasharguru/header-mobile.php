@@ -25,7 +25,7 @@
 </head>
 <body>
 <?php
-session_start();
+//session_start();
 // Set a session variable
 $id = $_SESSION['profile_user'];
 if($id==""){
