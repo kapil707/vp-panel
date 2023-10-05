@@ -101,7 +101,7 @@
 					</div>
 
 					<?php
-					if($_GET["interest"]!=""){
+					if(!empty($_GET["interest"])){
 						$i = 0;
 						if($_GET["interest"]==$row->id){
 							$i = 1;
