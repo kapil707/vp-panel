@@ -29,10 +29,28 @@
 			</p>
 			<div class="p-4">
 				<form method="POST" action="<?php echo base_url(); ?>post-data">
+				<?php 
+				$code = "";
+				if(!empty($_GET["code"])){
+					$code = $_GET["code"];
+				}
+				
+				$interest = "";
+				if(!empty($_GET["interest"])){
+					$interest = $_GET["interest"];
+				}
+
+				$interest_type = "";
+				if(!empty($_GET["interest_type"])){
+					$interest_type = $_GET["interest_type"];
+				}
+
+
+				?>
 				<input type="hidden" name="action_type" value="login_submit">
-				<input type="hidden" name="user_code" value="<?php echo $_GET["code"] ?>">
-                <input type="hidden" name="interest" value="<?php echo $_GET["interest"] ?>">
-                <input type="hidden" name="interest_type" value="<?php echo $_GET["interest_type"] ?>">
+				<input type="hidden" name="user_code" value="<?php echo $code?>">
+                <input type="hidden" name="interest" value="<?php echo $interest ?>">
+                <input type="hidden" name="interest_type" value="<?php echo $interest_type ?>">
 				<div class="mt-2"><input id="name" name="name" type="name" placeholder="Please Enter Your Name" maxlength="100" required="" class="border-[#A17603] w-full rounded-[11px] border-[1px] px-4 py-3 placeholder-[#A17603] focus:ring-2 focus:ring-inset focus:ring-[#A17603] text-[#A17603] " value=""></div><div><div class="p-2 PhoneInput"><div class="PhoneInputCountry">
 	
 				<select aria-label="Phone number country" class="PhoneInputCountrySelect" name="dropdown" onchange="PhoneInputCountrySelect()">
