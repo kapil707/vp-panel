@@ -59,7 +59,7 @@
 			</div>
 		</div>
 		<div class="col-xs-3">
-			<?php publish_panel_right_top($row,"Submit"); ?>
+			<?php publish_panel_right_top("","Submit"); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<div class="form-group">
@@ -84,7 +84,7 @@
 			</div>
 		</div>
 	</form>
-</div><!-- /.row -->
+</div>
 <script>
 function onchange_title()
 {

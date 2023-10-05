@@ -59,7 +59,7 @@
 			</div>
 		</div>
 		<div class="col-xs-3">
-			<?php publish_panel_right_top($row,"Submit"); ?>
+			<?php publish_panel_right_top("","Submit"); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<div class="form-group">
@@ -79,10 +79,10 @@
 					</div>
 					
 					<hr>
-					<?php admin_side_image("Image","image","",$row->image,"",""); ?>
+					<?php admin_side_image("Image","image","","","",""); ?>
 					
 					<hr>
-					<?php admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
+					<?php admin_side_image("Mobile Image","mobile_image","","","",""); ?>
 				</div>
 			</div>
 		</div>

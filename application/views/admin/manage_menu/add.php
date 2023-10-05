@@ -5,7 +5,7 @@
 		</a>
 	</div>
 	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="group_child_page" class="css_group_child_page" value="<?php echo $row->child_page ?>">
+	<input type="hidden" name="group_child_page" class="css_group_child_page" value="">
 		<div class="col-xs-9">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
@@ -89,7 +89,7 @@
 			</div>
 		</div>
 		<div class="col-xs-3">
-			<?php publish_panel_right_top($row,"Submit"); ?>
+			<?php publish_panel_right_top("","Submit"); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<div class="form-group">
@@ -109,10 +109,10 @@
 					</div>
 					
 					<hr>
-					<?php admin_side_image("Image","image","",$row->image,"",""); ?>
+					<?php admin_side_image("Image","image","","","",""); ?>
 					
 					<hr>
-					<?php admin_side_image("Mobile Image","mobile_image","",$row->mobile_image,"",""); ?>
+					<?php admin_side_image("Mobile Image","mobile_image","","","",""); ?>
 				</div>
 			</div>
 		</div>
