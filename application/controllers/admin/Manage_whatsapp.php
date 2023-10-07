@@ -317,8 +317,18 @@ class Manage_whatsapp extends CI_Controller {
 
 	public function insert_tbl($upload_path1,$import_xls_file)
 	{
-		$itemname = "A";
+		$itemname_a = "A";
+		$itemname_b = "B";
 		$headername = 1;
+
+		$time = time();
+		$date = date("Y-m-d",$time);
+		$status = "1";
+
+		$Page_tbl 	= $this->Page_tbl;
+
+		$user_id = $this->session->userdata("user_id");
+		$system_ip = $this->input->ip_address();
 
 		$inputFileName = $upload_path1.$import_xls_file;
 		$this->load->library('excel');
@@ -328,7 +338,21 @@ class Manage_whatsapp extends CI_Controller {
 			$highestRow = $worksheet->getHighestRow();
 			for ($row=$headername; $row<=$highestRow; $row++)
 			{
-				echo $worksheet->getCell($itemname.$row)->getValue();
+				$title = $worksheet->getCell($itemname_a.$row)->getValue();
+				$message = $worksheet->getCell($itemname_b.$row)->getValue();
+				
+				$result = "";
+				$dt = array(
+					'title'=>$title,
+					'message'=>$message,
+					'date'=>$date,
+					'time'=>$time,
+					'update_date'=>$date,
+					'update_time'=>$time,
+					'system_ip'=>$system_ip,
+					'user_id'=>$user_id,
+					'status'=>$status,);
+				$this->Scheme_Model->insert_fun($Page_tbl,$dt);
 			}
 		}
 	}   
