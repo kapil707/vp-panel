@@ -135,7 +135,7 @@ class Manage_whatsapp extends CI_Controller {
 			$this->Scheme_Model->edit_fun($tbl,$dt,$where);			
 		}
 		$page_type = "page";
-		$query = $this->db->query("select * from $tbl where page_type='$page_type' order by id desc");
+		$query = $this->db->query("select * from $tbl order by id desc");
   		$data["result"] = $query->result();
 		$this->load->view("admin/header_footer/header",$data);
 		$this->load->view("admin/$Page_view/view",$data);
