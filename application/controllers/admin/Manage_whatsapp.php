@@ -317,36 +317,18 @@ class Manage_whatsapp extends CI_Controller {
 
 	public function insert_tbl($upload_path1,$import_xls_file)
 	{
-		$this->load->library('Excel');
-		$inputFileName = $upload_path1.$import_xls_file;
-		try {
-			$inputFileType = PHPExcel_IOFactory::identify($inputFileName);
-			$objReader = PHPExcel_IOFactory::createReader($inputFileType);
-			$objPHPExcel = $objReader->load($inputFileName);
-			$allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
-			$flag = true;
-			$i=0;
-			foreach ($allDataInSheet as $value) {
-				if($flag){
-					$flag =false;
-					continue;
-				}
-				$inserdata[$i]['first_name'] = $value['A'];
-				$inserdata[$i]['last_name'] = $value['B'];
-				$i++;
-			} 
-			print_r($inserdata) ;
-			die;        
-			// $result = $this->import_model->importdata($inserdata);   
-			// if($result){
-			// 	echo "Imported successfully";
-			// }else{
-			// 	echo "ERROR !";
-			// }             
+		$itemname = "A";
 
-		} catch (Exception $e) {
-		die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
-					. '": ' .$e->getMessage());
+		$inputFileName = $upload_path1.$import_xls_file;
+		$this->load->library('excel');
+		$objPHPExcel = PHPExcel_IOFactory::load($inputFileName);
+		foreach ($objPHPExcel->getWorksheetIterator() as $worksheet)
+		{
+			$highestRow = $worksheet->getHighestRow();
+			for ($row=$headername; $row<=$highestRow; $row++)
+			{
+				echo $worksheet->getCell($itemname.$row)->getValue();
+			}
 		}
 	}   
 }
