@@ -182,10 +182,6 @@ class Manage_whatsapp extends CI_Controller {
 			}
 			else
 			{
-				/***********************************************/
-				$this->Manage_field_group_model->insert_field_data();
-				/***********************************************/
-				
 				$time = time();
 				$date = date("Y-m-d",$time);
 				$where = array('id'=>$id);
