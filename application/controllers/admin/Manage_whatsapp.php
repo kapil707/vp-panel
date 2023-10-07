@@ -298,18 +298,6 @@ class Manage_whatsapp extends CI_Controller {
 			else { 
 				$data = array('upload_data' => $this->upload->data());
 			} 
-			if($message_db!="")
-			{
-				$message = $Page_title." - ".$message;
-				$message_db = $Page_title." - ".$message_db;
-				$this->session->set_flashdata("message_footer","yes");
-				$this->session->set_flashdata("full_message",$message);
-				$this->Admin_Model->Add_Activity_log($message_db);
-				if($result)
-				{
-					redirect(base_url()."admin/$page_controllers/edit/".$result);
-				}
-			}
 		}
 		$this->load->view("admin/header_footer/header",$data);
 		$this->load->view("admin/$Page_view/add2",$data);
