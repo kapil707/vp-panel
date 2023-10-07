@@ -325,9 +325,17 @@ class Manage_whatsapp extends CI_Controller {
 		$date = date("Y-m-d",$time);
 		$status = "1";
 
-		$Page_tbl 	= $this->Page_tbl;
-
+		/******************session***********************/
 		$user_id = $this->session->userdata("user_id");
+		$user_type = $this->session->userdata("user_type");
+		/******************session***********************/
+		$Page_title = $this->Page_title;
+		$Page_name 	= $this->Page_name;
+		$Page_view 	= $this->Page_view;
+		$Page_menu 	= $this->Page_menu;
+		$Page_tbl 	= $this->Page_tbl;
+		$page_controllers 	= $this->page_controllers;
+
 		$system_ip = $this->input->ip_address();
 
 		$inputFileName = $upload_path1.$import_xls_file;
