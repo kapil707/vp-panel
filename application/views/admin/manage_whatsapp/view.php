@@ -3,6 +3,9 @@
 		<a href="<?= base_url()?>admin/<?= $Page_name; ?>/add" class="btn btn-w-m btn-info">
 			Add +
 		</a>
+		<a href="<?= base_url()?>admin/<?= $Page_name; ?>/add2" class="btn btn-w-m btn-info">
+			Import
+		</a>
 	</div>
     <div class="col-xs-12">
 		<div class="ibox float-e-margins">
