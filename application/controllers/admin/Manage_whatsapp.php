@@ -276,6 +276,7 @@ class Manage_whatsapp extends CI_Controller {
 		$data["child_page"] = "";
 
 		$upload_path 		= "./uploads/manage_library/";
+		$upload_path1 		= "uploads/manage_library/";
 		
 		$page_type = "page";
 		$system_ip = $this->input->ip_address();
@@ -299,16 +300,52 @@ class Manage_whatsapp extends CI_Controller {
 				
 			if ( ! $this->upload->do_upload('userfile')) {
 				$error = array('error' => $this->upload->display_errors()); 
-				print_r($error);
+				//print_r($error);
 			}
 				
 			else { 
 				$data = array('upload_data' => $this->upload->data());
-				print_r($data);
+				//print_r($data);
+				$import_xls_file = $data['upload_data']['file_name'];
+				$this->insert_tbl($upload_path1,$import_xls_file);
 			} 
 		}
 		$this->load->view("admin/header_footer/header",$data);
 		$this->load->view("admin/$Page_view/add2",$data);
 		$this->load->view("admin/header_footer/footer",$data);
 	}
+
+	public function insert_tbl($upload_path1,$import_xls_file)
+	{
+		$inputFileName = $upload_path1.$import_xls_file;
+		try {
+			$inputFileType = PHPExcel_IOFactory::identify($inputFileName);
+			$objReader = PHPExcel_IOFactory::createReader($inputFileType);
+			$objPHPExcel = $objReader->load($inputFileName);
+			$allDataInSheet = $objPHPExcel->getActiveSheet()->toArray(null, true, true, true);
+			$flag = true;
+			$i=0;
+			foreach ($allDataInSheet as $value) {
+				if($flag){
+					$flag =false;
+					continue;
+				}
+				$inserdata[$i]['first_name'] = $value['A'];
+				$inserdata[$i]['last_name'] = $value['B'];
+				$i++;
+			} 
+			print_r($inserdata) ;
+			die;        
+			// $result = $this->import_model->importdata($inserdata);   
+			// if($result){
+			// 	echo "Imported successfully";
+			// }else{
+			// 	echo "ERROR !";
+			// }             
+
+		} catch (Exception $e) {
+		die('Error loading file "' . pathinfo($inputFileName, PATHINFO_BASENAME)
+					. '": ' .$e->getMessage());
+		}
+	}   
 }
