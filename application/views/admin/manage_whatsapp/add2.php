@@ -15,7 +15,7 @@
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<input type="file" name="image" class="form-control">
+							<input type="file" name="userfile" class="form-control">
 						</div>
 						<div class="help-inline col-sm-12 has-error">
 							<span class="help-block reset middle">  
