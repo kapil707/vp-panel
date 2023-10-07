@@ -287,7 +287,11 @@ class Manage_whatsapp extends CI_Controller {
 			$message_db = "yes";
 
 			$config['upload_path']   = $upload_path; 
-			// $config['allowed_types'] = 'gif|jpg|png'; 
+			$config['allowed_types'] = 'xlsx|csv|xls';
+			$config['max_size'] = '10000'; 
+			$config['overwrite'] = true;
+			$config['encrypt_name'] = FALSE;
+			$config['remove_spaces'] = TRUE;
 			// $config['max_size']      = 100; 
 			// $config['max_width']     = 1024; 
 			// $config['max_height']    = 768;  
