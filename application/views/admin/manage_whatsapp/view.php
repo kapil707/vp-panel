@@ -18,10 +18,7 @@
 									Title
 								</th>
 								<th>
-									Date
-								</th>
-								<th>
-									Time
+									Date / Time
 								</th>
 								<th>
 									Action
@@ -40,17 +37,13 @@
 								</td>
 								<td>
 									<?= ($row->title); ?><br>
-									<a href="<?= base_url(); ?><?php echo $row->url; ?>"target='_blank'>
-										<?= base_url(); ?><?php echo $row->url; ?>
-									</a>
+									<?= ($row->message); ?>
 								</td>
 								<td>
 									<?php 
 									$date = ($row->update_time); 
 									echo date('d-M-Y', $date);
-									?>
-								</td>
-								<td>
+									?> /
 									<?php 
 									$time = ($row->update_time); 
 									echo date('H:i', $time);
