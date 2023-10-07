@@ -282,6 +282,8 @@ class Manage_whatsapp extends CI_Controller {
 		extract($_POST);
 		if(isset($Submit))
 		{
+			$this->load->helper('url');
+
 			$message_db = "yes";
 
 			$config['upload_path']   = $upload_path; 
