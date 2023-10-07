@@ -355,5 +355,6 @@ class Manage_whatsapp extends CI_Controller {
 				$this->Scheme_Model->insert_fun($Page_tbl,$dt);
 			}
 		}
+		redirect(base_url()."admin/$page_controllers/");
 	}   
 }
