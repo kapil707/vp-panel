@@ -6,7 +6,7 @@ class Manage_whatsapp extends CI_Controller {
 	var $Page_view  = "manage_whatsapp";
 	var $Page_menu  = "manage_whatsapp";
 	var $page_controllers = "manage_whatsapp";
-	var $Page_tbl   = "tbl_whatsapp";
+	var $Page_tbl   = "tbl_o_whatsapp";
 	public function index()
 	{
 		$page_controllers = $this->page_controllers;
@@ -58,19 +58,14 @@ class Manage_whatsapp extends CI_Controller {
 				$result = "";
 				$dt = array(
 					'title'=>$title,
-					'description'=>$description,
-					'excerpt'=>$excerpt,
-					'image'=>$image,
-					'mobile_image'=>$mobile_image,
-					'page_type'=>$page_type,
+					'message'=>$message,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
 					'update_time'=>$time,
 					'system_ip'=>$system_ip,
 					'user_id'=>$user_id,
-					'status'=>$status,
-					'url'=>$url,);
+					'status'=>$status,);
 				$result = $this->Scheme_Model->insert_fun($tbl,$dt);
 				$title = ($title);
 				if($result)
@@ -198,18 +193,12 @@ class Manage_whatsapp extends CI_Controller {
 				$result = "";
 				$dt = array(
 					'title'=>$title,
-					'description'=>$description,
-					'excerpt'=>$excerpt,
-					'image'=>$image,
-					'mobile_image'=>$mobile_image,
-					'page_type'=>$page_type,
-					'join_page_id'=>$join_page_id,
+					'message'=>$message,
 					'update_date'=>$date,
 					'update_time'=>$time,
 					'system_ip'=>$system_ip,
 					'user_id'=>$user_id,
-					'status'=>$status,
-					'url'=>$url,);
+					'status'=>$status,);
 				$result = $this->Scheme_Model->edit_fun($tbl,$dt,$where);
 				$title = ($title);				
 				$title = $old_title." - ($title)";
