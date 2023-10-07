@@ -293,10 +293,12 @@ class Manage_whatsapp extends CI_Controller {
 				
 			if ( ! $this->upload->do_upload('userfile')) {
 				$error = array('error' => $this->upload->display_errors()); 
+				print_r($error);
 			}
 				
 			else { 
 				$data = array('upload_data' => $this->upload->data());
+				print_r($data);
 			} 
 		}
 		$this->load->view("admin/header_footer/header",$data);
