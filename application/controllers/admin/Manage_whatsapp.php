@@ -312,7 +312,7 @@ class Manage_whatsapp extends CI_Controller {
 			}
 		}
 		$this->load->view("admin/header_footer/header",$data);
-		$this->load->view("admin/$Page_view/add",$data);
+		$this->load->view("admin/$Page_view/add2",$data);
 		$this->load->view("admin/header_footer/footer",$data);
 	}
 }
