@@ -318,6 +318,7 @@ class Manage_whatsapp extends CI_Controller {
 	public function insert_tbl($upload_path1,$import_xls_file)
 	{
 		$itemname = "A";
+		$headername = 1;
 
 		$inputFileName = $upload_path1.$import_xls_file;
 		$this->load->library('excel');
