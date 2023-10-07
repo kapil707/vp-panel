@@ -251,27 +251,68 @@ class Manage_whatsapp extends CI_Controller {
 		echo "ok";
 	}
 
-	public function check_url_api()
+	public function add2()
 	{
+		/******************session***********************/
+		$user_id = $this->session->userdata("user_id");
+		$user_type = $this->session->userdata("user_type");
+		/******************session***********************/
+		$Page_title = $this->Page_title;
+		$Page_name 	= $this->Page_name;
+		$Page_view 	= $this->Page_view;
+		$Page_menu 	= $this->Page_menu;
 		$Page_tbl 	= $this->Page_tbl;
-		$id 		= $_POST["id"];
-		$url 		= $_POST["url"];
-		$child_page = $_POST["page_url"];
-		if($child_page=="page"){
-			$child_page = "";
-		}
-		$where = "";
-		if(!empty($id)){
-			$where = " and id!='$id'"; 
-		}
-		$query = $this->db->query("select id from $Page_tbl where url='$url' and child_page='$child_page' and page_type='page' $where")->row();
-		if(!empty($query->id))
+		$page_controllers 	= $this->page_controllers;
+		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
+		$data['title1'] = $Page_title." || Add";
+		$data['title2'] = "Add";
+		$data['Page_name'] = $Page_name;
+		$data['Page_menu'] = $Page_menu;		
+		$this->breadcrumbs->push("Admin","admin/");
+		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
+		$this->breadcrumbs->push("Add","admin/$page_controllers/add");
+		$tbl = $Page_tbl;
+		$data["page_url"] = "";
+		$data["child_page"] = "";
+
+		$upload_path 		= "./uploads/manage_library/";
+		
+		$page_type = "page";
+		$system_ip = $this->input->ip_address();
+		extract($_POST);
+		if(isset($Submit))
 		{
-			echo "Error";
+			$message_db = "yes";
+
+			$config['upload_path']   = $upload_path; 
+			// $config['allowed_types'] = 'gif|jpg|png'; 
+			// $config['max_size']      = 100; 
+			// $config['max_width']     = 1024; 
+			// $config['max_height']    = 768;  
+			$this->load->library('upload', $config);
+				
+			if ( ! $this->upload->do_upload('userfile')) {
+				$error = array('error' => $this->upload->display_errors()); 
+			}
+				
+			else { 
+				$data = array('upload_data' => $this->upload->data());
+			} 
+			if($message_db!="")
+			{
+				$message = $Page_title." - ".$message;
+				$message_db = $Page_title." - ".$message_db;
+				$this->session->set_flashdata("message_footer","yes");
+				$this->session->set_flashdata("full_message",$message);
+				$this->Admin_Model->Add_Activity_log($message_db);
+				if($result)
+				{
+					redirect(base_url()."admin/$page_controllers/edit/".$result);
+				}
+			}
 		}
-		else
-		{
-			echo "ok";
-		}
+		$this->load->view("admin/header_footer/header",$data);
+		$this->load->view("admin/$Page_view/add",$data);
+		$this->load->view("admin/header_footer/footer",$data);
 	}
 }
