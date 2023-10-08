@@ -140,7 +140,7 @@
 </div>
 
 <div id="home-box5">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
                 <h5><?php echo get_field_data("home_page_label03","1"); ?></h5>
