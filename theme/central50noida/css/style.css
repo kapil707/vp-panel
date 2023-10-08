@@ -142,32 +142,12 @@ a:hover{
     margin-top: 30px;
     height: 250px;
     padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    background-color: #27387E;
-    border-radius: 15px;
+    border-radius: 10px;
 }
-#home-box5 .item .item1{
-    color:white;
-    font-size: 1.5rem;
-    margin: 15px;
-}
-#home-box5 .item .item2{
-    color:white;
-    margin: 15px;
-}
-#home-box5 .item .item3{
-    color:white;
-    font-size: 1.5rem;
-    margin: 15px;
-}
-#home-box5 .item .button{
-    background-color: white;
-    border: 0px;
-    border-radius: 15px;
+#home-box5 .item img{
+    height: 250px;
     padding: 10px;
-    font-size: 1.5rem;
-    margin: 15px;
+    border-radius: 10px;
 }
 
 

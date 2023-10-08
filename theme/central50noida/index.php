@@ -150,7 +150,7 @@
             $get_gallery = get_gallery();
             $i = 1;
             foreach($get_gallery as $row) { ?>
-                <div class="col-sm-3">
+                <div class="col-sm-3 item">
                     <img src="<?= get_library_to_image($row->image,'main'); ?>" src="<?= get_library_to_image($row->image,'main'); ?>" class="img-fluid">
                 </div>               
             <?php 
