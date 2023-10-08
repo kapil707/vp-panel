@@ -1,4 +1,5 @@
 <?php include_once(get_header()); ?>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"></script>
 <section id="home" class="fullwidth bg-stone-800">
     <?php echo do_slider(0) ;?>
 </section>
