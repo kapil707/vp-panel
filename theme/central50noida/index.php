@@ -70,7 +70,9 @@
                      $i = 1;						
                      foreach($get_blog as $row) { ?>
                     <div class="tab-pane fade <?php if($i==1) { ?>show active<?php } ?>" id="home_<?php echo $row->id; ?>" role="tabpanel" aria-labelledby="home-tab_<?php echo $row->id; ?>"></div>
-                    <?php } ?>
+                    <?php 
+                    $i++;
+                    } ?>
                 </div>
             </div>
         </div>
