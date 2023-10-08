@@ -50,6 +50,7 @@ a:hover{
 }
 #home-box1 .row .col-md-3{
     border-left: solid 1px #240d0d ;
+    padding:10px;
 }
 #home-box1 .row .col-md-3:hover{
     border-left: solid 1px #240d0d ;
@@ -67,6 +68,7 @@ a:hover{
 #home-box2 .tab-content{
     border: solid 1px #cccccc;
     padding: 50px;
+    border-radius: 10px;
 }
 
 #home-box3{
@@ -76,6 +78,12 @@ a:hover{
     font-size: 2rem;
     margin-bottom: 50px;
     color: #27387E;
+}
+#home-box3 .sml_border{
+    border: solid 1px #cccccc;
+    padding: 50px;
+    border-radius: 10px;
+
 }
 
 .owl-carousel .item .item-box{
