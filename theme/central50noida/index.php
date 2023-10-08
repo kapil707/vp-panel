@@ -7,7 +7,9 @@
 					$slider = get_gallery("slider");
 					foreach($slider as $row){ ?>
                     <li class="rs-slide" data-masterspeed="1000" data-transition="random" data-thumb="<?= get_library_to_image($row->image,'main'); ?>" data-saveperformance="off"data-title="Create Stunning Website" data-description="Home Slider">
-						<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="Image Background" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="0" class="rev-slidebg" data-no-retina>
+						<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="Image Background" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="0" class="rev-slidebg mobile_off" data-no-retina>
+
+                        <img src="<?= get_library_to_image($row->mobile_image,'main'); ?>" alt="Image Background" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="0" class="rev-slidebg mobile_show" data-no-retina>
                     </li>
 					<?php } ?>
                 </ul>

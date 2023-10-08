@@ -378,3 +378,17 @@ svg {
 	transition: transform 0.8s;
 	transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
+.mobile_show
+{
+	display:none;
+}
+@media screen and (max-width:800px) {
+	.mobile_off
+	{
+		display:none;
+	}
+    .mobile_show
+	{
+		display:block;
+	}
+}
