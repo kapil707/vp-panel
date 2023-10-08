@@ -96,7 +96,7 @@ if ( ! function_exists('vp_menu'))
 		foreach($result as $menu){
 			$row1 = $ci->db->query("select url from tbl_page where id='$menu->page_id'")->row();
 			$url = "";
-			if(empty($menu->child_page)){
+			if(empty($menu->child_page) && !empty($row1->url)){
 				$url = $row1->url;
 			}
 			$dt = get_blog_pg_url($menu->page_type,$menu->child_page);
