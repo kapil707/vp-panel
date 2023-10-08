@@ -107,7 +107,6 @@ a:hover{
 #home-box4 h5{
     font-size: 2rem;
     margin-bottom: 50px;
-    color: white;
 }
 #home-box4 .img1{
     width:100%;
@@ -119,12 +118,12 @@ a:hover{
 }
 #home-box4 .card-l{
     font-size: 2rem;
-    color:white;
     border-bottom: solid 1px #f3f3f3;
+    padding-bottom:15px;
 }
 #home-box4 .card-b{
     font-size: 1rem;
-    color:white;
+    padding-top:15px;
 } 
 
 #home-box5{
