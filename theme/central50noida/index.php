@@ -80,8 +80,8 @@
             </div>
         </div>
     </div>
-    
- 
+</div>    
+<div id="home-box3">
 	<section id="highlights" class="lg-py-12 sm-py-8 relative">
         <div class="fai xl-bottom-20 lg-bottom-18 bg-cover zi-1" data-bg="<?php echo base_url() ?>assets/website/images/i1.jpg"></div>
         <div class="container text-center relative zi-20">
