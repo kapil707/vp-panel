@@ -17,8 +17,8 @@
 
 .carousel-item img {
     width: 100%;
-    max-width: 650px;
-    height: auto;
+    max-width: 100%;
+    height: 650px;
 }
 </style>
     <div id="page-content" class="bg-dark-100 fullwidth lg-py-3 sm-py-4">
