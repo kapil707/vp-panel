@@ -118,8 +118,8 @@ a:hover{
 #home-box4 .img1:hover{
     transform:scale(1.5);
 }
-#home-box4 .card{
-
+#home-box4 .card-link{
+    font-size: 2rem;
 }
 #home-box4 .card .card-header{
     
