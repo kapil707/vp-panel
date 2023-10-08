@@ -16,6 +16,8 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css-1/plugins.min.css">
+    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css-1/revslider/settings.css">
     <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css-1/style3661.css?v=2.0">
 
     <?php /*
