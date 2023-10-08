@@ -8,6 +8,10 @@ a:hover{
 #header .logo{
     width:70px;
 }
+#top-bar
+{
+    padding: 10px;
+}
 #menu{
     list-style: none;
     margin: 0;
