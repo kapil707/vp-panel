@@ -91,6 +91,15 @@ a:hover{
     margin-top: 50px;
 }
 
+.sml_border0{
+	transform: rotateY(0deg);
+	transition: transform 0.8s;
+	transform-style: preserve-3d;
+}
+.sml_border0:hover{
+	transform: rotateY(365deg);
+}
+
 .owl-carousel .item .item-box{
     background-image: url(../images/2.jpg);
     background-position: center center;
