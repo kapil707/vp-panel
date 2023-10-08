@@ -202,7 +202,7 @@ class Manage_field_group_model extends CI_Model
 			{
 				$page_id 	= $_POST["page_id"];
 			}
-			
+
 			$options_id = 0;
 			if(!empty($_POST["options_id"]))
 			{
@@ -277,8 +277,11 @@ class Manage_field_group_model extends CI_Model
     {	
 		$page_type = "manage_".$page_type;
 		
-		$child_page = $_GET["child_page"];
-		if($child_page!=""){
+		$child_page = "";
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
+		}
+		if(!empty($child_page)){
 			$page_type = "manage_".$child_page;
 		}
 		$category_id = explode (",",$category_id);
