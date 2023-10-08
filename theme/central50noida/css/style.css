@@ -112,9 +112,10 @@ a:hover{
 }
 #home-box4 .img1{
     width:100%;
+    border-radius: 10px;
 }
 #home-box4 .img1:hover{
-    ransform:scale(2.5);
+    transform:scale(2.5);
 }
 
 #home-box5{
