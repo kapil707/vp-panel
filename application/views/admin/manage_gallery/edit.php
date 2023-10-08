@@ -73,8 +73,11 @@
 							</label>
 						</div>
 						<?php 
-						$page_type = $_GET["page_type"];
-						if($page_type==""){
+						$page_type = "";
+						if(!empty($_GET["page_type"])){
+							$page_type = $_GET["page_type"];
+						}
+						if(empty($page_type)){
 							$page_type = "gallery";
 						}else{
 							$page_type = str_replace("manage_","",$page_type);
