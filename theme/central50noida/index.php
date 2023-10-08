@@ -94,8 +94,10 @@
             $get_blog = get_blog("home_sec3");
             foreach($get_blog as $row) { ?>
                 <div class="col-sm-4 text-center sml_border0">
-                    <div class="sml_border">
-                        <?php echo $row->title; ?>
+                    <div>
+                        <span class="sml_border">
+                            <?php echo $row->title; ?>
+                        </span>
                     </div>
                     <div class="sml_border2">
                         <?php echo $row->description; ?>
