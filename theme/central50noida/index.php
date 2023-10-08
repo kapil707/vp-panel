@@ -77,49 +77,7 @@
             </div>
         </div>
     </div>
-    <section id="skills" class="lg-py-12 sm-py-8">
-        <div class="container">
-            <div class="flex-row">
-                <div class="lg-column-12 sm-column-12">
-                    <ul class="nav justify-content-center inline-flex w-auto" role="tablist">
-						<?php 
-						$get_blog = get_blog("home_sec2");
-						$i = 1;						
-						foreach($get_blog as $row) { ?>
-							<li role="presentation" class="d-flex">
-								<button type="button" data-bs-target="#tab1<?php echo $row->id; ?>" aria-selected="true" aria-controls="tab1<?php echo $row->id; ?>" role="tab" data-bs-toggle="pill" class="tab-filter <?php if($i==1) { ?>show active<?php } ?> font-secondary xl-mr-2 lg-mr-1 sm-mr-1 btn-md xl-px-4 lg-px-3 sm-px-2 bg-white active-bg-white hover-bg-gray-100 bg-white uppercase border-l-1 border-t-1 border-r-1 border-b-0 active-border-gray-300 border-white relative transition-colors">
-									<?php echo $row->title; ?>
-								<span class="opacity-0 get-active active-opacity-100 absolute top-0 h-2 zi-5 w-full bg-colored inline-flex transition"></span>
-								<span class="opacity-0 get-active active-opacity-100 absolute top-perc-100 h-2 zi-5 w-full bg-white inline-flex transition"></span>
-								</button>
-							</li>
-						<?php 
-						$i++;
-						} ?>
-                    </ul>
-                    <div class="tab-content p-4 block-images text-gray-600 text-justify border border-gray-300">
-						<?php 
-						$i = 1;
-						foreach($get_blog as $row) { ?>
-                        <div id="tab1<?php echo $row->id; ?>" role="tabpanel" class="tab-pane fade <?php if($i==1) { ?>show active<?php } ?>">
-                            <div class="tab-container py-2">
-								<?php if($row->image) { ?>
-									<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="mr-4 mxw-25 w-auto float-left"> 
-								<?php } ?>
-								<?php echo $row->title; ?>
-								<br>
-								<?php echo remove_p_tag($row->description); ?>
-								<div class="clearfix"></div>
-                            </div>
-                        </div>
-                        <?php 
-						$i++;
-						} ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
  
 	<section id="highlights" class="lg-py-12 sm-py-8 relative">
         <div class="fai xl-bottom-20 lg-bottom-18 bg-cover zi-1" data-bg="<?php echo base_url() ?>assets/website/images/i1.jpg"></div>
