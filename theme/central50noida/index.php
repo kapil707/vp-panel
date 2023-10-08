@@ -48,12 +48,20 @@
         </div>
     </div>
 </div>
-    <div class="container">
-        <div class="w-full h-1 bg-gray-300 relative relative flex justify-content-center">
-            <div class="absolute w-full left-0 top-0 h-auto flex justify-content-center">
-                <div
-                    class="icon-lg text-lg rounded-full border-1 -translate-y-perc-50 border-gray-400 bg-white text-gray-700 zi-10">
-                    <i class="bi-basket"></i></div>
+<div id="home-box2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <ul class="nav nav-tabs">
+                    <?php 
+                    $get_blog = get_blog("home_sec2");
+                    $i = 1;						
+                    foreach($get_blog as $row) { ?>
+                    <li class="nav-item">
+                        <a class="nav-link <?php if($i==1) { ?>active<?php } ?>" aria-current="page" href="#"><?php echo $row->title; ?></a>
+                    </li>
+                    <?php } ?>
+                </ul>
             </div>
         </div>
     </div>
