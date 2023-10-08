@@ -1,10 +1,10 @@
 <?php include_once(get_header()); ?>
 <section id="home" class="fullwidth bg-stone-800">
-    <?php echo do_slider(0) ;?>
+    <?php echo do_slider() ;?>
 </section>
 
 <style>
-#myCarousel_0 {
+#myCarousel_ {
     width: 100%;
     max-width: 100%;
 }
