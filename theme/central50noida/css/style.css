@@ -118,6 +118,12 @@ a:hover{
 #home-box4 .img1:hover{
     transform:scale(1.5);
 }
+#home-box4 .card{
+
+}
+#home-box4 .card .card-header{
+    
+} 
 
 #home-box5{
     color: #27387E;
