@@ -138,6 +138,17 @@
         </div>
     </div>
 </div>
+
+<div id="home-box5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h5><?php echo get_field_data("home_page_label03","1"); ?></h5>
+                <?php echo get_field_data("home_page_label04","1"); ?>
+            </div>
+        </div>
+    </div>
+</div>
     
                 <div class="lg-column-6 sm-mt-5">
                     <h1 class="lg-text-5xl sm-text-2xl font-secondary uppercase font-light text-dark-100">WHY DO YOU CHOOSE <span class="text-colored">Central 50?</span></h1>
@@ -159,10 +170,10 @@
     <section id="Gallery" class="lg-py-12 sm-py-8">
         <div class="container text-center">
             <h1 class="font-secondary uppercase text-dark lg-text-5xl sm-text-3xl font-light">
-				<?php echo get_field_data("home_page_label03","1"); ?>
+				
 			</h1>
             <p class="mx-auto mxw-50 text-gray-700 lg-mt-4 sm-mt-3">
-				<?php echo get_field_data("home_page_label04","1"); ?>
+				
 			</p>
         </div>
         <div class="container mt-5" style="display:none;">
