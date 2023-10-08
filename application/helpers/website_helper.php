@@ -93,18 +93,18 @@ if ( ! function_exists('vp_menu'))
 	
 		$return = "";
 		$result = $ci->db->query("select * from tbl_menu where status=1 and menu_id=0 order by sorting_order asc")->result();
-		foreach($result as $row){
+		foreach($result as $menu){
 			$row1 = $ci->db->query("select * from tbl_page where id='$row->page_id'")->row();
 			$url = "";
 			if(!empty($row->child_page)){
 				$url = $row->child_page;
 			}
-			$dt = get_blog_pg_url($row->page_type,$row->child_page);
+			$dt = get_blog_pg_url($menu->page_type,$menu->child_page);
 			if(!empty($dt["url"])) {
 				$url = $dt["url"];
 			}
 			
-			$return.= '<li><a href="'.base_url().$url.$row->page_type.'" class="nav-link">'.$row->title.'</a>'.vp_menu_submenu($row->id).'</li>';
+			$return.= '<li><a href="'.base_url().$url.$menu->page_type.'" class="nav-link">'.$row->title.'</a>'.vp_menu_submenu($menu->id).'</li>';
 		}
         return $return;
     }   
