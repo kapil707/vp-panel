@@ -332,7 +332,7 @@ if ( ! function_exists('slider_page'))
 				foreach($result as $row) { ?>
 				<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
 					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="d-block w-100 mobile_off">
-					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="d-block w-100 mobile_show">
+					<img src="<?= get_library_to_image($row->mobile_image,'main'); ?>" alt="<?php echo $row->title; ?>" class="d-block w-100 mobile_show">
 				</div>
 				<?php $i++; } ?>
 			</div>
