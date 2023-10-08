@@ -17,7 +17,7 @@
 
 .carousel-item img {
     width: 100%;
-    max-width: 100%;
+    max-width: 650px;
     height: auto;
 }
 </style>
