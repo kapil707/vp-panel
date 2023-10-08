@@ -82,38 +82,31 @@
     </div>
 </div>    
 <div id="home-box3">
-	<section id="highlights" class="lg-py-12 sm-py-8 relative">
-        <div class="fai xl-bottom-20 lg-bottom-18 bg-cover zi-1" data-bg="<?php echo base_url() ?>assets/website/images/i1.jpg"></div>
-        <div class="container text-center relative zi-20">
-            <h1 class="font-secondary uppercase text-gray-800 lg-text-5xl sm-text-3xl font-light">
-				<?php echo get_field_data("home_page_label01","1"); ?>
-			</h1>
-            <p class="mx-auto mxw-50 text-gray-700 lg-mt-4 sm-mt-3">
-				<?php echo get_field_data("home_page_label02","1"); ?>
-			</p>
-            
-			<div class="row">
-				<?php 
-				$get_blog = get_blog("home_sec3");
-				foreach($get_blog as $row) { ?>
-					<div class="col-sm-4" style="margin-top:50px;">
-						<div class="sml_border0">
-							<span class="sml_border">
-								<?php echo $row->title; ?>
-							</span>
-							
-						</div>
-						<div class="sml_border2">
-							<?php echo $row->description; ?>
-						</div>
-					</div>
-				<?php } ?>
-			</div>
-				
-				
+    <span id="highlights"></span>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <h5><?php echo get_field_data("home_page_label01","1"); ?></h5>
+                <?php echo get_field_data("home_page_label02","1"); ?>
             </div>
+            <?php 
+            $get_blog = get_blog("home_sec3");
+            foreach($get_blog as $row) { ?>
+                <div class="col-sm-4" style="margin-top:50px;">
+                    <div class="sml_border0">
+                        <span class="sml_border">
+                            <?php echo $row->title; ?>
+                        </span>
+                        
+                    </div>
+                    <div class="sml_border2">
+                        <?php echo $row->description; ?>
+                    </div>
+                </div>
+            <?php } ?>
         </div>
-    </section>
+    </div>
+</div>
     
     <div class="flex justify-content-center relative">
         <div class="absolute w-full left-0 top-0 h-auto flex justify-content-center">
