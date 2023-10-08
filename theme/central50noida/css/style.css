@@ -91,35 +91,13 @@ a:hover{
     margin-top: 50px;
 }
 
-.sml_border0{
+#home-box3 .sml_border0 .sml_border0{
 	transform: rotateY(0deg);
 	transition: transform 0.8s;
 	transform-style: preserve-3d;
 }
-.sml_border0:hover{
+#home-box3 .sml_border0 .sml_border0:hover{
 	transform: rotateY(365deg);
-}
-
-.owl-carousel .item .item-box{
-    background-image: url(../images/2.jpg);
-    background-position: center center;
-    background-size: cover;
-    height: 400px;
-    width: 300px;
-    border-radius: 15px;
-}
-
-.owl-carousel .item .item-box h4{
-    --background-overlay: '';
-    background-color: #02020236;
-    height: 400px;
-    width: 300px;
-    border-radius: 15px;
-}
-.owl-carousel .item h5{
-    color: white !important;
-    margin-top: -100px;
-    font-size: 1.5rem !important;
 }
 
 #home-box4{
@@ -132,23 +110,11 @@ a:hover{
     margin-bottom: 50px;
     color: white;
 }
-#home-box4 .item{
-    margin-top: 30px;
-    height: 200px;
-    padding: 10px;
-    padding-left: 50px;
-    padding-right: 50px;
-    background-color: white;
-    border-radius: 15px;
+#home-box4 .img1{
+    width:100%;
 }
-#home-box4 .item img{
-    width:100px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-#home-box4 .item p{
-    margin-top: 10px;
-    margin-bottom: 10px;
+#home-box4 .img1:hover{
+    ransform:scale(2.5);
 }
 
 #home-box5{

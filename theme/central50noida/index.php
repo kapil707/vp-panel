@@ -115,7 +115,7 @@
                 <h5>WHY DO YOU CHOOSE Central 50?</h5>
             </div>
             <div class="col-md-6 text-center">
-                <img src="<?php echo get_library_to_image(get_field_data("why_do_you_choose_image","1"),'main'); ?>">
+                <img src="<?php echo get_library_to_image(get_field_data("why_do_you_choose_image","1"),'main'); ?>" class="img1">
             </div>
             <div class="col-md-6">
                 <?php 
