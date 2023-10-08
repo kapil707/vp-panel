@@ -25,10 +25,10 @@
 </head>
 
 <body>
-    <div id="top-bar" class="top-bar w-full mnh-16 sm-mnh-20 sm-pt-2 flex align-items-center lh-normal nav-white">
+    <div id="top-bar">
         <div class="container">
-            <div class="row align-items-center">
-                <div class="col-sm-6 col-12 lg-text-left sm-text-center">
+            <div class="row">
+                <div class="col-sm-6 col-12">
                     <p class="text-base">
 						<i class="fa fa-file-text-o" aria-hidden="true"></i>
 						e-Brochure |
@@ -39,8 +39,7 @@
 					</p>					
                 </div>
 				
-				
-                <div class="col-sm-6 col-12 lg-text-right sm-text-center">
+                <div class="col-sm-6 col-12 float-md-right">
 					<?php 
 					$result = get_social_icon();
 					foreach($result as $row) { ?>
@@ -52,28 +51,21 @@
             </div>
         </div>
     </div>
-    <nav id="navigation" class="modern-nav sticky nav-lg text-sm bordered bg-dark-600 font-secondary fixed-height" data-offset="15">
-        <div class="container nav-container">
-            <div class="flex-row nav-wrapper justify-content-between">
-                <div class="column">
-					<a href="#top" class="logo">
-                    <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="theme/<?php echo $theme?> logo" class="mxw-18"></a>
-				</div>
-                
-				<div id="nav-menu" class="column ml-auto nav-menu">
-                    <ul class="nav-links justify-content-end">
-						<?php echo vp_menu(); ?>
-                    </ul>
-                </div>
-                <div class="mobile-nb">
-                    <div class="hamburger-menu">
-                        <div class="top-bun"></div>
-                        <div class="meat"></div>
-                        <div class="bottom-bun"></div>
+    <div id="header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 id="logo">
+                        <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="theme/<?php echo $theme?> logo"></a>
+                        </h2>
+                    </div>
+                    <div class="col-md-8">
+                        <ul id="menu" class="float-md-right">
+						    <?php echo vp_menu(); ?>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="mobile-nav-bg"></div>
-    </nav>
+    </div>
 	
