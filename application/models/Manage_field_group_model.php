@@ -186,12 +186,12 @@ class Manage_field_group_model extends CI_Model
 			
 			$title 	= "";
 			$field_name = $row->field_name;
-			if($_POST[$field_name])
+			if(!emtpy($_POST[$field_name]))
 			{
 				$title 	= $_POST[$field_name];
 			}	
 			
-			if($_FILES[$field_name]["name"]!="")
+			if(!emtpy($_FILES[$field_name]["name"]))
 			{
 				$title 	= $this->Manage_library_Model->insert_image_library($_FILES[$field_name]);
 			}
