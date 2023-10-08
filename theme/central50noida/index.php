@@ -158,44 +158,11 @@
         </div>
     </div>
 </div>
-
-   
-    <div class="flex justify-content-center relative">
-        <div class="absolute w-full left-0 top-0 h-auto flex justify-content-center">
-            <div
-                class="icon-lg text-lg rounded-full border-1 -translate-y-perc-50 border-gray-400 bg-white text-gray-700 zi-10">
-                <i class="bi-collection-play"></i></div>
-        </div>
+<div class="flex justify-content-center relative">
+    <div class="absolute w-full left-0 top-0 h-auto flex justify-content-center">
+        <div
+            class="icon-lg text-lg rounded-full border-1 -translate-y-perc-50 border-gray-400 bg-white text-gray-700 zi-10">
+            <i class="bi-bag-plus"></i></div>
     </div>
-    <section id="testimonials-1512324" class="has-parallax lg-py-7 sm-py-7 bg-semi-45 bg-semi-dark-800" data-bg="<?php echo base_url() ?>assets/website/images/video.jpg">
-        <div data-video-id="AMXhl4t1_yg" data-startat="0" data-endat="295" id="youtubeVideo" class="youtube-video zi-0 pointer-events-none"></div>
-        <div class="container-sm lg-px-5 relative text-center zi-5"><svg width="100%" class="h-auto"
-                viewBox="0 0 616 615" version="1.1" preserveAspectRatio="xMidYMid meet">
-                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <line x1="308" y1="0.5" x2="308" y2="614.5" stroke="#979797" stroke-linecap="square"></line>
-                    <ellipse stroke="#979797" cx="308" cy="307" rx="231.244541" ry="238"></ellipse>
-                    <line x1="1" y1="307.5" x2="615" y2="307.5" stroke="#979797" stroke-linecap="square"></line><text
-                        font-family="RobotoCondensed-Light, Roboto Condensed" font-size="66" font-style="condensed"
-                        font-weight="300" fill="#FFFFFF">
-                        <tspan x="223.636719" y="292">it’s</tspan>
-                    </text><text font-family="RobotoCondensed-Light, Roboto Condensed" font-size="66"
-                        font-style="condensed" font-weight="300" fill="#FFFFFF">
-                        <tspan x="318.5" y="372">time</tspan>
-                    </text><text opacity="0.699999988" font-family="RobotoCondensed-Light, Roboto Condensed"
-                        font-size="36" font-style="condensed" font-weight="300" fill="#FFFFFF">
-                        <tspan x="318.5" y="292">wisten</tspan>
-                    </text><text opacity="0.699999988" font-family="RobotoCondensed-Light, Roboto Condensed"
-                        font-size="36" font-style="condensed" font-weight="300" fill="#FFFFFF">
-                        <tspan x="222.951172" y="347">video</tspan>
-                    </text>
-                </g>
-            </svg></div>
-    </section>
-    <div class="flex justify-content-center relative">
-        <div class="absolute w-full left-0 top-0 h-auto flex justify-content-center">
-            <div
-                class="icon-lg text-lg rounded-full border-1 -translate-y-perc-50 border-gray-400 bg-white text-gray-700 zi-10">
-                <i class="bi-bag-plus"></i></div>
-        </div>
-    </div>
+</div>
 <?php include_once(get_footer()); ?>
