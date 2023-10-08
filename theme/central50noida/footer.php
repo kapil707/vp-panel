@@ -43,83 +43,8 @@
 		
 		
     </footer>
-    <script src="<?php echo get_theme_path(); ?>js/bs.js"></script>
-    <script src="<?php echo get_theme_path(); ?>js/plugins.min.js"></script>
-    <script src="<?php echo get_theme_path(); ?>js/revslider/jquery.themepunch.revolution.min.js"></script>
-    <script src="<?php echo get_theme_path(); ?>js/revslider/jquery.themepunch.tools.min.js"></script>
-    <script src="<?php echo get_theme_path(); ?>js/functions.js"></script>
-    <script>
-        var revapi1050, tpj = jQuery;
-        null == tpj("#home-slider").revolution ? revslider_showDoubleJqueryError("#home-slider") : revapi1050 = tpj(
-            "#home-slider").show().revolution({
-            sliderType: "standard",
-            jsFileLocation: "<?php echo get_theme_path(); ?>js/revslider/",
-            sliderLayout: "fullwidth",
-            dottedOverlay: "none",
-            delay: 9e3,
-            navigation: {
-                keyboardNavigation: "on",
-                keyboard_direction: "horizontal",
-                mouseScrollNavigation: "off",
-                mouseScrollReverse: "default",
-                onHoverStop: "off",
-                arrows: {
-                    enable: !0,
-                    style: "gyges"
-                },
-                touch: {
-                    touchenabled: "off",
-                    swipe_threshold: 75,
-                    swipe_min_touches: 50,
-                    swipe_direction: "horizontal",
-                    drag_block_vertical: !1
-                },
-                bullets: {
-                    enable: !0,
-                    hide_onmobile: !0,
-                    hide_under: 1024,
-                    style: "hesperiden",
-                    hide_onleave: !0,
-                    direction: "horizontal",
-                    h_align: "center",
-                    v_align: "bottom",
-                    h_offset: 0,
-                    v_offset: 20,
-                    space: 5,
-                    tmp: ""
-                }
-            },
-            responsiveLevels: [1400, 1024, 720, 540],
-            visibilityLevels: [1320, 992, 640, 480],
-            gridwidth: [1320, 992, 640, 480],
-            gridheight: [570, 570, 570, 600],
-            lazyType: "none",
-            shadow: 0,
-            spinner: "spinner2",
-            stopLoop: "off",
-            stopAfterLoops: -1,
-            stopAtSlide: -1,
-            shuffle: "off",
-            autoHeight: "off",
-            fullScreenAutoWidth: "off",
-            fullScreenAlignForce: "off",
-            fullScreenOffsetContainer: "",
-            fullScreenOffset: "0px",
-            disableProgressBar: "off",
-            hideThumbsOnMobile: "off",
-            fullWidth: "on",
-            fullScreen: "off",
-            hideSliderAtLimit: 0,
-            hideCaptionAtLimit: 0,
-            hideAllCaptionAtLilmit: 0,
-            debugMode: !1,
-            fallbacks: {
-                simplifyAll: "off",
-                nextSlideOnWindowFocus: "off",
-                disableFocusListener: !1
-            }
-        })
-    </script>
+    <script src="<?php echo get_theme_path(); ?>js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <div class="contact_btnss">
 <div class="get-in-touch-form-btn filled-btn mobile_book d-none">Book Now</div>
