@@ -329,8 +329,7 @@ if ( ! function_exists('slider_page'))
 				<?php 
 				$i = 1;
 				$result = get_gallery($val);
-				foreach($result as $row) {
-				?>
+				foreach($result as $row) { ?>
 				<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
 					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="d-block w-100">
 				</div>
