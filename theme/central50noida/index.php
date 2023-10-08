@@ -1,8 +1,7 @@
 <?php include_once(get_header()); ?>
-<section id="home" class="fullwidth bg-stone-800">
+<div id="slider">
     <?php echo do_slider() ;?>
-</section>
-
+</div>
 <style>
 #myCarousel_ {
     width: 100%;
@@ -21,13 +20,15 @@
     height: 650px;
 }
 </style>
-    <div id="page-content" class="bg-dark-100 fullwidth lg-py-3 sm-py-4">
-        <div class="container text-center text-white font-secondary uppercase lg-pt-2 lg-pb-3">
-            <h1 class="text-4xl sm-text-xl font-light lh-sm">
-				<?php echo get_field_data("home_page_title","1"); ?>
-			</h1>
+<div id="slider-bottom">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <?php echo get_field_data("home_page_title","1"); ?>
+            </div>
         </div>
     </div>
+</div>
     <section id="about" class="lg-py-12 sm-py-8">
         <div class="container cursor-default">
             <div class="flex-row lg-flex-columns-4 md-flex-columns-2 sm-flex-columns-2 xs-flex-columns-1">
