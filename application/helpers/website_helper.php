@@ -324,55 +324,30 @@ if ( ! function_exists('slider_page'))
 {
 	function do_slider($val = ""){
 		?>
-		<!-- Add these links to your HTML file -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/css/bootstrap.min.css">
-		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.2/dist/js/bootstrap.min.js"></script>
-		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
 		<div id="myCarousel_<?php echo $val; ?>" class="carousel slide" data-ride="carousel">
-		<div class="carousel-inner">
-			<?php 
-			$i = 1;
-			$result = get_gallery($val);
-			foreach($result as $row) {
-			?>
-			<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
-				<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>">
+  			<div class="carousel-inner">
+				<?php 
+				$i = 1;
+				$result = get_gallery($val);
+				foreach($result as $row) {
+				?>
+				<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
+					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="d-block w-100">
+				</div>
+				<?php $i++; } ?>
 			</div>
-			<?php $i++; } ?>
 		</div>
-		</div>
-		<a class="carousel-control-prev" href="#myCarousel_<?php echo $val; ?>" role="button" data-slide="prev">
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="sr-only">Previous</span>
-			</a>
-			<a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="sr-only">Next</span>
+		<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-prev" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-next" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
 		</a>
 		<script>
 		$(document).ready(function() {
 			$('#myCarousel_<?php echo $val; ?>').carousel();
 		});
 		</script>
-		<style>
-			#myCarousel_<?php echo $val; ?> {
-				width: 100%;
-				max-width: 100%;
-			}
-
-			.carousel-inner {
-				width: 100%;
-				max-width: 100%;
-				height: 400px; /* Adjust the height as needed */
-			}
-
-			.carousel-item img {
-				width: 100%;
-				max-width: 100%;
-				height: auto;
-			}
-		</style>
 		<?php
 	}
 }

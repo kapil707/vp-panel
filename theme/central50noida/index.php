@@ -1,7 +1,26 @@
 <?php include_once(get_header()); ?>
 <section id="home" class="fullwidth bg-stone-800">
-    <?php echo do_slider() ;?>
+    <?php echo do_slider(0) ;?>
 </section>
+
+<style>
+#myCarousel_0 {
+    width: 100%;
+    max-width: 100%;
+}
+
+.carousel-inner {
+    width: 100%;
+    max-width: 100%;
+    height: 650px; /* Adjust the height as needed */
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+</style>
     <div id="page-content" class="bg-dark-100 fullwidth lg-py-3 sm-py-4">
         <div class="container text-center text-white font-secondary uppercase lg-pt-2 lg-pb-3">
             <h1 class="text-4xl sm-text-xl font-light lh-sm">
