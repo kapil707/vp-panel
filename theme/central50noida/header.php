@@ -44,7 +44,7 @@
 					<?php 
 					$result = get_social_icon();
 					foreach($result as $row) { ?>
-						<a href="<?php echo $row->url ?>" target="_blank" class="icon-md hover-text-blue transition duration-300">
+						<a href="<?php echo $row->url ?>" target="_blank" class="icon-md">
 						<?php echo $row->description ?>zzzz
 						</a>
 					<?php } ?>
