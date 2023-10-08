@@ -87,6 +87,9 @@ a:hover{
     padding: 50px;
     border-radius: 100px;
 }
+#home-box3 .sml_border0 .sml_border2{
+    margin-top: 50px;
+}
 
 .owl-carousel .item .item-box{
     background-image: url(../images/2.jpg);
