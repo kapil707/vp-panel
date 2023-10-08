@@ -85,7 +85,7 @@
     <span id="highlights"></span>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-12 text-center">
                 <h5><?php echo get_field_data("home_page_label01","1"); ?></h5>
                 <?php echo get_field_data("home_page_label02","1"); ?>
             </div>
