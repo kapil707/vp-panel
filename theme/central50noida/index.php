@@ -122,8 +122,8 @@
                     $get_blog = get_blog("home_sec4");
                     $i = 1;
                     foreach($get_blog as $row) { ?>
-                        <div class="">
-                            <a class="card-link" data-toggle="collapse" href="#collapseOne<?php echo $row->id; ?>">
+                        <div class="card-l">
+                        <i class="fa fa-check" aria-hidden="true"></i> <a class="" data-toggle="collapse" href="#collapseOne<?php echo $row->id; ?>">
                             <?php echo $row->title; ?>
                             </a>
                         </div>

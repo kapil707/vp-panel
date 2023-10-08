@@ -118,9 +118,10 @@ a:hover{
 #home-box4 .img1:hover{
     transform:scale(1.5);
 }
-#home-box4 .card-link{
+#home-box4 .card-l{
     font-size: 2rem;
     color:white;
+    border-bottom: solid 1px #f3f3f3;
 }
 #home-box4 .card-b{
     font-size: 1rem;
