@@ -98,7 +98,7 @@
         </div>
     </section>
  
-	<section id="Highlights" class="lg-py-12 sm-py-8 relative">
+	<section id="highlights" class="lg-py-12 sm-py-8 relative">
         <div class="fai xl-bottom-20 lg-bottom-18 bg-cover zi-1" data-bg="<?php echo base_url() ?>assets/website/images/i1.jpg"></div>
         <div class="container text-center relative zi-20">
             <h1 class="font-secondary uppercase text-gray-800 lg-text-5xl sm-text-3xl font-light">
