@@ -40,12 +40,12 @@
                     <?php echo get_field_data("contact_phone",9) ?>
                 </div>
 				
-                <div class="col-sm-6 col-12 float-md-right">
+                <div class="col-sm-6 col-12 float-sm-right">
 					<?php 
 					$result = get_social_icon();
 					foreach($result as $row) { ?>
 						<a href="<?php echo $row->url ?>" target="_blank" class="icon-md">
-						<?php echo $row->description ?>zzzz
+						<?php echo $row->description ?>
 						</a>
 					<?php } ?>
 				</div>
