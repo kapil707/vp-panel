@@ -205,7 +205,7 @@ class Manage_field_group_model extends CI_Model
 				$options_id = 0;
 			}
 			
-			if($title!=""){
+			if(!emtpy($title!="")){
 				$dt = array(
 					'title'=>$title,
 					'field_name'=>$field_name,
