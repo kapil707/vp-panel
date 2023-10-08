@@ -110,8 +110,44 @@
 <div id="home-box4">
     <div class="container-fluid">
         <div class="row">
+            <div class="col-md-12 text-center">
+                <h5>WHY DO YOU CHOOSE Central 50?</h5>
+            </div>
             <div class="col-md-6 text-center">
                 <img src="<?php echo get_library_to_image(get_field_data("why_do_you_choose_image","1"),'main'); ?>">
+            </div>
+            <div class="col-md-6">
+                <?php 
+                    $get_blog = get_blog("home_sec4");
+                    $i = 1;
+                    foreach($get_blog as $row) { ?>
+                        <div data-bs-target="#acc-<?php echo $row->id; ?>"
+                        aria-controls="acc-<?php echo $row->id; ?>" 
+                        <?php if($i==1) { ?>
+                        aria-expanded="true"
+                        <?php } else { ?>
+                        aria-expanded="false"
+                        <?php } ?> data-bs-toggle="collapse" role="button" class="acc-bar border-b-1 border-solid border-gray-200 flex  align-items-center justify-content-between text-black flex-wrap transition">
+                            <div class="py-2 flex align-items-center">
+                                <h5 class="font-secondary uppercase text-gray-800 sm-text-base">
+                                <i class="bi-check text-xl relative top-px mr-1"></i><?php echo $row->title; ?></h5>
+                            </div>
+                            <div class="ml-auto">
+                                <i class="bi-plus text-lg text-gray-800"></i>
+                                <i class="bi-dash text-lg text-gray-800"></i>
+                            </div>
+                        </div>
+                        <div id="acc-<?php echo $row->id; ?>" class="collapse <?php if($i==1) { ?> show active <?php } ?> w-full" data-bs-parent="#one">
+                            <div class="py-2">
+                                <p class="text-md sm-text-base text-gray-800">
+                                <?php echo $row->description; ?>
+                                </p>
+                            </div>
+                        </div>
+                    <?php 
+                    $i++;
+                    } ?>
+                </div>
             </div>
         </div>
     </div>
@@ -121,36 +157,7 @@
                     <h1 class="lg-text-5xl sm-text-2xl font-secondary uppercase font-light text-dark-100">WHY DO YOU CHOOSE <span class="text-colored">Central 50?</span></h1>
                     
 					<div id="one" class="mt-3">
-					<?php 
-					$get_blog = get_blog("home_sec4");
-					$i = 1;
-					foreach($get_blog as $row) { ?>
-                        <div data-bs-target="#acc-<?php echo $row->id; ?>"
-						aria-controls="acc-<?php echo $row->id; ?>" 
-						<?php if($i==1) { ?>
-						aria-expanded="true"
-						<?php } else { ?>
-						aria-expanded="false"
-						<?php } ?> data-bs-toggle="collapse" role="button" class="acc-bar border-b-1 border-solid border-gray-200 flex  align-items-center justify-content-between text-black flex-wrap transition">
-                            <div class="py-2 flex align-items-center">
-                                <h5 class="font-secondary uppercase text-gray-800 sm-text-base">
-								<i class="bi-check text-xl relative top-px mr-1"></i><?php echo $row->title; ?></h5>
-                            </div>
-                            <div class="ml-auto">
-								<i class="bi-plus text-lg text-gray-800"></i>
-								<i class="bi-dash text-lg text-gray-800"></i>
-							</div>
-                        </div>
-                        <div id="acc-<?php echo $row->id; ?>" class="collapse <?php if($i==1) { ?> show active <?php } ?> w-full" data-bs-parent="#one">
-                            <div class="py-2">
-                                <p class="text-md sm-text-base text-gray-800">
-								<?php echo $row->description; ?>
-								</p>
-                            </div>
-                        </div>
-						<?php 
-						$i++;
-						} ?>
+					
                     </div>
                 </div>
             </div>
