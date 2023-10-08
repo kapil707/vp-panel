@@ -100,11 +100,12 @@ if ( ! function_exists('vp_menu'))
 				$url = $row->child_page;
 			}
 			$dt = get_blog_pg_url($row->page_type,$row->child_page);
+			print_r($dt);
 			if(!empty($dt["url"])) {
 				$url = $dt["url"];
 			}
 			
-			$return.= '<li><a href="'.base_url().$url.'ppp" class="nav-link">'.$row->title.'</a>'.vp_menu_submenu($row->id).'</li>';
+			$return.= '<li><a href="'.base_url().$url.'" class="nav-link">'.$row->title.'</a>'.vp_menu_submenu($row->id).'</li>';
 		}
         return $return;
     }   
