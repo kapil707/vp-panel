@@ -117,8 +117,6 @@
                 <img src="<?php echo get_library_to_image(get_field_data("why_do_you_choose_image","1"),'main'); ?>">
             </div>
             <div class="col-md-6">
-                <div id="accordion">
-
                 <?php 
                     $get_blog = get_blog("home_sec4");
                     $i = 1;
