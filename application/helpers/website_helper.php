@@ -100,7 +100,6 @@ if ( ! function_exists('vp_menu'))
 				$url = $row->child_page;
 			}
 			$dt = get_blog_pg_url($row->page_type,$row->child_page);
-			print_r($dt);
 			if(!empty($dt["url"])) {
 				$url = $dt["url"];
 			}
@@ -224,7 +223,7 @@ if ( ! function_exists('get_blog_pg_url'))
 			$data["url"] = $row1->url;
 		}else{
 			$data["link_page"] = "";
-			$data["url"] = "";
+			$data["url"] = "home";
 		}
 		return $data;
 	}
