@@ -284,7 +284,9 @@ class Manage_field_group_model extends CI_Model
 		if(!empty($child_page)){
 			$page_type = "manage_".$child_page;
 		}
-		$category_id = explode (",",$category_id);
+		if(!empty($category_id)){
+			$category_id = explode (",",$category_id);
+		}
 		
 		$result = $this->db->query("SELECT tbl_category.* FROM `tbl_permission_page` join tbl_category on tbl_permission_page.id=tbl_category.join_page_id where tbl_permission_page.page_type='$page_type' and tbl_category.category_id=0")->result();
 		foreach($result as $row){
