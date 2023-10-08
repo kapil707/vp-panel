@@ -3,7 +3,10 @@ a:hover{
 }
 #header{
     color: #fff;
-    background: #27387E;
+    background: #000000;
+}
+#header .logo{
+    width:120px;
 }
 #menu{
     list-style: none;
