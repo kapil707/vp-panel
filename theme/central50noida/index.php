@@ -48,6 +48,7 @@
         </div>
     </div>
 </div>
+
 <div id="home-box2">
     <div class="container-fluid">
         <div class="row">
