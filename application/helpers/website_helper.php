@@ -96,15 +96,16 @@ if ( ! function_exists('vp_menu'))
 		foreach($result as $menu){
 			$row1 = $ci->db->query("select * from tbl_page where id='$menu->page_id'")->row();
 			$url = "";
-			if(!empty($menu->child_page)){
-				$url = $menu->child_page;
+			if(empty($menu->child_page)){
+				$url = $row1->url;
 			}
 			$dt = get_blog_pg_url($menu->page_type,$menu->child_page);
 			if(!empty($dt["url"])) {
 				$url = $dt["url"];
 			}
+
 			
-			$return.= '<li><a href="'.base_url().$url.$menu->page_type.'" class="nav-link">'.$menu->title.'</a>'.vp_menu_submenu($menu->id).'</li>';
+			$return.= '<li><a href="'.base_url().$url.'" class="nav-link">'.$menu->title.'</a>'.vp_menu_submenu($menu->id).'</li>';
 		}
         return $return;
     }   
@@ -223,7 +224,7 @@ if ( ! function_exists('get_blog_pg_url'))
 			$data["url"] = $row1->url;
 		}else{
 			$data["link_page"] = "";
-			$data["url"] = "home";
+			$data["url"] = "";
 		}
 		return $data;
 	}
