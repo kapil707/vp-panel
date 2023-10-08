@@ -331,7 +331,8 @@ if ( ! function_exists('slider_page'))
 				$result = get_gallery($val);
 				foreach($result as $row) { ?>
 				<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
-					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="d-block w-100">
+					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="d-block w-100 mobile_off">
+					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="d-block w-100 mobile_show">
 				</div>
 				<?php $i++; } ?>
 			</div>
@@ -342,11 +343,6 @@ if ( ! function_exists('slider_page'))
 		<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-next" data-slide="next">
 			<span class="carousel-control-next-icon"></span>
 		</a>
-		<script>
-		$(document).ready(function() {
-			$('#myCarousel_<?php echo $val; ?>').carousel();
-		});
-		</script>
 		<?php
 	}
 }
