@@ -73,17 +73,7 @@
 							</label>
 						</div>
 						<?php 
-						$page_type = "";
-						if(!empty($_GET["page_type"])){
-							$page_type = $_GET["page_type"];
-						}
-						if(empty($page_type)){
-							$page_type = "gallery";
-						}else{
-							$page_type = str_replace("manage_","",$page_type);
-						}
-						$category_id = explode (",",$row->category_id);
-						$this->Manage_field_group_model->get_all_category_for_selected($category_id,"0",5,"gallery",$page_type) ?>
+						$this->Manage_field_group_model->get_all_category_for_selected($row->category_id,"gallery") ?>
 					</div>
 				</div>
 			</div>
