@@ -92,12 +92,11 @@
             <?php 
             $get_blog = get_blog("home_sec3");
             foreach($get_blog as $row) { ?>
-                <div class="col-sm-4" style="margin-top:50px;">
+                <div class="col-sm-4 text-center">
                     <div class="sml_border0">
                         <span class="sml_border">
                             <?php echo $row->title; ?>
                         </span>
-                        
                     </div>
                     <div class="sml_border2">
                         <?php echo $row->description; ?>
@@ -107,22 +106,17 @@
         </div>
     </div>
 </div>
-    
-    <div class="flex justify-content-center relative">
-        <div class="absolute w-full left-0 top-0 h-auto flex justify-content-center">
-            <div
-                class="icon-lg text-lg rounded-full border-1 -translate-y-perc-50 border-gray-400 bg-white text-gray-700 zi-10">
-                <i class="bi-cup-hot-fill"></i></div>
+
+<div id="home-box4">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <img src="<?php echo get_library_to_image(get_field_data("why_do_you_choose_image","1"),'main'); ?>">
+            </div>
         </div>
     </div>
-	
-    <section id="why-us" class="has-parallax lg-py-12 sm-py-8">
-        <div class="parallax" data-bg="" data-target="#history"
-            data-bottom-top="transform:translate3d(0px,-100px,0px);"
-            data-top-bottom="transform:translate3d(0px,100px,0px);"></div>
-        <div class="container">
-            <div class="flex-row align-items-center">
-                <div class="lg-column-6"><img src="<?php echo get_library_to_image(get_field_data("why_do_you_choose_image","1"),'main'); ?>" data-src="<?php echo get_library_to_image(get_field_data("why_do_you_choose_image","1"),'main'); ?>" alt="mobile image template" class="mxw-full animated zoom" data-animation="fadeInLeft" data-animation-delay="100"></div>
+</div>
+    
                 <div class="lg-column-6 sm-mt-5">
                     <h1 class="lg-text-5xl sm-text-2xl font-secondary uppercase font-light text-dark-100">WHY DO YOU CHOOSE <span class="text-colored">Central 50?</span></h1>
                     
