@@ -58,7 +58,7 @@
                     $i = 1;						
                     foreach($get_blog as $row) { ?>
                         <li class="nav-item">
-                            <a class="nav-link <?php if($i==1) { ?>active<?php } ?>" id="home-tab_<?php echo $row->id; ?>" data-toggle="tab" href="#home" role="tab" aria-controls="home_<?php echo $row->id; ?>"
+                            <a class="nav-link <?php if($i==1) { ?>active<?php } ?>" id="home-tab_<?php echo $row->id; ?>" data-toggle="tab" href="#home_<?php echo $row->id; ?>" role="tab" aria-controls="home_<?php echo $row->id; ?>"
                             aria-selected="true"><?php echo $row->title; ?></a>
                         </li>
                     <?php 
@@ -69,7 +69,7 @@
                     <?php
                      $i = 1;						
                      foreach($get_blog as $row) { ?>
-                    <div class="tab-pane fade <?php if($i==1) { ?>show active<?php } ?>" id="home_<?php echo $row->id; ?>" role="tabpanel" aria-labelledby="home-tab_<?php echo $row->id; ?>"></div>
+                        <div class="tab-pane fade <?php if($i==1) { ?>show active<?php } ?>" id="home_<?php echo $row->id; ?>" role="tabpanel" aria-labelledby="home-tab_<?php echo $row->id; ?>"></div>
                     <?php 
                     $i++;
                     } ?>
