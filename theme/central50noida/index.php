@@ -122,9 +122,11 @@
                     $get_blog = get_blog("home_sec4");
                     $i = 1;
                     foreach($get_blog as $row) { ?>
-                        <a class="card-link" data-toggle="collapse" href="#collapseOne<?php echo $row->id; ?>">
+                        <div class="">
+                            <a class="card-link" data-toggle="collapse" href="#collapseOne<?php echo $row->id; ?>">
                             <?php echo $row->title; ?>
-                        </a>
+                            </a>
+                        </div>
                         <div id="collapseOne<?php echo $row->id; ?>" class="collapse <?php if($i==1) { ?> show <?php } ?>" data-parent="#accordion">
                             <?php echo $row->description; ?>
                         </div>
