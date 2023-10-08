@@ -51,6 +51,14 @@ class Manage_setting extends CI_Controller {
 			
 			$this->Manage_field_group_model->insert_field_data_default($image_site_favicon,"image_site_favicon");
 
+			$this->Manage_field_group_model->insert_field_data_default($meta_title,"meta_title");
+
+			$this->Manage_field_group_model->insert_field_data_default($meta_discription,"meta_discription");
+
+			$this->Manage_field_group_model->insert_field_data_default($meta_keywords,"meta_keywords");
+
+			$this->Manage_field_group_model->insert_field_data_default($others_tag,"others_tag");
+
 			redirect(current_url());
 		}
 		$this->load->view("admin/header_footer/header",$data);

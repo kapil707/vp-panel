@@ -69,18 +69,17 @@ if ( ! function_exists('vp_head'))
 			<?php echo get_field_data("site_title") ?> || <?php echo get_field_data("site_tagline") ?>
 		</title>
 
-		<?php /*
-		<?php echo $google_code ?>
-
-		<meta name="author" content="<?php echo $meta_title ?>">
-		<meta name="description" content="<?php echo $meta_discription ?>" />
-		<meta name="keywords" content="<?php echo $meta_keywords ?>" /> */?>
+		<meta name="author" content="<?php echo get_field_data("meta_title") ?>">
+		<meta name="description" content="<?php echo get_field_data("meta_discription") ?>" />
+		<meta name="keywords" content="<?php echo get_field_data("meta_keywords") ?>" /> 
 
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
 		<?php $image_site_favicon = get_library_to_image(get_field_data("image_site_favicon")); ?>
 		<link rel="icon" type="image/png" href="<?php echo $image_site_favicon ?>">
 		<link rel="apple-touch-icon" href="<?php echo $image_site_favicon ?>">
+
+		<?php echo get_field_data("others_tag") ?>
 		<?php
 	}
 }
