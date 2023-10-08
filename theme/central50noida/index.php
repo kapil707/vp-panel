@@ -53,7 +53,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <ul class="nav nav-tabs" role="tablist">
                     <?php 
                     $get_blog = get_blog("home_sec2");
                     $i = 1;						
@@ -66,7 +66,7 @@
                     $i++;
                     } ?>
                 </ul>
-                <div class="tab-content" id="myTabContent">
+                <div class="tab-content">
                     <?php
                      $i = 1;						
                      foreach($get_blog as $row) { ?>

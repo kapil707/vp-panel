@@ -64,6 +64,10 @@ a:hover{
     font-size: 2rem;
     margin-bottom: 50px;
 }
+#home-box2 .tab-content{
+    border: solid 1px #cccccc;
+    padding: 50px;
+}
 
 #home-box3{
     padding: 100px;
