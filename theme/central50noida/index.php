@@ -109,15 +109,15 @@
 </div>
 
 <div id="home-box4">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
                 <h5>WHY DO YOU CHOOSE Central 50?</h5>
             </div>
-            <div class="col-md-6 text-center">
+            <div class="col-md-4 text-center">
                 <img src="<?php echo get_library_to_image(get_field_data("why_do_you_choose_image","1"),'main'); ?>" class="img1">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <?php 
                     $get_blog = get_blog("home_sec4");
                     $i = 1;
