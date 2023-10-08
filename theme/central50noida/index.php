@@ -29,29 +29,25 @@
         </div>
     </div>
 </div>
-    <section id="about" class="lg-py-12 sm-py-8">
-        <div class="container cursor-default">
-            <div class="flex-row lg-flex-columns-4 md-flex-columns-2 sm-flex-columns-2 xs-flex-columns-1">
-				<?php 
-				$get_blog = get_blog("home_sec"); 
-				foreach($get_blog as $row) { ?>
-                <div>
-                    <div class="group lg-py-4 sm-py-4 px-2 lg-mt-0 sm-mt-5 bg-transparent hover-bg-dark text-center flex align-items-center flex-column transition">
-						<div class="icon-xl bg-transparent relative border-2 border-dark text-base rounded-full group-hover-bg-white d-flex group-hover-border-double group-hover-border-white justify-content-center align-items-center transition">
-							<img src="<?= get_library_to_image($row->image,'main'); ?>" style="border-radius: 75%;height: 70px;width: 70px;">
-						</div>
-						<h4 class="text-lg font-secondary uppercase text-dark group-hover-text-white transition mt-3">
-							<?php echo $row->title; ?>
-						</h4>
-						<p class="text-gray-700 text-base group-hover-text-gray-400 mt-2 transition">
-							<?php echo remove_p_tag($row->description); ?>
-						</p>
-                    </div>
+<div id="home-box1">
+    <div class="container">
+        <div class="row">
+            <?php 
+            $get_blog = get_blog("home_sec"); 
+            foreach($get_blog as $row) { ?>
+                <div class="col-md-3 text-center">
+                    <img src="<?= get_library_to_image($row->image,'main'); ?>" style="border-radius: 75%;height: 70px;width: 70px;">
+                    <h4 class="text-lg font-secondary uppercase text-dark group-hover-text-white transition mt-3">
+                        <?php echo $row->title; ?>
+                    </h4>
+                    <p class="text-gray-700 text-base group-hover-text-gray-400 mt-2 transition">
+                        <?php echo remove_p_tag($row->description); ?>
+                    </p>
                 </div>
-				<?php } ?>
-            </div>
+            <?php } ?>
         </div>
-    </section>
+    </div>
+</div>
     <div class="container">
         <div class="w-full h-1 bg-gray-300 relative relative flex justify-content-center">
             <div class="absolute w-full left-0 top-0 h-auto flex justify-content-center">
