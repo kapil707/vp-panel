@@ -120,9 +120,11 @@ a:hover{
 }
 #home-box4 .card-link{
     font-size: 2rem;
+    color:white;
 }
-#home-box4 .card .card-header{
-    
+#home-box4 .card-b{
+    font-size: 1rem;
+    color:white;
 } 
 
 #home-box5{

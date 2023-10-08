@@ -127,7 +127,7 @@
                             <?php echo $row->title; ?>
                             </a>
                         </div>
-                        <div id="collapseOne<?php echo $row->id; ?>" class="collapse <?php if($i==1) { ?> show <?php } ?>" data-parent="#accordion">
+                        <div id="collapseOne<?php echo $row->id; ?>" class="collapse <?php if($i==1) { ?> show <?php } ?> card-b" data-parent="#accordion">
                             <?php echo $row->description; ?>
                         </div>
                     <?php 
