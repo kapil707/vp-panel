@@ -1,23 +1,7 @@
 <?php include_once(get_header()); ?>
 <section id="home" class="fullwidth bg-stone-800">
-        <?php echo do_slider() ;?>
-        <div id="home-slider-wrapper" class="rev_slider_wrapper fullwidthbanner-container">
-            <div id="home-slider" class="rev_slider fullwidthbanner" data-version="5.4.1">
-                <ul>
-					<?php 
-					$slider = get_gallery("slider");
-					foreach($slider as $row){ ?>
-                    <li class="rs-slide" data-masterspeed="1000" data-transition="random" data-thumb="<?= get_library_to_image($row->image,'main'); ?>" data-saveperformance="off"data-title="Create Stunning Website" data-description="Home Slider">
-						<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="Image Background" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="0" class="rev-slidebg mobile_off" data-no-retina>
-
-                        <img src="<?= get_library_to_image($row->mobile_image,'main'); ?>" alt="Image Background" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="0" class="rev-slidebg mobile_show" data-no-retina>
-                    </li>
-					<?php } ?>
-                </ul>
-                <div class="tp-bannertimer bg-white shadow-xl opacity-50"></div>
-            </div>
-        </div>
-    </section>
+    <?php echo do_slider() ;?>
+</section>
     <div id="page-content" class="bg-dark-100 fullwidth lg-py-3 sm-py-4">
         <div class="container text-center text-white font-secondary uppercase lg-pt-2 lg-pb-3">
             <h1 class="text-4xl sm-text-xl font-light lh-sm">
