@@ -236,9 +236,12 @@ class Manage_field_group_model extends CI_Model
 		$date 		= date("Y-m-d",$time);
 		$user_id 	= $this->session->userdata("user_id");
 		
-		$page_id 	= $_POST["page_id"];
-		if($page_id==""){
-			$page_id = 0;
+		$page_id = 0;
+		if(!empty($_POST["page_id"])){
+			$page_id 	= $_POST["page_id"];
+			if($page_id==""){
+				$page_id = 0;
+			}
 		}
 			
 		if($title!=""){
