@@ -196,13 +196,17 @@ class Manage_field_group_model extends CI_Model
 				$title 	= $this->Manage_library_Model->insert_image_library($_FILES[$field_name]);
 			}
 			
-			$page_id 	= $_POST["page_id"];
-			$options_id = $_POST["options_id"];
-			if($page_id==""){
-				$page_id = 0;
+			
+			$page_id = 0;
+			if(!empty($_POST["page_id"]))
+			{
+				$page_id 	= $_POST["page_id"];
 			}
-			if($options_id==""){
-				$options_id = 0;
+			
+			$options_id = 0;
+			if(!empty($_POST["options_id"]))
+			{
+				$options_id = $_POST["options_id"];
 			}
 			
 			if(!empty($title!="")){
