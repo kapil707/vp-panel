@@ -1,5 +1,6 @@
 <?php include_once(get_header()); ?>
 <section id="home" class="fullwidth bg-stone-800">
+        <?php echo do_slider() ;?>
         <div id="home-slider-wrapper" class="rev_slider_wrapper fullwidthbanner-container">
             <div id="home-slider" class="rev_slider fullwidthbanner" data-version="5.4.1">
                 <ul>
