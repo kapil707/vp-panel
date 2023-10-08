@@ -30,7 +30,7 @@
     </div>
 </div>
 <div id="home-box1">
-    <div class="container">
+    <div class="container-fluid">
         <div class="row">
             <?php 
             $get_blog = get_blog("home_sec"); 
