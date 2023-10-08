@@ -4,6 +4,7 @@ a:hover{
 #header{
     color: #fff;
     background: #000000;
+    padding: 10px;
 }
 #header .logo{
     width:70px;
