@@ -40,7 +40,7 @@
                     <?php echo get_field_data("contact_phone",9) ?>
                 </div>
 				
-                <div class="col-sm-6 col-12 float-sm-right">
+                <div class="col-sm-6 col-12 justify-content-end">
 					<?php 
 					$result = get_social_icon();
 					foreach($result as $row) { ?>
@@ -60,8 +60,8 @@
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                         </h2>
                     </div>
-                    <div class="col-md-8">
-                        <ul id="menu" class="float-md-right">
+                    <div class="col-md-8 justify-content-end">
+                        <ul id="menu" class="justify-content-end">
 						    <?php echo vp_menu(); ?>
                         </ul>
                     </div>
