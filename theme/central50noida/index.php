@@ -112,7 +112,7 @@
             <?php 
             $get_blog = get_blog("home_sec3");
             foreach($get_blog as $row) { ?>
-                <div class="col-sm-4 text-center sml_border0">
+                <div class="col-sm-4 col-6 text-center sml_border0">
                     <div>
                         <span class="sml_border">
                             <?php echo $row->title; ?>
