@@ -41,7 +41,7 @@ class Manage_blog extends CI_Controller {
 			$data['child_page'] = $dt_child_page;
 			$data['page_url'] = $child_page;
 		}else{
-			$child_page = "";
+			$child_page = $dt_child_page = "";
 		}
 		
 		$data['title1'] = $Page_title." || Add";
@@ -148,7 +148,7 @@ class Manage_blog extends CI_Controller {
 			$data['child_page'] = $dt_child_page;
 			$data['page_url'] = $child_page;
 		}else{
-			$child_page = "";
+			$child_page = $dt_child_page = "";
 		}
 		
 		$data['title1'] = $Page_title." || View";
@@ -200,7 +200,7 @@ class Manage_blog extends CI_Controller {
 			$data['child_page'] = $dt_child_page;
 			$data['page_url'] = $child_page;
 		}else{
-			$child_page = "";
+			$child_page = $dt_child_page = "";
 		}
 		
 		$data['title1'] = $Page_title." || Edit";
