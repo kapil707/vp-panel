@@ -14,8 +14,10 @@
                 <?php 
                 $result = get_social_icon();
                 foreach($result as $row) { ?>
-                    <a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a>
+                    <a href="<?php echo $row->url ?>" target="_blank" class="icon-md">
+                    <?php echo $row->description ?></a>
                 <?php } ?>
+                <br>
                 <?php echo get_field_data("contact_address",9) ?>
             </div>
             <div class="col-md-4 text-center py-5">

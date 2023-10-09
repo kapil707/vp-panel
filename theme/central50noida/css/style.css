@@ -306,7 +306,9 @@ a:hover{
     padding-left: 200px;
     padding-right: 200px;
 }
-
+#home-footer .icon-md{
+    padding: 10px;
+}
 #home-footer .footer-logo{
     width: 150px;
 }
