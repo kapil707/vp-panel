@@ -134,7 +134,7 @@ if ( ! function_exists('vp_menu_submenu'))
 		foreach($result as $row){
 			$result1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and child_page='$row->child_page'")->result();
 			foreach($result1 as $row1){
-				$blog = $row->child_page;
+				$blog = $row1->url; // yha url ke liya ha dont delete
 				$return.='<a class="dropdown-item" href="'.base_url().$blog.'/'.$row1->url.'">'.$row1->title.'</a></il>';
 			}
 		}
