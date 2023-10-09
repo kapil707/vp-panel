@@ -1,9 +1,9 @@
 <?php include_once(get_header()); ?>
 <div id="slider">
-    <?php echo do_slider() ;?>
+    <?php echo do_slider("slider") ;?>
 </div>
 <style>
-#myCarousel_ {
+#myCarousel_slider {
     width: 100%;
     max-width: 100%;
 }
