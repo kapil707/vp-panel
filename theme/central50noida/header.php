@@ -64,8 +64,10 @@
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                         </h2>
                     </div>
-                    <div class="col-md-8 col-8 web_menu">
-						<?php echo vp_menu(); ?>
+                    <div class="col-md-8 col-8">
+                        <div class="web_menu">
+						    <?php echo vp_menu(); ?>
+                        </div>
                     </div>
                 </div>
             </div>
