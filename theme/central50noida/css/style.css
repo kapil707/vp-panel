@@ -1,3 +1,7 @@
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 0;
+}
 a {
     color:#495057;
 }
@@ -24,12 +28,12 @@ a:hover{
 #header{
     color: #fff;
     background: #000000;
-    padding: 10px;
     padding-left: 200px;
     padding-right: 200px;
 }
 #header .logo{
     width:50px;
+    padding: 10px;
 }
 
 #header .web_menu {
