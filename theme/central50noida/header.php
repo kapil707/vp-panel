@@ -79,7 +79,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
                     </button>
                 </div>
-                <div class="col-md-8 col-12 wow bounceInRight">
+                <div class="col-md-8 col-12 wow animate__bounceInRight">
                     <div class="web_menu">
                         <?php echo vp_menu(); ?>
                     </div>
