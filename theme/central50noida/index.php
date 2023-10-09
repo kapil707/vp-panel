@@ -158,6 +158,14 @@
         </div>
     </div>
 </div>
+<div class="video-container">
+    <video autoplay muted loop>
+        <source src="<?php base_url(); ?>uploads/manage_library/videoplayback.mp4" type="video/mp4" />
+    </video>
+    <div class="caption">
+      <h2>Your caption here</h2>
+    </div>
+</div>
     <section id="testimonials-1512324" class="has-parallax lg-py-7 sm-py-7 bg-semi-45 bg-semi-dark-800" data-bg="<?php echo base_url() ?>assets/website/images/video.jpg">
         <div data-video-id="AMXhl4t1_yg" data-startat="0" data-endat="295" id="youtubeVideo" class="youtube-video zi-0 pointer-events-none"></div>
         <div class="container-sm lg-px-5 relative text-center zi-5"><svg width="100%" class="h-auto"
