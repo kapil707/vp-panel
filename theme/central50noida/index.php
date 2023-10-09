@@ -206,7 +206,6 @@
         </svg>
     </span>
 </div>
-
 <div id="home-box6" class="home-box-main">
     <video autoplay muted loop>
         <source src="<?php base_url(); ?>uploads/manage_library/videoplayback.mp4" type="video/mp4" />
