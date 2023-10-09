@@ -175,6 +175,17 @@ a:hover{
     position: relative;
     border-top: solid 1px #858585;
 }
+#home-box6 .h-svg{
+    border: solid 1px #dddddd;
+    padding: 41px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 39.6%;
+    margin-top: -202px;
+    z-index: 9;
+    position: absolute;
+    background: white;
+}
 
 #home-box6 video {
   width: 100%;
