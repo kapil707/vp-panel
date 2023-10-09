@@ -29,6 +29,8 @@
     <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/revslider/settings.css">
     <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/style3661.css?v=2.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> */ ?>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
@@ -49,7 +51,7 @@
                         <?php 
                         $result = get_social_icon();
                         foreach($result as $row) { ?>
-                            <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
+                            <li class="wow bounceInUp"><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
                         <?php } ?>
                     </ul>
 				</div>
