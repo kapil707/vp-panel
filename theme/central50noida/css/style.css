@@ -409,8 +409,13 @@ a:hover{
     }
     #header{
         padding: 10px !important;
-        z-index: 99999;
         height: 70px;
+
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
     }
     #header #logo {
         padding: 0px;
