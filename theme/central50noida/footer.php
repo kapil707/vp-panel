@@ -7,10 +7,10 @@
     </div>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-1 text-center">
+            <div class="col-md-4 text-center">
                 <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="img-fluid footer-logo">
 			</div>
-            <div class="col-md-6 text-center py-5">
+            <div class="col-md-4 text-center py-5">
                 <ul class="social_icon">
                     <?php 
                     $result = get_social_icon();
@@ -20,7 +20,7 @@
                 </ul>
                 <?php echo get_field_data("contact_address",9) ?>
             </div>
-            <div class="col-md-5 text-center py-5">
+            <div class="col-md-4 text-center py-5">
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <?php echo get_field_data("contact_email2",9) ?>
                 <br>
