@@ -135,9 +135,9 @@ a:hover{
 } 
 
 #home-box5{
-    color: #27387E;
     background: #fff;
     padding: 100px;
+    border-top: solid 1px #585353;
 }
 #home-box5 h5{
     font-size: 2rem;
