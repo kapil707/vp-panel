@@ -16,20 +16,12 @@ a:hover{
 {
     padding: 10px;
 }
-#menu{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-#menu li{
-    display: inline-block;
-}
-#menu li a{
+#header li a{
     color:#fff;
     padding: 15px 10px;
     display: block;
 }
-#menu li a:hover{
+#headerli a:hover{
     background-color: gray;
 }
 #slider img{
