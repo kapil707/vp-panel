@@ -114,7 +114,7 @@
             foreach($get_blog as $row) { ?>
                 <div class="col-sm-4 col-6 text-center sml_border0">
                     <div>
-                        <span class="sml_border">
+                        <span class="sml_border wow heartBeat">
                             <?php echo $row->title; ?>
                         </span>
                     </div>
