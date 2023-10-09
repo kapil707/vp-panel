@@ -370,5 +370,11 @@ a:hover{
     #home-box6 {
         height: 250px;
     }
+    #home-box6 video {
+        margin-top: -50px;
+    }
+    #home-footer .footer-logo{
+        width: 200px;
+    }
 }
 

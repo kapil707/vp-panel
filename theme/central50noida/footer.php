@@ -8,7 +8,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-1 text-center">
-                <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="img-fluid">
+                <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="img-fluid footer-logo">
 			</div>
             <div class="col-md-6 text-center py-5">
                 <?php echo get_field_data("contact_address",9) ?>
