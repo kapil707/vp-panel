@@ -10,8 +10,8 @@ class Manage_blog extends CI_Controller {
 	var $Page_type  = "blog";
 	public function index()
 	{
-		$child_page = $_GET["child_page"];
-		if($child_page){
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
 			$page_controllers = $this->page_controllers;
 			redirect("admin/$page_controllers/view?child_page=$child_page");
 		}else{
@@ -34,8 +34,8 @@ class Manage_blog extends CI_Controller {
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
 		
 		$data['page_url'] = $this->Page_type;
-		$child_page = $_GET["child_page"];
-		if($child_page){
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
 			$Page_title = get_child_page_name($child_page);
 			$dt_child_page = "?child_page=".$child_page;
 			$data['child_page'] = $dt_child_page;
@@ -141,8 +141,8 @@ class Manage_blog extends CI_Controller {
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
 		
 		$data['page_url'] = $this->Page_type;
-		$child_page = $_GET["child_page"];
-		if($child_page){
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
 			$Page_title = get_child_page_name($child_page);
 			$dt_child_page = "?child_page=".$child_page;
 			$data['child_page'] = $dt_child_page;
@@ -193,8 +193,8 @@ class Manage_blog extends CI_Controller {
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
 		
 		$data['page_url'] = $this->Page_type;
-		$child_page = $_GET["child_page"];
-		if($child_page){
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
 			$Page_title = get_child_page_name($child_page);
 			$dt_child_page = "?child_page=".$child_page;
 			$data['child_page'] = $dt_child_page;
