@@ -106,7 +106,7 @@ if ( ! function_exists('vp_menu'))
 			
 			$return.= '<li class="nav-item"><a href="'.base_url().$url.'" class="nav-link">'.$menu->title.'</a>'.vp_menu_submenu($menu->id).'</li>';
 		}
-		$return = '<nav class="navbar navbar-expand-lg navbar-light bg-light"><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto">'.$return.'</li>
+		$return = '<nav class="navbar navbar-expand-lg"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto">'.$return.'</li>
 		</ul></div></nav>';
         return $return;
     }   
