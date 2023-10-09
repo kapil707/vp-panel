@@ -59,12 +59,12 @@
     <div id="header">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-4">
+                <div class="col-md-4 col-2">
                     <h2 id="logo">
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                     </h2>
                 </div>
-                <div class="col-md-4 col-4 text-right">
+                <div class="col-6 mobile_show text-right">
                     <ul class="social_icon">
                         <?php 
                         $result = get_social_icon();
@@ -73,7 +73,7 @@
                         <?php } ?>
                     </ul>
                 </div>
-                <div class="col-8 mobile_show text-right">
+                <div class="col-4 mobile_show text-right">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
                     </button>
                 </div>

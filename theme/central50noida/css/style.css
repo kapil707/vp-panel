@@ -11,12 +11,12 @@ a:hover{
 #top-bar .num-b {
     padding: 10px;
 }
-#top-bar .social_icon {
+.social_icon {
     text-align: right;
     width: auto;
     float: right;
 }
-#top-bar .social_icon li{
+.social_icon li{
     padding: 10px;
     list-style-type: none;
     float: left;
