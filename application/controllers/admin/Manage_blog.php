@@ -322,7 +322,7 @@ class Manage_blog extends CI_Controller {
 			$where = " and id!='$id'"; 
 		}
 		$query = $this->db->query("select id from $Page_tbl where url='$url' and child_page='$child_page' and page_type='blog' $where")->row();
-		if($query->id)
+		if(!empty($query->id))
 		{
 			echo "Error";
 		}
