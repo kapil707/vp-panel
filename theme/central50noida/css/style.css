@@ -320,9 +320,14 @@ a:hover{
 
 /* Just styling the content of the div, the *magic* in the previous rules */
 .video-container .caption {
-  z-index: 1;
-  position: relative;
-  text-align: center;
-  color: #dc0000;
-  padding: 10px;
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    color: #dc0000;
+    padding: 10px;
+    /* height: 600px; */
+    width: 32%;
+    margin-left: 34%;
 }
+
+
