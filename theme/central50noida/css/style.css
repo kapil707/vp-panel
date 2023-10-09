@@ -18,6 +18,10 @@ a:hover{
 #header .dropdown-menu .dropdown-item:hover, .dropdown-item:focus{
     background: #393939;
 }
+#header .navbar-toggler {
+    background-color: #666666;
+    border: 1px solid #8f8f8f;
+}
 #top-bar
 {
     padding: 10px;
