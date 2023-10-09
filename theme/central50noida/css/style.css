@@ -25,6 +25,8 @@ a:hover{
     color: #fff;
     background: #000000;
     padding: 10px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 #header .logo{
     width:50px;
