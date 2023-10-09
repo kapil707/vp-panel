@@ -367,5 +367,8 @@ a:hover{
         width: 50px !important;
         padding: 17px !important;
     }
+    #home-box6 {
+        height: 250px;
+    }
 }
 
