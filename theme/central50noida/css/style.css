@@ -329,8 +329,16 @@ a:hover{
 	{
 		display:block;
 	}
-    #top-bar,#header{
+    #top-bar{
         padding: 0px !important;
+    }
+    #header{
+        padding:10px !important;
+    }
+    #header .web_menu {
+        text-align: left;
+        width: auto;
+        float: left;
     }
     .home-box-main{
         padding: 0px !important;
