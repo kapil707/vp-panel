@@ -339,6 +339,8 @@ a:hover{
     }
     #header{
         padding:10px !important;
+        z-index: 99999;
+        position: fixed;
     }
     #header .web_menu {
         text-align: left;
