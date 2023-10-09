@@ -1,48 +1,26 @@
-<footer id="footer" class="lg-py-12 sm-py-8 bg-dark-900">
-        <div class="container-lg text-center text-sm">
-            <div class="flex-row lg-flex-columns-3 sm-flex-columns-3 xs-flex-columns-1">
-                <div class="flex flex-column align-items-center animated" data-animation="flipInX"
-                    data-animation-delay="0">
-                    <div>
-						<img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="logo-white mxw-20">
-					</div>
-                </div>
-                <div class="flex flex-column align-items-center xs-mt-5 animated" data-animation="flipInX"
-                    data-animation-delay="200">
-                    <div><a href="#" target="_blank"
-                            class="icon-md mx-1 sm-mt-2 text-sm border-1 border-gray-800 text-gray-800 hover-text-facebook hover-border-facebook rounded-full transition-colors duration-300"><i
-                                class="bi-facebook"></i></a><a href="#" target="_blank"
-                            class="icon-md mx-1 sm-mt-2 text-sm border-1 border-gray-800 text-gray-800 hover-text-twitter hover-border-twitter rounded-full transition-colors duration-300"><i
-                                class="bi-twitter"></i></a><a href="#" target="_blank"
-                            class="icon-md mx-1 sm-mt-2 text-sm border-1 border-gray-800 text-gray-800 hover-text-linkedin hover-border-linkedin rounded-full transition-colors duration-300"><i
-                                class="bi-linkedin"></i></a></div>
-							<p class="lg-mt-3 sm-mt-3 text-gray-700"><i class="fa fa-map-marker" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_address",9) ?>
-						</p>
-                </div>
-                <div class="flex flex-column align-items-center xs-mt-5 animated" data-animation="flipInX"
-                    data-animation-delay="400"><a
-                        href="#"
-                        target="_blank"
-                        class="icon-md text-lg border-1 border-gray-800 text-gray-800 hover-text-white hover-border-white rounded-full transition-colors duration-300"><i
-                            class="bi-pin-angle-fill"></i></a>
-						<p class="lg-mt-3 sm-mt-3 text-gray-700">
-						
-						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_email2",9) ?>
-						<br>
-						<i class="fa fa-phone" aria-hidden="true"></i>
-						<?php echo get_field_data("contact_phone",9) ?></p>
-                </div>
+<div id="home-footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="img-fluid">
+			</div>
+            <div class="col-md-4 text-center">
+                <?php echo get_field_data("contact_address",9) ?>
+            </div>
+            <div class="col-md-4 text-center">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <?php echo get_field_data("contact_email2",9) ?>
+                <br>
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <?php echo get_field_data("contact_phone",9) ?>
+            </div>
+            <div class="col-md-12 text-center">
+                <?php echo get_field_data("contact_disclosure",9) ?>
             </div>
         </div>
-		<hr>
-		<div class="container-lg text-sm" style="margin-top:50px;">
-			<?php echo get_field_data("contact_disclosure",9) ?>
-		</div>
+    </div>
+</div>		
 		
-		
-    </footer>
     <script src="<?php echo get_theme_path(); ?>js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
