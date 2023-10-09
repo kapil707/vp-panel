@@ -7,8 +7,11 @@ a:hover{
 #top-bar .num-b {
     padding: 10px;
 }
+#top-bar .social_icon {
+    text-align: right;
+}
 #top-bar .social_icon ul {
-    width: 100%;
+    width: auto;
 }
 #top-bar .social_icon ul li{
     padding: 10px;
