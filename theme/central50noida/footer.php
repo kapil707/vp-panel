@@ -1,13 +1,13 @@
 <div id="home-footer">
-    <div class="container-fluid">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4 text-center">
+            <div class="col-md-2 text-center">
                 <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="img-fluid">
 			</div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-5 text-center">
                 <?php echo get_field_data("contact_address",9) ?>
             </div>
-            <div class="col-md-4 text-center">
+            <div class="col-md-5 text-center">
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <?php echo get_field_data("contact_email2",9) ?>
                 <br>
