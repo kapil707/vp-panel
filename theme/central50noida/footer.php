@@ -23,7 +23,7 @@
         </div>
     </div>
 </div>
-<div id="home-footer2">
+<div id="home-footer2" class="home-box-main">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
