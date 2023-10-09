@@ -30,6 +30,8 @@
     <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/style3661.css?v=2.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> */ ?>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
@@ -37,7 +39,7 @@
     <div id="top-bar">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-12 num-b">
+                <div class="col-sm-6 col-12 num-b wow bounceInUp">
                     <i class="fa fa-file-text-o" aria-hidden="true"></i>
                     e-Brochure |
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>

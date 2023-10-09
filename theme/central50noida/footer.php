@@ -131,3 +131,6 @@ document.addEventListener("DOMContentLoaded", function(){
   });
 }); 
 </script>
+<script>
+    new WOW.init();
+</script>
