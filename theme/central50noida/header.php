@@ -67,7 +67,6 @@
                 <div class="col-9 mobile_show text-right">
                     <ul class="social_icon">
                         <?php 
-                        $result = get_social_icon();
                         foreach($result as $row) { ?>
                             <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
                         <?php } ?>
