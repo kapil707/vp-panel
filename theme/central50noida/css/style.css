@@ -109,12 +109,12 @@ a:hover{
 
 #home-box4{
     padding: 100px;
+    border-top: solid 1px #585353;
 }
 
 #home-box4 h5{
     font-size: 2rem;
     margin-bottom: 50px;
-    border-top: solid 1px #585353;
 }
 #home-box4 .img1{
     width:100%;
