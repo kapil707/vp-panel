@@ -42,7 +42,7 @@
             <?php 
             $get_blog = get_blog("home_sec"); 
             foreach($get_blog as $row) { ?>
-                <div class="col-md-3 text-center">
+                <div class="col-md-3 text-center wow bounceInUp">
                     <img src="<?= get_library_to_image($row->image,'main'); ?>" style="border-radius: 75%;height: 70px;width: 70px;">
                     <h4 class="text-lg font-secondary uppercase text-dark group-hover-text-white transition mt-3">
                         <?php echo $row->title; ?>
