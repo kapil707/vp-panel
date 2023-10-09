@@ -113,6 +113,8 @@ a:hover{
 .heading_home1 span {
     border: solid 1px #dddddd;
     background: white;
+    padding: 40px;
+    border-radius: 100%;
 }
 #home-box1{
     border-top: solid 1px #dddddd;

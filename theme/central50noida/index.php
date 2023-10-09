@@ -136,9 +136,6 @@
     </span>
 </div>
 <div id="home-box4" class="home-box-main">
-    <div class="h-svg">
-        
-    </div>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
