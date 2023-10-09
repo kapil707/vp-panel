@@ -127,6 +127,9 @@
     </div>
 </div>
 
+<div class="heading_home1">
+    <span class="divisioncategory_title_3">Top brands</span>
+</div>
 <div id="home-box4" class="home-box-main">
     <div class="h-svg">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cup-hot-fill" viewBox="0 0 16 16">
