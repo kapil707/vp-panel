@@ -379,6 +379,9 @@ a:hover{
         position: fixed;
         height: 70px;
     }
+    #header #logo {
+        padding: 0px;
+    }
     #header .web_menu {
         text-align: left;
         width: auto;
@@ -418,6 +421,12 @@ a:hover{
     #home-footer{
         padding-left: 10px !important;
         padding-right: 10px !important;
+    }
+    #home-footer .h-svg {
+        margin-left: 41.3% !important;
+        margin-top: -76px !important;
+        width: 50px !important;
+        padding: 17px !important;
     }
     #home-footer2{
         padding: 10px !important;
