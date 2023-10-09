@@ -59,7 +59,7 @@
             </div>
         </div>
     </div>
-    <div id="header">
+    <div id="header" class="fixed-top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 col-2">
