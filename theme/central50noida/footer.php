@@ -20,7 +20,13 @@
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <?php echo get_field_data("contact_phone",9) ?>
             </div>
-            <div class="col-md-12 text-center py-10">
+        </div>
+    </div>
+</div>
+<div id="home-footer2">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
                 <?php echo get_field_data("contact_disclosure",9) ?>
             </div>
         </div>

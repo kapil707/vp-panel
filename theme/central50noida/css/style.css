@@ -340,5 +340,22 @@ a:hover{
     border-top: solid 1px white;
 }
 
+#home-footer .h-svg{
+    border: solid 1px white;
+    padding: 50px;
+    width: 120px;
+    border-radius: 100px;
+    margin-left: 41.7%;
+    margin-top: -177px;
+    z-index: 9;
+    position: absolute;
+}
+
+#home-footer2{
+    background-color: #000000;
+    padding: 100px;
+    color: white;
+    border-top: solid 1px white;
+}
 
 
