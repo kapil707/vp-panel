@@ -81,17 +81,6 @@ a:hover{
 #home-box2{
     border-top: solid 1px #dddddd;
 }
-#home-box2 .h-svg{
-    border: solid 1px #858585;
-    padding: 41px;
-    width: 100px;
-    border-radius: 100%;
-    margin-left: 42.3%;
-    margin-top: -152px;
-    z-index: 9;
-    position: absolute;
-    background: white;
-}
 #home-box2 h5{
     font-size: 2rem;
     margin-bottom: 50px;
@@ -311,8 +300,10 @@ a:hover{
         padding-bottom: 50px !important;
     }
     .home-box-main .h-svg {
-        margin-left: 35.3% !important;
-        margin-top: -60px !important;
+        margin-left: 44.3% !important;
+        margin-top: -76px !important;
+        width: 50px !important;
+        padding: 17px !important;
     }
 }
 
