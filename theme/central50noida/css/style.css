@@ -46,6 +46,17 @@ a:hover{
     padding: 100px;
     border-top: solid 1px #dddddd;
 }
+#home-box1 .h-svg{
+    border: solid 1px #858585;
+    padding: 41px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 42.3%;
+    margin-top: -142px;
+    z-index: 9;
+    position: absolute;
+    background: white;
+}
 #home-box1 .row .col-md-3:first-child{
     border: 0px;
 }
@@ -62,6 +73,17 @@ a:hover{
     padding: 100px;
     border-top: solid 1px #dddddd;
 }
+#home-box2 .h-svg{
+    border: solid 1px #858585;
+    padding: 41px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 42.3%;
+    margin-top: -142px;
+    z-index: 9;
+    position: absolute;
+    background: white;
+}
 #home-box2 h5{
     font-size: 2rem;
     margin-bottom: 50px;
@@ -77,6 +99,17 @@ a:hover{
 #home-box3{
     padding: 100px;
     border-top: solid 1px #dddddd;
+}
+#home-box3 .h-svg{
+    border: solid 1px #858585;
+    padding: 41px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 42.3%;
+    margin-top: -142px;
+    z-index: 9;
+    position: absolute;
+    background: white;
 }
 #home-box3 h5{
     font-size: 2rem;
@@ -111,7 +144,17 @@ a:hover{
     padding: 100px;
     border-top: solid 1px #dddddd;
 }
-
+#home-box4 .h-svg{
+    border: solid 1px #858585;
+    padding: 41px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 42.3%;
+    margin-top: -142px;
+    z-index: 9;
+    position: absolute;
+    background: white;
+}
 #home-box4 h5{
     font-size: 2rem;
     margin-bottom: 50px;
@@ -138,6 +181,17 @@ a:hover{
     background: #fff;
     padding: 100px;
     border-top: solid 1px #dddddd;
+}
+#home-box5 .h-svg{
+    border: solid 1px #858585;
+    padding: 41px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 42.3%;
+    margin-top: -142px;
+    z-index: 9;
+    position: absolute;
+    background: white;
 }
 #home-box5 h5{
     font-size: 2rem;
@@ -313,6 +367,18 @@ a:hover{
     height: 650px;
     width: 100%;
     position: relative;
+}
+
+.video-container .h-svg{
+    border: solid 1px #858585;
+    padding: 41px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 42.3%;
+    margin-top: -142px;
+    z-index: 9;
+    position: absolute;
+    background: white;
 }
 
 .video-container video {
