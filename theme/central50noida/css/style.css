@@ -4,8 +4,13 @@ a {
 a:hover{
     text-decoration: none;
 }
+#top-bar .social_icon ul {
+    width: 100%;
+}
 #top-bar .social_icon ul li{
     padding: 10px;
+    list-style-type: none;
+    float: left;
 }
 #header{
     color: #fff;
