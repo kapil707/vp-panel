@@ -307,7 +307,11 @@ a:hover{
     padding-right: 200px;
 }
 #home-footer .icon-md{
-    padding: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+#home-footer .icon-md:hover{
+    color:white;
 }
 #home-footer .footer-logo{
     width: 150px;
