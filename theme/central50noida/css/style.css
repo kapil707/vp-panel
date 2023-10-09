@@ -332,6 +332,11 @@ a:hover{
     #top-bar{
         display:none;
     }
+    .social_icon li{
+        padding: 0px;
+        list-style-type: none;
+        float: left;
+    }
     #header{
         padding:10px !important;
     }
