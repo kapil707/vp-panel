@@ -103,10 +103,11 @@ if ( ! function_exists('vp_menu'))
 			if(!empty($dt["url"])) {
 				$url = $dt["url"];
 			}
-
 			
-			$return.= '<li><a href="'.base_url().$url.'" class="nav-link">'.$menu->title.'</a>'.vp_menu_submenu($menu->id).'</li>';
+			$return.= '<li class="nav-item"><a href="'.base_url().$url.'" class="nav-link">'.$menu->title.'</a>'.vp_menu_submenu($menu->id).'</li>';
 		}
+		$return = '<nav class="navbar navbar-expand-lg navbar-light bg-light"><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto">'.$return.'</li>
+		</ul></div></nav>';
         return $return;
     }   
 }

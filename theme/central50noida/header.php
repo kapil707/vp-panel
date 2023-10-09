@@ -65,9 +65,7 @@
                         </h2>
                     </div>
                     <div class="col-md-8 justify-content-end">
-                        <ul id="menu" class="justify-content-end">
-						    <?php echo vp_menu(); ?>
-                        </ul>
+						<?php echo vp_menu(); ?>
                     </div>
                 </div>
             </div>
