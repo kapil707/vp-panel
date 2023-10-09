@@ -368,14 +368,14 @@ a:hover{
 }
 /*NEW ENQUIRY FORM STOP*/
 
-.video-container {
+.home-box6 {
     height: 650px;
     width: 100%;
     position: relative;
     border-top: solid 1px #858585;
 }
 
-.video-container .h-svg{
+.home-box6 .h-svg{
     border: solid 1px #858585;
     padding: 41px;
     width: 100px;
@@ -387,7 +387,7 @@ a:hover{
     background: white;
 }
 
-.video-container video {
+.home-box6 video {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -395,8 +395,7 @@ a:hover{
   z-index: 0;
 }
 
-/* Just styling the content of the div, the *magic* in the previous rules */
-.video-container .caption {
+.home-box6 .caption {
     z-index: 1;
     position: relative;
     text-align: center;
@@ -450,7 +449,7 @@ a:hover{
 	{
 		display:block;
 	}
-    #home-box1,#home-box2,#home-box3,#home-box4,#home-box5{
+    #home-box-main{
         padding: 5px;
         margin-top: 100px;
     }
