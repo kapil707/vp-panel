@@ -61,8 +61,9 @@ a:hover{
     padding: 15px 10px;
     display: block;
 }
-#header li a:hover{
-    background-color: gray;
+#header .web_menu li a:hover{
+    background-color: #393939;
+    border-radius: 10px;
 }
 
 #slider-bottom{
