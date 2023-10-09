@@ -44,8 +44,8 @@
                     <?php echo get_field_data("contact_phone",9) ?>
                 </div>
 				
-                <div class="col-sm-6 col-12 social_icon">
-                    <ul>
+                <div class="col-sm-6 col-12">
+                    <ul class="social_icon">
                         <?php 
                         $result = get_social_icon();
                         foreach($result as $row) { ?>

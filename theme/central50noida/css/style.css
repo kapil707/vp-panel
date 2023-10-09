@@ -9,11 +9,9 @@ a:hover{
 }
 #top-bar .social_icon {
     text-align: right;
-}
-#top-bar .social_icon ul {
     width: auto;
 }
-#top-bar .social_icon ul li{
+#top-bar .social_icon li{
     padding: 10px;
     list-style-type: none;
     float: left;
