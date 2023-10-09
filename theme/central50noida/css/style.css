@@ -32,8 +32,10 @@ a:hover{
     padding-right: 200px;
 }
 #header #logo{
-    width:70px;
     padding: 10px;
+}
+#header #logo .logo{
+    width:50px;
 }
 
 #header .web_menu {
