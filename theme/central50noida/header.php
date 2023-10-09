@@ -35,7 +35,7 @@
 </head>
 
 <body>
-    <div id="top-bar">
+    <div id="top-bar" class="fixed-top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 col-12 num-b wow bounceInLeft">
