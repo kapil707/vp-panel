@@ -304,6 +304,9 @@ a:hover{
     background-color: #000000;
     color: #585353;
 }
+#home-footer .social_icon{
+    width:100%;
+}
 
 #home-footer2{
     border-top: solid 1px #5f5f5f;
