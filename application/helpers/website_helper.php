@@ -127,45 +127,52 @@ if ( ! function_exists('vp_menu_submenu'))
 		$ci->load->database();
 
 		$return = "";
-		
-		// iss say wo wala sub manu ata ha jo sirf menu say set hota ha 
-		$result = $ci->db->query("select * from tbl_menu where status=1 and menu_id='$menu_id' order by sorting_order asc")->result();
+
+		$result = $ci->db->query("select * from tbl_menu where status=1 and id='$menu_id' order by sorting_order asc")->result();
 		foreach($result as $row){
-			if($row->page_type!="" && $row->page_id){
-				$row1 = $ci->db->query("select * from tbl_".$row->page_type." where id='$row->page_id'")->row();
-			}
-			if($row->page_type!="" && $row->page_id==0){
-				$row1->url = $row->page_type;
-			}
-			$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row->title.'</a></il>';
+			$row1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and child_page='$row->child_page'")->row();
+			
+			$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
 		}
 		
-		// iss say blogs ke sub menu atay ha 
-		$result = $ci->db->query("SELECT * FROM `tbl_menu` where id='$menu_id' and page_type='blog' and child_page!='' and page_id=0")->result();
-		foreach($result as $row){
-			$result1 = $ci->db->query("SELECT * FROM `tbl_page` where page_type='$row->page_type' and child_page='$row->child_page'")->result();
-			foreach($result1 as $row1){
-				$blog = "Blog";
-				$dt = get_blog_pg_url($row1->page_type,$row1->child_page);
-				if($dt["url"]){
-					$blog = $dt["url"];
-				}
-				$return.='<li> <a href="'.base_url().$blog.'/'.$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
-			}			
-		}
+		// // iss say wo wala sub manu ata ha jo sirf menu say set hota ha 
+		// $result = $ci->db->query("select * from tbl_menu where status=1 and menu_id='$menu_id' order by sorting_order asc")->result();
+		// foreach($result as $row){
+		// 	if($row->page_type!="" && $row->page_id){
+		// 		$row1 = $ci->db->query("select * from tbl_".$row->page_type." where id='$row->page_id'")->row();
+		// 	}
+		// 	if($row->page_type!="" && $row->page_id==0){
+		// 		$row1->url = $row->page_type;
+		// 	}
+		// 	$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row->title.'</a></il>';
+		// }
 		
-		$result = $ci->db->query("SELECT * FROM `tbl_menu` where id='$menu_id' and page_type='blog' and child_page='' and page_id=0")->result();
-		foreach($result as $row){
-			$result1 = $ci->db->query("SELECT * FROM `tbl_page` where page_type='$row->page_type' and child_page='$row->child_page'")->result();
-			foreach($result1 as $row1){
-				$blog = "Blog";
-				$dt = get_blog_pg_url($row1->page_type,$row1->child_page);
-				if($dt["url"]){
-					$blog = $dt["url"];
-				}
-				$return.='<li> <a href="'.base_url().$blog.'/'.$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
-			}			
-		}
+		// // iss say blogs ke sub menu atay ha 
+		// $result = $ci->db->query("SELECT * FROM `tbl_menu` where id='$menu_id' and page_type='blog' and child_page!='' and page_id=0")->result();
+		// foreach($result as $row){
+		// 	$result1 = $ci->db->query("SELECT * FROM `tbl_page` where page_type='$row->page_type' and child_page='$row->child_page'")->result();
+		// 	foreach($result1 as $row1){
+		// 		$blog = "Blog";
+		// 		$dt = get_blog_pg_url($row1->page_type,$row1->child_page);
+		// 		if($dt["url"]){
+		// 			$blog = $dt["url"];
+		// 		}
+		// 		$return.='<li> <a href="'.base_url().$blog.'/'.$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
+		// 	}			
+		// }
+		
+		// $result = $ci->db->query("SELECT * FROM `tbl_menu` where id='$menu_id' and page_type='blog' and child_page='' and page_id=0")->result();
+		// foreach($result as $row){
+		// 	$result1 = $ci->db->query("SELECT * FROM `tbl_page` where page_type='$row->page_type' and child_page='$row->child_page'")->result();
+		// 	foreach($result1 as $row1){
+		// 		$blog = "Blog";
+		// 		$dt = get_blog_pg_url($row1->page_type,$row1->child_page);
+		// 		if($dt["url"]){
+		// 			$blog = $dt["url"];
+		// 		}
+		// 		$return.='<li> <a href="'.base_url().$blog.'/'.$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
+		// 	}			
+		// }
 		if(!empty($return)){
 			$return ='<ul style="display:none">'.$return.'</ul>';
 		}else{
