@@ -4,12 +4,17 @@ a {
 a:hover{
     text-decoration: none;
 }
+#top-bar{
+    padding-left: 200px;
+    padding-right: 200px;
+}
 #top-bar .num-b {
     padding: 10px;
 }
 #top-bar .social_icon {
     text-align: right;
     width: auto;
+    float: right;
 }
 #top-bar .social_icon li{
     padding: 10px;
