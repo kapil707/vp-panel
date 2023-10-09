@@ -67,7 +67,7 @@
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                     </h2>
                 </div>
-                <div class="col-10 mobile_show text-right">
+                <div class="col-10 mobile_show text-right" style="padding:10px;">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
                     </button>
                 </div>
