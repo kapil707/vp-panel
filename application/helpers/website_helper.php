@@ -128,12 +128,13 @@ if ( ! function_exists('vp_menu_submenu'))
 
 		$return = "";
 
-		$result = $ci->db->query("select * from tbl_menu where status=1 and id='$menu_id' order by sorting_order asc")->result();
+		$result = $ci->db->query("select * from tbl_menu where status=1 and id='$menu_id' and page_type='blog' and child_page!='' and page_id=0 order by sorting_order asc")->result();
 		foreach($result as $row){
-			$row1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and child_page='$row->child_page'")->row();
-			
-			$return.= $row1->title;
-			//$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
+			$result1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and child_page='$row->child_page'")->result();
+			foreach($result1 as $row1){
+				$return.= $row1->title;
+				//$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
+			}
 		}
 		
 		// // iss say wo wala sub manu ata ha jo sirf menu say set hota ha 
