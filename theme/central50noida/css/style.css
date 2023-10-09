@@ -306,11 +306,20 @@ a:hover{
     padding-left: 200px;
     padding-right: 200px;
 }
-#home-footer .social_icon{
-    width:100%;
-}
+
 #home-footer .footer-logo{
     width: 150px;
+}
+#home-footer .h-svg {
+    border: solid 1px #dddddd;
+    padding: 41px;
+    width: 100px;
+    border-radius: 100%;
+    margin-left: 37.1%;
+    margin-top: -202px;
+    z-index: 9;
+    position: absolute;
+    background: white;
 }
 
 #home-footer2{

@@ -11,13 +11,11 @@
                 <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="img-fluid footer-logo">
 			</div>
             <div class="col-md-4 text-center py-5">
-                <ul class="social_icon">
-                    <?php 
-                    $result = get_social_icon();
-                    foreach($result as $row) { ?>
-                        <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
-                    <?php } ?>
-                </ul>
+                <?php 
+                $result = get_social_icon();
+                foreach($result as $row) { ?>
+                    <a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a>
+                <?php } ?>
                 <?php echo get_field_data("contact_address",9) ?>
             </div>
             <div class="col-md-4 text-center py-5">

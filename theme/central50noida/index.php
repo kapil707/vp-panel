@@ -21,7 +21,7 @@
 @media screen and (max-width:800px) {
     .carousel-inner {
         height: 250px !important;
-
+    }
     .carousel-item img {
         height: 250px !important;
     }
