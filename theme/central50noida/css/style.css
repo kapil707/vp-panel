@@ -347,6 +347,9 @@ a:hover{
     #header .web_menu .navbar{
         padding: 0px;
     }
+    #slider{
+        margin-top: 100px;
+    }
     .home-box-main{
         padding: 0px !important;
         padding-top: 50px !important;
