@@ -67,7 +67,7 @@
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                     </h2>
                 </div>
-                <div class="col-9 mobile_show text-right wow bounceInRight">
+                <div class="col-9 mobile_show text-right wow bounceInDown">
                     <ul class="social_icon">
                         <?php 
                         foreach($result as $row) { ?>
@@ -75,11 +75,11 @@
                         <?php } ?>
                     </ul>
                 </div>
-                <div class="col-2 mobile_show text-right" style="padding:10px;">
+                <div class="col-2 mobile_show text-right wow bounceInRight" style="padding:10px;">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
                     </button>
                 </div>
-                <div class="col-md-8 col-12">
+                <div class="col-md-8 col-12 wow bounceInRight">
                     <div class="web_menu">
                         <?php echo vp_menu(); ?>
                     </div>
