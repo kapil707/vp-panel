@@ -64,6 +64,15 @@
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                     </h2>
                 </div>
+                <div class="col-md-4 col-4 text-right">
+                    <ul class="social_icon">
+                        <?php 
+                        $result = get_social_icon();
+                        foreach($result as $row) { ?>
+                            <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
+                        <?php } ?>
+                    </ul>
+                </div>
                 <div class="col-8 mobile_show text-right">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
                     </button>

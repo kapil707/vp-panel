@@ -330,7 +330,7 @@ a:hover{
 		display:block;
 	}
     #top-bar{
-        padding: 0px !important;
+        display:none;
     }
     #header{
         padding:10px !important;
