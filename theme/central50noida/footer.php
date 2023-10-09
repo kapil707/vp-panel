@@ -109,6 +109,7 @@ $('.get-in-touch-form-btn, .close-form').click(function(){
 </body>
 </html>
 <script>
+    /*
 document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
       if (window.scrollY > 50) {
@@ -122,5 +123,5 @@ document.addEventListener("DOMContentLoaded", function(){
         document.body.style.paddingTop = '0';
       } 
   });
-}); 
+});  */
 </script>
