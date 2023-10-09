@@ -400,7 +400,7 @@ a:hover{
 		display:block;
 	}
     #top-bar{
-        display:none;
+        padding: 10px !important;
     }
     .social_icon li{
         padding: 0px;
@@ -427,9 +427,6 @@ a:hover{
     }
     #header .web_menu .navbar{
         padding: 0px;
-    }
-    #slider{
-        padding-top: 35px;
     }
     .home-box-main{
         padding: 0px !important;
