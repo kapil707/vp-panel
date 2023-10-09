@@ -132,6 +132,7 @@ document.addEventListener("DOMContentLoaded", function(){
 }); 
 </script>
 
+
 <script src="<?php echo get_theme_path(); ?>wowjs/wow.min.js"></script>
 <script>
 new WOW().init();
