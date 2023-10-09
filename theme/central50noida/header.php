@@ -73,7 +73,7 @@
                         <?php } ?>
                     </ul>
                 </div>
-                <div class="col-2 mobile_show text-right">
+                <div class="col-2 mobile_show text-right" style="padding:10px;">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
                     </button>
                 </div>
