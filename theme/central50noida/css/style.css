@@ -115,6 +115,8 @@ a:hover{
     background: white;
     padding: 40px;
     border-radius: 100%;
+    position: relative;
+    z-index:999;
 }
 #home-box1{
     border-top: solid 1px #dddddd;
