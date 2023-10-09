@@ -12,6 +12,9 @@ a:hover{
 #header .logo{
     width:50px;
 }
+#header .dropdown-menu{
+    background: #000000;
+}
 #top-bar
 {
     padding: 10px;
