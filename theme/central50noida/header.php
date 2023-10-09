@@ -33,7 +33,7 @@
 
 <body>
     <div id="top-bar">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 col-12 num-b">
                     <i class="fa fa-file-text-o" aria-hidden="true"></i>
@@ -57,7 +57,7 @@
         </div>
     </div>
     <div id="header">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 col-4">
                     <h2 id="logo">
