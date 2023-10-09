@@ -367,6 +367,7 @@ a:hover{
     height: 650px;
     width: 100%;
     position: relative;
+    border-top: solid 1px #858585;
 }
 
 .video-container .h-svg{
@@ -374,8 +375,8 @@ a:hover{
     padding: 41px;
     width: 100px;
     border-radius: 100%;
-    margin-left: 42.3%;
-    margin-top: -152px;
+    margin-left: 47.4%;
+    margin-top: -52px;
     z-index: 9;
     position: absolute;
     background: white;
