@@ -70,7 +70,7 @@ a:hover{
     border: 0px;
 }
 #home-box1 .row .col-md-3{
-    border-left: solid 1px #240d0d ;
+    border-left: solid 1px #dddddd ;
     padding:10px;
 }
 #home-box1 .row .col-md-3:hover{
