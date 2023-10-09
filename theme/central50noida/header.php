@@ -62,20 +62,12 @@
     <div id="header">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-1">
+                <div class="col-md-4 col-2">
                     <h2 id="logo">
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                     </h2>
                 </div>
-                <div class="col-9 mobile_show text-right">
-                    <ul class="social_icon">
-                        <?php 
-                        foreach($result as $row) { ?>
-                            <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
-                        <?php } ?>
-                    </ul>
-                </div>
-                <div class="col-2 mobile_show text-right" style="padding:10px;">
+                <div class="col-10 mobile_show text-right" style="padding:10px;">
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
                     </button>
                 </div>
