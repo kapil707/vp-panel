@@ -94,7 +94,7 @@ if ( ! function_exists('vp_menu'))
 		$return = "";
 		$result = $ci->db->query("select * from tbl_menu where status=1 and menu_id=0 order by sorting_order asc")->result();
 		foreach($result as $menu){
-			$row1 = $ci->db->query("select id,url from tbl_page where id='$menu->page_id'")->row();
+			$row1 = $ci->db->query("select url from tbl_page where id='$menu->page_id'")->row();
 			$url = "";
 			if(empty($menu->child_page) && !empty($row1->url)){
 				$url = $row1->url;
@@ -105,7 +105,7 @@ if ( ! function_exists('vp_menu'))
 			}
 
 			$dropdown = "";
-			$submenu = vp_menu_submenu($row1->id);
+			$submenu = vp_menu_submenu($menu->id);
 			if(!empty($submenu))
 			{
 				$dropdown = "dropdown";
