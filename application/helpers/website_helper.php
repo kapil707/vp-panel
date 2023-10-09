@@ -132,7 +132,8 @@ if ( ! function_exists('vp_menu_submenu'))
 		foreach($result as $row){
 			$row1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and child_page='$row->child_page'")->row();
 			
-			$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
+			$return.= $row1->title;
+			//$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
 		}
 		
 		// // iss say wo wala sub manu ata ha jo sirf menu say set hota ha 
@@ -173,11 +174,11 @@ if ( ! function_exists('vp_menu_submenu'))
 		// 		$return.='<li> <a href="'.base_url().$blog.'/'.$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
 		// 	}			
 		// }
-		if(!empty($return)){
-			$return ='<ul style="display:none">'.$return.'</ul>';
-		}else{
-			$return = "";
-		}
+		// if(!empty($return)){
+		// 	$return ='<ul style="display:none">'.$return.'</ul>';
+		// }else{
+		// 	$return = "";
+		// }
 		return $return;	
 	}
 }
