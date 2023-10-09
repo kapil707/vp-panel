@@ -47,7 +47,7 @@
 
 <div class="contact_btnss">
 <div class="get-in-touch-form-btn filled-btn mobile_book d-none">Book Now</div>
-<div class=" filled-btn d-none">
+<div class="filled-btn d-none">
     <a href="tel:+91 - 7838683368" class="text-white">  Call us</a></div>
 <div class="get-in-touch-form-btn filled-btn" onclick="call_get_in_touch()">Get in Touch</div>
 </div>
