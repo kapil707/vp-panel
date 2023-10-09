@@ -401,7 +401,11 @@ a:hover{
     #home-footer .footer-logo{
         width: 200px;
     }
-    #home-footer,#home-footer2{
+    #home-footer{
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    #home-footer2{
         padding: 10px !important;
     }
 }
