@@ -38,7 +38,7 @@
     <div id="top-bar">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-12 num-b wow bounceInUp">
+                <div class="col-sm-6 col-12 num-b wow bounceInLeft">
                     <i class="fa fa-file-text-o" aria-hidden="true"></i>
                     e-Brochure |
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
@@ -52,7 +52,7 @@
                         <?php 
                         $result = get_social_icon();
                         foreach($result as $row) { ?>
-                            <li class="wow bounceInUp"><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
+                            <li class="wow bounceInRight"><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
                         <?php } ?>
                     </ul>
 				</div>
@@ -62,12 +62,12 @@
     <div id="header">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-1">
+                <div class="col-md-4 col-1 wow bounceInLeft">
                     <h2 id="logo">
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                     </h2>
                 </div>
-                <div class="col-9 mobile_show text-right">
+                <div class="col-9 mobile_show text-right wow bounceInRight">
                     <ul class="social_icon">
                         <?php 
                         foreach($result as $row) { ?>
