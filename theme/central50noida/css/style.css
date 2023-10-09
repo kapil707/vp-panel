@@ -15,6 +15,9 @@ a:hover{
 #header .dropdown-menu{
     background: #000000;
 }
+#header .dropdown-menu .dropdown-item:hover, .dropdown-item:focus{
+    background: #393939;
+}
 #top-bar
 {
     padding: 10px;
