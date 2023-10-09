@@ -366,5 +366,9 @@ a:hover{
         margin-top: 20px;
         margin-bottom: 20px;
     }
+    .home-box-main .h-svg {
+        margin-left: 35.3%;
+        margin-top: -60px;
+    }
 }
 
