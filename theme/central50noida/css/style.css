@@ -44,7 +44,7 @@ a:hover{
 
 #home-box1{
     padding: 100px;
-    border-top: solid 1px #585353;
+    border-top: solid 1px #dddddd;
 }
 #home-box1 .row .col-md-3:first-child{
     border: 0px;
@@ -60,7 +60,7 @@ a:hover{
 
 #home-box2{
     padding: 100px;
-    border-top: solid 1px #585353;
+    border-top: solid 1px #dddddd;
 }
 #home-box2 h5{
     font-size: 2rem;
@@ -76,7 +76,7 @@ a:hover{
 
 #home-box3{
     padding: 100px;
-    border-top: solid 1px #585353;
+    border-top: solid 1px #dddddd;
 }
 #home-box3 h5{
     font-size: 2rem;
@@ -109,7 +109,7 @@ a:hover{
 
 #home-box4{
     padding: 100px;
-    border-top: solid 1px #585353;
+    border-top: solid 1px #dddddd;
 }
 
 #home-box4 h5{
@@ -137,7 +137,7 @@ a:hover{
 #home-box5{
     background: #fff;
     padding: 100px;
-    border-top: solid 1px #585353;
+    border-top: solid 1px #dddddd;
 }
 #home-box5 h5{
     font-size: 2rem;
