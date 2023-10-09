@@ -114,7 +114,7 @@
             foreach($get_blog as $row) { ?>
                 <div class="col-sm-4 col-6 text-center sml_border0">
                     <div>
-                        <span class="sml_border animate__animated animate__bounce">
+                        <span class="sml_border wow bounceInDown">
                             <?php echo $row->title; ?>
                         </span>
                     </div>
