@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function(){
     var $window = $(window);
     var windowsize = $window.width();
     if(windowsize>800){
-        alert("okok")
+        //alert("okok")
       if (window.scrollY > 50) {
         document.getElementById('header').classList.add('fixed-top');
         // add padding top to show content behind navbar
