@@ -309,6 +309,9 @@ a:hover{
 #home-footer .social_icon{
     width:100%;
 }
+#home-footer .footer-logo{
+    width: 250px;
+}
 
 #home-footer2{
     border-top: solid 1px #5f5f5f;
