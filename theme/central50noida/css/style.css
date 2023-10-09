@@ -22,6 +22,9 @@ a:hover{
     background-color: #666666;
     border: 1px solid #8f8f8f;
 }
+#header .navbar-toggler i{
+    color: white;
+}
 #top-bar
 {
     padding: 10px;
