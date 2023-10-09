@@ -59,12 +59,12 @@
     <div id="header">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-2">
+                <div class="col-md-4 col-1">
                     <h2 id="logo">
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                     </h2>
                 </div>
-                <div class="col-8 mobile_show text-right">
+                <div class="col-9 mobile_show text-right">
                     <ul class="social_icon">
                         <?php 
                         $result = get_social_icon();
