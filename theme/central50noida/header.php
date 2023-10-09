@@ -62,7 +62,7 @@
     <div id="header">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 col-1 wow bounceInLeft">
+                <div class="col-md-4 col-1">
                     <h2 id="logo">
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                     </h2>
@@ -79,7 +79,7 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bars"></i>
                     </button>
                 </div>
-                <div class="col-md-8 col-12 wow animate__bounceInRight">
+                <div class="col-md-8 col-12">
                     <div class="web_menu">
                         <?php echo vp_menu(); ?>
                     </div>
