@@ -2,6 +2,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-1 text-center">
+            <i class="bi bi-bag-plus"></i>
+
                 <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="img-fluid">
 			</div>
             <div class="col-md-6 text-center py-5">
