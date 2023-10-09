@@ -71,7 +71,7 @@
                     $get_blog = get_blog("home_sec2");
                     $i = 1;						
                     foreach($get_blog as $row) { ?>
-                        <li class="nav-item  wow heartBeat">
+                        <li class="nav-item wow heartBeat">
                             <a class="nav-link <?php if($i==1) { ?>active<?php } ?>" id="home-tab_<?php echo $row->id; ?>" data-toggle="tab" href="#home_<?php echo $row->id; ?>" role="tab" aria-controls="home_<?php echo $row->id; ?>"
                             aria-selected="true"><?php echo $row->title; ?></a>
                         </li>
