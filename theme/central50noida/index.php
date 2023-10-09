@@ -20,11 +20,10 @@
 }
 @media screen and (max-width:800px) {
     .carousel-inner {
-        height: 300px; /* Adjust the height as needed */
-    }
+        height: 300px !important;
 
     .carousel-item img {
-        height: 300px;
+        height: 300px !important;
     }
 }
 </style>
