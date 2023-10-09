@@ -362,8 +362,9 @@ a:hover{
 		display:block;
 	}
     .home-box-main{
-        margin-top: 20px;
-        margin-bottom: 20px;
+        padding: 0px !important;
+        padding-top: 50px !important;
+        padding-bottom: 50px !important;
     }
     .home-box-main .h-svg {
         margin-left: 35.3% !important;
