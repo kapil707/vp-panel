@@ -1,20 +1,20 @@
 <div id="home-footer">
     <div class="container">
         <div class="row">
-            <div class="col-md-2 text-center">
+            <div class="col-md-1 text-center">
                 <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="website logo" class="img-fluid">
 			</div>
-            <div class="col-md-5 text-center">
+            <div class="col-md-6 text-center py-6">
                 <?php echo get_field_data("contact_address",9) ?>
             </div>
-            <div class="col-md-5 text-center">
+            <div class="col-md-5 text-center py-6">
                 <i class="fa fa-envelope-o" aria-hidden="true"></i>
                 <?php echo get_field_data("contact_email2",9) ?>
                 <br>
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <?php echo get_field_data("contact_phone",9) ?>
             </div>
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center py-10">
                 <?php echo get_field_data("contact_disclosure",9) ?>
             </div>
         </div>
