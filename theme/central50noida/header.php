@@ -59,12 +59,12 @@
     <div id="header">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-4">
                     <h2 id="logo">
                         <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
                         </h2>
                     </div>
-                    <div class="col-md-8 float-right">
+                    <div class="col-md-8 col-8 float-right">
 						<?php echo vp_menu(); ?>
                     </div>
                 </div>
