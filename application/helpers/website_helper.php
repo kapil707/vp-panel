@@ -111,7 +111,7 @@ if ( ! function_exists('vp_menu'))
 				$dropdown = "dropdown";
 			}
 			
-			$return.= '<li class="nav-item'.$dropdown.'"><a href="'.base_url().$url.'" class="nav-link">'.$menu->title.$submenu.'</a>'.$submenu.$menu->id.'</li>';
+			$return.= '<li class="nav-item'.$dropdown.'"><a href="'.base_url().$url.'" class="nav-link">'.$menu->title.'</a>'.$submenu.'</li>';
 		}
 		$return = '<nav class="navbar navbar-expand-lg"><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navbarSupportedContent"><ul class="navbar-nav mr-auto">'.$return.'</li>
 		</ul></div></nav>';
@@ -132,8 +132,8 @@ if ( ! function_exists('vp_menu_submenu'))
 		foreach($result as $row){
 			$result1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and child_page='$row->child_page'")->result();
 			foreach($result1 as $row1){
-				$return.= $row1->title;
-				//$return.='<li> <a href="'.base_url().$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
+				
+				$return.='<a class="dropdown-item" href="'.base_url().$row1->url.'">'.$row1->title.'</a></il>';
 			}
 		}
 		
@@ -175,11 +175,11 @@ if ( ! function_exists('vp_menu_submenu'))
 		// 		$return.='<li> <a href="'.base_url().$blog.'/'.$row1->url.'" class="nav-link">'.$row1->title.'</a></il>';
 		// 	}			
 		// }
-		// if(!empty($return)){
-		// 	$return ='<ul style="display:none">'.$return.'</ul>';
-		// }else{
-		// 	$return = "";
-		// }
+		if(!empty($return)){
+			$return ='<div class="dropdown-menu" aria-labelledby="navbarDropdown">'.$return.'</div>';
+		}else{
+			$return = "";
+		}
 		return $return;	
 	}
 }
