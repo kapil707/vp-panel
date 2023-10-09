@@ -56,7 +56,7 @@ a:hover{
 #header .navbar-toggler i{
     color: white;
 }
-#header li a{
+#header .web_menu li a{
     color:#fff;
     padding: 15px 10px;
     display: block;
