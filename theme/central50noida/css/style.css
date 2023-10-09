@@ -51,11 +51,8 @@ a:hover{
     padding: 150px;
 }
 
-#home-box1{
-    border-top: solid 1px #dddddd;
-}
-#home-box1 .h-svg{
-    border: solid 1px #858585;
+.home-box-main .h-svg{
+    border: solid 1px #dddddd;
     padding: 41px;
     width: 100px;
     border-radius: 100%;
@@ -64,6 +61,10 @@ a:hover{
     z-index: 9;
     position: absolute;
     background: white;
+}
+
+#home-box1{
+    border-top: solid 1px #dddddd;
 }
 #home-box1 .row .col-md-3:first-child{
     border: 0px;
@@ -106,17 +107,6 @@ a:hover{
 #home-box3{
     border-top: solid 1px #dddddd;
 }
-#home-box3 .h-svg{
-    border: solid 1px #858585;
-    padding: 41px;
-    width: 100px;
-    border-radius: 100%;
-    margin-left: 42.3%;
-    margin-top: -152px;
-    z-index: 9;
-    position: absolute;
-    background: white;
-}
 #home-box3 h5{
     font-size: 2rem;
     margin-bottom: 50px;
@@ -149,17 +139,7 @@ a:hover{
 #home-box4{
     border-top: solid 1px #dddddd;
 }
-#home-box4 .h-svg{
-    border: solid 1px #858585;
-    padding: 41px;
-    width: 100px;
-    border-radius: 100%;
-    margin-left: 42.3%;
-    margin-top: -152px;
-    z-index: 9;
-    position: absolute;
-    background: white;
-}
+
 #home-box4 h5{
     font-size: 2rem;
     margin-bottom: 50px;
@@ -185,17 +165,6 @@ a:hover{
 #home-box5{
     border-top: solid 1px #dddddd;
 }
-#home-box5 .h-svg{
-    border: solid 1px #858585;
-    padding: 41px;
-    width: 100px;
-    border-radius: 100%;
-    margin-left: 42.3%;
-    margin-top: -152px;
-    z-index: 9;
-    position: absolute;
-    background: white;
-}
 #home-box5 h5{
     font-size: 2rem;
 }
@@ -215,18 +184,6 @@ a:hover{
     width: 100%;
     position: relative;
     border-top: solid 1px #858585;
-}
-
-.home-box6 .h-svg{
-    border: solid 1px #858585;
-    padding: 41px;
-    width: 100px;
-    border-radius: 100%;
-    margin-left: 47.4%;
-    margin-top: -52px;
-    z-index: 9;
-    position: absolute;
-    background: white;
 }
 
 .home-box6 video {
@@ -323,21 +280,8 @@ a:hover{
 
 #home-footer{
     background-color: #000000;
-    padding: 100px;
     color: #585353;
     border-top: solid 1px #585353;
-}
-
-#home-footer .h-svg{
-    border: solid 1px #858585;
-    padding: 41px;
-    width: 100px;
-    border-radius: 100%;
-    margin-left: 42.3%;
-    margin-top: -152px;
-    z-index: 9;
-    position: absolute;
-    background: white;
 }
 
 #home-footer2{
