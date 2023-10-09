@@ -107,7 +107,8 @@ if ( ! function_exists('vp_menu'))
 			$submenu = vp_menu_submenu($menu->id);
 			if(!empty($submenu))
 			{
-				$return.= '<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$menu->title.'</a>'.$submenu.'</li>';
+				// sub menu iss say show hotay ha
+				$return.= '<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" id="navbarDropdown'.$menu->id.'" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.$menu->title.'</a>'.$submenu.'</li>';
 			}
 			else{
 				$return.= '<li class="nav-item"><a href="'.base_url().$url.'" class="nav-link">'.$menu->title.'</a></li>';
@@ -128,11 +129,20 @@ if ( ! function_exists('vp_menu_submenu'))
 
 		$return = "";
 
+		// jab blog ki copy jasay kuch banaya ho or oss ke sub menu iss say atay ha
 		$result = $ci->db->query("select * from tbl_menu where status=1 and id='$menu_id' and page_type='blog' and child_page!='' and page_id=0 order by sorting_order asc")->result();
 		foreach($result as $row){
 			$result1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and child_page='$row->child_page'")->result();
 			foreach($result1 as $row1){
-				
+				$return.='<a class="dropdown-item" href="'.base_url().$row1->url.'">'.$row1->title.'</a></il>';
+			}
+		}
+
+		// jab blog banaya ho or oss ke sub menu iss say atay ha
+		$result = $ci->db->query("select * from tbl_menu where status=1 and id='$menu_id' and page_type='blog' and child_page='' and page_id=0 order by sorting_order asc")->result();
+		foreach($result as $row){
+			$result1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and child_page='$row->child_page'")->result();
+			foreach($result1 as $row1){
 				$return.='<a class="dropdown-item" href="'.base_url().$row1->url.'">'.$row1->title.'</a></il>';
 			}
 		}
@@ -176,7 +186,7 @@ if ( ! function_exists('vp_menu_submenu'))
 		// 	}			
 		// }
 		if(!empty($return)){
-			$return ='<div class="dropdown-menu" aria-labelledby="navbarDropdown">'.$return.'</div>';
+			$return ='<div class="dropdown-menu" aria-labelledby="navbarDropdown'.$menu_id.'">'.$return.'</div>';
 		}else{
 			$return = "";
 		}
