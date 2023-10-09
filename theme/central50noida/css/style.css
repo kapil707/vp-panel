@@ -353,6 +353,10 @@ a:hover{
     padding: 150px;
 }
 
+#about-box2 h5{
+    font-size: 2rem;
+}
+
 .mobile_show
 {
 	display:none;

@@ -6,7 +6,7 @@
 <div id="about-box2">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-3 text-center">
+            <div class="col-md-12 text-center">
                 <h5><?php echo $page_data->title ?></h5>
                 <?php echo $page_data->description ?>
             </div>
