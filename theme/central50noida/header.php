@@ -35,7 +35,7 @@
     <div id="top-bar">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-12">
+                <div class="col-sm-6 col-12 num-b">
                     <i class="fa fa-file-text-o" aria-hidden="true"></i>
                     e-Brochure |
                     <i class="fa fa-envelope-o" aria-hidden="true"></i>

@@ -4,6 +4,9 @@ a {
 a:hover{
     text-decoration: none;
 }
+#top-bar .num-b {
+    padding: 10px;
+}
 #top-bar .social_icon ul {
     width: 100%;
 }
@@ -32,10 +35,6 @@ a:hover{
 }
 #header .navbar-toggler i{
     color: white;
-}
-#top-bar
-{
-    padding: 10px;
 }
 #header li a{
     color:#fff;
