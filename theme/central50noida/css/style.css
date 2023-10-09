@@ -344,6 +344,14 @@ a:hover{
 }
 
 
+#about-box1{
+    width:100%;
+}
+
+#about-box2{
+    padding: 150px;
+}
+
 .mobile_show
 {
 	display:none;
