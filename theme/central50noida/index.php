@@ -7,7 +7,6 @@
     width: 100%;
     max-width: 100%;
 }
-
 .carousel-inner {
     width: 100%;
     max-width: 100%;
@@ -18,6 +17,15 @@
     width: 100%;
     max-width: 100%;
     height: 650px;
+}
+@media screen and (max-width:800px) {
+    .carousel-inner {
+        height: 300px; /* Adjust the height as needed */
+    }
+
+    .carousel-item img {
+        height: 300px;
+    }
 }
 </style>
 <div id="slider-bottom">
