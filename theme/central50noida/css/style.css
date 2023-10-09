@@ -280,16 +280,16 @@ a:hover{
 
 
 #home-footer{
-    border-top: solid 1px #dddddd;
+    border-top: solid 1px #5f5f5f;
     background-color: #000000;
     color: #585353;
 }
 
 #home-footer2{
+    border-top: solid 1px #5f5f5f;
     background-color: #000000;
     padding: 100px;
     color: #585353;
-    border-top: solid 1px #dddddd;
 }
 
 
