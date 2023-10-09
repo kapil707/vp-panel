@@ -450,5 +450,8 @@ a:hover{
 	{
 		display:block;
 	}
+    #home-box1,#home-box2,#home-box2,#home-box4,#home-box5{
+        padding: 5px;
+    }
 }
 
