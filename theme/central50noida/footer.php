@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", function(){
   window.addEventListener('scroll', function() {
     var $window = $(window);
     var windowsize = $window.width();
-    alert(windowsize)
+    if(windowsize>800){
       if (window.scrollY > 50) {
         document.getElementById('header').classList.add('fixed-top');
         // add padding top to show content behind navbar
@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", function(){
          // remove padding top from body
         document.body.style.paddingTop = '0';
       } 
+    }
   });
 }); 
 </script>
