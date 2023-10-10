@@ -92,7 +92,6 @@ $result1 = get_table("tbl_o_interest");
 	</div>
 </form>	
 			
-
 <script>
 function onchnage_dropdown(){
 	val = $("#interest option:selected").val();
