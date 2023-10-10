@@ -193,7 +193,10 @@ if ( ! function_exists('get_page_type_to_options_id'))
 
 if ( ! function_exists('get_page_template'))
 {
-	function get_page_template($row=""){ ?>	
+	function get_page_template($row=""){ 
+		$ci =& get_instance();
+		//$ci->load->database(); 
+		?>	
 		<div class="ibox float-e-margins">
 			<div class="ibox-content">
 				<div class="form-group">
@@ -204,7 +207,7 @@ if ( ! function_exists('get_page_template'))
 					</div>
 					<div class="col-sm-12">
 						<?php
-						$this->load->helper('directory'); //load directory helper
+						$ci->load->helper('directory'); //load directory helper
 						$dir = "./theme/central50noida/";
 						$map = directory_map($dir);
 						?>
