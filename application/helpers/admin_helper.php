@@ -208,7 +208,8 @@ if ( ! function_exists('get_page_template'))
 					<div class="col-sm-12">
 						<?php
 						$ci->load->helper('directory'); //load directory helper
-						$dir = "./theme/central50noida/";
+						$theme = get_field_data("system_theme");
+						$dir = "./theme/".$theme."/";
 						$map = directory_map($dir);
 						?>
 						<select class="form-control">
