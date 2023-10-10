@@ -99,7 +99,7 @@ function onchnage_dropdown(){
 }
 </script>
 
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
   <div class="toast-header">
     <img src="..." class="rounded mr-2" alt="...">
     <strong class="mr-auto">Bootstrap</strong>
@@ -116,9 +116,9 @@ function onchnage_dropdown(){
 <script>
 $(document).ready(function(){
   $("#myBtn").click(function(){
-    $(".toast").toast({
-    	autohide: false
-    });
+    $('.toast').toast(
+		autohide: false
+	);
   });
 });
 </script>
