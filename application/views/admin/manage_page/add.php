@@ -60,36 +60,7 @@
 		</div>
 		<div class="col-xs-3">
 			<?php publish_panel_right_top("","Submit"); ?>
-			<div class="ibox float-e-margins">
-				<div class="ibox-content">
-					<div class="form-group">
-						<div class="col-sm-12">
-							<label class="control-label" for="form-field-1">
-								Template
-							</label>
-						</div>
-						<div class="col-sm-12">
-							<?php
-							$this->load->helper('directory'); //load directory helper
-							$dir = "./theme/central50noida/";
-							$map = directory_map($dir);
-							?>
-							<select class="form-control">
-								<option>Select Template</option>
-								<?php foreach($map as $r){
-									if(strpos($r,'.php')){
-									?>
-										<option>
-											<?php echo $r; ?>
-										</option>
-									<?php
-									}
-								} ?>
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php get_page_template(""); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<div class="form-group">
