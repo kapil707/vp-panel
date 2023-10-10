@@ -212,10 +212,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_
 	session_start();
 	// Set a session variable
 	$id = $_SESSION['profile_user'];
-	
-	global $wpdb;
-	$table_name = $wpdb->prefix . 'my_users';
-	
+		
 	$first_name = filter_var($_POST['first_name'],FILTER_SANITIZE_STRING);
 	$last_name 	= filter_var($_POST['last_name'],FILTER_SANITIZE_STRING);
 	$email 		= filter_var($_POST['email'],FILTER_SANITIZE_STRING);
@@ -240,6 +237,11 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_
 
 	$where = array('id'=>$id);
 	$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
+
+	$this->session->set_flashdata('message_title','Profile Updated');
+	$this->session->set_flashdata('message_time','Just Now');
+	$this->session->set_flashdata('message_value','Profile Updated Successfully');
+	$this->session->set_flashdata('message_toast_show','1');
 	
 	redirect(base_url().'edit-profile');
 }

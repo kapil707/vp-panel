@@ -99,6 +99,44 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 <div class="container-fluid" style="margin-top:30px;">
 	<div class="row">
 		<div class="col-sm-4">
-
+			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+				<div class="toast-header">
+					<img src="..." class="rounded mr-2" alt="...">
+					<strong class="mr-auto">
+						<?php 
+						if (!emtpy($this->session->flashdata('message_title')))
+						{
+							echo $this->session->flashdata('message_title'); 
+						}
+						?>
+					</strong>
+					<small class="text-muted">
+						<?php 
+						if (!emtpy($this->session->flashdata('message_time')))
+						{
+							echo $this->session->flashdata('message_time'); 
+						}
+						?>
+					</small>
+					<button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="toast-body">
+					<?php 
+					if (!emtpy($this->session->flashdata('message_value')))
+					{
+						echo $this->session->flashdata('message_value'); 
+					}
+					?>
+				</div>
+			</div>
+			<script>
+			<?php if (!emtpy($this->session->flashdata('message_toast_show'))){ ?>
+			$(document).ready(function(){
+			$('.toast').toast('show');
+			});
+			<?php } ?>
+			</script>
 		</div>
 		<div class="col-sm-4" style="padding-top:35px">

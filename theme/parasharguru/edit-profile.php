@@ -99,25 +99,5 @@ function onchnage_dropdown(){
 }
 </script>
 
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
-  <div class="toast-header">
-    <img src="..." class="rounded mr-2" alt="...">
-    <strong class="mr-auto">Bootstrap</strong>
-    <small class="text-muted">11 mins ago</small>
-    <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="toast-body">
-    Hello, world! This is a toast message.
-  </div>
-</div>
+
 <?php include_once(get_footer("mobile")); ?>
-<script>
-$(document).ready(function(){
-  $("#myBtn").click(function(){
-    $('.toast').toast('show');
-  });
-});
-</script>
-<button type="button" class="btn btn-primary" id="myBtn">Show Toast</button>
