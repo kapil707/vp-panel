@@ -241,6 +241,6 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_
 	$where = array('id'=>$id);
 	$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
 	
-	redirect(base_url().'profile_edit_page');
+	redirect(base_url().'edit-profile');
 }
 ?>
