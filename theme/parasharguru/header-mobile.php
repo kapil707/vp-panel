@@ -97,7 +97,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 	</div>
 </div>
 <div class="container-fluid">
-	<div class="row" style="padding-top:35px;">
+	<div class="row" style="padding-top:80px;">
 		<div class="col-sm-4">
 			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
 				<div class="toast-header">
