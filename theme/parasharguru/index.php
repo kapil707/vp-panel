@@ -2,6 +2,31 @@
 <?php
 echo do_slider('slider');
 ?>
+<style>
+#myCarousel_slider {
+    width: 100%;
+    max-width: 100%;
+}
+.carousel-inner {
+    width: 100%;
+    max-width: 100%;
+    height: 650px; /* Adjust the height as needed */
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 100%;
+    height: 650px;
+}
+@media screen and (max-width:800px) {
+    .carousel-inner {
+        height: 250px !important;
+    }
+    .carousel-item img {
+        height: 250px !important;
+    }
+}
+</style>
 <div class="bg-[#A17603] text-white text-center p-1">
 	<p class="font-medium text-[32px] mt-1" id="join" style="font-size: 35px;">
 		<?php echo get_field_data('login_label1','73'); ?>
