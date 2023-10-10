@@ -10,13 +10,13 @@ echo do_slider('slider');
 .carousel-inner {
     width: 100%;
     max-width: 100%;
-    height: 650px; /* Adjust the height as needed */
+    height: 250px; /* Adjust the height as needed */
 }
 
 .carousel-item img {
     width: 100%;
     max-width: 100%;
-    height: 650px;
+    height: 250px;
 }
 @media screen and (max-width:800px) {
     .carousel-inner {
