@@ -10,8 +10,8 @@ class Manage_gallery extends CI_Controller {
 	var $Page_type  = "gallery";
 	public function index()
 	{
-		$child_page = $_GET["child_page"];
-		if($child_page){
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
 			$page_controllers = $this->page_controllers;
 			redirect("admin/$page_controllers/view?child_page=$child_page");
 		}else{
@@ -34,14 +34,15 @@ class Manage_gallery extends CI_Controller {
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
 		
 		$data['page_url'] = $this->Page_type;
-		$child_page = $_GET["child_page"];
-		if($child_page){
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
 			$Page_title = get_child_page_name($child_page);
 			$dt_child_page = "?child_page=".$child_page;
 			$data['child_page'] = $dt_child_page;
 			$data['page_url'] = $child_page;
 		}else{
-			$child_page = "";
+			$child_page = $dt_child_page = "";
+			$data['child_page'] = "";
 		}
 		
 		$data['title1'] = $Page_title." || Add";
@@ -142,14 +143,15 @@ class Manage_gallery extends CI_Controller {
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
 		
 		$data['page_url'] = $this->Page_type;
-		$child_page = $_GET["child_page"];
-		if($child_page){
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
 			$Page_title = get_child_page_name($child_page);
 			$dt_child_page = "?child_page=".$child_page;
 			$data['child_page'] = $dt_child_page;
 			$data['page_url'] = $child_page;
 		}else{
-			$child_page = "";
+			$child_page = $dt_child_page = "";
+			$data['child_page'] = "";
 		}
 		
 		$data['title1'] = $Page_title." || View";
@@ -194,14 +196,15 @@ class Manage_gallery extends CI_Controller {
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
 		
 		$data['page_url'] = $this->Page_type;
-		$child_page = $_GET["child_page"];
-		if($child_page){
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
 			$Page_title = get_child_page_name($child_page);
 			$dt_child_page = "?child_page=".$child_page;
 			$data['child_page'] = $dt_child_page;
 			$data['page_url'] = $child_page;
 		}else{
-			$child_page = "";
+			$child_page = $dt_child_page = "";
+			$data['child_page'] = "";
 		}
 		
 		$data['title1'] = $Page_title." || Edit";

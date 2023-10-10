@@ -6,8 +6,8 @@
 			?>
 			<div class="col-sm-4">
 				<div class="row" style="padding:5px;">
-					<div class="col-sm-12" style="border:solid 1px #ddd; height:300px;overfloaw:hidden;">
-						<img alt="image" src="<?= base_url()?><?php echo $subfolder ?>/screenshot.jpg" width="100%" />
+					<div class="col-sm-12" style="border:solid 1px #ddd; height:300px;overflow:hidden;">
+						<img alt="image" src="<?= base_url()?><?php echo $subfolder ?>/screenshot.jpg" width="100%" height="300px" />
 					</div>
 					<div class="col-sm-12" style="background:rgba(255,255,255,.65);height:50px;padding:15px;border-left:solid 1px #ddd;border-right:solid 1px #ddd;border-bottom:solid 1px #ddd;">
 						<?php
