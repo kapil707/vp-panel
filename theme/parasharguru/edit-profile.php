@@ -1,4 +1,4 @@
-<?php include_once(get_header("mobile")); ?>
+
 <?php
 // Set a session variable
 $id = $_SESSION['profile_user'];
@@ -98,7 +98,6 @@ function onchnage_dropdown(){
 	window.location.href = "<?php echo base_url(); ?>edit-profile/?interest="+val;
 }
 </script>
-<?php include_once(get_footer("mobile")); ?>
 
 <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
