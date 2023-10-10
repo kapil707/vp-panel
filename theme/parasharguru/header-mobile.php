@@ -104,7 +104,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 					<img src="..." class="rounded mr-2" alt="...">
 					<strong class="mr-auto">
 						<?php 
-						if (!emtpy($this->session->flashdata('message_title')))
+						if (!empty($this->session->flashdata('message_title')))
 						{
 							echo $this->session->flashdata('message_title'); 
 						}
@@ -112,7 +112,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 					</strong>
 					<small class="text-muted">
 						<?php 
-						if (!emtpy($this->session->flashdata('message_time')))
+						if (!empty($this->session->flashdata('message_time')))
 						{
 							echo $this->session->flashdata('message_time'); 
 						}
@@ -124,7 +124,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 				</div>
 				<div class="toast-body">
 					<?php 
-					if (!emtpy($this->session->flashdata('message_value')))
+					if (!empty($this->session->flashdata('message_value')))
 					{
 						echo $this->session->flashdata('message_value'); 
 					}
@@ -132,7 +132,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 				</div>
 			</div>
 			<script>
-			<?php if (!emtpy($this->session->flashdata('message_toast_show'))){ ?>
+			<?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
 			$(document).ready(function(){
 			$('.toast').toast('show');
 			});
