@@ -1,6 +1,4 @@
-<?php 
-//Template Name:Janmarashi-pg
-?>
+<?php include_once(get_header("mobile")); ?>
 <?php get_header("mobile"); ?>
 <p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 	<?php echo get_field_data('login_label2','73'); ?>
@@ -929,3 +927,4 @@ function fix360(v)
 	return v;
 }
 </script>
+<?php include_once(get_footer("mobile")); ?>
