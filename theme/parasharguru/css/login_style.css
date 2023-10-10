@@ -1630,3 +1630,18 @@ body,html {
     margin-left: 25%;
     margin-top:10px;
   }
+
+  .mobile_show
+{
+	display:none;
+}
+@media screen and (max-width:800px) {
+	.mobile_off
+	{
+		display:none;
+	}
+    .mobile_show
+	{
+		display:block;
+	}
+}
