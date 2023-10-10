@@ -116,9 +116,7 @@ function onchnage_dropdown(){
 <script>
 $(document).ready(function(){
   $("#myBtn").click(function(){
-    $('.toast').toast(
-		autohide: false
-	);
+    $('.toast').toast('show');
   });
 });
 </script>
