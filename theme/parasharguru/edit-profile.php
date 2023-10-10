@@ -117,5 +117,10 @@ function onchnage_dropdown(){
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-$('.toast').toast('show');
+$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $('.toast').toast('show');
+  });
+});
 </script>
+<button type="button" class="btn btn-primary" id="myBtn">Show Toast</button>
