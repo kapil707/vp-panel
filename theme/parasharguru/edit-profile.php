@@ -113,3 +113,8 @@ function onchnage_dropdown(){
     Hello, world! This is a toast message.
   </div>
 </div>
+<script>
+$(document).ready(function(){
+  $('.toast').toast('show');
+});
+</script>
