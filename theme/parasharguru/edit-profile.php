@@ -56,7 +56,7 @@ $result1 = get_table("tbl_o_interest");
 		<div class="col-sm-12 form-group">
 			<label><?php echo $row2->name ?></label>	
 			<select name="interest_type" id="interest_type" class="form-control input-lg">
-				<option value="0" <?php if($row->solving=="0") {echo "selected"; } ?>>Please Select</option>
+				<option value="0">Please Select</option>
 
 				<?php foreach($result3 as $row3) { ?>
 				<option value="<?php echo $id = ($row3->id); ?>" <?php if($row->interest_type==$id) {echo "selected"; } ?>><?php echo $row3->name ?></option>
