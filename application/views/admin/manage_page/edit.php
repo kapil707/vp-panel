@@ -64,7 +64,7 @@
 		</div>
 		<div class="col-xs-3">
 			<?php publish_panel_right_top($row,"Update"); ?>
-			<?php get_page_template(""); ?>
+			<?php get_page_template($row); ?>
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
 					<div class="form-group">
