@@ -9,9 +9,10 @@ $result1 = get_table("tbl_o_interest");
 ?>
 <?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
 <div class="alert alert-success">
-  <strong>
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<strong>
 	<?php echo $this->session->flashdata('message_title'); ?>
-  </strong><?php echo $this->session->flashdata('message_value'); ?>
+	</strong><?php echo $this->session->flashdata('message_value'); ?>
 </div>
 <?php } ?>
 <form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
