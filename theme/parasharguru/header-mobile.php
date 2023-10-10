@@ -96,10 +96,10 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 		</div>
 	</div>
 </div>
-<div class="container-fluid" style="margin-top:30px;">
+<div class="container-fluid" style="padding-top:35px;">
 	<div class="row">
 		<div class="col-sm-4">
-			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="3000">
+			<div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-delay="10000">
 				<div class="toast-header">
 					<img src="..." class="rounded mr-2" alt="...">
 					<strong class="mr-auto">
@@ -139,4 +139,4 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 			<?php } ?>
 			</script>
 		</div>
-		<div class="col-sm-4" style="padding-top:35px">
+		<div class="col-sm-4">
