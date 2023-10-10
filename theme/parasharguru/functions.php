@@ -197,7 +197,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 				'profile_update'=>'1',);
 			$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
 			
-			redirect(base_url().'profile_edit_page');
+			redirect(base_url().'edit-profile');
 		}else{
 			redirect(base_url().'home');
 		}
