@@ -101,4 +101,4 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 		<div class="col-sm-4">
 
 		</div>
-		<div class="col-sm-4" style="padding-top:100px">
+		<div class="col-sm-4" style="padding-top:45px">
