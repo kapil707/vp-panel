@@ -96,7 +96,7 @@ $result1 = get_table("tbl_o_interest");
 <script>
 function onchnage_dropdown(){
 	val = $("#interest option:selected").val();
-	window.location.href = "https://parashar.guru/profile_edit_page/?interest="+val;
+	window.location.href = "<?php echo base_url(); ?>edit-profile/?interest="+val;
 }
 </script>
 <?php include_once(get_footer("mobile")); ?>
