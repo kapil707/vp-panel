@@ -7,7 +7,13 @@ $row = get_table_row("tbl_o_my_users where id='$id'");
 
 $result1 = get_table("tbl_o_interest");
 ?>
-	
+<?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
+<div class="alert alert-success">
+  <strong>
+	<?php echo $this->session->flashdata('message_title'); ?>
+  </strong><?php echo $this->session->flashdata('message_value'); ?>
+</div>
+<?php } ?>
 <form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
 	<input type="hidden" name="action_type" value="profile_page_form_submit">
 	<div class="row">
@@ -97,6 +103,10 @@ function onchnage_dropdown(){
 	val = $("#interest option:selected").val();
 	window.location.href = "<?php echo base_url(); ?>edit-profile/?interest="+val;
 }
+
+setTimeout( function(){ 
+$(".alert-success").hide(500)
+},10000);
 </script>
 
 
