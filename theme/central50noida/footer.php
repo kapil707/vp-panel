@@ -143,9 +143,8 @@ document.addEventListener("DOMContentLoaded", function(){
 <link rel="stylesheet" href="<?php echo get_theme_path(); ?>lightbox/dist/css/lightbox.min.css">
 <script src="<?php echo get_theme_path(); ?>lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
 
+<?php if(!empty($this->session->flashdata('message_toast_show'))) { ?>
 <button class="message_toast_show_css" data-toggle="modal" data-target="#exampleModal_for_lead"></button>
-
-
 <div class="modal fade" id="exampleModal_for_lead" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -169,12 +168,12 @@ document.addEventListener("DOMContentLoaded", function(){
 </div>
 
 <script>
-setTimeout(open_modal(), 5000);
+open_modal()
 function open_modal(){
-    alert("asdfsaf")
     $(".message_toast_show_css").click()
 }
 </script>
+<?php } ?>
 
 <script src="<?php echo get_theme_path(); ?>wowjs/wow.min.js"></script>
 <script>
