@@ -176,6 +176,7 @@ $(document).ready(function(){
 
     setTimeout(open_modal(), 1000);
     function open_modal(){
+        alert("asdfsa")
         $(".message_toast_show_css").click()
     }
 });
