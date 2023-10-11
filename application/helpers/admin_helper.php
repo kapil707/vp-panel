@@ -202,7 +202,7 @@ if ( ! function_exists('get_page_template'))
 				<div class="form-group">
 					<div class="col-sm-12">
 						<label class="control-label" for="form-field-1">
-							Page Template
+							Page Template <?php echo $row->link_page ?>
 						</label>
 					</div>
 					<div class="col-sm-12">
