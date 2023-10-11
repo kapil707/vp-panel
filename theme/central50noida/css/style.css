@@ -477,6 +477,9 @@ a:hover{
     #home-footer2{
         padding: 10px !important;
     }
+    #about-box1{
+        padding-top: 70px;
+    }
     #about-box1 .main-banner{
         width:100%;
         height:300px;
