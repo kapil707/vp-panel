@@ -36,6 +36,12 @@
             <div class="col-md-12">
                 <?php echo $page_data->description ?>
             </div>
+        </div>
+    </div>
+</div>
+<div id="home-box5" class="home-box-main">
+    <div class="container-fluid">
+        <div class="row">
             <?php 
             $get_blog = get_blog("construction_updates","limit 0,4");
             $i = 1;						
