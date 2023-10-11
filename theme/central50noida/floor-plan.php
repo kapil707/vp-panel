@@ -25,6 +25,5 @@
 		</div>
     </div>
 </div>
-<link rel="stylesheet" href="<?php echo get_theme_path(); ?>lightbox/dist/css/lightbox.min.css">
-<script src="<?php echo get_theme_path(); ?>lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
+
 <?php include_once(get_footer()); ?>

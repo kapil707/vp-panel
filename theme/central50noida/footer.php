@@ -139,8 +139,11 @@ document.addEventListener("DOMContentLoaded", function(){
 }); 
 </script>
 
+<link rel="stylesheet" href="<?php echo get_theme_path(); ?>lightbox/dist/css/lightbox.min.css">
+<script src="<?php echo get_theme_path(); ?>lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
 
 <script src="<?php echo get_theme_path(); ?>wowjs/wow.min.js"></script>
 <script>
 new WOW().init();
 </script>
+
