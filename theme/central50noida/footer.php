@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function(){
 new WOW().init();
 
 $(document).ready(function(){
-    setInterval(open_modal(), 1000);
+    setInterval(open_modal(), 10000);
 
     //open_modal();
     function open_modal(){
