@@ -369,13 +369,14 @@ if ( ! function_exists('slider_page'))
 				</div>
 				<?php $i++; } ?>
 			</div>
+			<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-prev" data-slide="prev">
+				<span class="carousel-control-prev-icon"></span>
+			</a>
+			<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-next" data-slide="next">
+				<span class="carousel-control-next-icon"></span>
+			</a>
 		</div>
-		<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-prev" data-slide="prev">
-			<span class="carousel-control-prev-icon"></span>
-		</a>
-		<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-next" data-slide="next">
-			<span class="carousel-control-next-icon"></span>
-		</a>
+		
 		<?php
 	}
 }
