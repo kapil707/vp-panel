@@ -171,5 +171,8 @@ document.addEventListener("DOMContentLoaded", function(){
 <script src="<?php echo get_theme_path(); ?>wowjs/wow.min.js"></script>
 <script>
 new WOW().init();
-    $(".message_toast_show_css").click();
+setInterval(
+    $(".message_toast_show_css").click(),
+    5000
+);    
 </script>
