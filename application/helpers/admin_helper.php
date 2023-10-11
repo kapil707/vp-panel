@@ -212,7 +212,7 @@ if ( ! function_exists('get_page_template'))
 						$dir = "./theme/".$theme."/";
 						$map = directory_map($dir);
 						?>
-						<select class="form-control">
+						<select class="form-control" name="link_page">
 							<option>Select Template</option>
 							<?php 
 							error_reporting(0);
