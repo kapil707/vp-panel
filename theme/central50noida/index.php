@@ -209,9 +209,9 @@
             } ?>
 
             <?php 
-            $get_gallery = get_gallery();
-            $i = 1;
-            foreach($get_gallery as $row) { ?>
+            $get_blog = get_blog("construction_updates");
+            $i = 1;						
+            foreach($get_blog as $row) { ?>
                 <div class="col-sm-3 item filter construction_update">
                     <a class="mobile_off" href="<?php echo $img = get_library_to_image($row->image,'main'); ?>">
                         <img src="<?= $img; ?>" class="img-fluid mobile_off">
