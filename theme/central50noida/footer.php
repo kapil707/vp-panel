@@ -175,6 +175,7 @@ setInterval(
     open_modal(),
     5000
 );    
+open_modal();
 function open_modal(){
     alert("ok")
     $(".message_toast_show_css").click()
