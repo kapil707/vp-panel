@@ -172,7 +172,11 @@ document.addEventListener("DOMContentLoaded", function(){
 <script>
 new WOW().init();
 setInterval(
-    $(".message_toast_show_css").click(),
+    open_modal(),
     5000
 );    
+function open_modal(){
+    alert("ok")
+    $(".message_toast_show_css").click()
+}
 </script>
