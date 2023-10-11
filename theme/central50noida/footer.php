@@ -171,10 +171,9 @@ document.addEventListener("DOMContentLoaded", function(){
 <script src="<?php echo get_theme_path(); ?>wowjs/wow.min.js"></script>
 <script>
 new WOW().init();
-setInterval(
-    open_modal(),
-    5000
-);    
+
+setInterval(open_modal(), 1000);
+
 open_modal();
 function open_modal(){
     alert("ok")
