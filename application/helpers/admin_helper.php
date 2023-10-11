@@ -217,7 +217,7 @@ if ( ! function_exists('get_page_template'))
 							<?php foreach($map as $r){
 								if(strpos($r,'.php')){
 								?>
-									<option <?php if($row->link_page.".php"==$r) { echo "selected"; } ?>>
+									<option <?php if(!empty($row->link_page)) { if($row->link_page.".php"==$r) { echo "selected"; } }?>>
 										<?php echo $r; ?>
 									</option>
 								<?php
