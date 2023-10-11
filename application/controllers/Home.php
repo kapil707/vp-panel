@@ -35,7 +35,7 @@ class Home extends CI_Controller {
 	public function post_data()
 	{
 		$theme = get_field_data("system_theme");
-		$this->load->view("../../theme/".$theme."/functions",$data);
+		$this->load->view("../../theme/".$theme."/functions");
 	}
 	
 	public function blog($page="")
