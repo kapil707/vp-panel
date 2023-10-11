@@ -189,24 +189,21 @@
                 <?php echo get_field_data("home_page_label04","1"); ?>
             </div>
             <div class="col-md-12 text-center">
-                <div class="filter filter-basic">
-                    <div class="filter-nav">
-                        <button class="btn btn-default filter-button" data-filter="all">All</button>
-                        <button class="btn btn-default filter-button" data-filter="hdpe">HDPE Pipes</button>
-                        <button class="btn btn-default filter-button" data-filter="sprinkle">Sprinkle Pipes</button>
-                        <button class="btn btn-default filter-button" data-filter="spray">Spray Nozzle</button>
-                        <button class="btn btn-default filter-button" data-filter="irrigation">Irrigation Pipes</button>
-                    </div>
-                    <div class="filter-gallery">
-                        <div class="item filter hdpe">
-                            <div class="item-content">
-                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(30).webp" alt="image">
-                            </div>
+                <button class="btn btn-default filter-button" data-filter="all">All</button>
+                <button class="btn btn-default filter-button" data-filter="hdpe">HDPE Pipes</button>
+                <button class="btn btn-default filter-button" data-filter="sprinkle">Sprinkle Pipes</button>
+                <button class="btn btn-default filter-button" data-filter="spray">Spray Nozzle</button>
+                <button class="btn btn-default filter-button" data-filter="irrigation">Irrigation Pipes</button>
+            </div>
+            <div class="col-md-12 text-center">
+                    <div class="item filter hdpe">
+                        <div class="item-content">
+                            <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(30).webp" alt="image">
                         </div>
-                        <div class="item filter sprinkle">
-                            <div class="item-content">
-                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(1).webp" alt="image">
-                            </div>
+                    </div>
+                    <div class="item filter sprinkle">
+                        <div class="item-content">
+                            <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(1).webp" alt="image">
                         </div>
                     </div>
                 </div>
@@ -280,8 +277,7 @@ $(document).ready(function(){
         else
         {
             $(".filter").not('.'+value).hide('3000');
-            $('.filter').filter('.'+value).show('3000');
-            
+            $('.filter').filter('.'+value).show('3000');            
         }
     });
 
