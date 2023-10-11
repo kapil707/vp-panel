@@ -50,8 +50,9 @@ class Home extends CI_Controller {
 		//$this->load->view("../../theme/".$theme."/footer",$data);
 	}
 
-	public function construction_updates($page="")
+	public function construction_updates($id="")
 	{
+		$page = $this->uri->segment('1');
 		$theme 				= get_field_data("system_theme");
 		$page_data 			= get_all_blog_data($page);
 		$data["theme"]		= $theme;
