@@ -204,6 +204,7 @@
                     <a class="mobile_show" href="<?php echo $img = get_library_to_image($row->mobile_image,'main'); ?>">
                         <img src="<?= $img; ?>" class="img-fluid mobile_show">
                     </a>
+                    <h4><?php echo $row->title; ?></h4>
                 </div>               
             <?php 
             } ?>
@@ -219,6 +220,7 @@
                     <a class="mobile_show" href="<?php echo $img = get_library_to_image($row->mobile_image,'main'); ?>">
                         <img src="<?= $img; ?>" class="img-fluid mobile_show">
                     </a>
+                    <h4><?php echo $row->title; ?></h4>
                 </div>               
             <?php 
             } ?>
