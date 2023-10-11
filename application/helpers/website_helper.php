@@ -324,12 +324,12 @@ if ( ! function_exists('get_blog'))
 
 if ( ! function_exists('get_gallery'))
 {
-	function get_gallery($child_page="")
+	function get_gallery($child_page="",$limit="")
     {
 		$ci =& get_instance();
 		$ci->load->database(); 
 	
-		$result = $ci->db->query("select * from tbl_page where page_type='gallery' and child_page='$child_page'")->result();
+		$result = $ci->db->query("select * from tbl_page where page_type='gallery' and child_page='$child_page' $limit")->result();
 		return $result;
 	}
 }
