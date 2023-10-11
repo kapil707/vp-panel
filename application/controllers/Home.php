@@ -49,6 +49,19 @@ class Home extends CI_Controller {
 		$this->load->view("../../theme/".$theme."/".$mypage,$data);
 		//$this->load->view("../../theme/".$theme."/footer",$data);
 	}
+
+	public function construction_updates($page="")
+	{
+		$theme 				= get_field_data("system_theme");
+		$page_data 			= get_all_blog_data($page);
+		$data["theme"]		= $theme;
+		$data["page_data"] 	= $page_data[0];
+		$mypage 			= $page_data[2];
+		
+		//$this->load->view("../../theme/".$theme."/header",$data);
+		$this->load->view("../../theme/".$theme."/".$mypage,$data);
+		//$this->load->view("../../theme/".$theme."/footer",$data);
+	}
 	
 	public function not_found()
 	{
