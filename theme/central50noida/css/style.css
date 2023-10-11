@@ -380,6 +380,10 @@ a:hover{
 #about-box1{
     width:100%;
 }
+#about-box1 .main-banner{
+    width:100%;
+    height: 300px;
+}
 
 #about-box2{
     padding: 150px;
@@ -471,6 +475,13 @@ a:hover{
         padding: 17px !important;
     }
     #home-footer2{
+        padding: 10px !important;
+    }
+    #about-box1 .main-banner{
+        width:100%;
+        height:300px;
+    }
+    #about-box2{
         padding: 10px !important;
     }
 }
