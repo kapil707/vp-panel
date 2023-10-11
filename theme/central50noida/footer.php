@@ -53,7 +53,7 @@
 </div>
 <div class="close-form" style="display:none"></div>
 <div class="floating-form">
-    <form id="get_in_touch_form" action="<?= base_url(); ?><?php echo base_url(); ?>post-data" method="post">
+    <form id="get_in_touch_form" action="<?php echo base_url(); ?>post-data" method="post">
     <div class="contact-form">
         <div class="form-group">
             <label>Full Name *</label>
