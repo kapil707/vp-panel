@@ -11,12 +11,6 @@
             <div class="col-md-12">
                 <?php echo $page_data->description ?>
             </div>
-        </div>
-    </div>
-</div>
-<section class="contact-sec lg-py-4 sm-py-4">
-    <div class="container">
-        <div class="row">
             <div class="col-md-5">
                 <div class="contact-left">
                     <div class="elementor-widget-container margin-b-50">
@@ -66,8 +60,8 @@
             </div>
         </div>
     </div>
-</section>
-<section class="map-sec">
+</div>
+<div class="map-sec">
     <?php echo get_field_data("contact_map",9) ?>
-</section>
+</div>
 <?php include_once(get_footer()); ?>
