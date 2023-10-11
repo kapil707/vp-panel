@@ -5,7 +5,10 @@
 
     <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/bootstrap.css">
 
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"></script>
+    
     <script src="<?php echo get_theme_path(); ?>js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,21 +18,7 @@
     <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/style.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css-1/plugins.min.css">
-    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css-1/revslider/settings.css">
-    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css-1/style3661.css?v=2.0"> -->
-
-    <?php /*
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/plugins.min.css">
-    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/revslider/settings.css">
-    <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/style3661.css?v=2.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> */ ?>
-
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.6/animate.min.css">
 
 </head>

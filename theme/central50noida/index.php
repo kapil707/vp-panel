@@ -1,5 +1,4 @@
 <?php include_once(get_header()); ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
 <div id="slider">
     <?php echo do_slider("slider") ;?>
 </div>
