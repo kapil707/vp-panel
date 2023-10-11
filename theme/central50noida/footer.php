@@ -168,16 +168,17 @@ document.addEventListener("DOMContentLoaded", function(){
   </div>
 </div>
 
-<script src="<?php echo get_theme_path(); ?>wowjs/wow.min.js"></script>
 <script>
-new WOW().init();
-
 $(document).ready(function(){
-
     setTimeout(open_modal(), 1000);
     function open_modal(){
-        alert("asdfsa")
+        alert("asdfsaf")
         $(".message_toast_show_css").click()
     }
 });
+</script>
+
+<script src="<?php echo get_theme_path(); ?>wowjs/wow.min.js"></script>
+<script>
+new WOW().init();
 </script>
