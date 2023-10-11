@@ -1,6 +1,6 @@
 <?php include_once(get_header()); ?>
 <div id="about-box1">
-    <img src="<?php echo get_library_to_image($page_data->image,'main'); ?>" width="100%">
+    <img src="<?php echo get_library_to_image($page_data->image,'main'); ?>" class="main-banner">
 </div>
 
 <div id="about-box2">
