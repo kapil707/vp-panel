@@ -295,8 +295,7 @@ class Manage_field_group_model extends CI_Model
 				<label>
 					<input type="checkbox" class="new_check_box" name="category_id[]" 
 					value="<?php echo $row->id ?>" 
-					<?php if(!empty($category_id)) { if(in_array($row->id,$category_id)) { echo "checked"; } }?>> 
-					<?php echo $row->title; ?>
+					<?php if(!empty($category_id)) { if(in_array($row->id,$category_id)) { echo "checked"; } }?>> <?php echo $row->title; ?>
 				<label>
 			</div>
 			<?php
@@ -313,8 +312,9 @@ class Manage_field_group_model extends CI_Model
 			?>
 			<div class="col-sm-12">
 				<label style="margin-left:<?php echo $i; ?>px;">
-					<input type="checkbox" class="new_check_box" name="category_id[]" value="<?php echo $row->id ?>" <?php if(in_array($row->id,$category_id)) { echo "checked"; } ?>> 
-					<?php echo $row->title; ?>
+					<input type="checkbox" class="new_check_box" name="category_id[]" 
+					value="<?php echo $row->id ?>" 
+					<?php if(!empty($category_id)) { if(in_array($row->id,$category_id)) { echo "checked"; } }?>> <?php echo $row->title; ?>
 				<label>
 			</div>
 			<?php
