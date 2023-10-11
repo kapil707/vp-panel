@@ -54,6 +54,7 @@
 <div class="close-form" style="display:none"></div>
 <div class="floating-form">
     <form id="get_in_touch_form" action="<?php echo base_url(); ?>post-data" method="post">
+    <input type="hidden" name="action_type" value="load_submit_api">
     <div class="contact-form">
         <div class="form-group">
             <label>Full Name *</label>
