@@ -357,27 +357,25 @@ if ( ! function_exists('slider_page'))
 {
 	function do_slider($val = ""){
 		?>
-		<div id="slider">
-			<div id="myCarousel_<?php echo $val; ?>" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
-					<?php 
-					$i = 1;
-					$result = get_gallery($val);
-					foreach($result as $row) { ?>
-					<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
-						<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="w-100 mobile_off">
-						<img src="<?= get_library_to_image($row->mobile_image,'main'); ?>" alt="<?php echo $row->title; ?>" class="w-100 mobile_show">
-					</div>
-					<?php $i++; } ?>
+		<div id="myCarousel_<?php echo $val; ?>" class="carousel slide" data-ride="carousel">
+			<div class="carousel-inner">
+				<?php 
+				$i = 1;
+				$result = get_gallery($val);
+				foreach($result as $row) { ?>
+				<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
+					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="w-100 mobile_off">
+					<img src="<?= get_library_to_image($row->mobile_image,'main'); ?>" alt="<?php echo $row->title; ?>" class="w-100 mobile_show">
 				</div>
+				<?php $i++; } ?>
 			</div>
-			<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-prev" data-slide="prev">
-				<span class="carousel-control-prev-icon"></span>
-			</a>
-			<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-next" data-slide="next">
-				<span class="carousel-control-next-icon"></span>
-			</a>
 		</div>
+		<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-prev" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a href="#myCarousel_<?php echo $val; ?>" class="carousel-control-next" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
 		<?php
 	}
 }
