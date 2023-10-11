@@ -7,8 +7,9 @@ class Home extends CI_Controller {
 		$this->load->view("../../theme/central50noida/index");
 	}
 
-	public function index()
+	public function index($id="")
 	{
+		$data["page_url_id"] = $id;
 		$page = $this->uri->segment('1');
 
 		$theme = get_field_data("system_theme");
