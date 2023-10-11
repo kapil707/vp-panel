@@ -216,11 +216,11 @@ if ( ! function_exists('get_page_template'))
 							<option>Select Template</option>
 							<?php 
 							error_reporting(0);
-							foreach($map as $row){
-								if(strpos($row,'.php')){
-									$val = str_replace(".php","",$row); ?>
+							foreach($map as $row1){
+								if(strpos($row1,'.php')){
+									$val = str_replace(".php","",$row1); ?>
 									<option <?php if(!empty($row->link_page)) { if($row->link_page==$val) { echo "selected"; } }?> value="<?php echo $val; ?>">
-										<?php echo $val; ?>
+										<?php echo $row1; ?>
 									</option>
 								<?php
 								}
