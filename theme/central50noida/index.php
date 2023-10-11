@@ -193,7 +193,12 @@
             $i = 1;
             foreach($get_gallery as $row) { ?>
                 <div class="col-sm-3 item">
-                    <img src="<?= get_library_to_image($row->image,'main'); ?>" src="<?= get_library_to_image($row->image,'main'); ?>" class="img-fluid">
+                    <a class="mobile_off" href="<?php echo $img = get_library_to_image($row->image,'main'); ?>">
+                        <img src="<?= $img; ?>" class="img-fluid mobile_off">
+                    </a>
+                    <a class="mobile_show" href="<?php echo $img = get_library_to_image($row->mobile_image,'main'); ?>">
+                        <img src="<?= $img; ?>" class="img-fluid mobile_show">
+                    </a>
                 </div>               
             <?php 
             } ?>
