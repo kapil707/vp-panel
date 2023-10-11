@@ -35,7 +35,7 @@
 <div id="home-footer2" class="home-box-main">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-justify">
                 <?php echo get_field_data("contact_disclosure",9) ?>
             </div>
         </div>
