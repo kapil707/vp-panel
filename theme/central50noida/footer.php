@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <link rel="stylesheet" href="<?php echo get_theme_path(); ?>lightbox/dist/css/lightbox.min.css">
 <script src="<?php echo get_theme_path(); ?>lightbox/dist/js/lightbox-plus-jquery.min.js"></script>
 
-<a href="#" class="message_toast_show_css" data-toggle="modal" data-target="#exampleModal_for_lead">asdfasfasfasfasf</a>
+<button class="message_toast_show_css" data-toggle="modal" data-target="#exampleModal_for_lead"></button>
 
 
 <div class="modal fade" id="exampleModal_for_lead" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
