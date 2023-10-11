@@ -169,13 +169,11 @@ document.addEventListener("DOMContentLoaded", function(){
 </div>
 
 <script>
-$(document).ready(function(){
-    setTimeout(open_modal(), 5000);
-    function open_modal(){
-        alert("asdfsaf")
-        $(".message_toast_show_css").click()
-    }
-});
+setTimeout(open_modal(), 5000);
+function open_modal(){
+    alert("asdfsaf")
+    $(".message_toast_show_css").click()
+}
 </script>
 
 <script src="<?php echo get_theme_path(); ?>wowjs/wow.min.js"></script>
