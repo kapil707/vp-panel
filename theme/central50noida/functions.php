@@ -53,5 +53,5 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'load_submit_api') 
 	$this->session->set_flashdata('message_value','Thanks, we will contact you soon');
 	$this->session->set_flashdata('message_toast_show','1');
 	
-	redirect(base_url().'edit-profile');
+	redirect(base_url());
 }
