@@ -180,5 +180,5 @@ $(document).ready(function(){
         alert("ok")
         $(".message_toast_show_css").click()
     }
-}
+});
 </script>
