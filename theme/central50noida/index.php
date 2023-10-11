@@ -188,6 +188,28 @@
                 <h5><?php echo get_field_data("home_page_label03","1"); ?></h5>
                 <?php echo get_field_data("home_page_label04","1"); ?>
             </div>
+            <div class="col-md-12 text-center">
+                <div class="filter filter-basic">
+                    <div class="filter-nav">
+                        <button class="btn btn-success active" data-filter="">All</button>
+                        <button class="btn btn-primary" data-filter="nature">Nature</button>
+                        <button class="btn btn-primary" data-filter="food">Food</button>
+                        <button class="btn btn-primary" data-filter="architecture">Architecture</button>
+                    </div>
+                    <div class="filter-gallery">
+                        <div class="item" data-category="nature">
+                        <div class="item-content">
+                            <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(30).webp" alt="image">
+                        </div>
+                        </div>
+                        <div class="item" data-category="architecture">
+                            <div class="item-content">
+                                <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(1).webp" alt="image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <?php 
             $get_gallery = get_gallery();
             $i = 1;
