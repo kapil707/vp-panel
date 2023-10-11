@@ -194,7 +194,7 @@
                 <button class="btn btn-default filter-button" data-filter="construction_update">Construction Update</button>
             </div>
             <?php 
-            $get_gallery = get_gallery();
+            $get_gallery = get_gallery("","limit 0,4");
             $i = 1;
             foreach($get_gallery as $row) { ?>
                 <div class="col-sm-3 item filter gallery">
@@ -209,7 +209,7 @@
             } ?>
 
             <?php 
-            $get_blog = get_blog("construction_updates");
+            $get_blog = get_blog("construction_updates","limit 0,4");
             $i = 1;						
             foreach($get_blog as $row) { ?>
                 <div class="col-sm-3 item filter construction_update">

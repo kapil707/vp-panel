@@ -312,12 +312,12 @@ if ( ! function_exists('get_field_data_id'))
 
 if ( ! function_exists('get_blog'))
 {
-	function get_blog($child_page="")
+	function get_blog($child_page="",$limit="")
     {
 		$ci =& get_instance();
 		$ci->load->database(); 
 	
-		$result = $ci->db->query("select * from tbl_page where page_type='blog' and child_page='$child_page'")->result();
+		$result = $ci->db->query("select * from tbl_page where page_type='blog' and child_page='$child_page' $limit")->result();
 		return $result;
 	}
 }
