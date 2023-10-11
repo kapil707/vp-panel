@@ -264,4 +264,5 @@
         </svg>
     </div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/web-animations/2.3.1/web-animations.min.js"></script>
 <?php include_once(get_footer()); ?>
