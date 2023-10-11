@@ -64,7 +64,9 @@
             <div class="row">
                 <div class="col-md-4 col-2">
                     <h2 id="logo">
-                        <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo"></a>
+                        <a href="<?php echo base_url(); ?>">
+                            <img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" alt="logo" class="logo">
+                        </a>
                     </h2>
                 </div>
                 <div class="col-10 mobile_show text-right" style="padding:10px;">
