@@ -214,7 +214,9 @@ if ( ! function_exists('get_page_template'))
 						?>
 						<select class="form-control">
 							<option>Select Template</option>
-							<?php foreach($map as $row){
+							<?php 
+							error_reporting(0);
+							foreach($map as $row){
 								if(strpos($row,'.php')){
 									$val = str_replace(".php","",$row); ?>
 									<option <?php if(!empty($row->link_page)) { if($row->link_page.".php"==$row) { echo "selected"; } }?> value="<?php echo $val; ?>">
