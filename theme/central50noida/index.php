@@ -190,29 +190,29 @@
             </div>
             <div class="col-md-12 text-center">
                 <button class="btn btn-default filter-button" data-filter="all">All</button>
-                <button class="btn btn-default filter-button" data-filter="hdpe">HDPE Pipes</button>
-                <button class="btn btn-default filter-button" data-filter="sprinkle">Sprinkle Pipes</button>
-                <button class="btn btn-default filter-button" data-filter="spray">Spray Nozzle</button>
-                <button class="btn btn-default filter-button" data-filter="irrigation">Irrigation Pipes</button>
-            </div>
-            <div class="col-md-12 text-center">
-                    <div class="item filter hdpe">
-                        <div class="item-content">
-                            <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(30).webp" alt="image">
-                        </div>
-                    </div>
-                    <div class="item filter sprinkle">
-                        <div class="item-content">
-                            <img src="https://mdbootstrap.com/img/Photos/Lightbox/Thumbnail/img%20(1).webp" alt="image">
-                        </div>
-                    </div>
-                </div>
+                <button class="btn btn-default filter-button" data-filter="gallery">Gallery</button>
+                <button class="btn btn-default filter-button" data-filter="construction_update">Construction Update</button>
             </div>
             <?php 
             $get_gallery = get_gallery();
             $i = 1;
             foreach($get_gallery as $row) { ?>
-                <div class="col-sm-3 item">
+                <div class="col-sm-3 item filter gallery">
+                    <a class="mobile_off" href="<?php echo $img = get_library_to_image($row->image,'main'); ?>">
+                        <img src="<?= $img; ?>" class="img-fluid mobile_off">
+                    </a>
+                    <a class="mobile_show" href="<?php echo $img = get_library_to_image($row->mobile_image,'main'); ?>">
+                        <img src="<?= $img; ?>" class="img-fluid mobile_show">
+                    </a>
+                </div>               
+            <?php 
+            } ?>
+
+            <?php 
+            $get_gallery = get_gallery();
+            $i = 1;
+            foreach($get_gallery as $row) { ?>
+                <div class="col-sm-3 item filter construction_update">
                     <a class="mobile_off" href="<?php echo $img = get_library_to_image($row->image,'main'); ?>">
                         <img src="<?= $img; ?>" class="img-fluid mobile_off">
                     </a>
