@@ -170,7 +170,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
 <script>
 $(document).ready(function(){
-    setTimeout(open_modal(), 1000);
+    setTimeout(open_modal(), 5000);
     function open_modal(){
         alert("asdfsaf")
         $(".message_toast_show_css").click()
