@@ -188,7 +188,7 @@
                 <h5><?php echo get_field_data("home_page_label03","1"); ?></h5>
                 <?php echo get_field_data("home_page_label04","1"); ?>
             </div>
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center filter-button-div">
                 <button class="btn btn-default filter-button" data-filter="all">All</button>
                 <button class="btn btn-default filter-button" data-filter="gallery">Gallery</button>
                 <button class="btn btn-default filter-button" data-filter="construction_update">Construction Update</button>

@@ -214,6 +214,10 @@ a:hover{
 #home-box5 h5{
     font-size: 2rem;
 }
+#home-box5 .filter-button-div{
+    padding-top:50px;
+    padding-bottom:50px;
+}
 
 #home-box5 .item{
     margin-top: 30px;
