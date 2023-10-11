@@ -218,11 +218,11 @@
                 <div class="col-sm-3">
                     <div class="item filter construction_update">
                         <a class="mobile_off" href="<?php echo base_url(); ?>construction-updates/<?php echo $row->id; ?>">
-                            <?php echo $img = get_library_to_image($row->image,'main'); ?>
+                            <?php $img = get_library_to_image($row->image,'main'); ?>
                             <img src="<?= $img; ?>" class="img-fluid mobile_off">
                         </a>
                         <a class="mobile_show" href="<?php echo base_url(); ?>construction-updates/<?php echo $row->id; ?>">
-                            <?php echo $img = get_library_to_image($row->mobile_image,'main'); ?>
+                            <?php $img = get_library_to_image($row->mobile_image,'main'); ?>
                             <img src="<?= $img; ?>" class="img-fluid mobile_show">
                         </a>
                         <h4><?php echo $row->title; ?></h4>
