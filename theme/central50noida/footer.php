@@ -173,11 +173,9 @@ document.addEventListener("DOMContentLoaded", function(){
 new WOW().init();
 
 $(document).ready(function(){
-    setInterval(open_modal(), 10000);
 
-    //open_modal();
+    setTimeout(open_modal(), 1000);
     function open_modal(){
-        alert("ok")
         $(".message_toast_show_css").click()
     }
 });
