@@ -81,6 +81,15 @@
 						<th>
                         	Sorting
                         </th>
+						<th>
+                        	Add
+                        </th>
+						<th>
+                        	View
+                        </th>
+						<th>
+                        	Setting
+                        </th>
                     </tr>
                 </thead>
 				<tbody>
@@ -103,6 +112,15 @@
 						<td>
 							<input type="number" value="<?= $row->sorting_order; ?>" onchange="change_sorting_order('<?= $row->id; ?>')" class="sorting_order_<?= $row->id; ?>">
                         </td>
+						<td>
+							<input type="checkbox" <?php if($row->page_add) { echo "checked"; } ?>>Add
+						</td>
+						<td>
+							<input type="checkbox" <?php if($row->page_view) { echo "checked"; } ?>>View
+						</td>
+						<td>
+							<input type="checkbox" <?php if($row->page_setting) { echo "checked"; } ?>>Setting
+						</td>
                     </tr>
                     <?php
                     }
