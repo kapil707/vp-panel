@@ -251,6 +251,44 @@ class Manage_whatsapp extends CI_Controller {
 		echo "ok";
 	}
 
+	public function setting()
+	{
+		/******************session***********************/
+		$user_id = $this->session->userdata("user_id");
+		$user_type = $this->session->userdata("user_type");
+		/******************session***********************/
+		$Page_title = $this->Page_title;
+		$Page_name 	= $this->Page_name;
+		$Page_view 	= $this->Page_view;
+		$Page_menu 	= $this->Page_menu;
+		$Page_tbl 	= $this->Page_tbl;
+		$page_controllers 	= $this->page_controllers;
+		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
+		
+		$data['title1'] = $Page_title." || Settings";
+		$data['title2'] = "Settings";
+		$data['Page_name'] = $Page_name;
+		$data['Page_menu'] = $Page_menu;		
+		$this->breadcrumbs->push("Admin","admin/");
+		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/".$dt_child_page);
+		$this->breadcrumbs->push("Settings","admin/$page_controllers/setting".$dt_child_page);
+		$tbl = $Page_tbl;
+		
+		$system_ip = $this->input->ip_address();
+		extract($_POST);
+		if(isset($Submit))
+		{
+			$message_db = "";
+			
+			$this->Manage_field_group_model->insert_field_data_default($whatsapp_api_key,"whatsapp_api_key");
+
+			//redirect(current_url());
+		}
+		$this->load->view("admin/header_footer/header",$data);
+		$this->load->view("admin/$Page_view/setting",$data);
+		$this->load->view("admin/header_footer/footer",$data);
+	}
+
 	public function add2()
 	{
 		/******************session***********************/
@@ -364,5 +402,7 @@ class Manage_whatsapp extends CI_Controller {
 			}
 		}
 		redirect(base_url()."admin/$page_controllers/");
-	}   
+	} 
+	
+	
 }

@@ -43,84 +43,10 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	if(empty($row)){
 		$this->Scheme_Model->insert_fun("tbl_o_my_users",$dt);
 	}
-
-	/*$table_name = $wpdb->prefix . 'my_users'; // Replace 'your_table_name' with your actual table name
-	
-	$table_name2 = $wpdb->prefix . 'my_use_code';
-
-	$data_to_check = array(
-		'mobile' =>$mobile,
-		// Add more columns and values as needed
-	);
-
-	$where = array();
-	foreach ($data_to_check as $column => $value) {
-		$where[] = $column . ' = %s';
-	}
-
-	$where_clause = implode(' AND ', $where);
-
-	$sql = $wpdb->prepare("SELECT COUNT(*) FROM $table_name WHERE $where_clause", $data_to_check);
-
-	$existing_count = $wpdb->get_var($sql);
-
-	if ($existing_count > 0) {
-		// Data already exists, handle accordingly
-		
-	} else {
-		// Data doesn't exist, proceed with the insertion
-		$data_to_insert = array(
-			'first_name'=>$name,
-			'country'=>$country,
-			'mobile'=>$mobile,
-			'otp'=>$otp,
-			'interest'=>$interest,
-			'interest_type'=>$interest_type,
-			'your_code'=>$your_code,
-			// Add more columns and values as needed
-		);
-
-		$format = array(
-			'%s', // For string values
-			'%s', // For string values
-			// Add more format placeholders based on the data types of your columns
-		);
-
-		$insert_result = $wpdb->insert($table_name, $data_to_insert, $format);
-
-		if ($insert_result === false) {
-			// Handle the insertion error
-		} else {
-			// Insertion successful
-			
-			$sql = "SELECT id FROM $table_name WHERE mobile='$mobile'";
-			$row = $wpdb->get_row($sql);
-			$id = $row->id;
-			
-			$data_to_insert2 = array(
-				'use_code_user' =>$id,
-				'user_code' =>$user_code,
-			);
-			$format2 = array(
-				'%s', // For string values
-				'%s', // For string values
-				// Add more format placeholders based on the data types of your columns
-			);
-			if($_GET["code"]){
-				$wpdb->insert($table_name2, $data_to_insert2, $format2);
-			}
-		}
-	}
 	
 	$message = "Hello $name <br> Thank you for intresting us your otp is this: $otp";
 
 	send_otp($message,$mobile1);
-	
-	$sql = "SELECT * FROM $table_name WHERE mobile='$mobile'";
-	$row = $wpdb->get_row($sql);
-	
-	wp_redirect( home_url('/otp-enter/?id='.$row->id) ); 
-	exit(); */
 
 	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
 	redirect(base_url()."otp-enter?id=".$row->id);
@@ -128,7 +54,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 
 function send_otp($message,$mobile){
 
-	$whatsapp_key = "433e4178876685b01e0f99a4e474bcfab30d6b57fb256500ee65827aed544f37557625b3d70d4152";
+	$whatsapp_key = "d19fe624831cbb4792f696f2c42457103bcc5bf1c93045fcb00f980b5fc1c88f3b00ffa02fff8eb3";
 
 	//$mobile 		= "919782664507";
 	$media 			= "";
