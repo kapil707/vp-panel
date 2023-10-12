@@ -47,7 +47,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	$message = "Hello $name <br> Thank you for intresting us your otp is this: $otp";
 
 	send_otp($message,$mobile1);
-die;
+
 	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
 	redirect(base_url()."otp-enter?id=".$row->id);
 }
@@ -89,9 +89,7 @@ function send_otp($message,$mobile){
 	curl_close($curl);
 
 	$response = htmlspecialchars($response);
-	echo $response = str_replace("'","&#39;",$response);
-
-	die;
+	$response = str_replace("'","&#39;",$response);
 }
 function getName() {
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
