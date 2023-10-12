@@ -15,7 +15,7 @@
 							</label>
 						</div>
 						<div class="col-sm-4">
-							<input type="number" class="form-control" id="form-field-1" placeholder="WhatsApp Api Key" name="whatsapp_api_key" value="<?php echo get_field_data("whatsapp_api_key"); ?>" min=0 max=999 />
+							<input type="text" class="form-control" id="form-field-1" placeholder="WhatsApp Api Key" name="whatsapp_api_key" value="<?php echo get_field_data("whatsapp_api_key"); ?>" min=0 max=999 />
 						</div>
 						<div class="help-inline col-sm-12 has-error">
 							<span class="help-block reset middle">  
