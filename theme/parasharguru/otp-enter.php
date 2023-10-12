@@ -6,14 +6,6 @@ $row = get_table_row("tbl_o_my_users WHERE id='$id'");
 
 $no = $row->mobile;
 ?>
-<?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
-<div class="alert alert-danger">
-	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	<strong>
-	<?php echo $this->session->flashdata('message_title'); ?>
-	</strong><?php echo $this->session->flashdata('message_value'); ?>
-</div>
-<?php } ?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4">
@@ -25,6 +17,14 @@ $no = $row->mobile;
 					<?php echo get_field_data('login_label1','73'); ?>
 				</p>
 			</div>
+			<?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
+			<div class="alert alert-danger">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong>
+				<?php echo $this->session->flashdata('message_title'); ?>
+				</strong><?php echo $this->session->flashdata('message_value'); ?>
+			</div>
+			<?php } ?>
 			<p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 				<?php echo get_field_data('login_label2','73'); ?>
 			</p>
