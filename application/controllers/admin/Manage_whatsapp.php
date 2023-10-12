@@ -270,8 +270,8 @@ class Manage_whatsapp extends CI_Controller {
 		$data['Page_name'] = $Page_name;
 		$data['Page_menu'] = $Page_menu;		
 		$this->breadcrumbs->push("Admin","admin/");
-		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/".$dt_child_page);
-		$this->breadcrumbs->push("Settings","admin/$page_controllers/setting".$dt_child_page);
+		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
+		$this->breadcrumbs->push("Settings","admin/$page_controllers/setting");
 		$tbl = $Page_tbl;
 		
 		$system_ip = $this->input->ip_address();

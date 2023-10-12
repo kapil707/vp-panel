@@ -1,6 +1,6 @@
 <div class="row">
 	<div class="col-xs-12" style="margin-bottom:20px;">
-		<a href="<?= base_url()?>admin/<?= $Page_name; ?>/<?php echo $child_page ?>" class="btn btn-w-m btn-info">
+		<a href="<?= base_url()?>admin/<?= $Page_name; ?>" class="btn btn-w-m btn-info">
 			Back
 		</a>
 	</div>
