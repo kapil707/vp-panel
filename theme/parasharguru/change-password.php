@@ -20,11 +20,11 @@ $result1 = get_table("tbl_o_interest");
 	<div class="row">
 		<div class="col-sm-12 form-group">
 			<label>Enter Password:</label>
-			<input type="password" name="password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onkeypress="check_password1()" id="new_password">
+			<input type="password" name="password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password">
 		</div>
 		<div class="col-sm-12 form-group">
 			<label>Re-enter Password:</label>
-			<input type="password" name="password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onkeypress="check_password2()" id="renew_password">
+			<input type="password" name="password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onchange="check_password2()" id="renew_password">
 		</div>
 	</div>
 </form>	
