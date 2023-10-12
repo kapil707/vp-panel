@@ -125,10 +125,7 @@ class Profile_management extends CI_Controller {
 	{
 		$id 	= $_POST["id"];
 		$type 	= $_POST["type"];
-		$value 	= $_POST[$type];
-
-		echo "update tbl_permission_page set $type='$value' where id='$id'";
-
+		$value 	= $_POST["value"];
 
 		$Page_title = $this->Page_title;
 		$Page_tbl = $this->Page_tbl;
