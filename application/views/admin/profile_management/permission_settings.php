@@ -224,13 +224,13 @@ function onchange_page_add(id)
 	onchange_page_api(id,"page_add",value)
 }
 
-function onchange_page_edit(id)
+function onchange_page_view(id)
 {
 	value = 0;
-	if($(".page_edit_"+id).prop('checked') == true){
+	if($(".page_view_"+id).prop('checked') == true){
 		value = 1;
 	}
-	onchange_page_api(id,"page_edit",value)
+	onchange_page_api(id,"page_view",value)
 }
 
 function onchange_page_setting(id)
