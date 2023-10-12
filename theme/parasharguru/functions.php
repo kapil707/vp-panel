@@ -54,8 +54,8 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 
 function send_otp($message,$mobile){
 
-	$whatsapp_key = "d19fe624831cbb4792f696f2c42457103bcc5bf1c93045fcb00f980b5fc1c88f3b00ffa02fff8eb3";
-
+	echo $whatsapp_key = get_field_data("whatsapp_api_key");
+	die;
 	//$mobile 		= "919782664507";
 	$media 			= "";
 	$message 		= str_replace("<br>","\\n",$message);
