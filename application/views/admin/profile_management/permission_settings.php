@@ -79,7 +79,7 @@
                         	Page Fa Fa Icon
                         </th>
 						<th>
-                        	Sorting
+						 	Sorting Order
                         </th>
 						<th>
                         	Add
@@ -113,13 +113,13 @@
 							<input type="number" value="<?= $row->sorting_order; ?>" onchange="change_sorting_order('<?= $row->id; ?>')" class="sorting_order_<?= $row->id; ?>">
                         </td>
 						<td>
-							<input type="checkbox" <?php if($row->page_add) { echo "checked"; } ?>>Add
+							<input type="checkbox" <?php if($row->page_add) { echo "checked"; } ?> onchange="onchange_page_add('<?= $row->id; ?>')" class="page_add_<?= $row->id; ?>"> Add
 						</td>
 						<td>
-							<input type="checkbox" <?php if($row->page_view) { echo "checked"; } ?>>View
+							<input type="checkbox" <?php if($row->page_view) { echo "checked"; } ?> onchange="onchange_page_view('<?= $row->id; ?>')" class="page_view_<?= $row->id; ?>"> View
 						</td>
 						<td>
-							<input type="checkbox" <?php if($row->page_setting) { echo "checked"; } ?>>Setting
+							<input type="checkbox" <?php if($row->page_setting) { echo "checked"; } ?> onchange="onchange_page_setting('<?= $row->id; ?>')" class="page_setting_<?= $row->id; ?>"> Setting
 						</td>
                     </tr>
                     <?php
@@ -202,55 +202,53 @@ function check_all_value_not_null()
 	}*/
 }
 
-var change_fafa_icon1 = 0;
+
 function change_fafa_icon(id)
 {
-	if(change_fafa_icon1==0)
-	{
-		fafa_icon = $(".fafa_icon_"+id).val();
-		change_fafa_icon1 = 1;
-		$.ajax({
-			type       : "POST",
-			data       :  { id:id,fafa_icon:fafa_icon,} ,
-			url        : "<?= base_url()?>admin/<?= $Page_name; ?>/change_fafa_icon",
-			success    : function(data){
-				if(data!="")
-				{
-					java_alert_function("success","Update Successfully");
-				}
-				else
-				{
-					java_alert_function("error","Something Wrong")
-				}
-				change_fafa_icon1 = 0;
-			}
-		});
-	}
+	value = $(".fafa_icon_"+id).val();
+	onchange_page_api(id,"fafa_icon",value)
 }
 
-var change_sorting_order1 = 0;
 function change_sorting_order(id)
 {
-	if(change_sorting_order1==0)
-	{
-		sorting_order = $(".sorting_order_"+id).val();
-		change_sorting_order1 = 1;
-		$.ajax({
-			type       : "POST",
-			data       :  { id:id,sorting_order:sorting_order,} ,
-			url        : "<?= base_url()?>admin/<?= $Page_name; ?>/change_sorting_order",
-			success    : function(data){
-				if(data!="")
-				{
-					java_alert_function("success","Update Successfully");
-				}
-				else
-				{
-					java_alert_function("error","Something Wrong")
-				}
-				change_sorting_order1 = 0;
+	value = $(".sorting_order_"+id).val();
+	onchange_page_api(id,"sorting_order",value)
+}
+
+function onchange_page_add(id)
+{
+	value = $(".page_add_"+id).val();
+	onchange_page_api(id,"page_add",value)
+}
+
+function onchange_page_edit(id)
+{
+	value = $(".page_edit_"+id).val();
+	onchange_page_api(id,"page_edit",value)
+}
+
+function onchange_page_setting(id)
+{
+	value = $(".page_edit_"+id).val();
+	onchange_page_api(id,"page_setting",value)
+}
+
+function onchange_page_api(id,type,value)
+{
+	$.ajax({
+		type       : "POST",
+		data       :  { id:id,type:type,value:value} ,
+		url        : "<?= base_url()?>admin/<?= $Page_name; ?>/onchange_page_api",
+		success    : function(data){
+			if(data!="")
+			{
+				java_alert_function("success","Update Successfully");
 			}
-		});
-	}
+			else
+			{
+				java_alert_function("error","Something Wrong")
+			}
+		}
+	});
 }
 </script>
