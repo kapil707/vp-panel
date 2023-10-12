@@ -20,16 +20,16 @@ $result1 = get_table("tbl_o_interest");
 	<div class="row">
 		<div class="col-sm-12 form-group">
 			<label>Enter Password:</label>
-			<input type="password" name="password" class="form-control input-lg" placeholder="Enter Password" required="" value="">
+			<input type="password" name="password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onkeypress="check_password1()" id="new_password">
 		</div>
 		<div class="col-sm-12 form-group">
 			<label>Re-enter Password:</label>
-			<input type="password" name="password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="">
+			<input type="password" name="password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onkeypress="check_password2()" id="renew_password">
 		</div>
 	</div>
 </form>	
 <script>
-	function check_password1()
+function check_password1()
 {
 	$(".check_new_password_div").html("Loading....");
 	new_password = $("#new_password").val();
