@@ -121,6 +121,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	
 	wp_redirect( home_url('/otp-enter/?id='.$row->id) ); 
 	exit(); */
+	
 
 	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
 	redirect(base_url()."otp-enter?id=".$row->id);
