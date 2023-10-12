@@ -54,8 +54,8 @@ die;
 
 function send_otp($message,$mobile){
 
-	echo $whatsapp_key = get_field_data("whatsapp_api_key");
-	die;
+	$whatsapp_key = get_field_data("whatsapp_api_key");
+
 	//$mobile 		= "919782664507";
 	$media 			= "";
 	$message 		= str_replace("<br>","\\n",$message);
@@ -90,6 +90,8 @@ function send_otp($message,$mobile){
 
 	$response = htmlspecialchars($response);
 	echo $response = str_replace("'","&#39;",$response);
+
+	die;
 }
 function getName() {
     $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
