@@ -42,6 +42,15 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
 	if(empty($row)){
 		$this->Scheme_Model->insert_fun("tbl_o_my_users",$dt);
+	}else{
+		$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
+		$id = $row->id;
+
+		$where = array('id'=>$id);
+
+		$dt = array(
+			'otp'=>'$otp',);
+		$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
 	}
 	
 	$message = "Hello $name <br> Thank you for intresting us your otp is this: $otp";
