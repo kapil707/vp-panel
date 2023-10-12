@@ -144,6 +144,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 		$this->session->set_flashdata('message_toast_show','1');
 
 		redirect(base_url().'otp-enter/?id='.$id);
+		
 	}
 }
 
