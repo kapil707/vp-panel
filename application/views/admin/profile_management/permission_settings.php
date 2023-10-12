@@ -104,6 +104,9 @@
                         </td>
  						<td>
                         	<?= $row->page_title; ?>
+							<?php if($row->menu_id==0){
+								echo "(Main)";
+							} ?>
                         </td>
 						<td>
 							<input type="text" value="" onchange="change_fafa_icon('<?= $row->id; ?>')" class="fafa_icon_<?= $row->id; ?>">
