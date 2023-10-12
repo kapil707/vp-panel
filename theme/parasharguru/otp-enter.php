@@ -6,6 +6,14 @@ $row = get_table_row("tbl_o_my_users WHERE id='$id'");
 
 $no = $row->mobile;
 ?>
+<?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
+<div class="alert alert-danger">
+	<button type="button" class="close" data-dismiss="alert">&times;</button>
+	<strong>
+	<?php echo $this->session->flashdata('message_title'); ?>
+	</strong><?php echo $this->session->flashdata('message_value'); ?>
+</div>
+<?php } ?>
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-4">

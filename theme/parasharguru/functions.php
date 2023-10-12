@@ -137,7 +137,13 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 			redirect(base_url().'home');
 		}
 	}else{
-		redirect(base_url().'otp-enter/?id='.$id.'&error=true');
+		
+		$this->session->set_flashdata('message_title','Wrong Otp');
+		$this->session->set_flashdata('message_time','Just Now');
+		$this->session->set_flashdata('message_value','You Etner Wrong Otp');
+		$this->session->set_flashdata('message_toast_show','1');
+
+		redirect(base_url().'otp-enter/?id='.$id);
 	}
 }
 
