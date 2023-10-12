@@ -217,19 +217,28 @@ function change_sorting_order(id)
 
 function onchange_page_add(id)
 {
-	value = $(".page_add_"+id).val();
+	value = 0;
+	if($(".page_add_"+id).prop('checked') == true){
+		value = 1;
+	}
 	onchange_page_api(id,"page_add",value)
 }
 
 function onchange_page_edit(id)
 {
-	value = $(".page_edit_"+id).val();
+	value = 0;
+	if($(".page_edit_"+id).prop('checked') == true){
+		value = 1;
+	}
 	onchange_page_api(id,"page_edit",value)
 }
 
 function onchange_page_setting(id)
 {
-	value = $(".page_edit_"+id).val();
+	value = 0;
+	if($(".page_setting_"+id).prop('checked') == true){
+		value = 1;
+	}
 	onchange_page_api(id,"page_setting",value)
 }
 
