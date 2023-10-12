@@ -261,7 +261,7 @@ class Manage_field_group_model extends CI_Model
 				'user_id'=>$user_id,);
 			
 			$row1 = $this->db->query("select id from tbl_field_data where field_name='$field_name' and page_id='$page_id'")->row();
-			if($row1->id==""){
+			if(empty($row1->id)){
 				$this->Scheme_Model->insert_fun("tbl_field_data",$dt);
 			}else{
 				$where = array("id"=>$row1->id);
