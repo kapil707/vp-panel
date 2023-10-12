@@ -20,18 +20,26 @@ $result1 = get_table("tbl_o_interest");
 	<div class="row">
 		<div class="col-sm-12 form-group">
 			<label>Enter Password:</label>
-			<input type="password" name="password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password">
+			<input type="password" name="password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password" required>
 		</div>
 		<div class="col-sm-12 form-group">
 			<label>Re-enter Password:</label>
-			<input type="password" name="password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onchange="check_password2()" id="renew_password">
+			<input type="password" name="password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onchange="check_password2()" id="renew_password" required>
 		</div>
 		<div class="col-sm-12 form-group alert_div">
 			
 		</div>
+		<div class="col-sm-12 form-group">
+			<a href="" class="submitbtn_disable main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="Submit1">Edit<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></a>
+
+			<button type="submit" class="submitbtn main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="Submit1">Edit<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></button>
+		</div>
 	</div>
 </form>	
 <script>
+var pass1 = 0;
+var pass2 = 0;
+var pass3 = 0;
 function check_password1()
 {
 	new_password = $("#new_password").val();
@@ -39,14 +47,14 @@ function check_password1()
 	{
 		swal("Password must contain 8 characters (e.g. A,a or 1,2 or !,$,@)");
 		$(".alert_div").html("<div class='alert alert-danger'>Password must contain 8 characters (e.g. A,a or 1,2 or !,$,@)</div>");
-		// pass2 = 0;
-		// submit_btn();
+		pass2 = 0;
+		submit_btn();
 	}
 	else
 	{
 		$(".alert_div").html("&nbsp;");
-		// pass2 = 1;
-		// submit_btn();
+		pass2 = 1;
+		submit_btn();
 	}
 }
 function check_password2()
@@ -58,14 +66,24 @@ function check_password2()
 	{
 		swal("Password doesn't match");
 		$(".alert_div").html("<div class='alert alert-danger'>Password doesn't match</div>");
-		// pass3 = 0;
-		// submit_btn();
+		pass3 = 0;
+		submit_btn();
 	}
 	else
 	{
 		$(".alert_div").html("");
-		// pass3 = 1;
-		// submit_btn();
+		pass3 = 1;
+		submit_btn();
+	}
+}
+function submit_btn()
+{
+	$("#submitbtn").hide()
+	$("#submitbtn_disable").show()
+	if(pass1=="1" && pass2=="1" && pass3=="1")
+	{
+		$("#submitbtn").show()
+		$("#submitbtn_disable").hide()
 	}
 }
 </script>
