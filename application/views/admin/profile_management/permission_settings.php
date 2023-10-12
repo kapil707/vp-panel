@@ -1,137 +1,145 @@
 <div class="row">
     <div class="col-xs-12">
-    	<form class="form-horizontal" role="form" method="post">
-            <div class="form-group">
-                <div class="col-sm-2 text-right">
-                    <label class="col-sm-12 control-label">
-                        Select User Type
-                    </label>
-                </div>
-                <div class="col-sm-10">
-                    <select name="user_type" id="user_type" class="form-control" required="required" onchange="user_type_onchange()">
-                        <option value="">
-                            Select User Type
-                        </option>
-                        <?php
-						$user_type = $this->session->flashdata('user_type1');
-                        $query = $this->db->query("select * from tbl_user_type");
-                        $result1 = $query->result();
-                        foreach($result1 as $row1)
-                        {
-                            ?>
-                            <option value="<?= $row1->user_type; ?>"
-                            <?php if($row1->user_type==$user_type){ echo "selected"; } ?>>
-                                <?= $row1->user_title; ?>
-                            </option>
-                            <?php
-                        }
-                        ?>
-                    </select>
-                </div>
-            </div>
-            <div class="form-group" id="page_type_div">
-        		<div class="col-sm-12">
-                    <div class="col-sm-6">
-                        All Permission
-                    </div>
-                    <div class="col-sm-6">
-                        Permission Of Category
-                    </div>
-             	</div>
-           		<div class="col-sm-12">
-                	<select class="form-control dual_select" multiple name="page_type[]" id="page_type">
-                	<?php
-					$query = $this->db->query("select * from tbl_permission_page order by page_title asc");
-					$result1 = $query->result();
-					foreach($result1 as $row1)
-					{
-						$page_type = $row1->page_type;
-						$query = $this->db->query("select * from tbl_permission_settings where user_type='$user_type' and page_type='$page_type'");
-						$row2 = $query->row();
-						?>
-						<option value="<?= $row1->page_type; ?>" <?php if($row2->page_type==$row1->page_type) { echo "selected"; }?>>
-							<?= $row1->page_title; ?>
-						</option>
-						<?php
-					}
-					?>
-					</select>
-                </div>
-            </div>
+		<div class="ibox float-e-margins">
+			<div class="ibox-content">
+    			<form class="form-horizontal" role="form" method="post">			
+					<div class="form-group">
+						<div class="col-sm-2 text-right">
+							<label class="col-sm-12 control-label">
+								Select User Type
+							</label>
+						</div>
+						<div class="col-sm-10">
+							<select name="user_type" id="user_type" class="form-control" required="required" onchange="user_type_onchange()">
+								<option value="">
+									Select User Type
+								</option>
+								<?php
+								$user_type = $this->session->flashdata('user_type1');
+								$query = $this->db->query("select * from tbl_user_type");
+								$result1 = $query->result();
+								foreach($result1 as $row1)
+								{
+									?>
+									<option value="<?= $row1->user_type; ?>"
+									<?php if($row1->user_type==$user_type){ echo "selected"; } ?>>
+										<?= $row1->user_title; ?>
+									</option>
+									<?php
+								}
+								?>
+							</select>
+						</div>
+					</div>
+					<div class="form-group" id="page_type_div">
+						<div class="col-sm-12">
+							<div class="col-sm-6">
+								All Permission
+							</div>
+							<div class="col-sm-6">
+								Permission Of Category
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<select class="form-control dual_select" multiple name="page_type[]" id="page_type">
+							<?php
+							$query = $this->db->query("select * from tbl_permission_page order by page_title asc");
+							$result1 = $query->result();
+							foreach($result1 as $row1)
+							{
+								$page_type = $row1->page_type;
+								$query = $this->db->query("select * from tbl_permission_settings where user_type='$user_type' and page_type='$page_type'");
+								$row2 = $query->row();
+								?>
+								<option value="<?= $row1->page_type; ?>" <?php if($row2->page_type==$row1->page_type) { echo "selected"; }?>>
+									<?= $row1->page_title; ?>
+								</option>
+								<?php
+							}
+							?>
+							</select>
+						</div>
+					</div>
 
-            <div class="form-group text-right">
-            	<input type="submit" class="ladda-button ladda-button-demo btn btn-primary submitbtn" value="Permission Set" name="Submit" onclick="return check_all_value_not_null()" style="display:none" />
-            </div>
-     	</form>
+					<div class="form-group text-right">
+						<input type="submit" class="ladda-button ladda-button-demo btn btn-primary submitbtn" value="Permission Set" name="Submit" onclick="return check_all_value_not_null()" style="display:none" />
+					</div>
+     			</form>
+			</div>
+		</div>
     </div>
 	<div class="col-xs-12">
-        <div class="table-responsive">
-            <table class="table table-striped table-bordered table-hover dataTables-example">
-                <thead>
-                    <tr>
-                    	<th>
-                        	Sno.
-                        </th>
-						<th>
-                        	Page Title
-                        </th>
-                        <th>
-                        	Page Fa Fa Icon
-                        </th>
-						<th>
-						 	Sorting Order
-                        </th>
-						<th>
-                        	Add
-                        </th>
-						<th>
-                        	View
-                        </th>
-						<th>
-                        	Setting
-                        </th>
-                    </tr>
-                </thead>
-				<tbody>
-                <?php
-				$i=1;
-                foreach ($result as $row)
-                {
-					?>
-                    <tr id="row_<?= $row->id; ?>">
-                    	<td>
-                        	<?= $i++; ?>
-                        </td>
- 						<td>
-                        	<?= $row->page_title; ?>
-							<?php if($row->menu_id==0){
-								echo "(Main)";
-							} ?>
-                        </td>
-						<td>
-							<input type="text" value="" onchange="change_fafa_icon('<?= $row->id; ?>')" class="fafa_icon_<?= $row->id; ?>">
-							<?= base64_decode($row->fafa_icon); ?>
-                        </td>
-						<td>
-							<input type="number" value="<?= $row->sorting_order; ?>" onchange="change_sorting_order('<?= $row->id; ?>')" class="sorting_order_<?= $row->id; ?>">
-                        </td>
-						<td>
-							<input type="checkbox" <?php if($row->page_add) { echo "checked"; } ?> onchange="onchange_page_add('<?= $row->id; ?>')" class="page_add_<?= $row->id; ?>"> Add
-						</td>
-						<td>
-							<input type="checkbox" <?php if($row->page_view) { echo "checked"; } ?> onchange="onchange_page_view('<?= $row->id; ?>')" class="page_view_<?= $row->id; ?>"> View
-						</td>
-						<td>
-							<input type="checkbox" <?php if($row->page_setting) { echo "checked"; } ?> onchange="onchange_page_setting('<?= $row->id; ?>')" class="page_setting_<?= $row->id; ?>"> Setting
-						</td>
-                    </tr>
-                    <?php
-                    }
-                    ?>
-                </tbody>
-            </table>
-        </div>
-    </div>
+		<div class="ibox float-e-margins">
+			<div class="ibox-content">
+				<div class="table-responsive">
+					<table class="table table-striped table-bordered table-hover dataTables-example">
+						<thead>
+							<tr>
+								<th>
+									Sno.
+								</th>
+								<th>
+									Page Title
+								</th>
+								<th>
+									Page Fa Fa Icon
+								</th>
+								<th>
+									Sorting Order
+								</th>
+								<th>
+									Add
+								</th>
+								<th>
+									View
+								</th>
+								<th>
+									Setting
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+						<?php
+						$i=1;
+						foreach ($result as $row)
+						{
+							?>
+							<tr id="row_<?= $row->id; ?>">
+								<td>
+									<?= $i++; ?>
+								</td>
+								<td>
+									<?= $row->page_title; ?>
+									<?php if($row->menu_id==0){
+										echo "<b>(Main)</b>";
+									} ?>
+								</td>
+								<td>
+									<input type="text" value="" onchange="change_fafa_icon('<?= $row->id; ?>')" class="fafa_icon_<?= $row->id; ?>">
+									<?= base64_decode($row->fafa_icon); ?>
+								</td>
+								<td>
+									<input type="number" value="<?= $row->sorting_order; ?>" onchange="change_sorting_order('<?= $row->id; ?>')" class="sorting_order_<?= $row->id; ?>">
+								</td>
+								<td>
+									<input type="checkbox" <?php if($row->page_add) { echo "checked"; } ?> onchange="onchange_page_add('<?= $row->id; ?>')" class="page_add_<?= $row->id; ?>"> Add
+								</td>
+								<td>
+									<input type="checkbox" <?php if($row->page_view) { echo "checked"; } ?> onchange="onchange_page_view('<?= $row->id; ?>')" class="page_view_<?= $row->id; ?>"> View
+								</td>
+								<td>
+									<input type="checkbox" <?php if($row->page_setting) { echo "checked"; } ?> onchange="onchange_page_setting('<?= $row->id; ?>')" class="page_setting_<?= $row->id; ?>"> Setting
+								</td>
+							</tr>
+							<?php
+							}
+							?>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
 <script>
 function user_type_onchange()
