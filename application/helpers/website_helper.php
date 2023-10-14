@@ -207,14 +207,17 @@ if ( ! function_exists('get_all_page_data'))
 		$ci =& get_instance();
 		$ci->load->database(); 
 		
+		$data = "";
 		$row = $ci->db->query("select * from tbl_page where url='$page_url'")->row();
-		$page_type = "page";
-		$link_page = $row->link_page;
-		
-		$data[0] = $row; 
-		$data[1] = $page_type;
-		$data[2] = $row->link_page;
-		//print_r($data);
+		if(!empty($row)){
+			$page_type = "page";
+			$link_page = $row->link_page;
+			
+			$data[0] = $row; 
+			$data[1] = $page_type;
+			$data[2] = $row->link_page;
+			//print_r($data);
+		}
 		return $data;
 	}
 }
