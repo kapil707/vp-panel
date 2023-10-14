@@ -26,6 +26,10 @@ $result1 = get_table("tbl_o_interest");
 		<div class="col-sm-12 form-group">
 			<label>Enter Password:</label>
 			<input type="password" name="new_password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password" required>
+			<div style="float: right; margin-top: 10px;margin-left: -50px; width:45px;">
+				<img src="<?php echo get_theme_path(); ?>images/b_eyes1.png" width="25px" onclick="showpassword()" id="eyes1" alt="">
+				<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword()" id="eyes" style="display:none" alt="">
+			</div>
 		</div>
 		<div class="col-sm-12 form-group">
 			<label>Re-enter Password:</label>
