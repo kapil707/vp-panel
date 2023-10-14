@@ -13,11 +13,15 @@ class Home extends CI_Controller {
 		$page = $this->uri->segment('1');
 
 		$theme = get_field_data("system_theme");
-		$page_data = get_all_page_data($page);
-
 		$data["theme"] = $theme;
-		$data["page_data"] = $page_data[0];
-		$mypage = $page_data[2];
+
+		$page_data = get_all_page_data($page);
+		if(!empty($page_data)){		
+			$data["page_data"] = $page_data[0];
+			$mypage = $page_data[2];
+		}else{
+			$mypage = "404";
+		}
 		
 		//$this->load->view("../../theme/".$theme."/header",$data);
 		if($page=="home" || $page=="Home" || $page==""){
