@@ -2,9 +2,9 @@
 <body>
 <?php
 $id = $_SESSION["temp_user_id"];
-if(empty($id)){
-	redirect(base_url());
-}
+// if(empty($id)){
+// 	redirect(base_url());
+// }
 $row = get_table_row("tbl_o_my_users WHERE id='$id'");
 $no = $row->mobile;
 ?>

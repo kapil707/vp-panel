@@ -24,7 +24,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 		$mobile = substr($mobile, 1);
 	}
 
-	$mobile1 = $phonecode.$mobile;
+	$mobile = $phonecode.$mobile;
 	/***************************************************** */
 	
 	$otp = getName();
@@ -53,10 +53,11 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 		edit_function("tbl_o_my_users",$dt,$where);
 
 		$message = "Hello $name <br>Your otp to login https://www.parashar.guru/ is : $otp";
-		send_otp($message,$mobile1);
+		send_otp($message,$mobile);
 
 		$_SESSION['temp_user_id'] = $id;
-		redirect(base_url()."enter-otp");
+		echo "asdfsa";
+		//redirect(base_url()."enter-otp");
 	}else{
 		$_SESSION['temp_user_id'] = $id;
 		redirect(base_url()."enter-password");
