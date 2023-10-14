@@ -56,7 +56,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	if(empty($row->password)){
 		$message = "Hello $name <br>Your otp to login https://www.parashar.guru/ is : $otp";
 		send_otp($message,$mobile1);
-		//redirect(base_url()."otp-enter?id=".$row->id);
+		redirect(base_url()."otp-enter?id=".$row->id);
 	}else{
 		redirect(base_url());
 	}
