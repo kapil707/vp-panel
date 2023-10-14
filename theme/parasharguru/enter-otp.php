@@ -39,7 +39,7 @@ $no = $row->mobile;
 				<input type="hidden" name="action_type" value="otp_page_form_submit">
 				<input type="hidden" name="id" value="<?php echo $id ?>">
 				<div class="mt-2">
-					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->name; ?>, Otp Send on your this mobile no <?php echo $no; ?></p>
+					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->fname; ?>, Otp Send on your this mobile no <?php echo $no; ?></p>
 					<p class=" text-[#A17603] text-[12px] font-normal">Enter Otp</p>
 					<input id="name" name="otp" type="name" placeholder="Please Enter otp" maxlength="100" required="" class="border-[#A17603] w-full rounded-[11px] border-[1px] px-4 py-3 placeholder-[#A17603] focus:ring-2 focus:ring-inset focus:ring-[#A17603] text-[#A17603] " value="">
 				</div>
