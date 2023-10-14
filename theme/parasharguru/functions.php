@@ -115,9 +115,10 @@ function getName() {
 }
 
 /**********otp submit******************** */
-if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_submit' ) {
-	$otp 		= filter_var($_POST['otp'],FILTER_SANITIZE_STRING);
-	$id 		= filter_var($_POST['id'],FILTER_SANITIZE_STRING);
+if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_submit') {
+	
+	$id  = $_SESSION["temp_user_id"];
+	$otp = filter_var($_POST['otp'],FILTER_SANITIZE_STRING);
 	
 	$row = get_table_row("tbl_o_my_users WHERE id='$id'");
 
@@ -146,6 +147,24 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 	}		
 }
 
+if( isset($_POST['action_type']) && $_POST['action_type'] == 'enter_password_form_submit') {
+	$id = $_SESSION["temp_user_id"];
+	$password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
+
+	$row = get_table_row("tbl_o_my_users WHERE id='$id'");
+	if(emtpy($row->password)){
+		redirect(base_url());
+	}
+	if($password==password_decode($row->password)){
+		redirect(base_url());
+	}else{
+		$this->session->set_flashdata('message_title','Wrong Password');
+		$this->session->set_flashdata('message_time','Just Now');
+		$this->session->set_flashdata('message_value','Your entered wrong password');
+		$this->session->set_flashdata('message_toast_show','2');
+		redirect(base_url()."enter-password");
+	}
+}
 
 /**********edit profile submit******************** */
 if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_submit' ) {

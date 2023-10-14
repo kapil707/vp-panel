@@ -37,7 +37,6 @@ $no = $row->mobile;
 			</p>
 			<form class="" method="POST" style="margin-top:50px;" action="<?php echo base_url(); ?>post-data">
 				<input type="hidden" name="action_type" value="otp_page_form_submit">
-				<input type="hidden" name="id" value="<?php echo $id ?>">
 				<div class="mt-2">
 					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->first_name; ?>, Otp Send on your this mobile no <?php echo $no; ?></p>
 					<p class=" text-[#A17603] text-[12px] font-normal">Enter Otp</p>
