@@ -122,20 +122,17 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 
 	$row_otp = $row->otp;
 	if($row_otp==$otp){
-		session_start();
-		// Set a session variable
+		
 		$_SESSION['profile_user'] = $id;
-		if($row->profile_update==0){
 
-			$where = array('id'=>$id);
-
-			$dt = array(
-				'profile_update'=>'1',);
-			$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
-			
-			redirect(base_url().'edit-profile');
+		if(empty($row->password)){
+			redirect(base_url().'edit-password');
 		}else{
-			redirect(base_url().'home');
+			if($row->profile_update==0){				
+				redirect(base_url().'edit-profile');
+			}else{
+				redirect(base_url().'home');
+			}
 		}
 	}else{
 		
@@ -145,7 +142,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 		$this->session->set_flashdata('message_toast_show','1');
 
 		redirect(base_url().'otp-enter/?id='.$id);
-	}
+	}		
 }
 
 
@@ -175,6 +172,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_
 		'dob' => $dob,
 		'time' => $time,
 		'place' => $place,
+		'profile_update' =>1,
 	);
 
 	$where = array('id'=>$id);
