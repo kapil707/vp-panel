@@ -193,6 +193,8 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'password_form_subm
 	$renew_password = filter_var($_POST['renew_password'],FILTER_SANITIZE_STRING);
 
 	echo password_encode($new_password);
+	echo "<Br>";
+	echo password_decode($new_password);
 die;
 	if($new_password==$renew_password){
 

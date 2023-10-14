@@ -247,3 +247,17 @@ if ( ! function_exists('password_encode'))
 		return $ci->encrypt->encode($password, $key);
 	}
 }
+
+if ( ! function_exists('password_encode'))
+{
+	function password_decode($password=""){ 
+
+		$ci =& get_instance();
+
+		$ci->load->library('encrypt');
+
+		$key = 'oiashfhisaf';
+
+		return $ci->encrypt->decode($password, $key);
+	}
+}
