@@ -56,9 +56,11 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	if(empty($row->password)){
 		$message = "Hello $name <br>Your otp to login https://www.parashar.guru/ is : $otp";
 		send_otp($message,$mobile1);
-		redirect(base_url()."otp-enter?id=".$row->id);
+		
+		$_SESSION['temp_user_id'] = $id;
+		redirect(base_url()."enter-otp");
 	}else{
-		redirect(base_url());
+		redirect(base_url()."enter-password");
 	}
 }
 
@@ -131,7 +133,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 			if($row->profile_update==0){				
 				redirect(base_url().'edit-profile');
 			}else{
-				redirect(base_url().'home');
+				redirect(base_url());
 			}
 		}
 	}else{
@@ -139,9 +141,9 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 		$this->session->set_flashdata('message_title','Wrong Otp');
 		$this->session->set_flashdata('message_time','Just Now');
 		$this->session->set_flashdata('message_value','You Etner Wrong Otp');
-		$this->session->set_flashdata('message_toast_show','1');
+		$this->session->set_flashdata('message_toast_show','2');
 
-		redirect(base_url().'otp-enter/?id='.$id);
+		redirect(base_url()."enter-otp");
 	}		
 }
 

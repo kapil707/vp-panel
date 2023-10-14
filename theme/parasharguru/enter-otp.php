@@ -1,9 +1,11 @@
 <?php include_once(get_header()); ?>
 <body>
 <?php
-$id = $_GET["id"];
+$id = $_SESSION["temp_user_id"];
+if(empty($id)){
+	redirect(base_url());
+}
 $row = get_table_row("tbl_o_my_users WHERE id='$id'");
-
 $no = $row->mobile;
 ?>
 <div class="container-fluid">
