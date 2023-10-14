@@ -8,23 +8,28 @@ $row = get_table_row("tbl_o_my_users where id='$id'");
 $result1 = get_table("tbl_o_interest");
 ?>
 <?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
-<div class="alert alert-success">
-	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	<strong>
-	<?php echo $this->session->flashdata('message_title'); ?>
-	</strong><?php echo $this->session->flashdata('message_value'); ?>
-</div>
+<?php if ($this->session->flashdata('message_toast_show')==1){ ?>
+	<div class="alert alert-success">
+<?php } ?>
+<?php if ($this->session->flashdata('message_toast_show')==2){ ?>
+	<div class="alert alert-danger">
+<?php } ?>
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>
+		<?php echo $this->session->flashdata('message_title'); ?>
+		</strong><?php echo $this->session->flashdata('message_value'); ?>
+	</div>
 <?php } ?>
 <form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
 	<input type="hidden" name="action_type" value="password_form_submit">
 	<div class="row">
 		<div class="col-sm-12 form-group">
 			<label>Enter Password:</label>
-			<input type="password" name="password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password" required>
+			<input type="password" name="new_password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password" required>
 		</div>
 		<div class="col-sm-12 form-group">
 			<label>Re-enter Password:</label>
-			<input type="password" name="password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onchange="check_password2()" id="renew_password" required>
+			<input type="password" name="renew_password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onchange="check_password2()" id="renew_password" required>
 		</div>
 
 		<div class="col-sm-12 form-group alert_div"></div>

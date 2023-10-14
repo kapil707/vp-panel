@@ -192,37 +192,41 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'password_form_subm
 	// Set a session variable
 	$id = $_SESSION['profile_user'];
 		
-	$first_name = filter_var($_POST['first_name'],FILTER_SANITIZE_STRING);
-	$last_name 	= filter_var($_POST['last_name'],FILTER_SANITIZE_STRING);
-	$email 		= filter_var($_POST['email'],FILTER_SANITIZE_STRING);
-	$interest 	= filter_var($_POST['interest'],FILTER_SANITIZE_STRING);
-	$interest_type 	= filter_var($_POST['interest_type'],FILTER_SANITIZE_STRING);
-	$address 	= filter_var($_POST['address'],FILTER_SANITIZE_STRING);
-	$dob 		= filter_var($_POST['dob'],FILTER_SANITIZE_STRING);
-	$time 		= filter_var($_POST['time'],FILTER_SANITIZE_STRING);
-	$place 		= filter_var($_POST['place'],FILTER_SANITIZE_STRING);
+	$new_password 	= filter_var($_POST['new_password'],FILTER_SANITIZE_STRING);
+	$renew_password = filter_var($_POST['renew_password'],FILTER_SANITIZE_STRING);
 
-	$dt = array(
-		'first_name' => $first_name,
-		'last_name' => $last_name,
-		'email' => $email,
-		'interest' => $interest,
-		'interest_type' => $interest_type,
-		'address' => $address,
-		'dob' => $dob,
-		'time' => $time,
-		'place' => $place,
-		'profile_update' =>1,
-	);
+	if($new_password==$renew_password){
 
-	$where = array('id'=>$id);
-	$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
+		$this->session->set_flashdata('message_title','Password Updated');
+		$this->session->set_flashdata('message_time','Just Now');
+		$this->session->set_flashdata('message_value','Password Updated Successfully');
+		$this->session->set_flashdata('message_toast_show','2');
+	}else{
 
-	$this->session->set_flashdata('message_title','Profile Updated');
-	$this->session->set_flashdata('message_time','Just Now');
-	$this->session->set_flashdata('message_value','Profile Updated Successfully');
-	$this->session->set_flashdata('message_toast_show','1');
+		$this->session->set_flashdata('message_title','Password Updated');
+		$this->session->set_flashdata('message_time','Just Now');
+		$this->session->set_flashdata('message_value','Password Updated Successfully');
+		$this->session->set_flashdata('message_toast_show','1');
+	}
+
+	// $dt = array(
+	// 	'first_name' => $first_name,
+	// 	'last_name' => $last_name,
+	// 	'email' => $email,
+	// 	'interest' => $interest,
+	// 	'interest_type' => $interest_type,
+	// 	'address' => $address,
+	// 	'dob' => $dob,
+	// 	'time' => $time,
+	// 	'place' => $place,
+	// 	'profile_update' =>1,
+	// );
+
+	// $where = array('id'=>$id);
+	// $this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
+
+
 	
-	redirect(base_url().'edit-profile');
+	redirect(base_url().'edit-password');
 }
 ?>
