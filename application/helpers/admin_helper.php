@@ -233,3 +233,17 @@ if ( ! function_exists('get_page_template'))
 	<?php 
 	}
 }
+
+if ( ! function_exists('get_page_template'))
+{
+	function password_encode($password=""){ 
+
+		$ci =& get_instance();
+
+		$ci->load->library('encrypt');
+
+		$key = 'oiashfhisafhiuasdfijaisdfuasdfopueroiynfn';
+
+		return $ci->encrypt->encode($password, $key);
+	}
+}

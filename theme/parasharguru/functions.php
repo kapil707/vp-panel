@@ -191,22 +191,25 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'password_form_subm
 	session_start();
 	// Set a session variable
 	$id = $_SESSION['profile_user'];
-		
+	
+	//$new_password 	= filter_var($_POST['new_password'],FILTER_SANITIZE_STRING);
 	$new_password 	= filter_var($_POST['new_password'],FILTER_SANITIZE_STRING);
 	$renew_password = filter_var($_POST['renew_password'],FILTER_SANITIZE_STRING);
 
+	echo password_encode($new_password);
+die;
 	if($new_password==$renew_password){
 
 		$this->session->set_flashdata('message_title','Password Updated');
 		$this->session->set_flashdata('message_time','Just Now');
 		$this->session->set_flashdata('message_value','Password Updated Successfully');
-		$this->session->set_flashdata('message_toast_show','2');
+		$this->session->set_flashdata('message_toast_show','1');
 	}else{
 
 		$this->session->set_flashdata('message_title','Password Updated');
 		$this->session->set_flashdata('message_time','Just Now');
 		$this->session->set_flashdata('message_value','Password Updated Successfully');
-		$this->session->set_flashdata('message_toast_show','1');
+		$this->session->set_flashdata('message_toast_show','2');
 	}
 
 	// $dt = array(
