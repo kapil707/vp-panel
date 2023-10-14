@@ -1,4 +1,4 @@
-<?php include_once(get_header("mobile")); ?>
+<?php include_once(get_header()); ?>
 <body>
 <?php
 $id = $_GET["id"];
