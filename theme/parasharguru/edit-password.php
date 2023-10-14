@@ -26,14 +26,18 @@ $result1 = get_table("tbl_o_interest");
 		<div class="col-sm-12 form-group">
 			<label>Enter Password:</label>
 			<input type="password" name="new_password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password" required>
-			<div style="float: right; margin-top: 10px;margin-left: -50px; width:45px;">
-				<img src="<?php echo get_theme_path(); ?>images/b_eyes1.png" width="25px" onclick="showpassword()" id="eyes1" alt="">
-				<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword()" id="eyes" style="display:none" alt="">
+			<div style="margin-top: -32px;width: 45px;position: absolute;right: 4px;">
+				<img src="<?php echo get_theme_path(); ?>images/b_eyes1.png" width="25px" onclick="showpassword('new_password')" id="eyes1_new_password" alt="">
+				<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword('new_password')" id="eyes_new_password" style="display:none" alt="">
 			</div>
 		</div>
 		<div class="col-sm-12 form-group">
 			<label>Re-enter Password:</label>
 			<input type="password" name="renew_password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onchange="check_password2()" id="renew_password" required>
+			<div style="margin-top: -32px;width: 45px;position: absolute;right: 4px;">
+				<img src="<?php echo get_theme_path(); ?>images/b_eyes1.png" width="25px" onclick="showpassword('renew_password')" id="eyes1_renew_password" alt="">
+				<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword('renew_password')" id="eyes_renew_password" style="display:none" alt="">
+			</div>
 		</div>
 
 		<div class="col-sm-12 form-group alert_div"></div>
@@ -96,6 +100,18 @@ function submit_btn()
 		$("#submitbtn").show()
 		$("#submitbtn_disable").hide()
 	}
+}
+function showpassword(id)
+{
+	$("#eyes1_"+id).hide();
+	$("#eyes_"+id).show();
+	document.getElementById(id).type = 'text';
+}
+function hidepassword(id)
+{
+	$("#eyes1_"+id).show();
+	$("#eyes_"+id).hide();
+	document.getElementById(id).type = 'password';
 }
 </script>
 <?php include_once(get_footer("mobile")); ?>
