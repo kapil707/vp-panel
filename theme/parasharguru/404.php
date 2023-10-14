@@ -1,3 +1,3 @@
-<?php get_header(); ?>
+<?php include_once(get_header("mobile")); ?>
 <h1>Page Not Found</h1>
-<?php get_footer(); ?>
+<?php include_once(get_footer("mobile")); ?>
