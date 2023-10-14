@@ -56,12 +56,10 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 		send_otp($message,$mobile1);
 
 		$_SESSION['temp_user_id'] = $id;
-		//redirect(base_url()."enter-otp");
-		echo "11";
+		redirect(base_url()."enter-otp");
 	}else{
 		$_SESSION['temp_user_id'] = $id;
-		//redirect(base_url()."enter-password");
-		echo "22";
+		redirect(base_url()."enter-password");
 	}
 }
 
