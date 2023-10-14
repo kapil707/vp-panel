@@ -39,7 +39,7 @@ $no = $row->mobile;
 				<input type="hidden" name="action_type" value="enter_password_form_submit">
 				<input type="hidden" name="id" value="<?php echo $id ?>">
 				<div class="mt-2">
-					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->fname; ?></p>
+					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->first_name; ?></p>
 					<p class=" text-[#A17603] text-[12px] font-normal">Enter Password</p>
 					<input id="password" name="password" type="password" placeholder="Please Enter Login" maxlength="100" required="" class="border-[#A17603] w-full rounded-[11px] border-[1px] px-4 py-3 placeholder-[#A17603] focus:ring-2 focus:ring-inset focus:ring-[#A17603] text-[#A17603] " value="">
 				</div>
