@@ -41,26 +41,27 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 			'interest_type'=>$interest_type,
 			'your_code'=>$your_code,);
 		insert_function("tbl_o_my_users",$dt);
-	}else{
-		$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
-		$id = $row->id;
+	}
+
+	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
+	$id = $row->id;
+	if(empty($row->password)){
 
 		$where = array('id'=>$id);
-
 		$dt = array(
 			'otp'=>$otp);
 		edit_function("tbl_o_my_users",$dt,$where);
-	}
-	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
-	if(empty($row->password)){
+
 		$message = "Hello $name <br>Your otp to login https://www.parashar.guru/ is : $otp";
 		send_otp($message,$mobile1);
 
 		$_SESSION['temp_user_id'] = $id;
-		redirect(base_url()."enter-otp");
+		//redirect(base_url()."enter-otp");
+		echo "11";
 	}else{
 		$_SESSION['temp_user_id'] = $id;
-		redirect(base_url()."enter-password");
+		//redirect(base_url()."enter-password");
+		echo "22";
 	}
 }
 
