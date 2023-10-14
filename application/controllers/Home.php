@@ -24,16 +24,15 @@ class Home extends CI_Controller {
 		}
 		
 		//$this->load->view("../../theme/".$theme."/header",$data);
-		if($page=="home" || $page=="Home" || $page==""){
+		if($page=="home" || $page=="Home" || empty($page)){
 			$this->load->view("../../theme/".$theme."/index",$data);
 		}else{
-			if($mypage==""){
+			if(empty($mypage)){
 				$this->load->view("../../theme/".$theme."/index-2",$data);
 			}else{
 				$this->load->view("../../theme/".$theme."/".$mypage,$data);
 			}
 		}
-		//$this->load->view("../../theme/".$theme."/footer",$data);
 	}
 
 	public function post_data()
