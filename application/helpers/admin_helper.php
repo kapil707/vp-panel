@@ -248,7 +248,7 @@ if ( ! function_exists('password_encode'))
 	}
 }
 
-if ( ! function_exists('password_encode'))
+if ( ! function_exists('password_decode'))
 {
 	function password_decode($password=""){ 
 
