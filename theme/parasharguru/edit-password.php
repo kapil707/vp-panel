@@ -16,7 +16,7 @@ $result1 = get_table("tbl_o_interest");
 </div>
 <?php } ?>
 <form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
-	<input type="hidden" name="action_type" value="change_password">
+	<input type="hidden" name="action_type" value="password_form_submit">
 	<div class="row">
 		<div class="col-sm-12 form-group">
 			<label>Enter Password:</label>
@@ -54,7 +54,7 @@ function check_password1()
 	}
 	else
 	{
-		$(".alert_div").html("&nbsp;");
+		$(".alert_div").html("");
 		pass2 = 1;
 		submit_btn();
 	}
