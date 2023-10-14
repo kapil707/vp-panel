@@ -234,7 +234,7 @@ if ( ! function_exists('get_page_template'))
 	}
 }
 
-if ( ! function_exists('get_page_template'))
+if ( ! function_exists('password_encode'))
 {
 	function password_encode($password=""){ 
 

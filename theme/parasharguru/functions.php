@@ -148,8 +148,6 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 
 /**********edit profile submit******************** */
 if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_submit' ) {
-	session_start();
-	// Set a session variable
 	$id = $_SESSION['profile_user'];
 		
 	$first_name = filter_var($_POST['first_name'],FILTER_SANITIZE_STRING);
@@ -188,8 +186,6 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_
 
 /**********edit password submit******************** */
 if( isset($_POST['action_type']) && $_POST['action_type'] == 'password_form_submit' ) {
-	session_start();
-	// Set a session variable
 	$id = $_SESSION['profile_user'];
 	
 	//$new_password 	= filter_var($_POST['new_password'],FILTER_SANITIZE_STRING);
