@@ -242,7 +242,7 @@ if ( ! function_exists('password_encode'))
 
 		$ci->load->library('encrypt');
 
-		$key = 'oiashfhisafhiuasdfijaisdfuasdfopueroiynfn';
+		$key = 'oiashfhisaf';
 
 		return $ci->encrypt->encode($password, $key);
 	}
