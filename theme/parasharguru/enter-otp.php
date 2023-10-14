@@ -2,9 +2,9 @@
 <body>
 <?php
 $id = $_SESSION["temp_user_id"];
-// if(empty($id)){
-// 	redirect(base_url());
-// }
+if(empty($id)){
+	redirect(base_url());
+}
 $row = get_table_row("tbl_o_my_users WHERE id='$id'");
 $no = $row->mobile;
 ?>
@@ -20,19 +20,24 @@ $no = $row->mobile;
 				</p>
 			</div>
 			<?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
-			<div class="alert alert-danger">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong>
-				<?php echo $this->session->flashdata('message_title'); ?>
-				</strong><?php echo $this->session->flashdata('message_value'); ?>
-			</div>
+			<?php if ($this->session->flashdata('message_toast_show')==1){ ?>
+				<div class="alert alert-success">
+			<?php } ?>
+			<?php if ($this->session->flashdata('message_toast_show')==2){ ?>
+				<div class="alert alert-danger">
+			<?php } ?>
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong>
+					<?php echo $this->session->flashdata('message_title'); ?>
+					</strong><?php echo $this->session->flashdata('message_value'); ?>
+				</div>
 			<?php } ?>
 			<p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 				<?php echo get_field_data('login_label2','73'); ?>
 			</p>
 			<form class="" method="POST" style="margin-top:50px;" action="<?php echo base_url(); ?>post-data">
 				<input type="hidden" name="action_type" value="otp_page_form_submit">
-				<input type="hidden" name="id" value="<?php echo $_GET["id"] ?>">
+				<input type="hidden" name="id" value="<?php echo $id ?>">
 				<div class="mt-2">
 					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->name; ?>, Otp Send on your this mobile no <?php echo $no; ?></p>
 					<p class=" text-[#A17603] text-[12px] font-normal">Enter Otp</p>
