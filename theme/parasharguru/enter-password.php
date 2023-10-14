@@ -39,12 +39,12 @@ $no = $row->mobile;
 				<input type="hidden" name="action_type" value="enter_password_form_submit">
 				<input type="hidden" name="id" value="<?php echo $id ?>">
 				<div class="mt-2">
-					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->name; ?>, Otp Send on your this mobile no <?php echo $no; ?></p>
-					<p class=" text-[#A17603] text-[12px] font-normal">Enter Otp</p>
-					<input id="name" name="otp" type="name" placeholder="Please Enter otp" maxlength="100" required="" class="border-[#A17603] w-full rounded-[11px] border-[1px] px-4 py-3 placeholder-[#A17603] focus:ring-2 focus:ring-inset focus:ring-[#A17603] text-[#A17603] " value="">
+					<p class=" text-[#A17603] text-[12px] font-normal">Hello <?php echo $row->name; ?></p>
+					<p class=" text-[#A17603] text-[12px] font-normal">Enter Password</p>
+					<input id="password" name="password" type="password" placeholder="Please Enter Login" maxlength="100" required="" class="border-[#A17603] w-full rounded-[11px] border-[1px] px-4 py-3 placeholder-[#A17603] focus:ring-2 focus:ring-inset focus:ring-[#A17603] text-[#A17603] " value="">
 				</div>
 				<button type="submit" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="login_submit">
-					Submit
+					Login
 					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg>
 				</button>
 			</form>
