@@ -1,4 +1,4 @@
-<?php include_once(get_header("mobile")); ?>
+<?php include_once(get_header()); ?>
 <?php
 // Set a session variable
 $id = $_SESSION['profile_user'];

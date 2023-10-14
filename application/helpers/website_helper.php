@@ -383,3 +383,24 @@ if ( ! function_exists('slider_page'))
 		<?php
 	}
 }
+if ( ! function_exists('insert_function'))
+{
+	function insert_function($tbl,$dt){
+
+		$ci =& get_instance();
+		$ci->load->database(); 
+
+		$ci->Scheme_Model->insert_fun($tbl,$dt);
+	}
+}
+
+if ( ! function_exists('edit_function'))
+{
+	function edit_function($tbl,$dt,$where){
+
+		$ci =& get_instance();
+		$ci->load->database(); 
+
+		$ci->Scheme_Model->edit_fun($tbl,$dt,$where);
+	}
+}

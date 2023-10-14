@@ -29,19 +29,18 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 	
 	$otp = getName();
 	$your_code = getName();
-
-	$dt = array(
-		'first_name'=>$name,
-		'country'=>$country,
-		'mobile'=>$mobile,
-		'otp'=>$otp,
-		'interest'=>$interest,
-		'interest_type'=>$interest_type,
-		'your_code'=>$your_code,);
 	
 	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
 	if(empty($row)){
-		$this->Scheme_Model->insert_fun("tbl_o_my_users",$dt);
+		$dt = array(
+			'first_name'=>$name,
+			'country'=>$country,
+			'mobile'=>$mobile,
+			'otp'=>$otp,
+			'interest'=>$interest,
+			'interest_type'=>$interest_type,
+			'your_code'=>$your_code,);
+		insert_function("tbl_o_my_users",$dt);
 	}else{
 		$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
 		$id = $row->id;
@@ -50,16 +49,17 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 
 		$dt = array(
 			'otp'=>$otp);
-		$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
+		edit_function("tbl_o_my_users",$dt,$where);
 	}
 	$row = get_table_row("tbl_o_my_users where mobile='$mobile'");
 	if(empty($row->password)){
 		$message = "Hello $name <br>Your otp to login https://www.parashar.guru/ is : $otp";
 		send_otp($message,$mobile1);
-		
+
 		$_SESSION['temp_user_id'] = $id;
 		redirect(base_url()."enter-otp");
 	}else{
+		$_SESSION['temp_user_id'] = $id;
 		redirect(base_url()."enter-password");
 	}
 }
@@ -176,7 +176,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_
 	);
 
 	$where = array('id'=>$id);
-	$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
+	edit_function("tbl_o_my_users",$dt,$where);
 
 	$this->session->set_flashdata('message_title','Profile Updated');
 	$this->session->set_flashdata('message_time','Just Now');
@@ -202,7 +202,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'password_form_subm
 			'password' => $password,);
 
 		$where = array('id'=>$id);
-		$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
+		edit_function("tbl_o_my_users",$dt,$where);
 
 		$this->session->set_flashdata('message_title','Password Updated');
 		$this->session->set_flashdata('message_time','Just Now');
