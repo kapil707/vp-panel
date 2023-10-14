@@ -1,20 +1,29 @@
 <?php include_once(get_header("mobile")); ?>
 <?php
-// Set a session variable
-$id = $_SESSION['profile_user'];
-			
+$id = $_SESSION['profile_user'];		
 $row = get_table_row("tbl_o_my_users where id='$id'");
-
 $result1 = get_table("tbl_o_interest");
 ?>
+
 <?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
-<div class="alert alert-success">
-	<button type="button" class="close" data-dismiss="alert">&times;</button>
-	<strong>
-	<?php echo $this->session->flashdata('message_title'); ?>
-	</strong><?php echo $this->session->flashdata('message_value'); ?>
-</div>
+<?php if ($this->session->flashdata('message_toast_show')==1){ ?>
+	<div class="alert alert-success">
 <?php } ?>
+<?php if ($this->session->flashdata('message_toast_show')==2){ ?>
+	<div class="alert alert-danger">
+<?php } ?>
+		<button type="button" class="close" data-dismiss="alert">&times;</button>
+		<strong>
+		<?php echo $this->session->flashdata('message_title'); ?>
+		</strong><?php echo $this->session->flashdata('message_value'); ?>
+	</div>
+<?php } ?>
+
+<?php if(empty($row->password)) { ?>
+<a href="<?php echo base_url(); ?>" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="Submit1">Skip<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></a>
+<br><br>
+<?php } ?>
+
 <form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
 	<input type="hidden" name="action_type" value="profile_page_form_submit">
 	<div class="row">
