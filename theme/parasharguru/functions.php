@@ -53,7 +53,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'login_submit' ) {
 		$this->Scheme_Model->edit_fun("tbl_o_my_users",$dt,$where);
 	}
 	
-	$message = "Hello $name <br> Thank you for intresting us your otp is this: $otp";
+	$message = "Hello $name <br>Your otp to login https://www.parashar.guru/ is : $otp";
 
 	send_otp($message,$mobile1);
 
