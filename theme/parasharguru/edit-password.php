@@ -39,7 +39,7 @@ $result1 = get_table("tbl_o_interest");
 	</div>
 </form>	
 <script>
-var pass1 = 0;
+var pass1 = 1;
 var pass2 = 0;
 var pass3 = 0;
 function check_password1()
