@@ -157,7 +157,11 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'enter_password_for
 	}
 	if($password==password_decode($row->password)){
 		$_SESSION['profile_user'] = $id;
-		redirect(base_url());
+		if($row->profile_update==0){				
+			redirect(base_url().'edit-profile');
+		}else{
+			redirect(base_url());
+		}
 	}else{
 		$this->session->set_flashdata('message_title','Wrong Password');
 		$this->session->set_flashdata('message_time','Just Now');
