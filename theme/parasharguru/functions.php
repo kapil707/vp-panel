@@ -152,7 +152,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'enter_password_for
 	$password = filter_var($_POST['password'],FILTER_SANITIZE_STRING);
 
 	$row = get_table_row("tbl_o_my_users WHERE id='$id'");
-	if(emtpy($row->password)){
+	if(empty($row->password)){
 		redirect(base_url());
 	}
 	if($password==password_decode($row->password)){
