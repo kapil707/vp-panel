@@ -29,16 +29,26 @@
             <div class="row">
                 <div class="col-sm-6 col-12 wow bounceInLeft">
                     <ul class="social_icon1">
-                        <li><a href="<?php base_url(); ?>uploads/manage_library/lookbook3.pdf" download><i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="">e-Brochure</span></a></li>
+                        <li><a href="<?php base_url(); ?>uploads/manage_library/lookbook3.pdf" download><i class="fa fa-file-text-o" aria-hidden="true"></i> e-Brochure</a></li>
                         <li>|</li>
                         <li><a href="mailto:<?php echo $email = get_field_data("contact_email2",9) ?>">
-                        <i class="fa fa-envelope-o" aria-hidden="true"></i> <span class=""><?php echo $email ?></span></a></li>
-                        <li>|</li>
-                        <li><a href="tel:<?php echo $mobile = get_field_data("contact_phone",9) ?>"><i class="fa fa-phone" aria-hidden="true"></i> <span class=""><?php echo $mobile ?></span></a></li>
+                        <i class="fa fa-envelope-o" aria-hidden="true"></i> <?php echo $email ?></a></li>
+                        <li class="mobile_off">|</li>
+                        <li class="mobile_off"><a href="tel:<?php echo $mobile = get_field_data("contact_phone",9) ?>"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $mobile ?></a></li>
                     <ul>
                 </div>
-				
-                <div class="col-sm-6 col-12 wow bounceInRight">
+
+                <div class="col-sm-12 col-12 wow bounceInRight mobile_show">
+				    <ul class="social_icon1">
+                        <li class=""><a href="tel:<?php echo $mobile = get_field_data("contact_phone",9) ?>"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $mobile ?></a></li>
+                        <?php 
+                        $result = get_social_icon();
+                        foreach($result as $row) { ?>
+                            <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
+                        <?php } ?>
+                    <ul>
+                </div>
+                <div class="col-sm-6 wow bounceInRight mobile_off">
                     <ul class="social_icon">
                         <?php 
                         $result = get_social_icon();
