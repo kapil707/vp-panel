@@ -434,6 +434,7 @@ a:hover{
 .mybtncss:hover{
     background-color:black;
     color:white;
+    cursor: pointer;
 }
 .mobile_show
 {
