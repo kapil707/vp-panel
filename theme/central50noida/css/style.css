@@ -468,8 +468,10 @@ a:hover{
         background: black;
         width: 120%;
         /* padding: 15px; */
-        margin: -10px;
-        margin-left: -26px;
+        margin: 0px;
+        margin-left: -21px;
+        z-index: 999;
+        position: relative;
     }
     #header .web_menu .navbar{
         padding: 0px;
