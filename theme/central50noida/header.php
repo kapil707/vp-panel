@@ -28,7 +28,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-6 col-6 num-b wow bounceInLeft">
-                    <a href="<?php base_url(); ?>uploads/manage_library/lookbook3.pdf" download><i class="fa fa-file-text-o" aria-hidden="true"></i> e-Brochure</a> |
+                    <a href="<?php base_url(); ?>uploads/manage_library/lookbook3.pdf" download><i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="mobile_off">e-Brochure</span></a> |
                     <a href="mailto:<?php echo $email = get_field_data("contact_email2",9) ?>">
                     <i class="fa fa-envelope-o" aria-hidden="true"></i> <span class="mobile_off"><?php echo $email ?></span></a> |
                     <a href="tel:<?php echo $mobile = get_field_data("contact_phone",9) ?>"><i class="fa fa-phone" aria-hidden="true"></i> <span class="mobile_off"><?php echo $mobile ?></span></a>
