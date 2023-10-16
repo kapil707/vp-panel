@@ -41,13 +41,16 @@
                 <div class="col-sm-12 col-12 wow bounceInRight mobile_show">
 				    <ul class="social_icon1">
                         <li class=""><a href="tel:<?php echo $mobile = get_field_data("contact_phone",9) ?>"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $mobile ?></a></li>
+                        <li>|</li>
                         <?php 
                         $result = get_social_icon();
                         foreach($result as $row) { ?>
                             <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
+                            <li>|</li>
                         <?php } ?>
                     <ul>
                 </div>
+
                 <div class="col-sm-6 wow bounceInRight mobile_off">
                     <ul class="social_icon">
                         <?php 
