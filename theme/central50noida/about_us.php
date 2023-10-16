@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 text-center">
-                <h5><?php echo $page_data->title ?></h5>
+                <h1><?php echo $page_data->title ?></h1>
                 <?php echo $page_data->description ?>
             </div>
         </div>
