@@ -27,7 +27,7 @@
     <div id="top-bar">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-12 wow bounceInLeft">
+                <div class="col-sm-8 col-12 wow bounceInLeft">
                     <ul class="social_icon1">
                         <li><a href="<?php base_url(); ?>uploads/manage_library/lookbook3.pdf" download><i class="fa fa-file-text-o" aria-hidden="true"></i> e-Brochure</a></li>
                         <li>|</li>
@@ -37,6 +37,16 @@
                         <li class="mobile_off"><a href="tel:<?php echo $mobile = get_field_data("contact_phone",9) ?>"><i class="fa fa-phone" aria-hidden="true"></i> <?php echo $mobile ?></a></li>
                     <ul>
                 </div>
+
+                <div class="col-sm-4 wow bounceInRight mobile_off">
+                    <ul class="social_icon">
+                        <?php 
+                        $result = get_social_icon();
+                        foreach($result as $row) { ?>
+                            <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
+                        <?php } ?>
+                    </ul>
+				</div>
 
                 <div class="col-sm-12 col-12 wow bounceInRight mobile_show">
 				    <ul class="social_icon1">
@@ -49,16 +59,6 @@
                         <?php } ?>
                     <ul>
                 </div>
-
-                <div class="col-sm-6 wow bounceInRight mobile_off">
-                    <ul class="social_icon">
-                        <?php 
-                        $result = get_social_icon();
-                        foreach($result as $row) { ?>
-                            <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
-                        <?php } ?>
-                    </ul>
-				</div>
             </div>
         </div>
     </div>
