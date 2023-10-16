@@ -27,7 +27,10 @@
     }
 }
 </style>
-<?php echo $page_url_id; ?>
+<?php
+$row_category = get_table_row("tbl_category where url='$page_url_id'");
+$category_id = $row_category->id;
+?>
 <div id="home-box5" class="home-box-main">
     <div class="container-fluid">
         <div class="row">
@@ -38,9 +41,9 @@
                 <?php echo $page_data->description ?>
             </div>
             <?php 
-            $get_blog = get_blog("construction_updates","limit 0,4");
+            $construction_update = get_table("tbl_page where category_id='$category_id'");
             $i = 1;						
-            foreach($get_blog as $row) { ?>
+            foreach($construction_update as $row) { ?>
                 <div class="col-sm-3">
                     <div class="item filter construction_update">
                         <a class="mobile_off" href="<?php echo base_url(); ?>construction-updates/<?php echo $row->id; ?>">

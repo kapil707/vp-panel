@@ -43,7 +43,7 @@ if ( ! function_exists('get_table'))
 		$ci =& get_instance();
 		$ci->load->database(); 
 	
-		$result = $ci->db->query("select * from $table order by id asc")->result();
+		$result = $ci->db->query("select * from $table")->result();
 		return $result;
 	}
 }
@@ -55,7 +55,7 @@ if ( ! function_exists('get_table_row'))
 		$ci =& get_instance();
 		$ci->load->database(); 
 	
-		$result = $ci->db->query("select * from $table order by id asc")->row();
+		$result = $ci->db->query("select * from $table")->row();
 		return $result;
 	}
 }
