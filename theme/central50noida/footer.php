@@ -72,7 +72,7 @@
             <label>Message</label>
             <textarea class="form-control" rows="3" name="message"></textarea>
         </div>
-        <input class="filled-btn" type="submit" value="SUBMIT" name="submit">
+        <input class="mybtncss" type="submit" value="submit" name="submit">
     </div>
 </form>
 </div>
