@@ -9,8 +9,8 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
-		$data["page_url_id"] = $this->uri->segment('2'); // only for construction-updates
 		$page = $this->uri->segment('1');
+		$data["page_url_id"] = $this->uri->segment('2'); // only for construction-updates
 
 		$theme = get_field_data("system_theme");
 		$data["theme"] = $theme;
@@ -48,21 +48,6 @@ class Home extends CI_Controller {
 		$data["theme"]		= $theme;
 		$data["page_data"] 	= $page_data[0];
 		$mypage 			= $page_data[2]."-single";
-		
-		//$this->load->view("../../theme/".$theme."/header",$data);
-		$this->load->view("../../theme/".$theme."/".$mypage,$data);
-		//$this->load->view("../../theme/".$theme."/footer",$data);
-	}
-
-	public function construction_updates($id="")
-	{
-		echo $page = $this->uri->segment('1');
-		echo $id;
-		$theme 				= get_field_data("system_theme");
-		$page_data 			= get_all_blog_data($page);
-		$data["theme"]		= $theme;
-		$data["page_data"] 	= $page_data[0];
-		$mypage 			= $page_data[2];
 		
 		//$this->load->view("../../theme/".$theme."/header",$data);
 		$this->load->view("../../theme/".$theme."/".$mypage,$data);
