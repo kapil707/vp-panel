@@ -55,9 +55,10 @@ class Manage_category extends CI_Controller {
 				$result = "";
 				$dt = array(
 					'title'=>$title,
-					'slug'=>$slug,
 					'category_id'=>$category_id,
 					'join_page_id'=>$join_page_id,
+					'url'=>$url,
+					'sorting_order'=>$sorting_order,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
@@ -157,8 +158,7 @@ class Manage_category extends CI_Controller {
 		$this->breadcrumbs->push("Edit","admin/");
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("Edit","admin/$page_controllers/edit");
-		$tbl = $Page_tbl;
-		
+		$tbl = $Page_tbl;		
 		
 		$system_ip = $this->input->ip_address();		
 		extract($_POST);
@@ -183,9 +183,10 @@ class Manage_category extends CI_Controller {
 				$result = "";
 				$dt = array(
 					'title'=>$title,
-					'slug'=>$slug,
 					'category_id'=>$category_id,
 					'join_page_id'=>$join_page_id,
+					'url'=>$url,
+					'sorting_order'=>$sorting_order,
 					'date'=>$date,
 					'time'=>$time,
 					'update_date'=>$date,
@@ -229,12 +230,41 @@ class Manage_category extends CI_Controller {
 		$this->load->view("admin/$Page_view/edit",$data);
 		$this->load->view("admin/header_footer/footer",$data);
 	}
-	public function check_url()
+
+	public function check_url_api()
 	{
 		$Page_tbl 	= $this->Page_tbl;
 		$id 		= $_POST["id"];
-		$url 		= $_POST["url"];		
-		$query = $this->db->query("select * from $Page_tbl where url='$url' and id!='$id'")->row();
+		$url 		= $_POST["url"];
+		$where = "";
+		if($id!=""){
+			$where = " and id!='$id'"; 
+		}
+		$query = $this->db->query("select id from $Page_tbl where url='$url' $where")->row();
+		if(!empty($query->id))
+		{
+			echo "Error";
+		}
+		else
+		{
+			echo "ok";
+		}
+	}
+
+	public function check_sorting_order_api()
+	{
+		$Page_tbl 	= $this->Page_tbl;
+		$id 		= $_POST["id"];
+		$sorting_order = $_POST["sorting_order"];
+		$child_page = $this->page_type;
+		if($child_page=="blog"){
+			$child_page = "";
+		}
+		$where = "";
+		if($id!=""){
+			$where = " and id!='$id'"; 
+		}
+		$query = $this->db->query("select id from $Page_tbl where sorting_order='$sorting_order' $where")->row();
 		if($query->id)
 		{
 			echo "Error";
@@ -244,7 +274,7 @@ class Manage_category extends CI_Controller {
 			echo "ok";
 		}
 	}
-	
+
 	public function delete_page_rec()
 	{
 		$id = $_POST["id"];

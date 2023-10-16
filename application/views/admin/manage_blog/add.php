@@ -106,7 +106,7 @@
 			</div>
 		</div>
 	</form>
-</div><!-- /.row -->
+</div>
 <script>
 function onchange_title()
 {
