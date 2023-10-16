@@ -55,7 +55,7 @@
                                 <label for="email">Message</label>
                                 <textarea class="form-control" rows="5" placeholder="Comment" name="message" id="qQueryMessage4"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary" value="SUBMIT">Submit</button>
+                            <button type="submit" class="mybtncss" value="submit">Submit</button>
                         </form>
                     </div>
                 </div>
