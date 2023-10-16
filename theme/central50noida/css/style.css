@@ -2,6 +2,9 @@ ol, ul, dl {
     margin-top: 0;
     margin-bottom: 0;
 }
+h1{
+    font-size: 2rem;
+}
 a {
     color:#495057;
 }
@@ -428,6 +431,9 @@ a:hover{
 	{
 		display:block;
 	}
+    h1{
+        font-size: 1.5rem;
+    }
     .social_icon1 {
         padding: 0px;
     }
