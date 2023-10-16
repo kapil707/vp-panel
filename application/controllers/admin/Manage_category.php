@@ -33,6 +33,8 @@ class Manage_category extends CI_Controller {
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("Add","admin/$page_controllers/add");
 		$tbl = $Page_tbl;
+
+		$data["page_url"] = "";
 		
 		$system_ip = $this->input->ip_address();
 		extract($_POST);
@@ -122,6 +124,8 @@ class Manage_category extends CI_Controller {
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("View","admin/$page_controllers/view");
 		$tbl = $Page_tbl;
+
+		$data["page_url"] = "";
 		
 		extract($_POST);
 		if(isset($Delete))
@@ -159,6 +163,8 @@ class Manage_category extends CI_Controller {
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("Edit","admin/$page_controllers/edit");
 		$tbl = $Page_tbl;		
+
+		$data["page_url"] = "";
 		
 		$system_ip = $this->input->ip_address();		
 		extract($_POST);
