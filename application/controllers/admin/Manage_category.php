@@ -267,7 +267,7 @@ class Manage_category extends CI_Controller {
 			$where = " and id!='$id'"; 
 		}
 		$query = $this->db->query("select id from $Page_tbl where sorting_order='$sorting_order' $where")->row();
-		if($query->id)
+		if(!empty($query->id))
 		{
 			echo "Error";
 		}
