@@ -46,7 +46,6 @@
                         $result = get_social_icon();
                         foreach($result as $row) { ?>
                             <li><a href="<?php echo $row->url ?>" target="_blank" class="icon-md"><?php echo $row->description ?></a></li>
-                            <li>|</li>
                         <?php } ?>
                     <ul>
                 </div>
