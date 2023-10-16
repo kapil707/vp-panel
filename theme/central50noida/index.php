@@ -189,7 +189,7 @@
                 <?php echo get_field_data("home_page_label04","1"); ?>
             </div>
             <div class="col-md-12 text-center filter-button-div">
-                <button class="btn btn-default filter-button" data-filter="all">All</button>
+                <!-- <button class="btn btn-default filter-button" data-filter="all">All</button> -->
                 <button class="btn btn-default filter-button" data-filter="gallery">Gallery</button>
                 <button class="btn btn-default filter-button" data-filter="construction_update">Construction Update</button>
             </div>
@@ -205,7 +205,6 @@
                         <a class="mobile_show" href="<?php echo $img = get_library_to_image($row->mobile_image,'main'); ?>" data-lightbox="example-set2" data-title="">
                             <img src="<?= $img; ?>" class="img-fluid mobile_show">
                         </a>
-                        <h4><?php echo $row->title; ?></h4>
                     </div>
                 </div>
             <?php 
