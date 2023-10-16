@@ -190,8 +190,8 @@
             </div>
             <div class="col-md-12 text-center filter-button-div">
                 <!-- <button class="btn btn-default filter-button" data-filter="all">All</button> -->
-                <button class="btn btn-default filter-button" data-filter="gallery">Gallery</button>
-                <button class="btn btn-default filter-button" data-filter="construction_update">Construction Update</button>
+                <button class="mybtncss filter-button" data-filter="gallery">Gallery</button>
+                <button class="mybtncss filter-button" data-filter="construction_update">Construction Update</button>
             </div>
             <?php 
             $get_gallery = get_gallery("","limit 0,4");

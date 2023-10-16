@@ -421,7 +421,12 @@ a:hover{
     font-size: 2rem;
     padding-bottom: 50px;
 }
-
+.mybtncss{
+    padding: 5px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+}
 .mobile_show
 {
 	display:none;
