@@ -25,6 +25,9 @@ a:hover{
     list-style-type: none;
     float: left;
 }
+.social_icon1 li a{
+    border-right:solid 1px #000000;
+}
 .social_icon {
     text-align: right;
     width: auto;
