@@ -262,10 +262,6 @@ class Manage_category extends CI_Controller {
 		$Page_tbl 	= $this->Page_tbl;
 		$id 		= $_POST["id"];
 		$sorting_order = $_POST["sorting_order"];
-		$child_page = $this->page_type;
-		if($child_page=="blog"){
-			$child_page = "";
-		}
 		$where = "";
 		if($id!=""){
 			$where = " and id!='$id'"; 
