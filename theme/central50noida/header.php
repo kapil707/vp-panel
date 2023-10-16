@@ -30,10 +30,10 @@
                 <div class="col-sm-6 col-5 wow bounceInLeft">
                     <ul class="social_icon1">
                         <li><a href="<?php base_url(); ?>uploads/manage_library/lookbook3.pdf" download><i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="mobile_off">e-Brochure</span></a></li>
-
+                        <li>|</li>
                         <li><a href="mailto:<?php echo $email = get_field_data("contact_email2",9) ?>">
                         <i class="fa fa-envelope-o" aria-hidden="true"></i> <span class="mobile_off"><?php echo $email ?></span></a></li>
-
+                        <li>|</li>
                         <li><a href="tel:<?php echo $mobile = get_field_data("contact_phone",9) ?>"><i class="fa fa-phone" aria-hidden="true"></i> <span class="mobile_off"><?php echo $mobile ?></span></a></li>
                     <ul>
                 </div>
