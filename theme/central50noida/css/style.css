@@ -418,6 +418,9 @@ a:hover{
 	{
 		display:block;
 	}
+    .social_icon {
+        padding: 0px;
+    }
     .social_icon li{
         padding: 5px;
         list-style-type: none;
