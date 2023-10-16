@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
-                <?php echo get_field_data("home_page_title","1"); ?>
+                <h1><?php echo get_field_data("home_page_title","1"); ?></h1>
             </div>
         </div>
     </div>
