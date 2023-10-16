@@ -35,7 +35,7 @@ $category_id = $row_category->id;
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12 text-center">
-                <h5><?php echo $row_category->title ?></h5>
+                <h1><?php echo $row_category->title ?></h1>
             </div>
             <?php 
             $construction_update = get_table("tbl_page where category_id='$category_id'");
