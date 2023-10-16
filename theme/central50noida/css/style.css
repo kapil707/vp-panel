@@ -437,6 +437,9 @@ a:hover{
     #header #logo {
         margin: 2px;
     }
+    #header #logo .logo {
+        width: 50px;
+    }
     #header .web_menu {
         text-align: left;
         width: auto;
