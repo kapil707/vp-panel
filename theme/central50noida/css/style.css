@@ -423,6 +423,9 @@ a:hover{
         list-style-type: none;
         float: left;
     }
+    #top-bar{
+        padding: 10px !important;
+    }
     #header{
         padding: 10px !important;
         height: 70px;
