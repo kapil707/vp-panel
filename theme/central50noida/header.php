@@ -27,7 +27,7 @@
     <div id="top-bar">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-6 col-4 wow bounceInLeft">
+                <div class="col-sm-6 col-5 wow bounceInLeft">
                     <ul class="social_icon1">
                         <li><a href="<?php base_url(); ?>uploads/manage_library/lookbook3.pdf" download><i class="fa fa-file-text-o" aria-hidden="true"></i> <span class="mobile_off">e-Brochure</span></a></li>
 
@@ -38,7 +38,7 @@
                     <ul>
                 </div>
 				
-                <div class="col-sm-6 col-8 wow bounceInRight">
+                <div class="col-sm-6 col-7 wow bounceInRight">
                     <ul class="social_icon">
                         <?php 
                         $result = get_social_icon();
