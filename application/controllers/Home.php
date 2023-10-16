@@ -56,7 +56,7 @@ class Home extends CI_Controller {
 
 	public function construction_updates($id="")
 	{
-		$page = $this->uri->segment('1');
+		echo $page = $this->uri->segment('1');
 		echo $id;
 		$theme 				= get_field_data("system_theme");
 		$page_data 			= get_all_blog_data($page);
