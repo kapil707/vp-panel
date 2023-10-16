@@ -440,8 +440,14 @@ a:hover{
         padding-left: 10px;
         padding-right: 10px;
     }
+    #about-box2{
+        padding: 50px !important;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
     #home-box6 video {
-        margin-top: -50px;
+        margin: -50px;
+        padding: 0px;
     }
     #home-box5 .item img {
         height: 180px;
