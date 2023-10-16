@@ -27,6 +27,7 @@
     }
 }
 </style>
+<?php echo $page_url_id; ?>
 <div id="home-box5" class="home-box-main">
     <div class="container-fluid">
         <div class="row">
