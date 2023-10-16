@@ -57,7 +57,8 @@
 		</div>
 		<div class="col-xs-3">
 			<?php publish_panel_right_top($row,"Update"); ?>
-			<div class="ibox-content">
+			<div class="ibox float-e-margins">
+				<div class="ibox-content">
 					<div class="form-group">
 						<div class="col-sm-12">
 							<label class="control-label" for="form-field-1">
