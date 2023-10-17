@@ -3,13 +3,6 @@
 	<?php echo get_field_data('login_label2','73'); ?>
 </p>
 <?php
-// Print all timezones in Africa
-print_r(timezone_identifiers_list(1));
-
-// Print the whole list
-//print_r(timezone_identifiers_list());
-?>
-<?php
 echo do_slider('slider');
 ?>
 <style>
