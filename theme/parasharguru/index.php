@@ -4,7 +4,7 @@
 </p>
 <?php
 
-$timezone = geoip_time_zone_by_country_and_region('IN', '01');
+$timezone = geoip_time_zone_by_country_and_region('CA', 'QC');
 if ($timezone) {
     echo 'Time zone for CA/QC is: ' . $timezone;
 }
