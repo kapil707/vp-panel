@@ -209,8 +209,8 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_
 	//redirect(base_url().'edit-profile');
 
 	$row = get_table_row("tbl_o_my_users WHERE id='$id'");
-	if(empty($row->password)){
-		redirect(base_url().'edit-password');
+	if(empty($row->profile_update)){
+		redirect(base_url());
 	}else{
 		redirect(base_url().'edit-profile');
 	}
