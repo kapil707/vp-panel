@@ -1605,6 +1605,14 @@ body,html {
   .header2_css{
     color: gray;
   }
+  .home_page_profile_h2{
+    color: #c79330;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    font-size: 1.5rem;
+    border-bottom: solid 1px #b16161;
+  }
 
   .mobile-menu-css{
     width: 30px;
