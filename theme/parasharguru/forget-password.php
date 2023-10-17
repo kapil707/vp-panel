@@ -1,4 +1,3 @@
-<?php include_once(get_header("mobile")); ?>
 <?php
 include_once('functions.php');
 $id  = $_SESSION["temp_user_id"];
@@ -14,4 +13,3 @@ $otp = getName();
 $message = "Hello $row->name <br>Your otp to login https://www.parashar.guru/ is : $otp";
 send_otp($message,$row->mobile);
 ?>
-<?php include_once(get_footer("mobile")); ?>
