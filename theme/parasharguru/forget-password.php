@@ -12,4 +12,7 @@ $row = get_table_row("tbl_o_my_users where id='$id'");
 $otp = getName();
 $message = "Hello $row->name <br>Your otp to login https://www.parashar.guru/ is : $otp";
 send_otp($message,$row->mobile);
+
+$_SESSION['temp_user_id'] = $id;
+redirect(base_url()."enter-otp");
 ?>
