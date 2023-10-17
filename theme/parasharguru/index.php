@@ -49,6 +49,8 @@ $id = $_SESSION['profile_user'];
 $row = get_table_row("tbl_o_my_users where id='$id'");
 $result1 = get_table("tbl_o_interest");
 ?>
+<h2>Your Profile</h2>
+<hr>
 <div class="row">
     <div class="col-sm-12 form-group">
         <label>First Name:</label>
