@@ -1,4 +1,7 @@
 <?php include_once(get_header("mobile")); ?>
+<p class="font-bold text-[24px] mb-2 header2_css" style="font-size: 12px;text-align: right;">
+	<?php echo get_field_data('login_label2','73'); ?>
+</p>
 <?php
 echo do_slider('slider');
 ?>
@@ -27,14 +30,6 @@ echo do_slider('slider');
     }
 }
 </style>
-<div class="bg-[#A17603] text-white text-center p-1">
-	<p class="font-medium text-[32px] mt-1" id="join" style="font-size: 35px;">
-		<?php echo get_field_data('login_label1','73'); ?>
-	</p>
-</div>
-<p class="font-bold text-[24px] mb-2 header2_css" style="font-size: 12px;text-align: right;">
-	<?php echo get_field_data('login_label2','73'); ?>
-</p>
 <div>
 	<p class="text-[#A17603] font-semibold text-center pt-2 px-4 text-[24px] my-3 leading-7">
 		<?php echo get_field_data('login_label3','73'); ?>
