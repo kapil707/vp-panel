@@ -3,6 +3,12 @@
 	<?php echo get_field_data('login_label2','73'); ?>
 </p>
 <?php
+
+$timezone = geoip_time_zone_by_country_and_region('IN', '01');
+if ($timezone) {
+    echo 'Time zone for CA/QC is: ' . $timezone;
+}
+
 echo do_slider('slider');
 ?>
 <style>
