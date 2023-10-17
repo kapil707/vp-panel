@@ -25,7 +25,7 @@ $dobtime = preg_split ("/\:/", $dobtime);
     </div>
     <div class="col-sm-12">
 <div id="vvv" style="margin-top:10px;margin-bottom:10px;"></div>
-<form name=Form1>
+<form name=Form1 class="panchang_css">
 <div class="row">
 	<div class="col-sm-4">
 		<div class="form-group">
@@ -87,9 +87,7 @@ $dobtime = preg_split ("/\:/", $dobtime);
 	</div>
 	<input onclick=calculate() type=button value="Generate Panchang" name=Calculate class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]">
 </div>
-<hr style="margin-top:50px;">
-<p style="margin-top:50px;">
-Panchanga is the quality of the day, which consists of five elements - Vara (Day), Tithi (Lunar Day), Nakshatra (Star), Karana (1/60 parts of lunar month) and Yoga (1/27 parts of lunar month). Changing value of date and time in a field of the form it is possible to find most favourable time for any of undertaking.&nbsp; Accuracy of calculation +/- 1 minute.</P>
+
 </div></div>
 <script>
 // globals

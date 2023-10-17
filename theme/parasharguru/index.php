@@ -70,4 +70,7 @@ $result1 = get_table("tbl_o_interest");
     </div>
 </div>
 <?php include_once('panchang-2.php'); ?>
+<style>
+.panchang_css{ display:none; }
+</style>
 <?php include_once(get_footer("mobile")); ?>
