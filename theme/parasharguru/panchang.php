@@ -7,8 +7,6 @@ $gtm = $row1->gmtOffset;
 $gtm = str_replace("UTC +","",$gtm);
 $gtm = str_replace("UTC -","",$gtm); 
 $gtm = preg_split ("/\:/", $gtm);  
-echo $gtm[0];
-echo $gtm[1];
 ?>
 <p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 	<?php echo get_field_data('login_label2','73'); ?>
@@ -80,10 +78,10 @@ echo $gtm[1];
 			<label> Zone : </label>
 			<div class="row">
 				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value=0 name=ZoneHour class="form-control">
+					<input id=fld maxLength=2 size=2 value="<?php echo $gtm[0]; ?>" name=ZoneHour class="form-control">
 				</div>
 				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value=0 name=ZoneMin class="form-control">
+					<input id=fld maxLength=2 size=2 value="<?php echo $gtm[1]; ?>" name=ZoneMin class="form-control">
 				</div>
 			</div>
 		</div>
