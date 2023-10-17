@@ -44,4 +44,18 @@ echo do_slider('slider');
 <p class="font-medium text-[#A17603] text-center">
 	<?php echo get_field_data('login_label5','73'); ?>
 </p>
+<div class="row">
+    <div class="col-sm-12 form-group">
+        <label>First Name:</label>
+        <input type="text" name="first_name" class="form-control input-lg" placeholder="First Name" required="" value="<?php echo $row->first_name ?>">
+    </div>
+    <div class="col-sm-12 form-group">
+        <label>Last Name:</label>
+        <input type="text" name="last_name" class="form-control input-lg" placeholder="Last Name" required="" value="<?php echo $row->last_name ?>">
+    </div>
+    <div class="col-sm-12 form-group">
+        <label>Email:</label>
+        <input type="text" name="email" class="form-control input-lg" placeholder="Enter Email" value="<?php echo $row->email ?>">
+    </div>
+</div>
 <?php include_once(get_footer("mobile")); ?>
