@@ -69,7 +69,7 @@ $dobtime = preg_split ("/\:/", $row->time);
 			<label> Time : </label>
 			<div class="row">
 				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value="<?php echo $dobtime[2]; ?>" name=Hours class="form-control">
+					<input id=fld maxLength=2 size=2 value="<?php echo $dobtime[0]; ?>" name=Hours class="form-control">
 				</div>
 				<div class="col-sm-6">
 					<input id=fld maxLength=2 size=2 value="<?php echo $dobtime[1]; ?>" name=Minutes class="form-control">
