@@ -128,7 +128,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'otp_page_form_subm
 		$_SESSION['profile_user'] = $id;
 
 		if(empty($row->password)){
-			redirect(base_url().'edit-password');
+			redirect(base_url().'enter-password');
 		}else{
 			if(empty($row->profile_update)){
 				redirect(base_url().'edit-profile');
