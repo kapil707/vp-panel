@@ -44,6 +44,11 @@ echo do_slider('slider');
 <p class="font-medium text-[#A17603] text-center">
 	<?php echo get_field_data('login_label5','73'); ?>
 </p>
+<?php
+$id = $_SESSION['profile_user'];		
+$row = get_table_row("tbl_o_my_users where id='$id'");
+$result1 = get_table("tbl_o_interest");
+?>
 <div class="row">
     <div class="col-sm-12 form-group">
         <label>First Name:</label>
