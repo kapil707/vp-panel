@@ -5,8 +5,10 @@ $row = get_table_row("tbl_o_my_users WHERE id='$id'");
 $row1 = get_table_row("app_time_zone WHERE countryCode='$row->country'");
 $gtm = $row1->gmtOffset;
 $gtm = str_replace("UTC +","",$gtm);
-$gtm = str_replace("UTC -","",$gtm);
-echo $gtm;
+$gtm = str_replace("UTC -","",$gtm); 
+$gtm = preg_split ("/\:/", $gtm);  
+echo $gtm[0];
+echo $gtm[1];
 ?>
 <p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 	<?php echo get_field_data('login_label2','73'); ?>
