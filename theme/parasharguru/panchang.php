@@ -9,6 +9,7 @@ $gtm = str_replace("UTC -","",$gtm);
 $gtm = preg_split ("/\:/", $gtm);  
 
 $dob = preg_split ("/\-/", $row->dob);
+$dobtime = preg_split ("/\:/", $row->time);
 ?>
 <p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 	<?php echo get_field_data('login_label2','73'); ?>
@@ -40,7 +41,7 @@ $dob = preg_split ("/\-/", $row->dob);
 	<div class="col-sm-4">
 		<div class="form-group">
 			<label>Month : </label>
-      <?php echo $mon = $dob[1] - 1; ?>
+      <?php $mon = $dob[1] - 1; ?>
 			<select id=fld name=Month class="form-control">
 				<option value=0 <?php if($mon==0) { echo "selected"; } ?>>January</option>
 				<option value=1 <?php if($mon==1) { echo "selected"; } ?>>February</option>
@@ -68,10 +69,10 @@ $dob = preg_split ("/\-/", $row->dob);
 			<label> Time : </label>
 			<div class="row">
 				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value=0 name=Hours class="form-control">
+					<input id=fld maxLength=2 size=2 value="<?php echo $dobtime[2]; ?>" name=Hours class="form-control">
 				</div>
 				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value=0 name=Minutes class="form-control">
+					<input id=fld maxLength=2 size=2 value="<?php echo $dobtime[1]; ?>" name=Minutes class="form-control">
 				</div>
 			</div>
 		</div>
