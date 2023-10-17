@@ -34,7 +34,7 @@ $dob = preg_split ("/\-/", $row->dob);
 	<div class="col-sm-4">
 		<div class="form-group">
 			<label> Date : </label>
-			<input id=fld maxLength=2 size=2 value= value="<?php echo $dob[2]; ?>"  name="Day" class="form-control">
+			<input id=fld maxLength=2 size=2 value="<?php echo $dob[2]; ?>"  name="Day" class="form-control">
 		</div>
 	</div>
 	<div class="col-sm-4">
@@ -42,18 +42,18 @@ $dob = preg_split ("/\-/", $row->dob);
 			<label>Month : </label>
       <?php echo $mon = $dob[2] - 1; ?>
 			<select id=fld name=Month class="form-control">
-				<option value=0 selected>January</option>
-				<option value=1>February</option>
-				<option value=2>March</option>
-				<option value=3>April</option>
-				<option value=4>May</option>
-				<option value=5>June</option>
-				<option value=6>July</option> 
-				<option value=7>August</option>
-				<option value=8>September</option>
-				<option value=9>October</option>
-				<option value=10>November</option>
-				<option value=11>December</option>
+				<option value=0 <?php if($mon==0) { echo "selected"; } ?>>January</option>
+				<option value=1 <?php if($mon==1) { echo "selected"; } ?>>February</option>
+				<option value=2 <?php if($mon==2) { echo "selected"; } ?>>March</option>
+				<option value=3 <?php if($mon==3) { echo "selected"; } ?>>April</option>
+				<option value=4 <?php if($mon==4) { echo "selected"; } ?>>May</option>
+				<option value=5 <?php if($mon==5) { echo "selected"; } ?>>June</option>
+				<option value=6 <?php if($mon==6) { echo "selected"; } ?>>July</option> 
+				<option value=7 <?php if($mon==7) { echo "selected"; } ?>>August</option>
+				<option value=8 <?php if($mon==8) { echo "selected"; } ?>>September</option>
+				<option value=9 <?php if($mon==9) { echo "selected"; } ?>>October</option>
+				<option value=10 <?php if($mon==10) { echo "selected"; } ?>>November</option>
+				<option value=11 <?php if($mon==11) { echo "selected"; } ?>>December</option>
 			</select> 
 		</div>
 	</div>
