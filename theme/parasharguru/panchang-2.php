@@ -7,6 +7,8 @@ $gtm = str_replace("UTC +","",$gtm);
 $gtm = str_replace("UTC -","",$gtm); 
 $gtm = preg_split ("/\:/", $gtm);  
 
+date_default_timezone_set($row1->timeZone);
+
 $dob = $row->dob;
 $dobtime = $row->time;
 
