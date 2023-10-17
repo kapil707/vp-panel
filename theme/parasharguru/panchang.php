@@ -7,6 +7,9 @@ $gtm = $row1->gmtOffset;
 $gtm = str_replace("UTC +","",$gtm);
 $gtm = str_replace("UTC -","",$gtm); 
 $gtm = preg_split ("/\:/", $gtm);  
+
+$dob = preg_split ("/\-/", $row->dob);
+print_r($dob);
 ?>
 <p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 	<?php echo get_field_data('login_label2','73'); ?>
