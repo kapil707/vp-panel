@@ -21,7 +21,7 @@ $dobtime = preg_split ("/\:/", $dobtime);
 ?>
 <div class="row">
     <div class="col-sm-12">                
-        <h2 class="home_page_profile_h2">Panchang</h2>
+        <h2 class="home_page_profile_h2">Current Panchang</h2>
     </div>
     <div class="col-sm-12">
 <div id="vvv" style="margin-top:10px;margin-bottom:10px;"></div>
