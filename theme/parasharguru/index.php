@@ -3,12 +3,13 @@
 	<?php echo get_field_data('login_label2','73'); ?>
 </p>
 <?php
+// Print all timezones in Africa
+print_r(timezone_identifiers_list(1));
 
-$timezone = geoip_time_zone_by_country_and_region('CA', 'QC');
-if ($timezone) {
-    echo 'Time zone for CA/QC is: ' . $timezone;
-}
-
+// Print the whole list
+//print_r(timezone_identifiers_list());
+?>
+<?php
 echo do_slider('slider');
 ?>
 <style>
