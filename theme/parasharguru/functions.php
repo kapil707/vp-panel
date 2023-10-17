@@ -238,6 +238,11 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'password_form_subm
 		$this->session->set_flashdata('message_value','Password Updated Successfully');
 		$this->session->set_flashdata('message_toast_show','2');
 	}
-	redirect(base_url().'edit-password');
+	$row = get_table_row("tbl_o_my_users WHERE id='$id'");
+	if(empty($row->password)){
+		redirect(base_url().'edit-password');
+	}else{
+		redirect(base_url().'edit-profile');
+	}	
 }
 ?>
