@@ -73,4 +73,7 @@ $result1 = get_table("tbl_o_interest");
 <style>
 .panchang_css{ display:none; }
 </style>
+<script>
+calculate(); //onload
+</script>
 <?php include_once(get_footer("mobile")); ?>
