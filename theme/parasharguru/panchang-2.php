@@ -980,4 +980,6 @@ aYoga=new Array(
 	}
 	return str;
 }
+
+calculate(); //onload
 </script>
