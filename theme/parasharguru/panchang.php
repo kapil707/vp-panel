@@ -16,5 +16,5 @@
 <p class="font-medium text-[#A17603] text-center">
 	<?php echo get_field_data('login_label5','73'); ?>
 </p>
-<?php include_once('panchange-2.php'); ?>
+<?php include_once('panchang-2.php'); ?>
 <?php include_once(get_footer("mobile")); ?>
