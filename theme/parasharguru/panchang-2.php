@@ -24,7 +24,6 @@ $dobtime = preg_split ("/\:/", $dobtime);
         <h2 class="home_page_profile_h2">Current Panchang</h2>
     </div>
     <div class="col-sm-12">
-<div id="vvv" style="margin-top:10px;margin-bottom:10px;"></div>
 <form name=Form1 class="panchang_css">
 <div class="row">
 	<div class="col-sm-4">
@@ -88,6 +87,7 @@ $dobtime = preg_split ("/\:/", $dobtime);
 	<input onclick=calculate() type=button value="Generate Panchang" name=Calculate class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]">
 </div>
 
+<div id="vvv" style="margin-top:10px;margin-bottom:10px;"></div>
 </div></div>
 <script>
 // globals
