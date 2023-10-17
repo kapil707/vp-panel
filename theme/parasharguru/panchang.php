@@ -9,7 +9,6 @@ $gtm = str_replace("UTC -","",$gtm);
 $gtm = preg_split ("/\:/", $gtm);  
 
 $dob = preg_split ("/\-/", $row->dob);
-print_r($dob);
 ?>
 <p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
 	<?php echo get_field_data('login_label2','73'); ?>
@@ -35,12 +34,13 @@ print_r($dob);
 	<div class="col-sm-4">
 		<div class="form-group">
 			<label> Date : </label>
-			<input id=fld maxLength=2 size=2 value=1 name="Day" class="form-control">
+			<input id=fld maxLength=2 size=2 value= value="<?php echo $dob[2]; ?>"  name="Day" class="form-control">
 		</div>
 	</div>
 	<div class="col-sm-4">
 		<div class="form-group">
 			<label>Month : </label>
+      <?php echo $mon = $dob[2] - 1; ?>
 			<select id=fld name=Month class="form-control">
 				<option value=0 selected>January</option>
 				<option value=1>February</option>
@@ -60,7 +60,7 @@ print_r($dob);
 	<div class="col-sm-4">
 		<div class="form-group">
 			<label> Year : </label>
-			<input id=fld maxLength=4 size=6 value=2002 name=Year class="form-control">
+			<input id=fld maxLength=4 size=6 value="<?php echo $dob[0]; ?>" name=Year class="form-control">
 		</div>
 	</div>
 	<div class="col-sm-6">
