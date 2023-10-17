@@ -40,7 +40,7 @@ $dob = preg_split ("/\-/", $row->dob);
 	<div class="col-sm-4">
 		<div class="form-group">
 			<label>Month : </label>
-      <?php echo $mon = $dob[2] - 1; ?>
+      <?php echo $mon = $dob[1] - 1; ?>
 			<select id=fld name=Month class="form-control">
 				<option value=0 <?php if($mon==0) { echo "selected"; } ?>>January</option>
 				<option value=1 <?php if($mon==1) { echo "selected"; } ?>>February</option>
