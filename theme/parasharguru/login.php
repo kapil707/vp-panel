@@ -10,7 +10,7 @@
 					<?php echo get_field_data('login_label1','73'); ?>
 				</p>
 			</div>
-			<p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
+			<p class="font-bold text-[24px] mb-2 header2_css" style="font-size: 12px;text-align: right;">
 				<?php echo get_field_data('login_label2','73'); ?>
 			</p>
 			<div>

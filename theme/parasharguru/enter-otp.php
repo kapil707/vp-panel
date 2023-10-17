@@ -32,7 +32,7 @@ $no = $row->mobile;
 					</strong><?php echo $this->session->flashdata('message_value'); ?>
 				</div>
 			<?php } ?>
-			<p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
+			<p class="font-bold text-[24px] mb-2 header2_css" style="font-size: 12px;text-align: right;">
 				<?php echo get_field_data('login_label2','73'); ?>
 			</p>
 			<form class="" method="POST" style="margin-top:50px;" action="<?php echo base_url(); ?>post-data">
