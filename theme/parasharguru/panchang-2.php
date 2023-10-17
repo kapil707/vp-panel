@@ -7,12 +7,15 @@ $gtm = str_replace("UTC +","",$gtm);
 $gtm = str_replace("UTC -","",$gtm); 
 $gtm = preg_split ("/\:/", $gtm);  
 
-$dob = preg_split ("/\-/", $row->dob);
-$dobtime = preg_split ("/\:/", $row->time);
+$dob = $row->dob;
+$dobtime = $row->time;
 
 /******************* */
 $dob = date("Y-m-d");
 $dobtime = date("h:i");
+
+$dob = preg_split ("/\-/", $dob);
+$dobtime = preg_split ("/\:/", $dobtime);
 ?>
 <div class="row">
     <div class="col-sm-12">                
