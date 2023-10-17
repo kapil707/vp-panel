@@ -14,6 +14,7 @@ $dobtime = $row->time;
 $dob = date("Y-m-d");
 $dobtime = date("h:i");
 
+
 $dob = preg_split ("/\-/", $dob);
 $dobtime = preg_split ("/\:/", $dobtime);
 ?>
