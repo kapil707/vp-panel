@@ -48,9 +48,6 @@ $result1 = get_table("tbl_o_interest");
 				<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword('renew_password')" id="eyes_renew_password" style="display:none" alt="">
 			</div>
 		</div>
-		<div class="col-sm-12 form-group">
-			<a href="<?= base_url(); ?>/forget-password">forget password?</a>
-		</div>
 		<div class="col-sm-12 form-group alert_div"></div>
 
 		<div class="col-sm-12 form-group" id="submitbtn_disable" style="display:none">
