@@ -1,7 +1,5 @@
 <?php include_once(get_header("mobile")); ?>
 <?php
-session_start();
-// Set a session variable
 $id = $_SESSION['profile_user'];
 			
 $row = get_table_row("tbl_o_my_users where id='$id'");
