@@ -206,7 +206,14 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'profile_page_form_
 	$this->session->set_flashdata('message_value','Profile Updated Successfully');
 	$this->session->set_flashdata('message_toast_show','1');
 	
-	redirect(base_url().'edit-profile');
+	//redirect(base_url().'edit-profile');
+
+	$row = get_table_row("tbl_o_my_users WHERE id='$id'");
+	if(empty($row->password)){
+		redirect(base_url().'edit-password');
+	}else{
+		redirect(base_url().'edit-profile');
+	}
 }
 
 /**********edit password submit******************** */
@@ -239,7 +246,7 @@ if( isset($_POST['action_type']) && $_POST['action_type'] == 'password_form_subm
 		$this->session->set_flashdata('message_toast_show','2');
 	}
 	$row = get_table_row("tbl_o_my_users WHERE id='$id'");
-	if(empty($row->password)){
+	if(empty($row->password) && empty($row->profile_update)){
 		redirect(base_url().'edit-password');
 	}else{
 		redirect(base_url().'edit-profile');
