@@ -1650,7 +1650,7 @@ body,html {
 	display:none;
 }
 .main-body-css{
-    padding-top: 50px;
+    padding-top: 70px;
 }
 @media screen and (max-width:800px) {
 	.mobile_off
@@ -1665,7 +1665,7 @@ body,html {
         font-size: 22px;
     }
     .main-body-css{
-        padding-top: 10px;
+        padding-top: 60px;
     }
     .mobile-menu-css{
         width: 30px;
