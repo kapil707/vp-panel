@@ -197,7 +197,7 @@
             $get_gallery = get_gallery("","limit 0,4");
             $i = 1;
             foreach($get_gallery as $row) { ?>
-                <div class="col-sm-3 col-6">
+                <div class="col-md-3 col-sm-6 col-12">
                     <div class="item filter gallery">
                         <a class="mobile_off" href="<?php echo $img = get_library_to_image($row->image,'main'); ?>" data-lightbox="example-set1" data-title="">
                             <img src="<?= $img; ?>" class="img-fluid mobile_off">
