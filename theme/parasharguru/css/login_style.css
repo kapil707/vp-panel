@@ -1652,6 +1652,14 @@ body,html {
 .main-body-css{
     padding-top: 70px;
 }
+.social-share ul{
+    width: 100%;
+}
+.social-share ul li{
+    list-style-type: none;
+    float: left;
+    padding: 10px;
+}
 @media screen and (max-width:800px) {
 	.mobile_off
 	{
