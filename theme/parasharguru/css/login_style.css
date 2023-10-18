@@ -1649,6 +1649,9 @@ body,html {
 {
 	display:none;
 }
+.main-body-css{
+    padding-top: 50px;
+}
 @media screen and (max-width:800px) {
 	.mobile_off
 	{
@@ -1660,5 +1663,8 @@ body,html {
 	}
     .main-header-text{
         font-size: 22px;
+    }
+    .main-body-css{
+        padding-top: 10px;
     }
 }
