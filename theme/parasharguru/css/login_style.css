@@ -1660,6 +1660,9 @@ body,html {
     float: left;
     padding: 10px;
 }
+.social-share ul li i{
+    font-size: 32px;
+}
 @media screen and (max-width:800px) {
 	.mobile_off
 	{
