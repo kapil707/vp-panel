@@ -181,7 +181,7 @@ menu,ol,ul {
     top: 0px;
     left: 0px;
     z-index: 1;
-    height:50px;
+    height:60px;
 }
 .main-header-text{
     font-size: 35px;
@@ -1669,7 +1669,11 @@ body,html {
     }
     .mobile-menu-css{
         width: 30px;
-        margin: 1px;
+        margin: 7px;
         position: absolute;
+    }
+    .fix-header
+    {
+        height:50px;
     }
 }
