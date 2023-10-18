@@ -278,11 +278,14 @@ class Manage_menu extends CI_Controller {
 	public function change_select_group_page_type_api()
 	{
 		$page_type 	= $_POST["page_type"];
-		$child_page = $_POST["child_page"];
+		$child_page = "";
+		if(!empty($_POST["child_page"])){
+			$child_page = $_POST["child_page"];
+		}
 		$page_id 	= $_POST["page_id"];
 		
 		$all = $page_type;
-		if($child_page){
+		if(!emtpy($child_page)){
 			$all = get_child_page_name($child_page);
 			$all = str_replace("Manage ","",$all);
 		}
