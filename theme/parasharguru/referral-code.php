@@ -13,10 +13,11 @@ $row = get_table_row("tbl_o_my_users where id='$id'");
 		</a>
 	</div>
 	<div class="social-share">
-        <button id="facebook-share"><i class="fa fa-facebook" aria-hidden="true"></i></button>
-        <button id="twitter-share"><i class="fa fa-twitter" aria-hidden="true"></i></button>
-        <button id="linkedin-share"><i class="fa fa-linkedin" aria-hidden="true"></i></button>
-		<a href="<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+		<ul>
+			<li> <button id="facebook-share"><i class="fa fa-facebook" aria-hidden="true"></i></button></li>
+			<li> <button id="twitter-share"><i class="fa fa-twitter" aria-hidden="true"></i></button></li>
+			<li> <button id="linkedin-share"><i class="fa fa-linkedin" aria-hidden="true"></i></button></li>
+			<li> <a href="<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>" data-action="share/whatsapp/share"><i class="fa fa-whatsapp" aria-hidden="true"></i></a></li>
     </div>
 <script>
 function CopyToClipboard(id)
