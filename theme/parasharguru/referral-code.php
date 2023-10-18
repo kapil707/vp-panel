@@ -28,5 +28,26 @@ function CopyToClipboard(id)
 	window.getSelection().removeAllRanges();
 	alert("Text Copy")
 }
+
+// Function to open a new window for sharing
+function openShareWindow(url) {
+    window.open(url, '_blank', 'width=600,height=400');
+}
+
+// Add event listeners to the buttons
+document.getElementById('facebook-share').addEventListener('click', function() {
+    const url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>);
+    openShareWindow(url);
+});
+
+document.getElementById('twitter-share').addEventListener('click', function() {
+    const url = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>);
+    openShareWindow(url);
+});
+
+document.getElementById('linkedin-share').addEventListener('click', function() {
+    const url = 'https://www.linkedin.com/shareArticle?url=' + encodeURIComponent(<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>);
+    openShareWindow(url);
+});
 </script>
 <?php include_once(get_footer("mobile")); ?>
