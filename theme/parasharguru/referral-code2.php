@@ -3,7 +3,7 @@ $id = $_SESSION['profile_user'];
 			
 $row = get_table_row("tbl_o_my_users where id='$id'");
 ?>
-	<div class="text-center" style="font-size:20px;margin-top:50px;">
+	<div class="text-center" style="font-size:20px;margin-top:20px;">
 		<a href="#" onclick="CopyToClipboard('sample');return false;" id="sample">
 			<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>
 		</a>
