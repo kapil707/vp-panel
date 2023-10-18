@@ -12,6 +12,11 @@ $row = get_table_row("tbl_o_my_users where id='$id'");
 			<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>
 		</a>
 	</div>
+	<div class="social-share">
+        <button id="facebook-share">Share on Facebook</button>
+        <button id="twitter-share">Share on Twitter</button>
+        <button id="linkedin-share">Share on LinkedIn</button>
+    </div>
 <script>
 function CopyToClipboard(id)
 {

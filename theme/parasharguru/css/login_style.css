@@ -1665,7 +1665,8 @@ body,html {
         font-size: 22px;
     }
     .main-body-css{
-        padding-top: 60px;
+        margin-top: -22px;
+        padding-top: 0px;
     }
     .mobile-menu-css{
         width: 30px;
