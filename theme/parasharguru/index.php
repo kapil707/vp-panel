@@ -71,7 +71,7 @@ $result1 = get_table("tbl_o_interest");
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <h2 class="home_page_profile_h2">Your Profile</h2>
+        <h2 class="home_page_profile_h2">Referral code</h2>
     </div>
     <div class="col-sm-12">  
         <?php include_once('referral-code2.php'); ?>
