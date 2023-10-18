@@ -1,0 +1,269 @@
+a:hover{
+    text-decoration: none;
+}
+#header{
+    color: #fff;
+    background: #27387E;
+}
+#menu{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+#menu li{
+    display: inline-block;
+}
+#menu li a{
+    color:#fff;
+    padding: 15px 10px;
+    display: block;
+}
+#menu li a:hover{
+    background-color: gray;
+}
+#slider img{
+    height:750px;
+}
+
+#slider-bottom{
+    color: #fff;
+    background: #27387E;
+    padding: 20px;
+}
+
+#home-box1{
+    padding: 100px;
+}
+#home-box1 .row .col-md-3:first-child{
+    border: 0px;
+}
+#home-box1 .row .col-md-3{
+    border-left: solid 1px #240d0d ;
+}
+
+#home-box2{
+    padding: 100px;
+    background: gainsboro;
+}
+#home-box2 h5{
+    font-size: 2rem;
+    margin-bottom: 50px;
+}
+#home-box2 .image-box{
+    margin-top: 50px;
+}
+#home-box2 .image-box img{
+    width:100%;
+    border-radius: 10px;
+}
+#home-box2 .ulli-box{
+    margin-top: 50px;
+}
+#home-box2 .ulli-box ul{
+    width:100%;
+}
+
+#home-box2 .ulli-box ul li{
+    list-style-type: none;
+    width:100%;
+    float: left;
+    padding: 10px;
+    border-bottom: solid 1px #000000;
+}
+
+
+#home-box3{
+    padding: 100px;
+}
+#home-box3 h5{
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: #27387E;
+}
+
+.owl-carousel .item .item-box{
+    background-image: url(../images/2.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 400px;
+    width: 300px;
+    border-radius: 15px;
+}
+
+.owl-carousel .item .item-box h4{
+    --background-overlay: '';
+    background-color: #02020236;
+    height: 400px;
+    width: 300px;
+    border-radius: 15px;
+}
+.owl-carousel .item h5{
+    color: white !important;
+    margin-top: -100px;
+    font-size: 1.5rem !important;
+}
+
+#home-box4{
+    background: #27387E;
+    padding: 100px;
+}
+
+#home-box4 h5{
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: white;
+}
+#home-box4 .item{
+    margin-top: 30px;
+    height: 200px;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: white;
+    border-radius: 15px;
+}
+#home-box4 .item img{
+    width:100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#home-box4 .item p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#home-box5{
+    color: #27387E;
+    background: #fff;
+    padding: 100px;
+}
+#home-box5 h5{
+    font-size: 2rem;
+}
+
+#home-box5 .item{
+    margin-top: 30px;
+    height: 250px;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #27387E;
+    border-radius: 15px;
+}
+#home-box5 .item .item1{
+    color:white;
+    font-size: 1.5rem;
+    margin: 15px;
+}
+#home-box5 .item .item2{
+    color:white;
+    margin: 15px;
+}
+#home-box5 .item .item3{
+    color:white;
+    font-size: 1.5rem;
+    margin: 15px;
+}
+#home-box5 .item .button{
+    background-color: white;
+    border: 0px;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin: 15px;
+}
+
+
+#home-box6{
+    background: #27387E;
+    padding: 100px;
+}
+
+#home-box6 h5{
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: white;
+}
+#home-box6 .item img{
+    width:100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+#home-box6 .item{
+    background-image: url(../images/2.jpg);
+    background-position: center center;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    border-radius: 15px;
+}
+#home-box6 .item h4{
+    --background-overlay: '';
+    background-color: #9f9f9fad;
+    height: 200px;
+    width: 100%;
+    border-radius: 15px;
+}
+#home-box6 .item .button{
+    background-color: white;
+    border: 0px;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 1.5rem;
+    margin: 15px;
+    margin-top: -125px;
+}
+
+
+#home-box7{
+    color: #27387E;
+    background: #fff;
+    padding: 100px;
+}
+#home-box7 h5{
+    font-size: 2rem;
+}
+
+#home-box7 .item{
+    margin-top: 30px;
+}
+#home-box7 .item img{
+    border-radius: 15px;
+}
+
+#home-box8{
+    color: white;
+    background: #27387E;
+    background-image: url('../images/priceList-pattern.png');
+    padding: 100px;
+}
+
+#home-box8 h5{
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: white;
+}
+#home-box8 ul li{
+    margin: 10px;
+}
+
+#home-box9{
+    color: white;
+    background: #27387E;
+    padding: 100px;
+}
+
+#home-box9 h5{
+    font-size: 2rem;
+    margin-bottom: 50px;
+    color: white;
+}
+#home-box9 ul li{
+    margin: 10px;
+}
+
+@media screen and (max-width:1100px) {
+    #slider img {
+        height: 500px;
+    }
+}
