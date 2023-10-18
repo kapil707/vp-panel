@@ -309,7 +309,11 @@ if ( ! function_exists('get_field_data_id'))
 		$ci->load->database(); 
 
 		$row = $ci->db->query("select id from tbl_field_data where field_name='$field_name' and page_id='$page_id'")->row();
-		return $row->id;
+		if(!empty($row->id)){
+			return $row->id;
+		}else{
+			return 0;
+		}
 	}
 }
 
