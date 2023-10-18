@@ -3,9 +3,6 @@ $id = $_SESSION['profile_user'];
 			
 $row = get_table_row("tbl_o_my_users where id='$id'");
 ?>
-	<h1 style="font-size:30px;margin-top:30px;" class="text-center">Referral code</h1>
-	<h1 style="font-size:30px;margin-top:30px;" class="text-center"><?php echo $row->your_code ?></h1>
-	
 	<div class="text-center" style="font-size:20px;margin-top:50px;">
 		<a href="#" onclick="CopyToClipboard('sample');return false;" id="sample">
 			<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>
