@@ -124,13 +124,13 @@ function onchange_select_group_page_type(id){
 	child_page = $('.group_page_type_'+id+' option:selected').attr("child_page");
 	
 	$(".css_group_child_page").val(child_page)
-	change_select_group_page_type(page_type)
+	change_select_group_page_type(page_type,child_page)
 }
-function change_select_group_page_type(page_type)
+function change_select_group_page_type(page_type,child_page)
 {	
 	$.ajax({
 	type       : "POST",
-	data       :  { page_type : page_type,} ,
+	data       :  { page_type : page_type,child_page:child_page} ,
 	url        : "<?= base_url()?>admin/<?= $Page_name?>/change_select_group_page_type_api",
 	success    : function(data){
 			if(data!="")
