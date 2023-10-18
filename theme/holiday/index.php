@@ -43,14 +43,14 @@
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="images/1.webp" class="d-block w-100">
+                        <img src="<?php echo get_theme_path(); ?>images/1.webp" class="d-block w-100">
                         <div class="carousel-caption d-none d-md-block">
                             <h5>Hello</h5>
                             <p>Hello g Hello g Hello g Hello g Hello g Hello g</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="images/2.jpg" class="d-block w-100">
+                        <img src="<?php echo get_theme_path(); ?>images/2.jpg" class="d-block w-100">
                     </div>
                 </div>
                 <a href="#myCarousel" class="carousel-control-prev" data-slide="prev">
@@ -111,7 +111,7 @@
                         <span>Noida-NCR has added many commercial developments to the nation. But here is a commercial property in noida with assured return in Sector-75, Noida that will mark a new era by transforming commercial investments and redefining international lifestyle trends in modern times. Under the aegis of SPECTRUM GROUP, Spectrum@Metro is a benchmark in commercial and retail development, a one of its kind project located at Sector 75, Noida.</span>
                     </div>
                     <div class="col-md-5 text-center image-box">
-                        <img src="images/2.jpg" class="img-fluid">
+                        <img src="<?php echo get_theme_path(); ?>images/2.jpg" class="img-fluid">
                     </div>
                     <div class="col-md-7 ulli-box">
                         <ul>
@@ -203,37 +203,37 @@
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="item">
-                            <img src="images/climate-300x300.png">
+                            <img src="<?php echo get_theme_path(); ?>images/climate-300x300.png">
                             <p>One of the biggest & longest High Street Project of North India</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="item">
-                            <img src="images/climate-300x300.png">
+                            <img src="<?php echo get_theme_path(); ?>images/climate-300x300.png">
                             <p>European Street Style Elevation</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="item">
-                            <img src="images/climate-300x300.png">
+                            <img src="<?php echo get_theme_path(); ?>images/climate-300x300.png">
                             <p>3 level food court, restaurants & entertainment zone</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="item">
-                            <img src="images/climate-300x300.png">
+                            <img src="<?php echo get_theme_path(); ?>images/climate-300x300.png">
                             <p>Ample Parking Space for efficient parking management</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="item">
-                            <img src="images/climate-300x300.png">
+                            <img src="<?php echo get_theme_path(); ?>images/climate-300x300.png">
                             <p>Four side open (multiple entry & exit points)</p>
                         </div>
                     </div>
                     <div class="col-md-4 text-center">
                         <div class="item">
-                            <img src="images/climate-300x300.png">
+                            <img src="<?php echo get_theme_path(); ?>images/climate-300x300.png">
                             <p>Door step connectivity to Sec- 50 Metro Station</p>
                         </div>
                     </div>
@@ -310,19 +310,19 @@
                         <h5>Gallery</h5>
                     </div>
                     <div class="col-md-4 text-center item">
-                        <img src="images/01.jpg" class="img-fluid">
+                        <img src="<?php echo get_theme_path(); ?>images/01.jpg" class="img-fluid">
                     </div>
                     <div class="col-md-4 text-center item">
-                        <img src="images/02.jpg" class="img-fluid">
+                        <img src="<?php echo get_theme_path(); ?>images/02.jpg" class="img-fluid">
                     </div>
                     <div class="col-md-4 text-center item">
-                        <img src="images/03.jpg" class="img-fluid">
+                        <img src="<?php echo get_theme_path(); ?>images/03.jpg" class="img-fluid">
                     </div>
                     <div class="col-md-4 text-center item">
-                        <img src="images/04.jpg" class="img-fluid">
+                        <img src="<?php echo get_theme_path(); ?>images/04.jpg" class="img-fluid">
                     </div>
                     <div class="col-md-4 text-center item">
-                        <img src="images/05.jpg" class="img-fluid">
+                        <img src="<?php echo get_theme_path(); ?>images/05.jpg" class="img-fluid">
                     </div>
                 </div>
             </div>
