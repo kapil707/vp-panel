@@ -1,71 +1,7 @@
-<html lang="en">
-    <head>
-        <title>test page</title>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/bootstrap.css">
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js"></script>
-        <script src="<?php echo get_theme_path(); ?>js/bootstrap.min.js"></script>
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css" integrity="sha512-OTcub78R3msOCtY3Tc6FzeDJ8N9qvQn1Ph49ou13xgA9VsH9+LRxoFU6EqLhW4+PKRfU+/HReXmSZXHEkpYoOA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-        <link rel="stylesheet" href="<?php echo get_theme_path(); ?>css/style.css">
-    </head>
-    <body>
-        <!--Header Start-->
-        <div id="header">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h2 id="logo">Compnay Logo</h2>
-                    </div>
-                    <div class="col-md-8">
-                        <ul id="menu" class="float-md-right">
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Home</a></li>
-                            <li><a href="">Home</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!--Header End-->
-
-        <!--Slider Start-->
-        <div id="slider">
-            <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="<?php echo get_theme_path(); ?>images/1.webp" class="d-block w-100">
-                        <div class="carousel-caption d-none d-md-block">
-                            <h5>Hello</h5>
-                            <p>Hello g Hello g Hello g Hello g Hello g Hello g</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="<?php echo get_theme_path(); ?>images/2.jpg" class="d-block w-100">
-                    </div>
-                </div>
-                <a href="#myCarousel" class="carousel-control-prev" data-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a href="#myCarousel" class="carousel-control-next" data-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </a>
-                <ol class="carousel-indicators">
-                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#myCarousel" data-slide-to="1"></li>
-                </ol>
-            </div>
-        </div>
-        <!--Slider End-->
+<?php include_once(get_header()); ?>
+<div id="slider">
+    <?php echo do_slider("slider") ;?>
+</div>
 
         <div id="slider-bottom">
             <div class="container">
