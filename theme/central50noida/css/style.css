@@ -301,7 +301,7 @@ a:hover{
     transform: translateY(-50%) rotate(270deg);
     right: -53px;
     top: 50%;
-    z-index: 9;
+    z-index: 999;
     transition: .7s;
     /* transition-delay: .1s; */
     width: fit-content;
@@ -466,7 +466,7 @@ a:hover{
         padding-right: 10px;
     }
     #home-box6 video {
-        margin: -50px;
+        margin-top: -50px;
         padding: 0px;
     }
     #home-box5 .item img {
