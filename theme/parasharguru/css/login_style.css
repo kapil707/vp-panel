@@ -181,8 +181,11 @@ menu,ol,ul {
     top: 0px;
     left: 0px;
     z-index: 1;
+    height:50px;
 }
-
+.main-header-text{
+    font-size: 35px;
+}
 textarea {
     resize: vertical
 }
@@ -1655,4 +1658,7 @@ body,html {
 	{
 		display:block;
 	}
+    .main-header-text{
+        font-size: 22px;
+    }
 }

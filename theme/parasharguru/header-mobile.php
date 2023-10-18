@@ -97,7 +97,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 	<div class="col-sm-12">
 		<div class="bg-[#A17603] text-white text-center p-1">
 			<img src="<?php echo get_theme_path(); ?>images/menu-icon-12.png" class="mobile-menu-css" onclick="menushow()">
-			<p class="font-medium text-[28px] mt-1" id="join" style="font-size: 35px;">
+			<p class="font-medium text-[28px] mt-1 main-header-text" id="join">
 				<?php echo get_field_data('login_label1','73'); ?>
 			</p>
 		</div>
