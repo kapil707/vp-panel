@@ -581,5 +581,11 @@ a:hover{
     #about-box2{
         padding: 10px !important;
     }
+    
+    #home-box5 .item img {
+        height: 230px;
+        width: 100%;
+        border-radius: 10px;
+    }
 }
 
