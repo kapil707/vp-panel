@@ -216,7 +216,7 @@
             foreach($tbl_category as $row) { 
                 $row1 = get_table_row("tbl_page where page_type='blog' and child_page='construction_updates' and category_id in ('$row->id')");
                 ?>                
-                <div class="col-sm-3">
+                <div class="col-md-3 col-sm-6 col-12">
                     <div class="item filter construction_update" style="display:none">
                         <a class="mobile_off" href="<?php echo base_url(); ?>construction-updates/<?php echo $row->url; ?>">
                             <?php $img = get_library_to_image($row1->image,'main'); ?>
