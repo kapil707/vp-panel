@@ -282,7 +282,10 @@ class Manage_menu extends CI_Controller {
 		if(!empty($_POST["child_page"])){
 			$child_page = $_POST["child_page"];
 		}
-		$page_id 	= $_POST["page_id"];
+		$page_id = "";
+		if(!empty($_POST["page_id"])){
+			$page_id = $_POST["page_id"];
+		}
 		
 		$all = $page_type;
 		if(!emtpy($child_page)){
