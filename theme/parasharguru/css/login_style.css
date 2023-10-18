@@ -1667,4 +1667,9 @@ body,html {
     .main-body-css{
         padding-top: 10px;
     }
+    .mobile-menu-css{
+        width: 30px;
+        margin: 1px;
+        position: absolute;
+    }
 }
