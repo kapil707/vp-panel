@@ -288,7 +288,7 @@ class Manage_menu extends CI_Controller {
 		}
 		
 		$all = $page_type;
-		if(!emtpy($child_page)){
+		if(!empty($child_page)){
 			$all = get_child_page_name($child_page);
 			$all = str_replace("Manage ","",$all);
 		}
