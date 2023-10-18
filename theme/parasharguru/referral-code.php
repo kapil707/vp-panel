@@ -36,17 +36,17 @@ function openShareWindow(url) {
 
 // Add event listeners to the buttons
 document.getElementById('facebook-share').addEventListener('click', function() {
-    const url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>);
+    const url = 'https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent('<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>');
     openShareWindow(url);
 });
 
 document.getElementById('twitter-share').addEventListener('click', function() {
-    const url = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent(<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>);
+    const url = 'https://twitter.com/intent/tweet?url=' + encodeURIComponent('<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>');
     openShareWindow(url);
 });
 
 document.getElementById('linkedin-share').addEventListener('click', function() {
-    const url = 'https://www.linkedin.com/shareArticle?url=' + encodeURIComponent(<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>);
+    const url = 'https://www.linkedin.com/shareArticle?url=' + encodeURIComponent('<?php echo site_url(); ?>login/?code=<?php echo $row->your_code ?>');
     openShareWindow(url);
 });
 </script>
