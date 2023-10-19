@@ -1,4 +1,9 @@
 <?php include_once(get_header()); ?>
+<style>
+.about-box1 .main-banner{
+    height:650px;
+}
+</style>
 <div id="about-box1">
     <img src="<?php echo get_library_to_image($page_data->image,'main'); ?>" class="main-banner mobile_off">
     <img src="<?php echo get_library_to_image($page_data->mobile_image,'main'); ?>" class="main-banner mobile_show">
