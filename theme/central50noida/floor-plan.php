@@ -1,7 +1,12 @@
 <?php include_once(get_header()); ?>
 <style>
-.about-box1 .main-banner{
+#about-box1 .main-banner{
     height:650px;
+}
+@media screen and (max-width:800px) {
+    #about-box1 .main-banner{
+        height:250px;
+    }
 }
 </style>
 <div id="about-box1">
