@@ -1,4 +1,4 @@
-
+<?php include_once(get_header()); ?>
         <div class="container-fluid bg-primary py-5 mb-5 hero-header">
             <div class="container py-5">
                 <div class="row justify-content-center py-5">
@@ -510,3 +510,4 @@
         </div>
     </div>
     <!-- Testimonial End -->
+<?php include_once(get_footer()); ?>
