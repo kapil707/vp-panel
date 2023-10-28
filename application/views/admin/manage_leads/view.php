@@ -67,11 +67,11 @@
 								</td>
 								<td>
 									<?php 
-									$date = ($row->date_time); 
+									$date = ($row->datetime); 
 									echo date('d-M-Y', $date);
 									?> /
 									<?php 
-									$time = ($row->date_time); 
+									$time = ($row->datetime); 
 									echo date('H:i', $time);
 									?>
 								</td>
