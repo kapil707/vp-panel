@@ -1,11 +1,8 @@
 <div class="row">
     <div class="col-xs-12" style="margin-bottom:20px;">
-		<a href="<?= base_url()?>admin/<?= $Page_name; ?>/add" class="btn btn-w-m btn-info">
+		<!-- <a href="<?= base_url()?>admin/<?= $Page_name; ?>/add" class="btn btn-w-m btn-info">
 			Add +
-		</a>
-		<a href="<?= base_url()?>admin/<?= $Page_name; ?>/add2" class="btn btn-w-m btn-info">
-			Import
-		</a>
+		</a> -->
 	</div>
     <div class="col-xs-12">
 		<div class="ibox float-e-margins">
@@ -35,9 +32,9 @@
 								<th>
 									Date / Time
 								</th>
-								<th>
+								<!-- <th>
 									Action
-								</th>
+								</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -75,13 +72,13 @@
 									echo date('H:i', $time);
 									?>
 								</td>
-								<td class="text-right">
+								<!-- <td class="text-right">
 									<div class="btn-group">
 										<a href="edit/<?= $row->id; ?>" class="btn-white btn btn-xs">Edit
 										</a>
 										<a href="javascript:void(0)" onclick="delete_page_rec('<?= $row->id; ?>')" class="btn-white btn btn-xs">Delete</i> </a>
 									</div>
-								</td>
+								</td> -->
 							</tr>
 							<?php
 							}
