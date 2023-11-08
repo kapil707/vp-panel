@@ -5,8 +5,8 @@ class Manage_field_group_model extends CI_Model
 	function get_field_group_set_page_type($page_type="",$child_page="")
     {
 		?>
-		<option value="page" <?php if($page_type=="page") { echo "selected"; } ?>>Page</li>
-		<option value="blog"  <?php if($page_type=="blog" && $child_page=="") { echo "selected"; } ?>>Blog</li>
+		<option value="page" child_page="" <?php if($page_type=="page") { echo "selected"; } ?>>Page</li>
+		<option value="blog" child_page="" <?php if($page_type=="blog" && $child_page=="") { echo "selected"; } ?>>Blog</li>
 		<?php 
 		$row = $this->db->query("select id from tbl_permission_page where page_type='manage_blog'")->row();
 		

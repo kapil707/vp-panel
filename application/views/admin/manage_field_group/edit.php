@@ -228,10 +228,6 @@ function onchange_select_group_page_type(id){
 }
 function change_select_group_page_type(page_type,child_page,page_id)
 {	
-	if(child_page==""){
-		child_page = "";
-	}
-
 	$.ajax({
 	type       : "POST",
 	data       :  {page_type:page_type,child_page:child_page,page_id:page_id} ,
