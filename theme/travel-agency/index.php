@@ -32,22 +32,34 @@
                     <p class="mb-4"><?php echo get_field_data("home_about",1) ?></p>
                     <div class="row gy-2 gx-4 mb-4">
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>First Class Flights</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>
+                                <?php echo get_field_data("home_about1",1) ?>
+                            </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Handpicked Hotels</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>
+                                <?php echo get_field_data("home_about2",1) ?>
+                            </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>5 Star Accommodations</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>
+                                <?php echo get_field_data("home_about3",1) ?>
+                            </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Latest Model Vehicles</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>
+                            <?php echo get_field_data("home_about4",1) ?>
+                            </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>150 Premium City Tours</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>
+                                <?php echo get_field_data("home_about5",1) ?>
+                            </p>
                         </div>
                         <div class="col-sm-6">
-                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>24/7 Service</p>
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>
+                                <?php echo get_field_data("home_about6",1) ?>
+                            </p>
                         </div>
                     </div>
                     <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
