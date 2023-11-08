@@ -76,8 +76,9 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="fa fa-bars"></span>
             </button>
-            <div class="web_menu">
-                <?php echo vp_menu(); ?>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <?php echo vp_menu(); ?>
+                </div>
             </div>
-            
         </nav>
