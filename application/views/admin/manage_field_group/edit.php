@@ -10,7 +10,8 @@
 	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="field_label_old" value="<?php echo $row->field_label; ?>" />
 	<input type="hidden" name="field_name_old" value="<?php echo $row->field_name; ?>" />
-	<input type="hidden" name="group_child_page" class="css_group_child_page" value="<?php echo $row->child_page ?>">
+	<!-- <input type="hidden" name="group_child_page" class="css_group_child_page" value="<?php echo $row->child_page ?>"> -->
+	<input type="hidden" name="group_child_page" class="css_group_child_page" value="">
 		<div class="col-xs-9">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
