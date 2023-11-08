@@ -10,6 +10,8 @@
 	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
 	<input type="hidden" name="field_label_old" value="<?php echo $row->field_label; ?>" />
 	<input type="hidden" name="field_name_old" value="<?php echo $row->field_name; ?>" />
+	<!-- <input type="hidden" name="group_child_page" class="css_group_child_page" value="<?php echo $row->child_page ?>"> -->
+	<input type="hidden" name="group_child_page" class="css_group_child_page" value="">
 		<div class="col-xs-9">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
@@ -220,10 +222,9 @@
 function onchange_select_group_page_type(id){
 	page_type  = $('.group_page_type_'+id+' option:selected').val();
 	child_page = $('.group_page_type_'+id+' option:selected').attr("child_page");
-
-	page_id = 0;
 	
-	change_select_group_page_type(page_type,child_page,page_id)
+	$(".css_group_child_page").val(child_page)
+	change_select_group_page_type(page_type,child_page,"")
 }
 function change_select_group_page_type(page_type,child_page,page_id)
 {	
