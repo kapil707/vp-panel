@@ -220,11 +220,11 @@
                         </div>
                         <div class="d-flex border-bottom">
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row->title; ?></small>
-                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>3 days</small>
+                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i><?php echo get_field_data("packages_days",$row->id) ?> days</small>
                             <small class="flex-fill text-center py-2"><i class="fa fa-user text-primary me-2"></i><?php echo get_field_data("packages_person",$row->id) ?> Person</small>
                         </div>
                         <div class="text-center p-4">
-                            <h3 class="mb-0">$149.00</h3>
+                            <h3 class="mb-0">Rs.<?php echo get_field_data("packages_price",$row->id) ?></h3>
                             <div class="mb-3">
                                 <small class="fa fa-star text-primary"></small>
                                 <small class="fa fa-star text-primary"></small>
