@@ -161,7 +161,7 @@
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
                 <h6 class="section-title bg-white text-center text-primary px-3">Destination</h6>
-                <h1 class="mb-5">Popular Destination</h1>
+                <h1 class="mb-5">Popular Destination <?php echo get_library_to_image(get_field_data("destination_photo1","1"),'main'); ?></h1>
             </div>
             <div class="row g-3">
                 <div class="col-lg-7 col-md-6">
