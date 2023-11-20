@@ -211,12 +211,12 @@
             </div>
             <div class="row g-4 justify-content-center">
                 <?php 
-                $get_blog = get_blog("home_sec3");
+                $get_blog = get_blog("packages");
                 foreach($get_blog as $row) { ?>
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="package-item">
                         <div class="overflow-hidden">
-                            <img class="img-fluid" src="img/package-1.jpg" alt="">
+                            <img class="img-fluid" src="<?= get_library_to_image($row->image,'main'); ?>" alt="">
                         </div>
                         <div class="d-flex border-bottom">
                             <small class="flex-fill text-center border-end py-2"><i class="fa fa-map-marker-alt text-primary me-2"></i><?php echo $row->title; ?></small>
