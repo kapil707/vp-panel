@@ -49,37 +49,37 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
         <li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>home">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>bhava">
 				Bhava
 			</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>janmarashi">
 				Janmarashi
 			</a>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>panchang">
 				Panchang
 			</a>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>referral-code">
 				Referral code
 			</a>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>edit-profile">
 				Edit Profile
 			</a>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>edit-password">
 				Edit Password
 			</a>
 		</li>
-		<li class="nav-item">
+		<li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>profile-logout">
 				Logout
 			</a>
