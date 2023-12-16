@@ -47,24 +47,43 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
+			<a class="nav-link" href="<?php echo site_url(); ?>home">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
+			<a class="nav-link" href="<?php echo site_url(); ?>bhava">
+				Bhava
+			</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown link
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
+			<a class="nav-link" href="<?php echo site_url(); ?>janmarashi">
+				Janmarashi
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="<?php echo site_url(); ?>panchang">
+				Panchang
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="<?php echo site_url(); ?>referral-code">
+				Referral code
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="<?php echo site_url(); ?>edit-profile">
+				Edit Profile
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="<?php echo site_url(); ?>edit-password">
+				Edit Password
+			</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="<?php echo site_url(); ?>profile-logout">
+				Logout
+			</a>
+		</li>
       </ul>
     </div>
   </div>
