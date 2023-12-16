@@ -2,7 +2,7 @@
 <div class="container-lg">
     <div class="row">
         <div class="col">
-            <?php echo do_slider('slider');?>
+            <?php echo do_slider5('slider');?>
         </div>
     </div>
 </div>

@@ -387,6 +387,44 @@ if ( ! function_exists('do_slider'))
 		<?php
 	}
 }
+
+if ( ! function_exists('do_slider5'))
+{
+	function do_slider5($val = ""){
+		?>
+		<div id="myCarousel_<?php echo $val; ?>" class="carousel slide" data-bs-ride="carousel">
+			<?php 
+			$result = get_gallery($val); ?>
+			<div class="carousel-indicators">
+			<?php 
+				$i = 0;
+				foreach($result as $row) {?>
+				<button type="button" data-bs-target="#myCarousel_<?php echo $val; ?>" data-bs-slide-to="<?= $i; ?>" <?php if($i==0) { ?>class="active"<?php } ?> aria-current="true" aria-label="Slide <?= $i++; ?>"></button>
+				<?php } ?>
+			</div>
+			<div class="carousel-inner">
+				<?php 
+				$i = 1;
+				foreach($result as $row) { ?>
+				<div class="carousel-item <?php if($i==1) { ?>active<?php } ?>">
+					<img src="<?= get_library_to_image($row->image,'main'); ?>" alt="<?php echo $row->title; ?>" class="w-100 mobile_off">
+					<img src="<?= get_library_to_image($row->mobile_image,'main'); ?>" alt="<?php echo $row->title; ?>" class="w-100 mobile_show">
+				</div>
+				<?php $i++; } ?>
+			</div>
+			<button class="carousel-control-prev" type="button" data-bs-target="#myCarousel_<?php echo $val; ?>" data-bs-slide="prev">
+				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Previous</span>
+			</button>
+			<button class="carousel-control-next" type="button" data-bs-target="#myCarousel_<?php echo $val; ?>" data-bs-slide="next">
+				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<span class="visually-hidden">Next</span>
+			</button>
+		</div>
+		
+		<?php
+	}
+}
 if ( ! function_exists('insert_function'))
 {
 	function insert_function($tbl,$dt){
