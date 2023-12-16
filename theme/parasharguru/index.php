@@ -1,35 +1,11 @@
 <?php include_once(get_header("mobile")); ?>
-<p class="font-bold text-[24px] mb-2 header2_css" style="font-size: 12px;text-align: right;">
-	<?php echo get_field_data('login_label2','73'); ?>
-</p>
-<?php
-echo do_slider('slider');
-?>
-<style>
-#myCarousel_slider {
-    width: 100%;
-    max-width: 100%;
-}
-.carousel-inner {
-    width: 100%;
-    max-width: 100%;
-    height: 250px; /* Adjust the height as needed */
-}
-
-.carousel-item img {
-    width: 100%;
-    max-width: 100%;
-    height: 250px;
-}
-@media screen and (max-width:800px) {
-    .carousel-inner {
-        height: 250px !important;
-    }
-    .carousel-item img {
-        height: 250px !important;
-    }
-}
-</style>
+<div class="container-lg">
+    <div class="row">
+        <div class="col">
+            <?php echo do_slider('slider');?>
+        </div>
+    </div>
+</div>
 <div>
 	<p class="text-[#A17603] font-semibold text-center pt-2 px-4 text-[24px] my-3 leading-7">
 		<?php echo get_field_data('login_label3','73'); ?>

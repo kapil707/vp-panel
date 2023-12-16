@@ -360,7 +360,7 @@ if ( ! function_exists('do_shortcode'))
 	}
 }
 
-if ( ! function_exists('slider_page'))
+if ( ! function_exists('do_slider'))
 {
 	function do_slider($val = ""){
 		?>
