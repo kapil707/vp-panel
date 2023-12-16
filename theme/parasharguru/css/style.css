@@ -15,6 +15,10 @@ body{
       border-radius: 4px;
 }
 
+.menu-button-css a{
+    color: white;
+}
+
 #myCarousel_slider {
     width: 100%;
     max-width: 100%;
