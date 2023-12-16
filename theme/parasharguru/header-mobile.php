@@ -69,7 +69,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
     </div>
   </div>
 </nav>
-
+<?php /*
 <div class="mobile-left-menu">
 	<i class="fa fa-times mobile-left-menu-cancel" aria-hidden="true" onclick="menuoff()"></i>
 	<div class="row">
@@ -181,4 +181,4 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
 			<?php } ?>
 			</script>
 		</div>
-		<div class="col-sm-4">
+		<div class="col-sm-4"> */ ?>
