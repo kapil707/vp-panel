@@ -398,9 +398,9 @@ if ( ! function_exists('do_slider5'))
 			<div class="carousel-indicators">
 			<?php 
 				$i = 0;
-				foreach($result as $row) {?>
+				foreach($result as $row) { ?>
 				<button type="button" data-bs-target="#myCarousel_<?php echo $val; ?>" data-bs-slide-to="<?= $i; ?>" <?php if($i==0) { ?>class="active"<?php } ?> aria-current="true" aria-label="Slide <?= $i++; ?>"></button>
-				<?php } ?>
+			<?php } ?>
 			</div>
 			<div class="carousel-inner">
 				<?php 
