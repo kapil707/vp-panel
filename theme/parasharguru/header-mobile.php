@@ -46,7 +46,7 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
     </button>
     <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="navbar-nav">
-        <li class="nav-item">
+        <li class="nav-item menu-button-css">
 			<a class="nav-link" href="<?php echo site_url(); ?>home">Home</a>
         </li>
         <li class="nav-item">
