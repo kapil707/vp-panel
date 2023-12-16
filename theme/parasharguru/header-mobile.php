@@ -43,6 +43,11 @@ $users_row = get_table_row("tbl_o_my_users where id='$id'");
     <a class="navbar-brand" href="#">
 		<img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" width="100%">
 	</a>
+	<div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
