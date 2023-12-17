@@ -20,6 +20,15 @@ body{
     font-size: 16px;
 }
 
+.image-container1 {
+    background-image: url('images/bg1.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
+    background-size: cover; /* Adjust the background size as needed */
+    background-position: center; /* Adjust the background position as needed */
+    height: 300px; /* Set the height of the div */
+    width: 100%; /* Set the width of the div */
+    /* Optional: You can add more styles such as padding, margin, etc. */
+  }
+
 #myCarousel_slider {
     width: 100%;
     max-width: 100%;
