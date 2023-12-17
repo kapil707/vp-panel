@@ -14,14 +14,12 @@
             <a href="" class="menu-button-css">Learning</a>
         </div>
         <div class="col-sm-4 col-12">
-            <div class="card">
-                <img src="<?php echo get_theme_path(); ?>images/box/2.jpeg" class="card-img-top" alt="">
-            </div>
+            <img src="<?php echo get_theme_path(); ?>images/box/2.jpeg" class="card-img-top" alt="">
+            <a href="" class="menu-button-css">Learning</a>
         </div>
         <div class="col-sm-4 col-12">
-            <div class="card">
-                <img src="<?php echo get_theme_path(); ?>images/box/3.jpeg" class="card-img-top" alt="">
-            </div>
+            <img src="<?php echo get_theme_path(); ?>images/box/3.jpeg" class="card-img-top" alt="">
+            <a href="" class="menu-button-css">Learning</a>
         </div>
     </div>
 </div>
