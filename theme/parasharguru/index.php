@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<div class="container-lg image-container1">
+<div class="container-lg image-container1" style="background-image: url(<?php echo get_theme_path(); ?>images/bg1.jpeg);">
     <div class="row">
         <div class="col">
             hello g
