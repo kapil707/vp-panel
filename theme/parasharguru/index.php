@@ -1,5 +1,5 @@
 <?php include_once(get_header("mobile")); ?>
-<div class="container-lg">
+<div class="container-fluid">
     <div class="row">
         <div class="col">
             <?php echo do_slider5('slider');?>
@@ -7,10 +7,22 @@
     </div>
 </div>
 
-<div class="container-fluid image-container1" style="background-image: url(<?php echo get_theme_path(); ?>images/bg1.jpeg);">
+<div class="container-fluid image-container1" style="background-image: url(<?php echo get_theme_path(); ?>images/box/bg.jpeg);">
     <div class="row">
         <div class="col">
-            hello g
+            <div class="card">
+                <img src="<?php echo get_theme_path(); ?>images/box/1.jpeg" class="card-img-top" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="<?php echo get_theme_path(); ?>images/box/2.jpeg" class="card-img-top" alt="">
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="<?php echo get_theme_path(); ?>images/box/3.jpeg" class="card-img-top" alt="">
+            </div>
         </div>
     </div>
 </div>
