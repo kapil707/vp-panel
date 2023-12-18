@@ -53,6 +53,8 @@ body{
 
 .card_ul{
     width: 100%;
+    padding: 0px;
+    margin: 0px;
 }
 
 .card_ul li{
