@@ -142,3 +142,6 @@ footer .recent-post li a {
     padding: 0;
     list-style: none;
 }
+.footer_social_icons li i {
+    color: #e6eceb;
+}
