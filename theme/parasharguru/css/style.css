@@ -20,6 +20,11 @@ body{
     font-size: 16px;
 }
 
+.menu-button-css a:hover{
+    color: white;
+    font-size: 16px;
+}
+
 .image-container1 {
     background-image: url('images/bg1.jpeg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image file */
     background-size: cover; /* Adjust the background size as needed */
@@ -41,12 +46,17 @@ body{
       text-decoration: none;
       display: inline-block;
       font-size: 16px;
-      margin: 4px 2px;
+      margin: 20px;
       cursor: pointer;
       border-radius: 4px;
 }
 
 .menu-button-css1 a{
+    color: white;
+    font-size: 16px;
+}
+
+.menu-button-css1 a:hover{
     color: white;
     font-size: 16px;
 }
