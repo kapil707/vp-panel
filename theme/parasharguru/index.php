@@ -12,14 +12,34 @@
         <div class="col-sm-4 col-12 text-center">
             <img src="<?php echo get_theme_path(); ?>images/box/1.jpeg" class="card-img-top" alt="">
             <a href="" class="menu-button-css">Learning</a>
+            <ul>
+                <li>Astrology</li>
+                <li>Numerology</li>
+                <li>Palmistry</li>
+                <li>Vastu</li>
+                <li>Handwriting analysis</li>
+            </ul>
         </div>
         <div class="col-sm-4 col-12 text-center">
             <img src="<?php echo get_theme_path(); ?>images/box/2.jpeg" class="card-img-top" alt="">
-            <a href="" class="menu-button-css">Learning</a>
+            <a href="" class="menu-button-css">Problem Solving</a>
+            <ul>
+                <li>Health</li>
+                <li>Family</li>
+                <li>Education</li>
+                <li>Career</li>
+                <li>Marriage Other</li>
+            </ul>
         </div>
         <div class="col-sm-4 col-12 text-center">
             <img src="<?php echo get_theme_path(); ?>images/box/3.jpeg" class="card-img-top" alt="">
-            <a href="" class="menu-button-css">Learning</a>
+            <a href="" class="menu-button-css">Self Improvement</a>
+            <ul>
+                <li>Meditation</li>
+                <li>Healing Mantras</li>
+                <li>Confidence Building</li>
+                <li>Positive Mindset</li>
+            </ul>
         </div>
     </div>
 </div>
