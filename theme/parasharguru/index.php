@@ -7,10 +7,10 @@
     </div>
 </div>
 
-<div class="container-fluid image-container1" style="background-image: url(<?php echo get_theme_path(); ?>images/box/bg.jpeg);">
+<div class="container-fluid image-container1" style="background-image: url(<?php echo get_theme_path(); ?>images/box1/bg.png);">
     <div class="row">
         <div class="col-sm-4 col-12 text-center">
-            <img src="<?php echo get_theme_path(); ?>images/box/1.jpeg" class="card-img-top" alt="">
+            <img src="<?php echo get_theme_path(); ?>images/box1/01.png" class="card-img-top" alt="">
             <a href="" class="menu-button-css1">Learning</a>
             <ul class="card_ul">
                 <li>Astrology</li>
@@ -21,7 +21,7 @@
             </ul>
         </div>
         <div class="col-sm-4 col-12 text-center">
-            <img src="<?php echo get_theme_path(); ?>images/box/2.jpeg" class="card-img-top" alt="">
+            <img src="<?php echo get_theme_path(); ?>images/box1/02.png" class="card-img-top" alt="">
             <a href="" class="menu-button-css1">Problem Solving</a>
             <ul class="card_ul">
                 <li>Health</li>
@@ -32,7 +32,7 @@
             </ul>
         </div>
         <div class="col-sm-4 col-12 text-center">
-            <img src="<?php echo get_theme_path(); ?>images/box/3.jpeg" class="card-img-top" alt="">
+            <img src="<?php echo get_theme_path(); ?>images/box1/03.png" class="card-img-top" alt="">
             <a href="" class="menu-button-css1">Self Improvement</a>
             <ul class="card_ul">
                 <li>Meditation</li>
