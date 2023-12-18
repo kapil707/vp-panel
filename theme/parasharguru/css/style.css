@@ -145,3 +145,9 @@ footer .recent-post li a {
 .footer_social_icons li i {
     color: #e6eceb;
 }
+.footer_social_icons li {
+    float: left;
+    padding-right: 20px;
+    font-size: 18px;
+    margin-top: 5px;
+}
