@@ -106,3 +106,20 @@ body{
 .footer_middle {
     padding-top: 42px;
 }
+.footer-section .widget h5 {
+    color: #fff;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    font-size: 20px;
+    margin-bottom: 26px;
+}
+.footer-section {
+    float: left;
+    width: 100%;
+    color: #fff;
+    background: #27243f;
+}
+footer .recent-post li a {
+    color: #e6eceb;
+    font-size: 14px;
+}
