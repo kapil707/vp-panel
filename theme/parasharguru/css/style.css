@@ -137,3 +137,8 @@ footer .recent-post li a {
     margin-bottom: 12px;
     margin-top: 20px;
 }
+.footer_social_icons {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
