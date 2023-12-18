@@ -123,3 +123,17 @@ footer .recent-post li a {
     color: #e6eceb;
     font-size: 14px;
 }
+.recent-post {
+    margin: 0;
+    padding: 0;
+}
+.recent-post li {
+    border-bottom: 1px solid #362d2d;
+    list-style: none;
+    margin: 0 0 -11px 0;
+    position: relative;
+}
+.recent-post h6 {
+    margin-bottom: 12px;
+    margin-top: 20px;
+}
