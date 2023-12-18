@@ -96,3 +96,13 @@ body{
         height: 250px !important;
     }
 }
+
+.footer-section {
+    float: left;
+    width: 100%;
+    color: #fff;
+    background: #27243f;
+}
+.footer_middle {
+    padding-top: 42px;
+}
