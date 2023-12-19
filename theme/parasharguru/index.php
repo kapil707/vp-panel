@@ -66,23 +66,23 @@
             $result1 = get_table("tbl_o_interest");
             ?>
             <div class="row">
-                <div class="col-sm-12">                
+                <div class="col-sm-12 text-white">                
                     <h2 class="home_page_profile_h2">Your Profile</h2>
                 </div>
-                <div class="col-sm-12 form-group">
+                <div class="col-sm-12 form-group text-white">
                     <label>First Name:</label>
                     <input type="text" name="first_name" class="form-control input-lg" placeholder="First Name" required="" value="<?php echo $row->first_name ?>">
                 </div>
-                <div class="col-sm-12 form-group">
+                <div class="col-sm-12 form-group text-white">
                     <label>Last Name:</label>
                     <input type="text" name="last_name" class="form-control input-lg" placeholder="Last Name" required="" value="<?php echo $row->last_name ?>">
                 </div>
-                <div class="col-sm-12 form-group">
+                <div class="col-sm-12 form-group text-white">
                     <label>Email:</label>
                     <input type="text" name="email" class="form-control input-lg" placeholder="Enter Email" value="<?php echo $row->email ?>">
                 </div>
-                <div class="col-sm-12 form-group">
-                    <a href="<?php echo base_url(); ?>edit-profile" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="Submit1">Update Your Profile<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="" style="width:25px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></a>
+                <div class="col-sm-12 form-group text-white">
+                    <a href="<?php echo base_url(); ?>edit-profile" class="main-btn flex gap-1" name="Submit1">Update Your Profile<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="" style="width:25px;"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></a>
                 </div>
             </div>
         </div>
