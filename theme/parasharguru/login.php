@@ -1,7 +1,7 @@
 <?php include_once(get_header()); ?>
 <div class="container">
 	<div class="row justify-content-center">
-		<div class="col-sm-4 text-center">
+		<div class="col-sm-4">
 			<img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" width="100%">
 			<div>
 				<p class="text-white">
