@@ -1,7 +1,7 @@
 <?php include_once(get_header()); ?>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col text-center">
+		<div class="col-sm-12 text-center">
 			<div class="text-white">
 				<p class="" style="font-size: 35px;">
 					<?php echo get_field_data('login_label1','73'); ?>
