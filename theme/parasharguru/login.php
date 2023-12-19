@@ -2,6 +2,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12 text-center">
+			<img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" width="40%">
 			<div class="">
 				<p class="text-white" style="font-size: 35px;">
 					<?php echo get_field_data('login_label1','73'); ?>
