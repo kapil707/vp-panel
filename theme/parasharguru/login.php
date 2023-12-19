@@ -2,12 +2,12 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-sm-12 text-center">
-			<div class="text-white">
-				<p class="" style="font-size: 35px;">
+			<div class="">
+				<p class="text-white" style="font-size: 35px;">
 					<?php echo get_field_data('login_label1','73'); ?>
 				</p>
 			</div>
-			<p class="text-white" style="font-size: 12px;text-align: right;">
+			<p class="text-white" style="font-size: 12px;">
 				<?php echo get_field_data('login_label2','73'); ?>
 			</p>
 			<div>
