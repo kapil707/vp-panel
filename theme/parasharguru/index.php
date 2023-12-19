@@ -43,7 +43,7 @@
         </div>
     </div>
 </div>
-<div class="container-fluid">
+<div class="container-fluid image-container2">
     <div class="row">
         <div class="col">
             <p class="text-[#A17603] font-semibold text-center pt-2 px-4 text-[24px] my-3 leading-7">
@@ -86,7 +86,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <!-- <div class="col">
             <div class="row">
                 <div class="col-sm-12">
                     <h2 class="home_page_profile_h2">Referral code</h2>
@@ -95,7 +95,7 @@
                     <?php include_once('referral-code2.php'); ?>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <div class="row">
         <div class="col">
