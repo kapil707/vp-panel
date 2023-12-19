@@ -1,10 +1,7 @@
 <?php include_once(get_header()); ?>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-sm-4">
-
-		</div>
-		<div class="col-sm-4 text-center">
+		<div class="col text-center">
 			<div class="bg-[#A17603] text-white text-center p-1">
 				<p class="font-medium text-[32px] mt-1" id="join" style="font-size: 35px;">
 					<?php echo get_field_data('login_label1','73'); ?>
