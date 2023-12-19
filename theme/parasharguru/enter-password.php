@@ -34,7 +34,7 @@ $no = $row->mobile;
 					<input id="password" name="password" type="password" placeholder="Please Enter Login" maxlength="100" required="" class="border-[#A17603] w-full rounded-[11px] border-[1px] px-4 py-3 placeholder-[#A17603] focus:ring-2 focus:ring-inset focus:ring-[#A17603] text-[#A17603] " value="">
 				</div>
 				
-				<div class="mt-2" style="font-size: 12px;text-align: right;">
+				<div class="mt-2" style="font-size: 12px;text-align: right; text-white">
 					<a href="<?= base_url(); ?>/forget-password">forget password?</a>
 				</div>
 				<button type="submit" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="login_submit">
