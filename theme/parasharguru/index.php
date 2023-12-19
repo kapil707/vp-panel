@@ -45,7 +45,7 @@
 </div>
 <div class="container-fluid image-container2">
     <div class="row">
-        <div class="col-sm-7">
+        <div class="col-sm-7 text-center">
             <p class="text-white">
                 <?php echo get_field_data('login_label3','73'); ?>
             </p>
