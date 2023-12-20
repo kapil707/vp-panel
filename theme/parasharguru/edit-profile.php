@@ -26,7 +26,7 @@ $result1 = get_table("tbl_o_interest");
 <div class="container-fluid">
     <div class="row">
         <div class="col-sm-2"></div>
-		<div class="col-sm-8 text-white">
+		<div class="col-sm-8 text-white p-5">
 			<form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
 				<input type="hidden" name="action_type" value="profile_page_form_submit">
 				<div class="row">
