@@ -1,88 +1,75 @@
 <?php include_once(get_header("mobile")); ?>
-<p class="font-bold text-[24px] mb-2" style="font-size: 12px;text-align: right;">
-	<?php echo get_field_data('login_label2','73'); ?>
-</p>
-<div>
-	<p class="text-[#A17603] font-semibold text-center pt-2 px-4 text-[24px] my-3 leading-7">
-		<?php echo get_field_data('login_label3','73'); ?>
-	</p>
-	<div class="flex justify-center items-center gap-4 mx-auto mt-3">
-		<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="text-[#A17603] w-[29px] h-[30px]"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"></path></svg>
-		<p class="text-[#A17603] font-normal text-[22px]">
-			<?php echo get_field_data('login_label4','43'); ?>
-		</p>
-	</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2"></div>
+          <div class="col-sm-8 text-white p-5">
+            <form name=Form1>
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label> Date : </label>
+                  <input id=fld maxLength=2 size=2 value=1 name="Day" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label>Month : </label>
+                  <select id=fld name=Month class="form-control">
+                    <option value=0 selected>January</option>
+                    <option value=1>February</option>
+                    <option value=2>March</option>
+                    <option value=3>April</option>
+                    <option value=4>May</option>
+                    <option value=5>June</option>
+                    <option value=6>July</option> 
+                    <option value=7>August</option>
+                    <option value=8>September</option>
+                    <option value=9>October</option>
+                    <option value=10>November</option>
+                    <option value=11>December</option>
+                  </select> 
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="form-group">
+                  <label> Year : </label>
+                  <input id=fld maxLength=4 size=6 value=2002 name=Year class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label> Time : </label>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input id=fld maxLength=2 size=2 value=0 name=Hours class="form-control">
+                    </div>
+                    <div class="col-sm-6">
+                      <input id=fld maxLength=2 size=2 value=0 name=Minutes class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label> Zone : </label>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <input id=fld maxLength=2 size=2 value=0 name=ZoneHour class="form-control">
+                    </div>
+                    <div class="col-sm-6">
+                      <input id=fld maxLength=2 size=2 value=0 name=ZoneMin class="form-control">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <input onclick=calculate() type=button value="Generate Panchang" name=Calculate class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]">
+            </div>
+            <hr style="margin-top:50px;">
+            <p style="margin-top:50px;">
+            Panchanga is the quality of the day, which consists of five elements - Vara (Day), Tithi (Lunar Day), Nakshatra (Star), Karana (1/60 parts of lunar month) and Yoga (1/27 parts of lunar month). Changing value of date and time in a field of the form it is possible to find most favourable time for any of undertaking.&nbsp; Accuracy of calculation +/- 1 minute.</P>
+        </div>
+    </div>
 </div>
-<p class="font-medium text-[#A17603] text-center">
-	<?php echo get_field_data('login_label5','43'); ?>
-</p>
-<hr>
-<div id="vvv" style="margin-top:10px;margin-bottom:10px;"></div>
-<form name=Form1>
-<div class="row">
-	<div class="col-sm-4">
-		<div class="form-group">
-			<label> Date : </label>
-			<input id=fld maxLength=2 size=2 value=1 name="Day" class="form-control">
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="form-group">
-			<label>Month : </label>
-			<select id=fld name=Month class="form-control">
-				<option value=0 selected>January</option>
-				<option value=1>February</option>
-				<option value=2>March</option>
-				<option value=3>April</option>
-				<option value=4>May</option>
-				<option value=5>June</option>
-				<option value=6>July</option> 
-				<option value=7>August</option>
-				<option value=8>September</option>
-				<option value=9>October</option>
-				<option value=10>November</option>
-				<option value=11>December</option>
-			</select> 
-		</div>
-	</div>
-	<div class="col-sm-4">
-		<div class="form-group">
-			<label> Year : </label>
-			<input id=fld maxLength=4 size=6 value=2002 name=Year class="form-control">
-		</div>
-	</div>
-	<div class="col-sm-6">
-		<div class="form-group">
-			<label> Time : </label>
-			<div class="row">
-				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value=0 name=Hours class="form-control">
-				</div>
-				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value=0 name=Minutes class="form-control">
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col-sm-6">
-		<div class="form-group">
-			<label> Zone : </label>
-			<div class="row">
-				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value=0 name=ZoneHour class="form-control">
-				</div>
-				<div class="col-sm-6">
-					<input id=fld maxLength=2 size=2 value=0 name=ZoneMin class="form-control">
-				</div>
-			</div>
-		</div>
-	</div>
-	<input onclick=calculate() type=button value="Generate Panchang" name=Calculate class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]">
-</div>
-<hr style="margin-top:50px;">
-<p style="margin-top:50px;">
-Panchanga is the quality of the day, which consists of five elements - Vara (Day), Tithi (Lunar Day), Nakshatra (Star), Karana (1/60 parts of lunar month) and Yoga (1/27 parts of lunar month). Changing value of date and time in a field of the form it is possible to find most favourable time for any of undertaking.&nbsp; Accuracy of calculation +/- 1 minute.</P>
-
 <?php include_once(get_footer("mobile")); ?>
 <script>
 // globals
