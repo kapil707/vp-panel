@@ -28,37 +28,43 @@ $result1 = get_table("tbl_o_interest");
 	<?php } ?>
 <br><br>
 <?php } ?>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2"></div>
+		<div class="col-sm-8 text-white p-5">
+			<form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
+				<input type="hidden" name="action_type" value="password_form_submit">
+				<div class="row">
+					<div class="col-sm-6 form-group">
+						<label>Enter Password:</label>
+						<input type="password" name="new_password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password" required>
+						<div style="margin-top: -32px;width: 45px;position: absolute;right: 4px;">
+							<img src="<?php echo get_theme_path(); ?>images/b_eyes1.png" width="25px" onclick="showpassword('new_password')" id="eyes1_new_password" alt="">
+							<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword('new_password')" id="eyes_new_password" style="display:none" alt="">
+						</div>
+					</div>
+					<div class="col-sm-6 form-group">
+						<label>Re-enter Password:</label>
+						<input type="password" name="renew_password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onchange="check_password2()" id="renew_password" required>
+						<div style="margin-top: -32px;width: 45px;position: absolute;right: 4px;">
+							<img src="<?php echo get_theme_path(); ?>images/b_eyes1.png" width="25px" onclick="showpassword('renew_password')" id="eyes1_renew_password" alt="">
+							<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword('renew_password')" id="eyes_renew_password" style="display:none" alt="">
+						</div>
+					</div>
+					<div class="col-sm-12 form-group alert_div"></div>
 
-<form method="POST" class="detailsbox" id="contact-form" enctype="multipart/form-data" action="<?php echo base_url(); ?>post-data">
-	<input type="hidden" name="action_type" value="password_form_submit">
-	<div class="row">
-		<div class="col-sm-12 form-group">
-			<label>Enter Password:</label>
-			<input type="password" name="new_password" class="form-control input-lg" placeholder="Enter Password" required="" value="" onchange="check_password1()" id="new_password" required>
-			<div style="margin-top: -32px;width: 45px;position: absolute;right: 4px;">
-				<img src="<?php echo get_theme_path(); ?>images/b_eyes1.png" width="25px" onclick="showpassword('new_password')" id="eyes1_new_password" alt="">
-				<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword('new_password')" id="eyes_new_password" style="display:none" alt="">
-			</div>
-		</div>
-		<div class="col-sm-12 form-group">
-			<label>Re-enter Password:</label>
-			<input type="password" name="renew_password" class="form-control input-lg" placeholder="Re-enter Password" required="" value="" onchange="check_password2()" id="renew_password" required>
-			<div style="margin-top: -32px;width: 45px;position: absolute;right: 4px;">
-				<img src="<?php echo get_theme_path(); ?>images/b_eyes1.png" width="25px" onclick="showpassword('renew_password')" id="eyes1_renew_password" alt="">
-				<img src="<?php echo get_theme_path(); ?>images/b_eyes.png" width="25px" onclick="hidepassword('renew_password')" id="eyes_renew_password" style="display:none" alt="">
-			</div>
-		</div>
-		<div class="col-sm-12 form-group alert_div"></div>
+					<div class="col-sm-12 form-group" id="submitbtn_disable" style="display:none">
+						<a href="#" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="Submit1">Edit<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></a>
+					</div>
 
-		<div class="col-sm-12 form-group" id="submitbtn_disable" style="display:none">
-			<a href="#" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="Submit1">Edit<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></a>
-		</div>
-
-		<div class="col-sm-12 form-group" id="submitbtn">
-			<button type="submit" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="Submit1">Update<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></button>
+					<div class="col-sm-12 form-group" id="submitbtn">
+						<button type="submit" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="Submit1">Update<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></button>
+					</div>
+				</div>
+			</form>
 		</div>
 	</div>
-</form>	
+</div>	
 <script>
 var pass1 = 1;
 var pass2 = 0;
