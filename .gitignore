@@ -1,3 +1,4 @@
 application/config/database.php
 application/config/hooks.php
 uploads/manage_library/
+theme/
