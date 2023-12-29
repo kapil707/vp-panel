@@ -261,6 +261,8 @@ if ( ! function_exists('get_blog_pg_url'))
 		
 		$row = $ci->db->query("select * from tbl_permission_page where page_type='$page_type'")->row();
 		
+		//echo "select link_page,url from tbl_page where join_page_id='$row->id'";
+
 		$row1 = $ci->db->query("select link_page,url from tbl_page where join_page_id='$row->id'")->row();
 		if(!empty($row1)){
 			$data["link_page"] = $row1->link_page;

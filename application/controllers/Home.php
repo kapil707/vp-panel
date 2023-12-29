@@ -51,7 +51,12 @@ class Home extends CI_Controller {
 		$page_data 			= get_all_blog_data($page);
 		$data["theme"]		= $theme;
 		$data["page_data"] 	= $page_data[0];
-		$mypage 			= $page_data[2]."-single";
+		$mypage  			= $page_data[2];
+
+		if($mypage == "Select Template"){
+			$mypage = "default";
+		}
+		$mypage 			= $mypage."-single";
 		
 		//$this->load->view("../../theme/".$theme."/header",$data);
 		$this->load->view("../../theme/".$theme."/".$mypage,$data);
