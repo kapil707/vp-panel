@@ -48,8 +48,8 @@
 									</a>
 								</td>
 								<td>
-									<?php if($row->link_page){
-
+									<?php if($row->link_page=="Select Template"){
+										$row->link_page = "Default Page";
 									}?>
 									<?= ($row->link_page); ?>
 								</td>
