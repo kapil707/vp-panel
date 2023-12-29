@@ -18,6 +18,9 @@
 									Title
 								</th>
 								<th>
+									Link Page
+								</th>
+								<th>
 									Date
 								</th>
 								<th>
@@ -43,6 +46,12 @@
 									<a href="<?= base_url(); ?><?php echo $row->url; ?>"target='_blank'>
 										<?= base_url(); ?><?php echo $row->url; ?>
 									</a>
+								</td>
+								<td>
+									<?php if($row->link_page){
+
+									}?>
+									<?= ($row->link_page); ?>
 								</td>
 								<td>
 									<?php 
