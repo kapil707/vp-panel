@@ -156,7 +156,8 @@ if ( ! function_exists('vp_menu_submenu'))
 		// jab dirclty sub menu add kartay ha to yha show hota ha 
 		$result = $ci->db->query("select * from tbl_menu where status=1 and menu_id='$menu_id' and page_type='page' order by sorting_order asc")->result();
 		foreach($result as $row){
-			$return.='<a href="'.base_url().$row->url.'" class="dropdown-item">'.$row->title.'</a>';
+			$row1 = $ci->db->query("select * from tbl_page where page_type='$row->page_type' and id='$row->id'")->row();
+			$return.='<a href="'.base_url().$row1->url.'" class="dropdown-item">'.$row->title.'</a>';
 		}
 		
 		// iss say wo wala sub manu ata ha jo sirf menu say set hota ha 
