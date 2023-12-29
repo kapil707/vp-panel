@@ -22,6 +22,10 @@ class Home extends CI_Controller {
 		}else{
 			$mypage = "404";
 		}
+
+		if($mypage == "Select Template"){
+			$mypage = "default";
+		}
 		
 		//$this->load->view("../../theme/".$theme."/header",$data);
 		if($page=="home" || $page=="Home" || empty($page)){
