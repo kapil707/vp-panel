@@ -152,8 +152,14 @@ if ( ! function_exists('vp_menu_submenu'))
 				$return.='<a class="dropdown-item" href="'.base_url().$blog.'/'.$row1->url.'">'.$row1->title.'</a></il>';
 			}
 		}
+
+		// jab dirclty sub menu add kartay ha to yha show hota ha 
+		$result = $ci->db->query("select * from tbl_menu where status=1 and menu_id='$menu_id' and page_type='page' order by sorting_order asc")->result();
+		foreach($result as $row){
+			$return.='<a href="'.base_url().$row->url.'" class="dropdown-item">'.$row->title.'</a>';
+		}
 		
-		// // iss say wo wala sub manu ata ha jo sirf menu say set hota ha 
+		// iss say wo wala sub manu ata ha jo sirf menu say set hota ha 
 		// $result = $ci->db->query("select * from tbl_menu where status=1 and menu_id='$menu_id' order by sorting_order asc")->result();
 		// foreach($result as $row){
 		// 	if($row->page_type!="" && $row->page_id){
