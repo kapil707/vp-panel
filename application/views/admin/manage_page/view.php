@@ -49,7 +49,7 @@
 								</td>
 								<td>
 									<?php if($row->link_page=="Select Template"){
-										$row->link_page = "Default Page";
+										$row->link_page = "Default";
 									}?>
 									<?= ($row->link_page); ?>
 								</td>
