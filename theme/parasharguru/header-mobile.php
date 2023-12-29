@@ -14,7 +14,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -28,7 +30,7 @@
 
 	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
-<body>
+<body style="background-image: url(<?php echo get_theme_path(); ?>images/login_page/bg.png);" class="main-body">
 <?php
 //session_start();
 // Set a session variable
@@ -39,62 +41,61 @@ if($id==""){
 $users_row = get_table_row("tbl_o_my_users where id='$id'");
 ?>
 
-<nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-		<img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" width="100%">
-	</a>
-	<div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item menu-button-css">
-			<a class="nav-link" href="<?php echo site_url(); ?>home">Home</a>
-        </li>
-        <li class="nav-item menu-button-css">
-			<a class="nav-link" href="<?php echo site_url(); ?>bhava">
-				Bhava
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+	<div class="container">
+		<div class="d-flex align-items-center">
+			<a class="navbar-brand" href="#">
+				<img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" width="30%">
 			</a>
-        </li>
-        <li class="nav-item menu-button-css">
-			<a class="nav-link" href="<?php echo site_url(); ?>janmarashi">
-				Janmarashi
-			</a>
-		</li>
-		<li class="nav-item menu-button-css">
-			<a class="nav-link" href="<?php echo site_url(); ?>panchang">
-				Panchang
-			</a>
-		</li>
-		<li class="nav-item menu-button-css">
-			<a class="nav-link" href="<?php echo site_url(); ?>referral-code">
-				Referral code
-			</a>
-		</li>
-		<li class="nav-item menu-button-css">
-			<a class="nav-link" href="<?php echo site_url(); ?>edit-profile">
-				Edit Profile
-			</a>
-		</li>
-		<li class="nav-item menu-button-css">
-			<a class="nav-link" href="<?php echo site_url(); ?>edit-password">
-				Edit Password
-			</a>
-		</li>
-		<li class="nav-item menu-button-css">
-			<a class="nav-link" href="<?php echo site_url(); ?>profile-logout">
-				Logout
-			</a>
-		</li>
-      </ul>
-    </div>
-  </div>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</div>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ml-auto">
+				<li class="nav-item menu-button-css1">
+					<a class="nav-link" href="<?php echo site_url(); ?>home">Home</a>
+				</li>
+				<li class="nav-item menu-button-css1">
+					<a class="nav-link" href="<?php echo site_url(); ?>bhava">
+						Bhava
+					</a>
+				</li>
+				<li class="nav-item menu-button-css1">
+					<a class="nav-link" href="<?php echo site_url(); ?>janmarashi">
+						Janmarashi
+					</a>
+				</li>
+				<li class="nav-item menu-button-css1">
+					<a class="nav-link" href="<?php echo site_url(); ?>panchang">
+						Panchang
+					</a>
+				</li>
+				<li class="nav-item menu-button-css1">
+					<a class="nav-link" href="<?php echo site_url(); ?>referral-code">
+						Referral code
+					</a>
+				</li>
+				<li class="nav-item menu-button-css1">
+					<a class="nav-link" href="<?php echo site_url(); ?>edit-profile">
+						Edit Profile
+					</a>
+				</li>
+				<li class="nav-item menu-button-css1">
+					<a class="nav-link" href="<?php echo site_url(); ?>edit-password">
+						Edit Password
+					</a>
+				</li>
+				<li class="nav-item menu-button-css1">
+					<a class="nav-link" href="<?php echo site_url(); ?>profile-logout">
+						Logout
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>
 <?php /*
 <div class="mobile-left-menu">

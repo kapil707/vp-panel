@@ -8,11 +8,9 @@ if(empty($id)){
 $row = get_table_row("tbl_o_my_users WHERE id='$id'");
 $no = $row->mobile;
 ?>
-<div class="container">
+<div class="container login-main-css">
 	<div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-4 text-center">
-			<img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" width="100%">
+		<div class="col-md-4 login-css2">
 			<?php if (!empty($this->session->flashdata('message_toast_show'))){ ?>
 			<?php if ($this->session->flashdata('message_toast_show')==1){ ?>
 				<div class="alert alert-success">
@@ -43,8 +41,77 @@ $no = $row->mobile;
 				</button>
 			</form>
 		</div>
+		<div class="col-md-8 login-slider">
+            <div class="owl-carousel">
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/astrology.png" width="100%">
+					<h2>Astrology</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/handwriting.png" width="100%">
+					<h2>Handwriting</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/motivator.png" width="100%">
+					<h2>Motivator</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/numerology.png" width="100%">
+					<h2>Numerology</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/palmistrt.png" width="100%">
+					<h2>Palmistrt</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/spiritual_guru.png" width="100%">
+					<h2>Spiritual Guru</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/vastu.png" width="100%">
+					<h2>Vastu</h2>
+				</div>
+				<!-- Add more slides as needed -->
+			</div>
+		</div>
 	</div>
 </div>
+<?php include_once(get_footer()); ?>
+<script>
+function PhoneInputCountrySelect(){
+	val = $(".PhoneInputCountrySelect option:selected").val();
+	ios = $(".PhoneInputCountrySelect option:selected").attr("ios");
+	phonecode = $(".PhoneInputCountrySelect option:selected").attr("phonecode");
+	name = $(".PhoneInputCountrySelect option:selected").attr("cname");
+	
+	
+	$(".PhoneInputCountryIconImg").attr("src","https://purecatamphetamine.github.io/country-flag-icons/3x2/"+val+".svg");
+	$(".PhoneInputCountryIconImg").attr("alt",name);
+	$(".PhoneInputInput").val("+"+phonecode);
+}
+</script>
+<!-- Owl Carousel JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+$(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items: 3, // Number of items to show
+            loop: true,
+            margin: 10,
+            nav: true, // Show navigation arrows
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                }
+            }
+        });
+    });
+</script>
 
 
 

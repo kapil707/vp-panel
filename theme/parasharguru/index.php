@@ -1,7 +1,7 @@
 <?php include_once(get_header("mobile")); ?>
-<div class="container-fluid">
+<div class="container-fluid main-slider">
     <div class="row">
-        <div class="col">
+        <div class="col-sm-12">
             <?php echo do_slider5('slider');?>
         </div>
     </div>

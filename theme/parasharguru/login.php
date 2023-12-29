@@ -1,25 +1,8 @@
 <?php include_once(get_header()); ?>
-<div class="container">
+<div class="container login-main-css">
 	<div class="row">
-		<div class="col-md-4"></div>
-		<div class="col-md-4 text-center">
-			<img src="<?php echo $logo = get_library_to_image(get_field_data("image_site_logo"),'main'); ?>" width="100%">
-			<div>
-				<p class="text-white">
-					<?php echo get_field_data('login_label3','73'); ?>
-				</p>
-				<div class="text-white flex justify-center items-center gap-4 mx-auto mt-3">
-					<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="" style="width:30px;"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"></path></svg>
-					<p class="text-[#A17603] font-normal text-[22px]">
-						<?php echo get_field_data('login_label4','73'); ?>
-					</p>
-				</div>
-			</div>
-			<p class="text-white text-center">
-				<?php echo get_field_data('login_label5','73'); ?>
-			</p>
-			<div class="p-4">
-				<form method="POST" action="<?php echo base_url(); ?>post-data">
+		<div class="col-md-4 login-css2">
+			<form method="POST" action="<?php echo base_url(); ?>post-data">
 				<?php 
 				$code = "";
 				if(!empty($_GET["code"])){
@@ -64,71 +47,45 @@
 				
 				<p class=" text-[#A17603] text-right text-[12px] font-normal">* Please Enter Whats App Number Only</p><div>
 
-				<button type="submit" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="login_submit">Continue To Dashboard<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></button></div></form>
-			</div>
-			<?php $login_image1 = get_field_data('login_image1','43');
-			if($login_image1) {?>
-			<div class="p-4 mt-5">
-				<?php $sizes = ($login_image1["sizes"]) ?>
-				<img src="<?php echo ($sizes["medium_large"]) ?>" alt="" width="100%" class="alignnone size-full wp-image-63" />
-			</div>
-			<?php } ?>
-			<p class="text-[#A17603] font-semibold text-center pt-2 px-4 text-[15px] my-3 leading-7">
-			Please choose your area of interest:
-			</p>
-			<div id="accordion">
-			<?php
-				$i = 1;
-				$result = get_table("tbl_o_interest");
-				foreach($result as $row) {
-				?>
-				<div class="card">
-					<div class="card-header bg-[#A17603] text-white text-center" id="headingOne<?php echo $row->id; ?>">
-						<h5 class="mb-0">
-							<button class="btn btn-link text-white" data-toggle="collapse" data-target="#collapseOne<?php echo $row->id; ?>" aria-expanded="true" aria-controls="collapse<?php echo $row->id; ?>" style="font-size:18px;">
-								<?php echo $row->name; ?>
-							</button>
-						</h5>
-					</div>
-
-					<?php
-					if(!empty($_GET["interest"])){
-						$i = 0;
-						if($_GET["interest"]==$row->id){
-							$i = 1;
-						}
-					}
-					?>
-
-					<div id="collapseOne<?php echo $row->id; ?>" class="collapse <?php if($i==1) { echo "show"; }?>" aria-labelledby="headingOne<?php echo $row->id; ?>" data-parent="#collapseOne<?php echo $row->id; ?>">
-						<div class="card-body text-left">
-							<?php
-							$result2 = get_table("tbl_o_interest_type where interest_id='$row->id'");
-							foreach($result2 as $row2){
-								?>
-								<a href="https://parashar.guru/login/?interest=<?php echo ($row->id) ?>&&interest_type=<?php echo ($row2->id) ?>">
-								<?php echo $row2->name; ?>
-								</a>
-								<?php
-								echo "<br>";
-							}
-							?>
-						</div>
-					</div>
-				</div>
-			<?php 
-			$i++;
-			} ?>
-			</div>
-			<div class="p-4 mt-5">
-			
-			</div>
+				<button type="submit" class="main-btn flex gap-1 items-center justify-center w-full font-semibold text-center mt-6 text-white rounded-md bg-[#A17603] px-3 py-3 text-[18px]" name="login_submit">Continue To Dashboard<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="w-[21px]"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"></path></svg></button></div>
+			</form>
 		</div>
-		<div class="col-sm-4">
-
+		<div class="col-md-8 login-slider">
+            <div class="owl-carousel">
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/astrology.png" width="100%">
+					<h2>Astrology</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/handwriting.png" width="100%">
+					<h2>Handwriting</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/motivator.png" width="100%">
+					<h2>Motivator</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/numerology.png" width="100%">
+					<h2>Numerology</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/palmistrt.png" width="100%">
+					<h2>Palmistrt</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/spiritual_guru.png" width="100%">
+					<h2>Spiritual Guru</h2>
+				</div>
+				<div class="item">
+					<img src="<?php echo get_theme_path(); ?>images/login_page/vastu.png" width="100%">
+					<h2>Vastu</h2>
+				</div>
+				<!-- Add more slides as needed -->
+			</div>
 		</div>
 	</div>
 </div>
+<?php include_once(get_footer()); ?>
 <script>
 function PhoneInputCountrySelect(){
 	val = $(".PhoneInputCountrySelect option:selected").val();
@@ -141,4 +98,26 @@ function PhoneInputCountrySelect(){
 	$(".PhoneInputCountryIconImg").attr("alt",name);
 	$(".PhoneInputInput").val("+"+phonecode);
 }
+</script>
+<!-- Owl Carousel JavaScript -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script>
+$(document).ready(function(){
+        $(".owl-carousel").owlCarousel({
+            items: 3, // Number of items to show
+            loop: true,
+            margin: 10,
+            nav: true, // Show navigation arrows
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:3
+                }
+            }
+        });
+    });
 </script>
