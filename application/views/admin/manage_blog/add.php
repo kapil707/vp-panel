@@ -189,7 +189,7 @@ function check_sorting_order(sorting_order)
 	check_btn_in_page();
 	
 	page_url = "<?= $page_url ?>";
-	id = "<?= $row->id ?>";
+	id = "";
 	$.ajax({
 	type       : "POST",
 	data       :  {sorting_order:sorting_order,id:id,page_url:page_url} ,
