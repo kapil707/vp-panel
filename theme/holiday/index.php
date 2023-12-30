@@ -2,7 +2,7 @@
 <div id="slider">
     <?php echo do_slider("slider") ;?>
 </div>
-
+xxxxx
         <div id="slider-bottom">
             <div class="container">
                 <div class="row">
