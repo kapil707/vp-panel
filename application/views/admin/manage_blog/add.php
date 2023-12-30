@@ -147,7 +147,7 @@ function check_url(url)
 	check_btn_in_page();
 	
 	page_url = "<?= $page_url ?>";
-	id = "<?= $row->id ?>";
+	id = "";
 	$.ajax({
 	type       : "POST",
 	data       :  {url:url,id:id,page_url:page_url} ,
