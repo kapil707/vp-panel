@@ -180,9 +180,9 @@ class Profile_management extends CI_Controller {
 			{
 				$message = "Check Validation.";
 				$this->session->set_flashdata("message_type","warning");
-			}
-			else
-			{
+			
+			} else {
+
 				$row = $this->db->query("select id from $Page_tbl where page_type='$page_name'")->row();
 				if(!empty($row->id)){
 					$page_error_message = "This Page Already Use";
