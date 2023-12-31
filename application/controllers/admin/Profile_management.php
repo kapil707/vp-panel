@@ -164,7 +164,7 @@ class Profile_management extends CI_Controller {
 		$this->breadcrumbs->push("Admin","admin/");
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/");
 		$this->breadcrumbs->push("Add","admin/$page_controllers/add");
-		$tbl = $Page_tbl;
+		$tbl = $Page_tbl = "tbl_permission_page";
 		
 		$page_error_message = "";
 		$system_ip = $this->input->ip_address();
