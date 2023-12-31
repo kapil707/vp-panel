@@ -157,18 +157,6 @@ class Profile_management extends CI_Controller {
 		$page_controllers 	= $this->page_controllers;
 		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
 		
-		$data['page_url'] = $this->Page_type;
-		if(!empty($_GET["child_page"])){
-			$child_page = $_GET["child_page"];
-			$Page_title = get_child_page_name($child_page);
-			$dt_child_page = "?child_page=".$child_page;
-			$data['child_page'] = $dt_child_page;
-			$data['page_url'] = $child_page;
-		}else{
-			$child_page = $dt_child_page = "";
-			$data['child_page'] = "";
-		}
-		
 		$data['title1'] = $Page_title." || Add";
 		$data['title2'] = "Add";
 		$data['Page_name'] = $Page_name;
@@ -178,18 +166,13 @@ class Profile_management extends CI_Controller {
 		$this->breadcrumbs->push("Add","admin/$page_controllers/add".$dt_child_page);
 		$tbl = $Page_tbl;
 		
-		$page_type = $this->Page_type;
-		$data['page_type'] = $page_type;
-		
 		$category_id = "";
 		$system_ip = $this->input->ip_address();
 		extract($_POST);
 		if(isset($Submit))
 		{
 			$message_db = "";
-			$this->form_validation->set_rules('title','Title',"required");
-			/*$this->form_validation->set_rules('url', 'Url', "required|callback_check_url");
-			$this->form_validation->set_rules('url', 'Url', "required|callback_check_url");*/
+			$this->form_validation->set_rules('page_name','Page Name',"required|is_unique[$Page_tbl.page_type]");
 			if ($this->form_validation->run() == FALSE)
 			{
 				$message = "Check Validation.";
@@ -197,41 +180,7 @@ class Profile_management extends CI_Controller {
 			}
 			else
 			{
-				$time = time();
-				$date = date("Y-m-d",$time);
 				
-				$result = "";
-				$dt = array(
-					'title'=>$title,
-					'description'=>$description,
-					'excerpt'=>$excerpt,
-					'image'=>$image,
-					'mobile_image'=>$mobile_image,
-					'page_type'=>$page_type,
-					'child_page'=>$child_page,
-					'category_id'=>$category_id,
-					'sorting_order'=>$sorting_order,
-					'url'=>$url,
-					'date'=>$date,
-					'time'=>$time,
-					'update_date'=>$date,
-					'update_time'=>$time,
-					'system_ip'=>$system_ip,
-					'user_id'=>$user_id,
-					'status'=>$status,);
-				$result = $this->Scheme_Model->insert_fun($tbl,$dt);
-				if($result)
-				{
-					$message_db = "($title) -  Add Successfully.";
-					$message = "Add Successfully.";
-					$this->session->set_flashdata("message_type","success");
-				}
-				else
-				{
-					$message_db = "($title) - Not Add.";
-					$message = "Not Add.";
-					$this->session->set_flashdata("message_type","error");
-				}
 			}
 			if($message_db!="")
 			{
