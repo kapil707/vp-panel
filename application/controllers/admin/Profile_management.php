@@ -166,7 +166,7 @@ class Profile_management extends CI_Controller {
 		$this->breadcrumbs->push("Add","admin/$page_controllers/add");
 		$tbl = $Page_tbl;
 		
-		$category_id = "";
+		$page_error_message = "";
 		$system_ip = $this->input->ip_address();
 		extract($_POST);
 		if(isset($Submit))
@@ -182,7 +182,12 @@ class Profile_management extends CI_Controller {
 			}
 			else
 			{
-				
+				$row = $this->db->query("select id from $Page_tbl where page_type='$page_type'")->row();
+				if(!empty($row->id)){
+					$page_error_message = "This Page Already Use";
+					$message = "Check Validation.";
+					$this->session->set_flashdata("message_type","warning");
+				}
 			}
 			if($message_db!="")
 			{
@@ -197,6 +202,7 @@ class Profile_management extends CI_Controller {
 				}
 			}
 		}
+		$data["page_error_message"] = $page_error_message;
 		$this->load->view("admin/header_footer/header",$data);
 		$this->load->view("admin/$Page_view/add",$data);
 		$this->load->view("admin/header_footer/footer",$data);

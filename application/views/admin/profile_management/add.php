@@ -20,6 +20,7 @@
 						<div class="help-inline col-sm-12 has-error">
 							<span class="help-block reset middle">  
 								<?= form_error('page_name'); ?>
+								<?= $page_error_message; ?>
 							</span>
 						</div>
 					</div>
