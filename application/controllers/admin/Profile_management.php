@@ -174,7 +174,7 @@ class Profile_management extends CI_Controller {
 			$message_db = "";
 			$page_name = str_replace("_","",$page_name);
 			$page_name = "manage_".str_replace("manage","",$page_name);
-			echo $page_name = str_replace(" ","_",$page_name);
+			$page_name = str_replace(" ","_",$page_name);
 			$this->form_validation->set_rules('page_name','Page Name',"required|is_unique[$Page_tbl.page_type]");
 			if ($this->form_validation->run() == FALSE)
 			{
@@ -188,6 +188,8 @@ class Profile_management extends CI_Controller {
 					$page_error_message = "This Page Already Use";
 					$message = "Check Validation.";
 					$this->session->set_flashdata("message_type","warning");
+				}else{
+					
 				}
 			}
 			if($message_db!="")
