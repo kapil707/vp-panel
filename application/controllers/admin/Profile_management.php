@@ -182,6 +182,7 @@ class Profile_management extends CI_Controller {
 				$this->session->set_flashdata("message_type","warning");
 			}
 			else
+			
 			{
 				$row = $this->db->query("select id from $Page_tbl where page_type='$page_name'")->row();
 				if(!empty($row->id)){
