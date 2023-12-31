@@ -43,8 +43,8 @@
 								</td>
 								<td>
 									<?= ($row->title); ?><br>
-									<a href="<?= base_url(); ?><?php echo $row->url; ?>"target='_blank'>
-										<?= base_url(); ?><?php echo $row->url; ?>
+									<a href="<?= base_url(); ?><?php echo $child_page ?>/<?php echo $row->url; ?>"target='_blank'>
+										<?= base_url(); ?><?php echo $child_page ?>/<?php echo $row->url; ?>
 									</a>
 								</td>
 								<td>
