@@ -196,6 +196,14 @@ class Profile_management extends CI_Controller {
 						'page_type'=>$page_type,
 						'menu_id'=>$menu_id,);
 					$result = $this->Scheme_Model->insert_fun($tbl,$dt);
+
+					$route = str_replace("mange_","",$page_name);
+					$controller = "home/blog/$1";
+					$dt = array(
+						'route'=>$route,
+						'controller'=>$controller,);
+					$result = $this->Scheme_Model->insert_fun("tbl_routes",$dt);
+
 					$title = ($title);
 					if($result)
 					{
@@ -220,7 +228,7 @@ class Profile_management extends CI_Controller {
 				$this->Admin_Model->Add_Activity_log($message_db);
 				if($result)
 				{
-					redirect(base_url()."admin/$page_controllers/edit/".$result.$dt_child_page);
+					redirect(base_url()."admin/profile_management/permission_settings");
 				}
 			}
 		}
