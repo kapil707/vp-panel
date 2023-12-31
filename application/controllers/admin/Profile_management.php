@@ -189,7 +189,7 @@ class Profile_management extends CI_Controller {
 					$message = "Check Validation.";
 					$this->session->set_flashdata("message_type","warning");
 				}else{
-					$page_title = ucfirst(str_replace("_"," ",$page_name));
+					$page_title = ucwords(str_replace("_"," ",$page_name));
 					$page_type = $page_name;
 					$dt = array(
 						'page_title'=>$page_title,
