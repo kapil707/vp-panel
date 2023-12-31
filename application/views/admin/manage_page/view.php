@@ -18,13 +18,13 @@
 									Title
 								</th>
 								<th>
+									Image
+								</th>
+								<th>
 									Link Page
 								</th>
 								<th>
-									Date
-								</th>
-								<th>
-									Time
+									Update
 								</th>
 								<th>
 									Action
@@ -48,6 +48,9 @@
 									</a>
 								</td>
 								<td>
+									<img src="<?php echo get_library_to_image($row->image,'main'); ?>" class="text-center" width="120px">
+								</td>
+								<td>
 									<?php if($row->link_page=="Select Template"){
 										$row->link_page = "Default";
 									}?>
@@ -55,14 +58,12 @@
 								</td>
 								<td>
 									<?php 
-									$date = ($row->update_time); 
-									echo date('d-M-Y', $date);
-									?>
-								</td>
-								<td>
-									<?php 
-									$time = ($row->update_time); 
-									echo date('H:i', $time);
+										$date = ($row->update_time); 
+										echo date('d M,Y', $date);
+										?> at
+										<?php 
+										$time = ($row->update_time); 
+										echo date('H:i', $time);
 									?>
 								</td>
 								<td class="text-right">

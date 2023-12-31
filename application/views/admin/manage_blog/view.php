@@ -67,12 +67,12 @@
 								</td>
 								<td>
 									<?php 
-									$date = ($row->update_time); 
-									echo date('d M,Y', $date);
-									?> at
-									<?php 
-									$time = ($row->update_time); 
-									echo date('H:i', $time);
+										$date = ($row->update_time); 
+										echo date('d M,Y', $date);
+										?> at
+										<?php 
+										$time = ($row->update_time); 
+										echo date('H:i', $time);
 									?>
 								</td>
 								<td class="text-right">
