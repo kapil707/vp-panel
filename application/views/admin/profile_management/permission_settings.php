@@ -117,7 +117,11 @@
 									<?= $row->page_title; ?>
 									<?php if($row->menu_id==0){
 										echo "<b>(Main)</b>";
-									} ?>
+									} else{
+										?>
+										<a href="javascript:void(0)" onclick="delete_page_rec('<?= $row->id; ?>')" class="btn-white btn btn-xs">Delete</i> </a>
+										<?php
+									}?>
 								</td>
 								<td>
 									<input type="text" value="" onchange="change_fafa_icon('<?= $row->id; ?>')" class="fafa_icon_<?= $row->id; ?>">
