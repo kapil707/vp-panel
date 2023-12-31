@@ -189,7 +189,7 @@ class Profile_management extends CI_Controller {
 					$message = "Check Validation.";
 					$this->session->set_flashdata("message_type","warning");
 				}else{
-					
+
 				}
 			}
 			if($message_db!="")
@@ -205,6 +205,8 @@ class Profile_management extends CI_Controller {
 				}
 			}
 		}
+		$result = $this->db->query("select id,page_title,page_type from $Page_tbl where id in(6,9)")->result();
+		$data["result_pg"] = $result;
 		$data["page_error_message"] = $page_error_message;
 		$this->load->view("admin/header_footer/header",$data);
 		$this->load->view("admin/$Page_view/add",$data);

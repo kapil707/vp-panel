@@ -18,8 +18,8 @@
 								</div>
 								<div class="col-sm-12">
 									<select name="copy_type" id="copy_type" data-placeholder="Select Copy Type" class="chosen-select">
-										<?php $result = $this->db->query("select id,page_title,page_type from $Page_tbl where id in(6,9)")->result();
-										foreach($result as $row){ ?>
+										<?php 
+										foreach($result as $row) { ?>
 										<option value="<?php echo $row->id; ?>">
 											<?php echo $row->title; ?>
 										</option>
