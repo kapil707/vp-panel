@@ -117,7 +117,7 @@
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<textarea type="text" class="form-control" id="form-field-1" placeholder="CopyRight Text" name="site_copyright" style="height:100px"><?php echo get_field_data("site_copyright"); ?></textarea>
+							<textarea type="text" class="form-control" id="form-field-1" placeholder="Site Copyright" name="site_copyright" style="height:100px"><?php echo get_field_data("site_copyright"); ?></textarea>
 						</div>
 						<div class="help-inline col-sm-12 has-error">
 							<span class="help-block reset middle">  
