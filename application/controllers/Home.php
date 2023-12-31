@@ -53,8 +53,12 @@ class Home extends CI_Controller {
 		$data["page_data"] 	= $page_data[0];
 		$mypage  			= $page_data[2];
 
-		if($mypage == "Select Template"){
-			$mypage = "default";
+		if($mypage == "Select Template" || $mypage =="") {
+			$mypage = "blog";
+		}
+
+		if($page_data[0]->page_type=="blog" && $page_data[0]->child_page!="") {
+			$mypage = $page_data[0]->child_page;
 		}
 		$mypage 			= $mypage."-single";
 		
