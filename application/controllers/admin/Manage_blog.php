@@ -180,6 +180,7 @@ class Manage_blog extends CI_Controller {
 		$this->load->view("admin/$Page_view/view",$data);
 		$this->load->view("admin/header_footer/footer",$data);
 	}
+
 	public function edit($id)
 	{
 		/******************session***********************/
@@ -210,7 +211,7 @@ class Manage_blog extends CI_Controller {
 		$data['title2'] = "Edit";
 		$data['Page_name'] = $Page_name;
 		$data['Page_menu'] = $Page_menu;		
-		$this->breadcrumbs->push("Edit","admin/");
+		$this->breadcrumbs->push("Admin","admin/");
 		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/".$dt_child_page);
 		$this->breadcrumbs->push("Edit","admin/$page_controllers/edit".$dt_child_page);
 		$tbl = $Page_tbl;
