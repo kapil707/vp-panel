@@ -45,7 +45,7 @@
 									<?= ($row->title); ?>
 								</td>
 								<td>
-									<img src="<?php echo get_library_to_image($get_blog->image,'main'); ?>" class="text-center" width="120px">
+									<img src="<?php echo get_library_to_image($row->image,'main'); ?>" class="text-center" width="120px">
 								</td>
 								<td>
 									<?php
