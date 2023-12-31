@@ -340,9 +340,10 @@ class Manage_blog extends CI_Controller {
 		$Page_tbl 	= $this->Page_tbl;
 		$id 		= $_POST["id"];
 		$sorting_order = $_POST["sorting_order"];
-		$child_page = $this->page_type;
-		if($child_page=="blog"){
-			$child_page = "";
+		$child_page = "";
+		if(!empty($id)){
+			$row = $this->db->query("select child_page from $Page_tbl where id='$id'")->row();
+			$child_page = $row->child_page;
 		}
 		$where = "";
 		if($id!=""){
