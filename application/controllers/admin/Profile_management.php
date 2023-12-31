@@ -197,11 +197,15 @@ class Profile_management extends CI_Controller {
 						'menu_id'=>$menu_id,);
 					$result = $this->Scheme_Model->insert_fun($tbl,$dt);
 
-					$route = str_replace("mange_","",$page_name);
+					$row = $this->db->query("select id from $Page_tbl where page_type='$page_name' and menu_id='$menu_id'")->row();
+
+					$menu_id = $row->id;
+					$route = str_replace("manage_","",$page_name)."/(:any)";
 					$controller = "home/blog/$1";
 					$dt = array(
 						'route'=>$route,
-						'controller'=>$controller,);
+						'controller'=>$controller,
+						'menu_id'=>$menu_id,);
 					$result = $this->Scheme_Model->insert_fun("tbl_routes",$dt);
 
 					$title = ($title);
