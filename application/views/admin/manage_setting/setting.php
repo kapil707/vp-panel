@@ -113,15 +113,15 @@
 					<div class="form-group">
 						<div class="col-sm-12">
 							<label class="control-label" for="form-field-1">
-								CopyRight Text
+								Site Copyright
 							</label>
 						</div>
 						<div class="col-sm-12">
-							<textarea type="text" class="form-control" id="form-field-1" placeholder="CopyRight Text" name="copyright_text" style="height:100px"><?php echo get_field_data("copyright_text"); ?></textarea>
+							<textarea type="text" class="form-control" id="form-field-1" placeholder="CopyRight Text" name="site_copyright" style="height:100px"><?php echo get_field_data("site_copyright"); ?></textarea>
 						</div>
 						<div class="help-inline col-sm-12 has-error">
 							<span class="help-block reset middle">  
-								<?= form_error('copyright_text'); ?>
+								<?= form_error('site_copyright'); ?>
 							</span>
 						</div>
 					</div>
