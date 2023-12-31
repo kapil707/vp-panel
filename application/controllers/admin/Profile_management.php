@@ -252,7 +252,7 @@ class Profile_management extends CI_Controller {
 
 		$this->db->query("delete from tbl_routes where menu_id='$id'");
 
-		$result = $this->db->query("delete from $Page_tbl where id='$id' and menu_id=0");
+		$result = $this->db->query("delete from $Page_tbl where id='$id' and menu_id!=0");
 		if($result)
 		{
 			$message = "Delete Successfully.";
