@@ -59,7 +59,7 @@ class Home extends CI_Controller {
 		$mypage 			= $mypage."-single";
 		
 		//$this->load->view("../../theme/".$theme."/header",$data);
-		//$this->load->view("../../theme/".$theme."/".$mypage,$data);
+		$this->load->view("../../theme/".$theme."/".$mypage,$data);
 		//$this->load->view("../../theme/".$theme."/footer",$data);
 	}
 	
