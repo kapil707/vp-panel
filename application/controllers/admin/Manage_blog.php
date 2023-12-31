@@ -346,16 +346,13 @@ class Manage_blog extends CI_Controller {
 			$child_page = $row->child_page;
 		}
 		$where = "";
-		if($id!=""){
+		if(!empty($id)){
 			$where = " and id!='$id'"; 
 		}
-		$query = $this->db->query("select id from $Page_tbl where sorting_order='$sorting_order' and child_page='$child_page' and page_type='blog' $where")->row();
-		if($query->id)
-		{
+		$row = $this->db->query("select id from $Page_tbl where sorting_order='$sorting_order' and child_page='$child_page' and page_type='blog' $where")->row();
+		if(!empty($row->id)){
 			echo "Error";
-		}
-		else
-		{
+		}else{
 			echo "ok";
 		}
 	}
