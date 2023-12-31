@@ -42,7 +42,10 @@
 									<?= $i++; ?>
 								</td>
 								<td>
-									<?= ($row->title); ?>
+									<?= ($row->title); ?><br>
+									<a href="<?= base_url(); ?><?php echo $row->url; ?>"target='_blank'>
+										<?= base_url(); ?><?php echo $row->url; ?>
+									</a>
 								</td>
 								<td>
 									<img src="<?php echo get_library_to_image($row->image,'main'); ?>" class="text-center" width="120px">
