@@ -243,4 +243,26 @@ class Profile_management extends CI_Controller {
 		$this->load->view("admin/$Page_view/add",$data);
 		$this->load->view("admin/header_footer/footer",$data);
 	}
+
+	public function delete_page_rec()
+	{
+		$id = $_POST["id"];
+		$Page_title = $this->Page_title;
+		$Page_tbl = "tbl_permission_page";
+
+		$this->db->query("delete from tbl_routes where menu_id='$id'");
+
+		$result = $this->db->query("delete from $Page_tbl where id='$id' and menu_id=0");
+		if($result)
+		{
+			$message = "Delete Successfully.";
+		}
+		else
+		{
+			$message = "Not Delete.";
+		}
+		$message = $Page_title." - ".$message;
+		$this->Admin_Model->Add_Activity_log($message);
+		echo "ok";
+	}
 }
