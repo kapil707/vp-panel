@@ -18,8 +18,7 @@
 								</div>
 								<div class="col-sm-12">
 									<select name="copy_type" id="copy_type" data-placeholder="Select Copy Type" class="chosen-select">
-										<?php 
-										foreach($result as $row) { ?>
+										<?php foreach($result_pg as $row) { ?>
 										<option value="<?php echo $row->id; ?>">
 											<?php echo $row->title; ?>
 										</option>
