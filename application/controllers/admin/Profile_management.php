@@ -183,7 +183,7 @@ class Profile_management extends CI_Controller {
 			}
 			else
 			{
-				$row = $this->db->query("select id from $Page_tbl where page_type='$page_type'")->row();
+				$row = $this->db->query("select id from $Page_tbl where page_type='$page_name'")->row();
 				if(!empty($row->id)){
 					$page_error_message = "This Page Already Use";
 					$message = "Check Validation.";
