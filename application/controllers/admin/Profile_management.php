@@ -172,6 +172,7 @@ class Profile_management extends CI_Controller {
 		if(isset($Submit))
 		{
 			$message_db = "";
+			$page_name = str_replace("manage","",$page_name)."mange";
 			$this->form_validation->set_rules('page_name','Page Name',"required|is_unique[$Page_tbl.page_type]");
 			if ($this->form_validation->run() == FALSE)
 			{
