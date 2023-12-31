@@ -59,6 +59,8 @@ class Manage_setting extends CI_Controller {
 
 			$this->Manage_field_group_model->insert_field_data_default($others_tag,"others_tag");
 
+			$this->Manage_field_group_model->insert_field_data_default($copyright_text,"copyright_text");
+
 			redirect(current_url());
 		}
 		$this->load->view("admin/header_footer/header",$data);
