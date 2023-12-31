@@ -142,4 +142,112 @@ class Profile_management extends CI_Controller {
 		$this->Admin_Model->Add_Activity_log($message);
 		echo "ok";
 	}
+
+	public function add()
+	{
+		/******************session***********************/
+		$user_id = $this->session->userdata("user_id");
+		$user_type = $this->session->userdata("user_type");
+		/******************session***********************/
+		$Page_title = $this->Page_title;
+		$Page_name 	= $this->Page_name;
+		$Page_view 	= $this->Page_view;
+		$Page_menu 	= $this->Page_menu;
+		$Page_tbl 	= $this->Page_tbl;
+		$page_controllers 	= $this->page_controllers;
+		$this->Admin_Model->permissions_check_or_set($Page_title,$Page_name,$user_type);
+		
+		$data['page_url'] = $this->Page_type;
+		if(!empty($_GET["child_page"])){
+			$child_page = $_GET["child_page"];
+			$Page_title = get_child_page_name($child_page);
+			$dt_child_page = "?child_page=".$child_page;
+			$data['child_page'] = $dt_child_page;
+			$data['page_url'] = $child_page;
+		}else{
+			$child_page = $dt_child_page = "";
+			$data['child_page'] = "";
+		}
+		
+		$data['title1'] = $Page_title." || Add";
+		$data['title2'] = "Add";
+		$data['Page_name'] = $Page_name;
+		$data['Page_menu'] = $Page_menu;		
+		$this->breadcrumbs->push("Admin","admin/");
+		$this->breadcrumbs->push("$Page_title","admin/$page_controllers/".$dt_child_page);
+		$this->breadcrumbs->push("Add","admin/$page_controllers/add".$dt_child_page);
+		$tbl = $Page_tbl;
+		
+		$page_type = $this->Page_type;
+		$data['page_type'] = $page_type;
+		
+		$category_id = "";
+		$system_ip = $this->input->ip_address();
+		extract($_POST);
+		if(isset($Submit))
+		{
+			$message_db = "";
+			$this->form_validation->set_rules('title','Title',"required");
+			/*$this->form_validation->set_rules('url', 'Url', "required|callback_check_url");
+			$this->form_validation->set_rules('url', 'Url', "required|callback_check_url");*/
+			if ($this->form_validation->run() == FALSE)
+			{
+				$message = "Check Validation.";
+				$this->session->set_flashdata("message_type","warning");
+			}
+			else
+			{
+				$time = time();
+				$date = date("Y-m-d",$time);
+				
+				$result = "";
+				$dt = array(
+					'title'=>$title,
+					'description'=>$description,
+					'excerpt'=>$excerpt,
+					'image'=>$image,
+					'mobile_image'=>$mobile_image,
+					'page_type'=>$page_type,
+					'child_page'=>$child_page,
+					'category_id'=>$category_id,
+					'sorting_order'=>$sorting_order,
+					'url'=>$url,
+					'date'=>$date,
+					'time'=>$time,
+					'update_date'=>$date,
+					'update_time'=>$time,
+					'system_ip'=>$system_ip,
+					'user_id'=>$user_id,
+					'status'=>$status,);
+				$result = $this->Scheme_Model->insert_fun($tbl,$dt);
+				if($result)
+				{
+					$message_db = "($title) -  Add Successfully.";
+					$message = "Add Successfully.";
+					$this->session->set_flashdata("message_type","success");
+				}
+				else
+				{
+					$message_db = "($title) - Not Add.";
+					$message = "Not Add.";
+					$this->session->set_flashdata("message_type","error");
+				}
+			}
+			if($message_db!="")
+			{
+				$message = $Page_title." - ".$message;
+				$message_db = $Page_title." - ".$message_db;
+				$this->session->set_flashdata("message_footer","yes");
+				$this->session->set_flashdata("full_message",$message);
+				$this->Admin_Model->Add_Activity_log($message_db);
+				if($result)
+				{
+					redirect(base_url()."admin/$page_controllers/edit/".$result.$dt_child_page);
+				}
+			}
+		}
+		$this->load->view("admin/header_footer/header",$data);
+		$this->load->view("admin/$Page_view/add",$data);
+		$this->load->view("admin/header_footer/footer",$data);
+	}
 }

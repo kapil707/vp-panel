@@ -1,4 +1,9 @@
 <div class="row">
+    <div class="col-xs-12" style="margin-bottom:20px;">
+		<a href="<?= base_url()?>admin/<?= $Page_name; ?>/add" class="btn btn-w-m btn-info">
+			Add +
+		</a>
+	</div>
     <div class="col-xs-12">
 		<div class="ibox float-e-margins">
 			<div class="ibox-content">
