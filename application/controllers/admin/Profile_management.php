@@ -189,7 +189,26 @@ class Profile_management extends CI_Controller {
 					$message = "Check Validation.";
 					$this->session->set_flashdata("message_type","warning");
 				}else{
-
+					$page_title = ucfirst(str_replace("_"," ",$page_name));
+					$page_type = $page_name;
+					$dt = array(
+						'page_title'=>$page_title,
+						'page_type'=>$page_type,
+						'menu_id'=>$menu_id,);
+					$result = $this->Scheme_Model->insert_fun($tbl,$dt);
+					$title = ($title);
+					if($result)
+					{
+						$message_db = "($title) -  Add Successfully.";
+						$message = "Add Successfully.";
+						$this->session->set_flashdata("message_type","success");
+					}
+					else
+					{
+						$message_db = "($title) - Not Add.";
+						$message = "Not Add.";
+						$this->session->set_flashdata("message_type","error");
+					}
 				}
 			}
 			if($message_db!="")
