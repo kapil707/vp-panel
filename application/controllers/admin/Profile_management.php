@@ -173,7 +173,7 @@ class Profile_management extends CI_Controller {
 		{
 			$message_db = "";
 			$page_name = str_replace("manage","",$page_name)."manage";
-			$page_name = str_replace(" ","_",$page_name);
+			echo $page_name = str_replace(" ","_",$page_name);
 			$this->form_validation->set_rules('page_name','Page Name',"required|is_unique[$Page_tbl.page_type]");
 			if ($this->form_validation->run() == FALSE)
 			{
