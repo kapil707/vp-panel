@@ -6,7 +6,7 @@
 	</div>
 	<?php foreach ($result as $row) { ?> 
 	<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data">
-	<input type="hidden" name="group_child_page" class="css_group_child_page" value="<?php echo $row->child_page ?>">
+		<input type="hidden" name="group_child_page" class="css_group_child_page" value="<?php echo $row->child_page ?>">
 		<div class="col-xs-9">
 			<div class="ibox float-e-margins">
 				<div class="ibox-content">
